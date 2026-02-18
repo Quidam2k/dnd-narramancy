@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code when working with this repository.
 
 ## Project Overview
 
@@ -9,97 +9,81 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Development Commands
 
 ```bash
-# Run tests
+# Run tests (from project root)
 python tests/test_flavor_generation.py
 
-# Run the main generator directly
-python src/python/flavor_text_generator.py
+# Quick import check
+python -c "from flavor_forge import FlavorTextGenerator; print('OK')"
+
+# Generate flavor text (once CLI is built in Phase 2+)
+# python -m flavor_forge generate ...
 ```
 
-Note: This module depends on external modules (`cost_tracker`, `characterization_profiler`) that must be available in the Python path. The test file imports from `summarizer.core.flavor_text_generator` and `summarizer.config.settings`, suggesting this is part of a larger project structure.
+Note: Run from project root. Tests add `src/` to sys.path automatically.
 
-## Key Files
+## Project Structure
 
-### Python Implementation (Primary)
-- `src/python/flavor_text_generator.py` - Main implementation with:
-  - `FlavorTextGenerator` class - Core generation logic
-  - `FlavorTextRequest` / `FlavorTextResult` - Data structures
-  - `CharacterAbilityParser` - Extracts abilities from character data
-  - `VTTExporter` - Export wrapper for VTT formats
-
-### TypeScript Implementation (Reference)
-- `src/typescript/flavorText.ts` - Original Firebase Functions version
-
-### Tests
-- `tests/test_flavor_generation.py` - Python test suite
+```
+dnd-flavor-forge/
+├── src/flavor_forge/          # Main package
+│   ├── __init__.py            # Public exports
+│   ├── generator.py           # FlavorTextGenerator (core AI generation)
+│   ├── models.py              # FlavorTextRequest, FlavorTextResult, AbilityData
+│   ├── parser.py              # CharacterAbilityParser
+│   ├── config.py              # ConfigManager (env vars + optional YAML)
+│   ├── cost_tracker.py        # API cost logging (stub)
+│   ├── profiler.py            # Character profiling stubs + context_blob interface
+│   └── exporters/             # VTT export (Phase 4)
+├── archive/typescript/        # Original Firebase Functions version (reference only)
+├── tests/
+│   └── test_flavor_generation.py
+├── docs/                      # Design docs and extraction notes
+├── config.yaml.example        # Config template
+└── requirements.txt
+```
 
 ## Architecture
 
 ```
-FlavorTextRequest → FlavorTextGenerator → AI Service → FlavorTextResult
-                         ↓
-              (optional) CharacterProfile from dnd-character-profiler
+FlavorTextRequest → FlavorTextGenerator → AI Provider → FlavorTextResult
+                         ↓                    ↑
+                    context_blob         Gemini / Claude / Ollama (Phase 3)
 ```
 
 ## Key Concepts
 
-### Request Structure
+### context_blob
+The `FlavorTextRequest.context_blob` field accepts free-text context that gets appended
+to the AI prompt. This serves both:
+- **Per-creature seasoning**: "This skeleton was once a noble knight..."
+- **Future PC context**: Automated summaries from the summarizer project
+
+### Request/Result
 ```python
 FlavorTextRequest(
-    character_name="Thorin",
-    character_race="Dwarf",
-    character_class="Fighter",
-    character_level=5,
-    ability_name="Action Surge",
-    ability_type="feature",  # spell|cantrip|action|feature|attack|item
-    style="dramatic",        # dramatic|comedic|gritty|heroic
-    variations=5
+    character_name="Thorin", character_race="Dwarf", character_class="Fighter",
+    character_level=5, ability_name="Action Surge", ability_type="feature",
+    style="dramatic", variations=5, context_blob="optional seasoning..."
 )
-```
 
-### Result Structure
-```python
 FlavorTextResult(
-    attempts=["...", "...", ...],    # Trying to use ability
-    successes=["...", "...", ...],   # Ability succeeds
-    failures=["...", "...", ...],    # Ability fails
+    attempts=["...", ...], successes=["...", ...], failures=["...", ...],
     metadata={...}
 )
 ```
 
-## Dependencies
+## AI Providers
 
-Python 3.8+ with:
-- `google-generativeai` - For Gemini API calls
-- `anthropic` - For Claude API calls (alternative)
+- **Gemini** (`gemini-2.0-flash-exp`) — Default, cost-effective
+- **Claude** — Higher quality, more expensive
+- **Ollama** — Local models, free (Phase 3)
 
-External module imports (from parent project):
-- `cost_tracker` - API cost tracking (can be stubbed)
-- `characterization_profiler` - Character personality integration (can be mocked)
-- `ConfigManager` - API key and settings management
-
-For standalone use, mock these imports or comment them out.
-
-## AI Service Integration
-
-Supports both:
-- **Gemini** (`gemini-2.0-flash-exp`) - Default, cost-effective
-- **Claude** - Higher quality, more expensive
-
-API keys managed via config manager.
+API keys via env vars: `GEMINI_API_KEY`, `ANTHROPIC_API_KEY`
 
 ## Output Guidelines
 
 Generated text should be:
 - Exactly 1 sentence, max 20 words
-- Vivid but concise
-- Include one key sensory detail
-- Match character's race/class/level
+- Vivid but concise, with one key sensory detail
+- Matched to character's race/class/level
 - Appropriate for ability type
-
-## Integration
-
-This is a standalone module. Optional integrations:
-- `dnd-character-profiler`: Personality-enhanced prompts
-- `dnd-vtt-bridge`: Rollable table export
-- `dnd-platform`: Unified management UI

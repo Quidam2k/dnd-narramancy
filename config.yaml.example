@@ -1,0 +1,20 @@
+# Flavor Forge Configuration
+# Copy to config.yaml and fill in your values.
+# Environment variables override these settings.
+
+ai_generation:
+  # Model to use for generation. Options:
+  #   gemini-2.0-flash-exp (default, cheap)
+  #   claude-sonnet-4-5-20250929 (higher quality)
+  #   llama3.2 (Ollama, local)
+  model: gemini-2.0-flash-exp
+
+# API keys (prefer env vars: GEMINI_API_KEY, ANTHROPIC_API_KEY)
+# api_keys:
+#   gemini: your-gemini-key-here
+#   anthropic: your-anthropic-key-here
+
+# Ollama configuration (prefer env var: OLLAMA_BASE_URL)
+# ollama:
+#   base_url: http://localhost:11434
+#   model: llama3.2

@@ -1,116 +1,27 @@
 #!/usr/bin/env python3
-"""
-Test script for the FlavorForge flavor text generation system.
-
-This script tests the existing implementation to understand current capabilities.
-"""
+"""Test suite for the Flavor Forge flavor text generation system."""
 
 import asyncio
 import sys
 import os
 from pathlib import Path
 
-# Add project root to path
-sys.path.insert(0, str(Path(__file__).parent))
+# Add src/ to path so flavor_forge package is importable
+sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from summarizer.core.flavor_text_generator import (
-    FlavorTextGenerator, 
-    FlavorTextRequest, 
-    CharacterAbilityParser
+from flavor_forge import (
+    FlavorTextGenerator,
+    FlavorTextRequest,
+    CharacterAbilityParser,
+    ConfigManager,
 )
-from summarizer.config.settings import ConfigManager
 
-async def test_flavor_text_system():
-    """Test the current flavor text generation system."""
-    print("🎲 Testing FlavorForge Flavor Text Generation System")
-    print("=" * 60)
-    
-    try:
-        # Initialize configuration
-        config = ConfigManager()
-        
-        # Test if we have API keys configured
-        gemini_key = config.get_api_key('gemini')
-        claude_key = config.get_api_key('anthropic')
-        
-        print(f"📋 Configuration Status:")
-        print(f"   Gemini API Key: {'✅ Configured' if gemini_key else '❌ Missing'}")
-        print(f"   Claude API Key: {'✅ Configured' if claude_key else '❌ Missing'}")
-        
-        if not gemini_key and not claude_key:
-            print("\n⚠️  No API keys configured. Cannot test AI generation.")
-            print("   Configure an API key first: python3 main.py --help")
-            return False
-        
-        # Initialize the generator
-        generator = FlavorTextGenerator(config)
-        print(f"\n🤖 FlavorTextGenerator initialized successfully")
-        
-        # Create test requests for different ability types
-        test_requests = [
-            FlavorTextRequest(
-                character_name="Thorin Ironforge",
-                character_race="Dwarf",
-                character_class="Fighter",
-                character_level=5,
-                ability_name="Action Surge",
-                ability_type="feature",
-                ability_description="Push yourself beyond normal limits for a moment",
-                style="dramatic",
-                variations=3
-            ),
-            FlavorTextRequest(
-                character_name="Lyralei Windwhisper",
-                character_race="Elf",
-                character_class="Ranger",
-                character_level=3,
-                ability_name="Hunter's Mark",
-                ability_type="spell",
-                ability_description="Choose a creature you can see within range. Until the spell ends, you deal an extra 1d6 damage to the target whenever you hit it with a weapon attack",
-                style="heroic",
-                variations=2
-            )
-        ]
-        
-        print(f"\n🧪 Testing flavor text generation with {len(test_requests)} abilities:")
-        
-        for i, request in enumerate(test_requests, 1):
-            print(f"\n--- Test {i}: {request.character_name}'s {request.ability_name} ---")
-            
-            try:
-                result = await generator.generate_flavor_text(request)
-                
-                print(f"✅ Generated {len(result.attempts)} attempts, {len(result.successes)} successes, {len(result.failures)} failures")
-                print(f"   Style: {request.style}")
-                print(f"   Model: {result.metadata.get('model', 'unknown')}")
-                
-                # Show one example from each category
-                if result.attempts:
-                    print(f"   📝 Attempt: {result.attempts[0]}")
-                if result.successes:
-                    print(f"   🎯 Success: {result.successes[0]}")
-                if result.failures:
-                    print(f"   ❌ Failure: {result.failures[0]}")
-                    
-            except Exception as e:
-                print(f"❌ Failed to generate flavor text for {request.ability_name}: {e}")
-                return False
-        
-        print(f"\n🎉 All flavor text generation tests passed!")
-        return True
-        
-    except Exception as e:
-        print(f"❌ Error during testing: {e}")
-        import traceback
-        traceback.print_exc()
-        return False
 
 def test_character_ability_parser():
-    """Test the character ability parsing system."""
-    print(f"\n🔍 Testing CharacterAbilityParser")
+    """Test the character ability parsing system (no API required)."""
+    print("\nTesting CharacterAbilityParser")
     print("-" * 40)
-    
-    # Sample character data
+
     sample_character = {
         "name": "Test Character",
         "class": "Fighter",
@@ -124,7 +35,7 @@ def test_character_ability_parser():
             },
             {
                 "name": "Second Wind",
-                "type": "feature", 
+                "type": "feature",
                 "description": "You have a limited well of stamina that you can draw on to protect yourself from harm.",
                 "uses": "1 per short rest"
             }
@@ -147,43 +58,185 @@ def test_character_ability_parser():
             }
         ]
     }
-    
+
     try:
-        parser = CharacterAbilityParser()
-        abilities = parser.parse_character_abilities(sample_character)
-        
-        print(f"✅ Parsed {len(abilities)} abilities from character data:")
+        abilities = CharacterAbilityParser.parse_character_abilities(sample_character)
+
+        print(f"  Parsed {len(abilities)} abilities from character data:")
         for ability in abilities:
-            ability_type = parser.classify_ability_type(ability)
-            print(f"   • {ability['name']} ({ability_type})")
-        
+            ability_type = CharacterAbilityParser.classify_ability_type(ability)
+            print(f"    - {ability['name']} ({ability_type})")
+
+        assert len(abilities) == 4, f"Expected 4 abilities, got {len(abilities)}"
+        assert abilities[0]['name'] == 'Action Surge'
+        assert abilities[2]['name'] == "Hunter's Mark"
+        assert abilities[2]['type'] == 'spell'
+        assert abilities[3]['name'] == 'Longsword'
+        assert CharacterAbilityParser.classify_ability_type(abilities[3]) == 'attack'
+
+        print("  PASS")
         return True
-        
+
     except Exception as e:
-        print(f"❌ Error parsing character abilities: {e}")
+        print(f"  FAIL: {e}")
+        import traceback
+        traceback.print_exc()
         return False
 
-async def main():
-    """Main test function."""
-    print("🚀 FlavorForge Integration Test Suite")
-    print("=" * 60)
-    
-    # Test ability parser first (no API required)
-    parser_success = test_character_ability_parser()
-    
-    # Test flavor text generation (requires API key)
-    generator_success = await test_flavor_text_system()
-    
-    print(f"\n📊 Test Results:")
-    print(f"   Character Parser: {'✅ Pass' if parser_success else '❌ Fail'}")
-    print(f"   Flavor Generator: {'✅ Pass' if generator_success else '❌ Fail'}")
-    
-    if parser_success and generator_success:
-        print(f"\n🎉 All tests passed! FlavorForge integration is working.")
+
+def test_config_manager():
+    """Test ConfigManager env var and fallback logic."""
+    print("\nTesting ConfigManager")
+    print("-" * 40)
+
+    try:
+        config = ConfigManager()
+
+        # Test fallback
+        val = config.get('ai_generation', 'model', fallback='gemini-2.0-flash-exp')
+        assert val == 'gemini-2.0-flash-exp', f"Expected fallback, got {val}"
+
+        # Test env var override
+        os.environ['FLAVOR_FORGE_AI_GENERATION_MODEL'] = 'test-model'
+        val = config.get('ai_generation', 'model', fallback='default')
+        assert val == 'test-model', f"Expected 'test-model', got {val}"
+        del os.environ['FLAVOR_FORGE_AI_GENERATION_MODEL']
+
+        # Test API key lookup
+        os.environ['GEMINI_API_KEY'] = 'fake-key'
+        key = config.get_api_key('gemini')
+        assert key == 'fake-key'
+        del os.environ['GEMINI_API_KEY']
+
+        print("  PASS")
         return True
-    else:
-        print(f"\n⚠️  Some tests failed. Check configuration and dependencies.")
+
+    except Exception as e:
+        print(f"  FAIL: {e}")
+        import traceback
+        traceback.print_exc()
         return False
+
+
+def test_generator_init():
+    """Test that FlavorTextGenerator instantiates without errors."""
+    print("\nTesting FlavorTextGenerator instantiation")
+    print("-" * 40)
+
+    try:
+        config = ConfigManager()
+        generator = FlavorTextGenerator(config)
+
+        # Test prompt generation (no API call)
+        request = FlavorTextRequest(
+            character_name="Thorin Ironforge",
+            character_race="Dwarf",
+            character_class="Fighter",
+            character_level=5,
+            ability_name="Action Surge",
+            ability_type="feature",
+            ability_description="Push beyond normal limits",
+            style="dramatic",
+            variations=3
+        )
+        prompt = generator.generate_flavor_text_prompt(request)
+        assert "Thorin Ironforge" in prompt
+        assert "Action Surge" in prompt
+        assert "dramatic" in prompt
+
+        # Test with context_blob
+        request_with_context = FlavorTextRequest(
+            character_name="Skeleton",
+            character_race="Undead",
+            character_class="Fighter",
+            character_level=1,
+            ability_name="Shortsword",
+            ability_type="attack",
+            context_blob="This skeleton was once a noble knight who fell defending the castle.",
+            variations=3
+        )
+        prompt2 = generator.generate_flavor_text_prompt(request_with_context)
+        assert "noble knight" in prompt2
+
+        print("  PASS")
+        return True
+
+    except Exception as e:
+        print(f"  FAIL: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+
+
+async def test_ai_generation():
+    """Test actual AI generation (requires API key). Skipped if no key available."""
+    print("\nTesting AI Generation (requires API key)")
+    print("-" * 40)
+
+    config = ConfigManager()
+    gemini_key = config.get_api_key('gemini')
+    claude_key = config.get_api_key('anthropic')
+
+    if not gemini_key and not claude_key:
+        print("  SKIP: No API keys configured")
+        return None  # None = skipped, not failed
+
+    generator = FlavorTextGenerator(config)
+
+    request = FlavorTextRequest(
+        character_name="Thorin Ironforge",
+        character_race="Dwarf",
+        character_class="Fighter",
+        character_level=5,
+        ability_name="Action Surge",
+        ability_type="feature",
+        ability_description="Push yourself beyond normal limits for a moment",
+        style="dramatic",
+        variations=3
+    )
+
+    try:
+        result = await generator.generate_flavor_text(request)
+        print(f"  Generated {len(result.attempts)} attempts, {len(result.successes)} successes, {len(result.failures)} failures")
+        if result.attempts:
+            print(f"  Sample: {result.attempts[0]}")
+        print("  PASS")
+        return True
+    except Exception as e:
+        print(f"  FAIL: {e}")
+        return False
+
+
+async def main():
+    """Run all tests."""
+    print("Flavor Forge Test Suite")
+    print("=" * 60)
+
+    results = {}
+    results['parser'] = test_character_ability_parser()
+    results['config'] = test_config_manager()
+    results['generator_init'] = test_generator_init()
+    results['ai_generation'] = await test_ai_generation()
+
+    print(f"\n{'=' * 60}")
+    print("Results:")
+    for name, result in results.items():
+        if result is None:
+            status = "SKIP"
+        elif result:
+            status = "PASS"
+        else:
+            status = "FAIL"
+        print(f"  {name}: {status}")
+
+    failures = [k for k, v in results.items() if v is False]
+    if failures:
+        print(f"\nFailed: {', '.join(failures)}")
+        return False
+    else:
+        print("\nAll tests passed (or skipped).")
+        return True
+
 
 if __name__ == "__main__":
     success = asyncio.run(main())
