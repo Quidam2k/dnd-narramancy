@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Spider Climb - Attempts",
+  "formula": "1d5",
+  "description": "Flavor text for attempts a feature",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "The vampire's crimson eyes lock onto the ceiling, claws flexing with predatory precision before ascent begins."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "A faint hiss echoes as the undead lord prepares to defy gravity once more, shadows writhing beneath him."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "With a bone-chilling whisper, the vampire turns his gaze upward, sensing the cold embrace of stone awaiting."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "The air grows thick with anticipation as the monstrous figure coils, ready to scale the impossible heights."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "A predatory grin spreads across the pale face as claws find purchase on the slick, vertical surface."
+    }
+  ]
+}

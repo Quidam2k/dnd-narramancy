@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Vampire Weaknesses - Failures",
+  "formula": "1d5",
+  "description": "Flavor text for failures a feature",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "A searing wave of holy fire consumes the vampire as it falters in the sun's glare."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Water's acidic kiss burns away flesh as the creature thrashes in futile defiance."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "The stake shatters against an unseen barrier\u2014its resting place remains inviolate."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "A guest's refusal echoes like thunder, sealing the vampire out of sanctuary forever."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "The threshold rejects its presence with a violent surge of arcane energy."
+    }
+  ]
+}

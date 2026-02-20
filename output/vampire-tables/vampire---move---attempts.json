@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Move - Attempts",
+  "formula": "1d5",
+  "description": "Flavor text for attempts a legendary",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "The vampire's cloak billows as it readies to move with unholy grace."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Fangs glint in the moonlight as the undead monster prepares its legendary stride."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "A chilling whisper echoes as the vampire gathers itself to strike unseen."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Shadows coil around its feet, anticipating the creature's swift, silent motion."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "The air grows cold as the vampire's eyes gleam with predatory intent."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Unarmed Strike (Vampire Form Only) - Failures",
+  "formula": "1d5",
+  "description": "Flavor text for failures a attack",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Your attack misses by inches, the target's desperate dodge leaving you grasping at empty air."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "The creature twists away just in time, your claws raking uselessly through mist and shadow."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Your strike meets only air as your foe vanishes into the darkness!"
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Their reflexes betray their mortal nature as they barely avoid your deadly embrace."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "A feint! You swing at nothing but the fading echoes of your prey's laughter."
+    }
+  ]
+}

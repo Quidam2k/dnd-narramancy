@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Charm - Successes",
+  "formula": "1d5",
+  "description": "Flavor text for successes a action",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Their gaze softens under the vampire\u2019s spell, eyes glazing over as they smile sweetly, enchanted."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "The target sighs deeply, drawn into a trance-like devotion to the ancient undead predator."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "A shiver runs down their spine, but their will bends like reeds before the vampire\u2019s hypnotic storm."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Their voice trembles with affection as they step closer, eyes locked onto their newfound protector."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "The charm takes hold, their resistance melting away under the vampire\u2019s commanding presence."
+    }
+  ]
+}

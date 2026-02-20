@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Legendary Resistance (3/Day) - Successes",
+  "formula": "1d5",
+  "description": "Flavor text for successes a feature",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "With a thunderous echo, fate bends to the vampire's will, its essence unbroken by mortal forces."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "The saving throw's failure transforms into triumph, the undead's power shattering the chains of destiny."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "A spectral glow envelops the vampire as it rewrites the script of its demise with bloodied quill."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Death itself recoils as the vampire's legendary resistance turns the tide in a heartbeat."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "The crypt trembles as the vampire's defiance resounds, the very walls echoing its unyielding resolve."
+    }
+  ]
+}

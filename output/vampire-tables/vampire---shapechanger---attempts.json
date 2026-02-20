@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Shapechanger - Attempts",
+  "formula": "1d5",
+  "description": "Flavor text for attempts a feature",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "The vampire's form trembles, its essence wrestling with the night's embrace."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "A shiver runs through his body as the shadows answer his call."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "His bones creak and his flesh ripples like a disturbed grave."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "With a hiss of defiance, he fights to shed mortal constraints."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "The air grows thick with the scent of decay as transformation begins."
+    }
+  ]
+}

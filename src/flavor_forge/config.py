@@ -87,6 +87,7 @@ class ConfigManager:
             'anthropic': 'ANTHROPIC_API_KEY',
             'claude': 'ANTHROPIC_API_KEY',
             'ollama': 'OLLAMA_BASE_URL',
+            'lmstudio': 'LMSTUDIO_BASE_URL',
         }
         env_name = key_map.get(provider.lower())
         if env_name:

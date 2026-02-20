@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Regeneration - Successes",
+  "formula": "1d5",
+  "description": "Flavor text for successes a feature",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "With a sickening ripple, its wounds knit together like silk, restored by the cursed embrace of eternal night."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "The vampire\u2019s flesh solidifies with an eerie, wet sound as dark energy mends its battered form."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Life returns to its veins in a rush, the taste of iron sharp on its tongue."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "A pulse of unnatural vitality courses through its body, sealing every gash and bruise."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "The shadows themselves seem to stitch his wounds shut as regeneration surges within."
+    }
+  ]
+}

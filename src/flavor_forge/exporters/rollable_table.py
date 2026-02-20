@@ -1,6 +1,13 @@
-"""Foundry VTT RollTable JSON exporter."""
+"""Foundry VTT RollTable JSON exporter.
 
-import secrets
+Produces JSON compatible with the Roll Table Importer module:
+  https://foundryvtt.com/packages/roll-table-importer
+
+Each table uses the "FoundryTable" format (has formula + range/text results).
+Tables are written as individual files for single import, or as a collection
+dict keyed by table name for batch import via macro.
+"""
+
 from typing import Dict, List
 
 from ..models import FlavorTextResult
@@ -10,10 +17,14 @@ def export_rollable_tables(
     creature_name: str,
     results: Dict[str, FlavorTextResult],
 ) -> List[dict]:
-    """Convert generation results to Foundry VTT RollTable JSON objects.
+    """Convert generation results to Roll Table Importer-compatible JSON.
 
     Produces up to 3 tables per ability (attempts, successes, failures).
     Empty categories are skipped.
+
+    Each table matches the Roll Table Importer "FoundryTable" format:
+        {"name": "...", "formula": "1dN", "description": "...",
+         "results": [{"range": [1,1], "text": "..."}]}
     """
     tables = []
 
@@ -29,27 +40,15 @@ def export_rollable_tables(
             table_results = []
             for i, text in enumerate(texts, 1):
                 table_results.append({
-                    "_id": secrets.token_hex(8),
-                    "type": 0,
-                    "text": text,
-                    "img": "icons/svg/d20-black.svg",
-                    "weight": 1,
                     "range": [i, i],
-                    "drawn": False,
+                    "text": text,
                 })
 
             ability_type = result.metadata.get('ability_type', 'ability')
             tables.append({
                 "name": table_name,
-                "img": "icons/svg/d20-black.svg",
-                "description": f"Flavor text for {category} a {ability_type}",
                 "formula": f"1d{len(texts)}",
-                "replacement": True,
-                "displayRoll": True,
-                "folder": None,
-                "sort": 0,
-                "ownership": {"default": 0},
-                "flags": {},
+                "description": f"Flavor text for {category} a {ability_type}",
                 "results": table_results,
             })
 

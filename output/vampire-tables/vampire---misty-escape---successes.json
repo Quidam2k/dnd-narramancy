@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Misty Escape - Successes",
+  "formula": "1d5",
+  "description": "Flavor text for successes a feature",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "With a final, gurgling scream, the vampire dissolves into a wisp of nightmarish fog and vanishes into the gloom."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "The monster\u2019s body disintegrates in a swirl of ebony mist, slipping through cracks like a shadow given life."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "A shriek echoes as the undead vanishes mid-air, leaving only the faint scent of decay in its wake."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Like smoke on the wind, the vampire evaporates into the darkness, leaving no trace behind but dread."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Ink-like tendrils of mist coil around the creature\u2019s fading form before it dissipates entirely."
+    }
+  ]
+}

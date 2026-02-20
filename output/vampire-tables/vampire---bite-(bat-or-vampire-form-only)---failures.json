@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Bite (Bat or Vampire Form Only) - Failures",
+  "formula": "1d5",
+  "description": "Flavor text for failures a attack",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Your strike is parried by a desperate flail of limbs, leaving only air where flesh should be."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "The target twists away at the last instant, their panicked heartbeat mocking your hunger."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Your fangs scrape uselessly against bone, their wild thrashing denying you your due."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "A surge of unnatural strength throws them from your grip, their life force still untouched."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Their flesh is cold and lifeless\u2014already dead, offering nothing but the taste of rot."
+    }
+  ]
+}

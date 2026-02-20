@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Regeneration - Failures",
+  "formula": "1d5",
+  "description": "Flavor text for failures a feature",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "The vampire gasps in agony as holy fire scorches its essence, halting its unholy recovery."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "A searing light burns away the dark magic, leaving its wounds gaping and raw."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "The sacred water hisses on its skin, rendering its cursed vitality useless against divine wrath."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Radiant energy flares within, scalding his veins as the regeneration fails him."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Sunlight\u2019s cruel touch steals the night\u2019s blessing, leaving him broken and defenseless."
+    }
+  ]
+}

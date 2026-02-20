@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Charm - Attempts",
+  "formula": "1d5",
+  "description": "Flavor text for attempts a action",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "The vampire's crimson eyes lock onto the target, a hypnotic gaze weaving through the air."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "With a predatory smile, the undead beast unleashes its mesmerizing aura, filling the room with an eerie silence."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "A whisper of dark enchantment escapes the vampire\u2019s lips, the air thickening with unnatural allure."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "The creature extends a skeletal hand, fingers curling as if plucking at invisible threads of will."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Eyes like pools of blood meet theirs, an inescapable pull tugging at their very soul."
+    }
+  ]
+}

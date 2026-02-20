@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Shapechanger - Failures",
+  "formula": "1d5",
+  "description": "Flavor text for failures a feature",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "His body convulses but resists, trapped between forms in agony."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "A searing pain shoots through his veins as the change fails."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "His flesh twitches, but the shadows refuse to answer his call."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "A hollow laugh echoes as the transformation sputters and fades."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "The air grows heavy with dread as his form remains unyielding."
+    }
+  ]
+}

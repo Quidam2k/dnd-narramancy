@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Multiattack (Vampire Form Only) - Attempts",
+  "formula": "1d5",
+  "description": "Flavor text for attempts a action",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "The vampire lunges with a chilling hiss, fangs glistening in the moonlit shadows."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Shadows writhe as the undead lord readies twin strikes with eerie precision."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "A gust of decayed air precedes his dual assault, eyes burning crimson."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Cloaked in darkness, the vampire's claws and fangs gleam like obsidian blades."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "His form blurs into a spectral blur, teeth bared for a deadly embrace."
+    }
+  ]
+}

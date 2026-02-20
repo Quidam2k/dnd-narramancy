@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Children of the Night (1/Day) - Attempts",
+  "formula": "1d5",
+  "description": "Flavor text for attempts a action",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "The vampire raises a skeletal hand, moonlight glinting off its cold fingers as it summons the night's fury."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "With a haunting whisper, the undead lord reaches out to the shadows, beckoning his children from the darkness."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "A chilling wind howls as the vampire prepares to unleash the horde, their presence felt in every rustling leaf."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "The vampire\u2019s crimson eyes flare with eerie light, calling forth the beasts of the night to do its bidding."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "Fangs glistening in the pale moonlight, the undead monster commands the creatures of shadow to answer his call."
+    }
+  ]
+}

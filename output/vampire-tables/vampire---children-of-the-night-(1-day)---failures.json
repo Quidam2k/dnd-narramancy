@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Children of the Night (1/Day) - Failures",
+  "formula": "1d5",
+  "description": "Flavor text for failures a action",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "The summons falters, a gust of wind scattering the creatures before they fully materialize, leaving only echoes of fury."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "A mocking silence answers the vampire\u2019s command as the night remains eerily still, refusing to yield its beasts."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "The summoned creatures shriek in agony as daylight sears them away, their forms dissolving into nothingness."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "A futile ripple of energy fades, the beasts never fully manifesting, leaving the vampire alone against its foes."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "The night betrays its master, denying him his children and leaving only the cold embrace of defeat."
+    }
+  ]
+}

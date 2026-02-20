@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Children of the Night (1/Day) - Successes",
+  "formula": "1d5",
+  "description": "Flavor text for successes a action",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "A deafening chorus of screeches and snarls erupts as swarms of bats and wolves materialize at the vampire\u2019s command."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "The night itself seems to tear open as the beasts pour forth, ready to obey their master\u2019s cruel orders."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "With a thunderous rush, the creatures answer the call, their collective presence shaking the very earth beneath them."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "A tidal wave of fur and fangs crashes into existence, the vampire\u2019s minions arriving with primal ferocity."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "The air vibrates with the growls and hisses of the summoned horde, their loyalty to the undead absolute."
+    }
+  ]
+}

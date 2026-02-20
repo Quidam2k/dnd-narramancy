@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Misty Escape - Attempts",
+  "formula": "1d5",
+  "description": "Flavor text for attempts a feature",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "The vampire's body convulses as it clutches its chest, veins blackening with unholy energy."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "A guttural hiss escapes the creature\u2019s lips as it twists in agony, shadows writhing around it."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Blood curdles in the air as the vampire\u2019s form trembles on the brink of dissolution."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "The moonlight dims as the undead fiend struggles to unravel its corporeal bonds."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "A chilling mist swirls at the creature\u2019s feet, hinting at escape but not yet formed."
+    }
+  ]
+}

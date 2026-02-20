@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Multiattack (Vampire Form Only) - Failures",
+  "formula": "1d5",
+  "description": "Flavor text for failures a action",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "A desperate swipe misses as the foe dodges the vampiric assault with uncanny reflexes!"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "The vampire's strike falters, his movements hampered by a sudden flash of holy light."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Both attacks whiff past their mark, the target vanishing into the night's mist."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "A misstep in the shadows leaves him vulnerable as his blows land harmlessly on empty air."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "His fangs and claws clatter against armor with a hollow, impotent clang!"
+    }
+  ]
+}

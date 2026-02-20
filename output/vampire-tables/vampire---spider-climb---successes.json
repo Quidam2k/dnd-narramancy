@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Spider Climb - Successes",
+  "formula": "1d5",
+  "description": "Flavor text for successes a feature",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "The vampire ascends silently, talons clicking against stone like a macabre metronome in the dead of night."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "With effortless grace, he clings to the ceiling, crimson cloak billowing beneath as if suspended by unseen threads."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Defying all natural laws, the undead horror crawls upward, leaving only echoes of his passage behind."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "The vampire's ascent is swift and soundless, his form blending into the darkness above like a specter reclaiming its domain."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "With preternatural agility, he scales the wall, claws carving faint grooves where mortal hands would slip."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Unarmed Strike - Successes",
+  "formula": "1d5",
+  "description": "Flavor text for successes a legendary",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "His strike lands like a blade forged in the fires of damnation, tearing flesh effortlessly."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "Bone cracks and blood sprays as his legendary blow connects with bone-crushing force."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "The vampire's claws rend through armor like paper, leaving a mortal wound behind."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "A guttural snarl escapes his lips as his fist crushes its mark with superhuman strength."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "His strike is swift as death itself, leaving no room for mercy or hesitation."
+    }
+  ]
+}

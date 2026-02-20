@@ -297,10 +297,14 @@ def _export_results(creature_name, results, export_format, output_dir):
 
     if export_format in ('foundry', 'all'):
         tables = export_rollable_tables(creature_name, results)
-        path = os.path.join(output_dir, f"{slug}-tables.json")
-        with open(path, 'w') as f:
-            json.dump(tables, f, indent=2)
-        print(f"Wrote {len(tables)} rollable tables to {path}")
+        tables_dir = os.path.join(output_dir, f"{slug}-tables")
+        os.makedirs(tables_dir, exist_ok=True)
+        for i, table in enumerate(tables):
+            table_slug = table['name'].lower().replace(' ', '-').replace('/', '-')
+            path = os.path.join(tables_dir, f"{table_slug}.json")
+            with open(path, 'w') as f:
+                json.dump(table, f, indent=2)
+        print(f"Wrote {len(tables)} rollable tables to {tables_dir}/")
 
     if export_format in ('tokensays', 'all'):
         sayings = export_token_says(creature_name, results)

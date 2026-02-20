@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Vampire Weaknesses - Attempts",
+  "formula": "1d5",
+  "description": "Flavor text for attempts a feature",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "The vampire hesitates at the threshold, fangs bared as a whisper of forbidden air hisses past."
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "A wooden stake glints in torchlight, hovering over the resting undead's heart with deadly purpose."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "Rushing water roars like a thousand screams, daring the creature to defy its ancient curse."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "The vampire recoils from blinding sunlight, as if seared by a divine judgment."
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "A guest's cold invitation lingers in the air, a key to the undead's nocturnal domain."
+    }
+  ]
+}

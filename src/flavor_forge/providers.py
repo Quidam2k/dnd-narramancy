@@ -1,6 +1,6 @@
 """AI provider abstraction for Flavor Forge.
 
-Supports Gemini, Claude, and Ollama with a common interface.
+Supports Gemini, Claude, Ollama, and LM Studio (OpenAI-compatible) providers.
 """
 
 import asyncio
@@ -149,6 +149,52 @@ class OllamaProvider(AIProvider):
         )
 
 
+class LMStudioProvider(AIProvider):
+    """LM Studio / OpenAI-compatible API provider."""
+
+    name = "lmstudio"
+
+    def __init__(self, base_url: str = "http://localhost:1234", model: str = "local-model"):
+        self.base_url = base_url.rstrip("/")
+        self.model = model
+
+    async def generate(self, prompt: str) -> ProviderResult:
+        import urllib.request
+
+        url = f"{self.base_url}/v1/chat/completions"
+        payload = json.dumps({
+            "model": self.model,
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": 0.8,
+            "max_tokens": 2048,
+            "stream": False,
+        }).encode("utf-8")
+
+        req = urllib.request.Request(
+            url,
+            data=payload,
+            headers={"Content-Type": "application/json"},
+        )
+
+        def _do_request():
+            with urllib.request.urlopen(req, timeout=300) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+
+        data = await asyncio.to_thread(_do_request)
+
+        choice = data["choices"][0]
+        response_text = choice["message"]["content"]
+        usage = data.get("usage", {})
+
+        return ProviderResult(
+            text=response_text,
+            input_tokens=usage.get("prompt_tokens", 0),
+            output_tokens=usage.get("completion_tokens", 0),
+            model=data.get("model", self.model),
+            provider_name=self.name,
+        )
+
+
 def get_provider(name: str, config: ConfigManager) -> AIProvider:
     """Create a provider instance by name, using config for credentials.
 
@@ -175,8 +221,13 @@ def get_provider(name: str, config: ConfigManager) -> AIProvider:
         model = config.get("ai_generation", "ollama_model", fallback="llama3.2")
         return OllamaProvider(base_url=base_url, model=model)
 
+    elif name == "lmstudio":
+        base_url = config.get_api_key("lmstudio") or "http://localhost:1234"
+        model = config.get("ai_generation", "lmstudio_model", fallback="local-model")
+        return LMStudioProvider(base_url=base_url, model=model)
+
     else:
-        raise ValueError(f"Unknown provider: {name!r}. Available: gemini, claude, ollama")
+        raise ValueError(f"Unknown provider: {name!r}. Available: gemini, claude, ollama, lmstudio")
 
 
 def get_available_providers(config: ConfigManager) -> list[str]:
@@ -189,7 +240,9 @@ def get_available_providers(config: ConfigManager) -> list[str]:
         available.append("claude")
 
     # Ollama is always "available" since it defaults to localhost
-    ollama_url = config.get_api_key("ollama") or "http://localhost:11434"
     available.append("ollama")
+
+    if config.get_api_key("lmstudio"):
+        available.append("lmstudio")
 
     return available

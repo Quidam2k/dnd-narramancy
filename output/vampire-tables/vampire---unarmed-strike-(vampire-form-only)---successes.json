@@ -1,0 +1,42 @@
+{
+  "name": "Vampire - Unarmed Strike (Vampire Form Only) - Successes",
+  "formula": "1d5",
+  "description": "Flavor text for successes a attack",
+  "results": [
+    {
+      "range": [
+        1,
+        1
+      ],
+      "text": "Your unholy grip ensnares your foe like a vice, their bones groaning under your supernatural strength!"
+    },
+    {
+      "range": [
+        2,
+        2
+      ],
+      "text": "With a snarl, you crush flesh and splinter bone beneath your relentless assault."
+    },
+    {
+      "range": [
+        3,
+        3
+      ],
+      "text": "The creature shudders as your fangs sink in, their blood turning to ice in your veins."
+    },
+    {
+      "range": [
+        4,
+        4
+      ],
+      "text": "Your strike lands with the force of a tombstone dropping, sending them crashing into the dirt!"
+    },
+    {
+      "range": [
+        5,
+        5
+      ],
+      "text": "A flash of crimson and agony erupts as your fist connects like a hammer from the grave!"
+    }
+  ]
+}
