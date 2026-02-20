@@ -1,0 +1,335 @@
+d5 Vampire - Multiattack (Vampire Form Only) - Attempts
+### Flavor text for attempts a action
+The vampire lunges with a chilling hiss, fangs glistening in the moonlit shadows.
+Shadows writhe as the undead lord readies twin strikes with eerie precision.
+A gust of decayed air precedes his dual assault, eyes burning crimson.
+Cloaked in darkness, the vampire's claws and fangs gleam like obsidian blades.
+His form blurs into a spectral blur, teeth bared for a deadly embrace.
+
+d5 Vampire - Multiattack (Vampire Form Only) - Successes
+### Flavor text for successes a action
+The vampire's bite sinks deep as his other claw rips flesh with unholy savagery!
+With inhuman speed, he strikes twice--one fang, one talon--a symphony of carnage.
+A flash of crimson and steel; both attacks land, leaving victims gasping for breath.
+The vampire's dual strike is a dance of death, ending with a scream of agony.
+His claws rend while his fangs pierce, the scent of blood thick in the air.
+
+d5 Vampire - Multiattack (Vampire Form Only) - Failures
+### Flavor text for failures a action
+A desperate swipe misses as the foe dodges the vampiric assault with uncanny reflexes!
+The vampire's strike falters, his movements hampered by a sudden flash of holy light.
+Both attacks whiff past their mark, the target vanishing into the night's mist.
+A misstep in the shadows leaves him vulnerable as his blows land harmlessly on empty air.
+His fangs and claws clatter against armor with a hollow, impotent clang!
+
+d5 Vampire - Unarmed Strike (Vampire Form Only) - Attempts
+### Flavor text for attempts a attack
+The vampire lunges with inky talons outstretched, fangs glinting under the moonlight's cruel glow.
+A blur of shadow strikes as the undead predator closes the distance between prey and fang.
+Crimson eyes lock onto their target as the vampire coils like a serpent ready to strike.
+The air chills as the vampire's form materializes, fingers curling into claws with lethal intent.
+With a whisper of movement, the ancient horror moves in for the kill, shadows writhing around them.
+
+d5 Vampire - Unarmed Strike (Vampire Form Only) - Successes
+### Flavor text for successes a attack
+Your unholy grip ensnares your foe like a vice, their bones groaning under your supernatural strength!
+With a snarl, you crush flesh and splinter bone beneath your relentless assault.
+The creature shudders as your fangs sink in, their blood turning to ice in your veins.
+Your strike lands with the force of a tombstone dropping, sending them crashing into the dirt!
+A flash of crimson and agony erupts as your fist connects like a hammer from the grave!
+
+d5 Vampire - Unarmed Strike (Vampire Form Only) - Failures
+### Flavor text for failures a attack
+Your attack misses by inches, the target's desperate dodge leaving you grasping at empty air.
+The creature twists away just in time, your claws raking uselessly through mist and shadow.
+Your strike meets only air as your foe vanishes into the darkness!
+Their reflexes betray their mortal nature as they barely avoid your deadly embrace.
+A feint! You swing at nothing but the fading echoes of your prey's laughter.
+
+d5 Vampire - Bite (Bat or Vampire Form Only) - Attempts
+### Flavor text for attempts a attack
+Your fangs glisten in the moonlight as you lunge with predatory precision.
+The air chills as your shadow stretches, hunger driving your lethal embrace.
+A whisper of bat wings precedes your strike, claws unsheathed for the kill.
+Eyes like crimson embers lock onto flesh, your thirst demanding satisfaction.
+Dark tendrils writhe from your form as you close in for the fatal bite.
+
+d5 Vampire - Bite (Bat or Vampire Form Only) - Successes
+### Flavor text for successes a attack
+Your fangs sink deep into tender flesh, a gush of blood singing to your hunger.
+Life force pours forth like liquid shadow, your body swelling with stolen vigor.
+The victim's scream echoes through the night as their vitality becomes yours.
+A crimson tide floods your senses, the necrotic magic binding them to you eternally.
+Your jaw clamps down with unnatural force, and their soul trembles in your grasp.
+
+d5 Vampire - Bite (Bat or Vampire Form Only) - Failures
+### Flavor text for failures a attack
+Your strike is parried by a desperate flail of limbs, leaving only air where flesh should be.
+The target twists away at the last instant, their panicked heartbeat mocking your hunger.
+Your fangs scrape uselessly against bone, their wild thrashing denying you your due.
+A surge of unnatural strength throws them from your grip, their life force still untouched.
+Their flesh is cold and lifeless--already dead, offering nothing but the taste of rot.
+
+d5 Vampire - Charm - Attempts
+### Flavor text for attempts a action
+The vampire's crimson eyes lock onto the target, a hypnotic gaze weaving through the air.
+With a predatory smile, the undead beast unleashes its mesmerizing aura, filling the room with an eerie silence.
+A whisper of dark enchantment escapes the vampire's lips, the air thickening with unnatural allure.
+The creature extends a skeletal hand, fingers curling as if plucking at invisible threads of will.
+Eyes like pools of blood meet theirs, an inescapable pull tugging at their very soul.
+
+d5 Vampire - Charm - Successes
+### Flavor text for successes a action
+Their gaze softens under the vampire's spell, eyes glazing over as they smile sweetly, enchanted.
+The target sighs deeply, drawn into a trance-like devotion to the ancient undead predator.
+A shiver runs down their spine, but their will bends like reeds before the vampire's hypnotic storm.
+Their voice trembles with affection as they step closer, eyes locked onto their newfound protector.
+The charm takes hold, their resistance melting away under the vampire's commanding presence.
+
+d5 Vampire - Charm - Failures
+### Flavor text for failures a action
+The target shudders violently, snapping out of the trance with a gasp of defiance.
+Their eyes narrow in sudden clarity, the enchantment shattered by an iron will.
+A sharp cry escapes them as they break free from the vampire's hypnotic grasp.
+With a growl, they shake off the spell, their expression twisting into fury.
+The charm fizzles like mist before fire, their resolve unbroken.
+
+d5 Vampire - Children of the Night (1/Day) - Attempts
+### Flavor text for attempts a action
+The vampire raises a skeletal hand, moonlight glinting off its cold fingers as it summons the night's fury.
+With a haunting whisper, the undead lord reaches out to the shadows, beckoning his children from the darkness.
+A chilling wind howls as the vampire prepares to unleash the horde, their presence felt in every rustling leaf.
+The vampire's crimson eyes flare with eerie light, calling forth the beasts of the night to do its bidding.
+Fangs glistening in the pale moonlight, the undead monster commands the creatures of shadow to answer his call.
+
+d5 Vampire - Children of the Night (1/Day) - Successes
+### Flavor text for successes a action
+A deafening chorus of screeches and snarls erupts as swarms of bats and wolves materialize at the vampire's command.
+The night itself seems to tear open as the beasts pour forth, ready to obey their master's cruel orders.
+With a thunderous rush, the creatures answer the call, their collective presence shaking the very earth beneath them.
+A tidal wave of fur and fangs crashes into existence, the vampire's minions arriving with primal ferocity.
+The air vibrates with the growls and hisses of the summoned horde, their loyalty to the undead absolute.
+
+d5 Vampire - Children of the Night (1/Day) - Failures
+### Flavor text for failures a action
+The summons falters, a gust of wind scattering the creatures before they fully materialize, leaving only echoes of fury.
+A mocking silence answers the vampire's command as the night remains eerily still, refusing to yield its beasts.
+The summoned creatures shriek in agony as daylight sears them away, their forms dissolving into nothingness.
+A futile ripple of energy fades, the beasts never fully manifesting, leaving the vampire alone against its foes.
+The night betrays its master, denying him his children and leaving only the cold embrace of defeat.
+
+d5 Vampire - Shapechanger - Attempts
+### Flavor text for attempts a feature
+The vampire's form trembles, its essence wrestling with the night's embrace.
+A shiver runs through his body as the shadows answer his call.
+His bones creak and his flesh ripples like a disturbed grave.
+With a hiss of defiance, he fights to shed mortal constraints.
+The air grows thick with the scent of decay as transformation begins.
+
+d5 Vampire - Shapechanger - Successes
+### Flavor text for successes a feature
+In a swirl of mist, the vampire dissolves into the night's embrace.
+Wings burst forth, leathery and bat-like, carrying him into the moonlit sky.
+A chill wind whispers through his form as he becomes one with the fog.
+With a final shudder, his true shape melts away, leaving only shadow.
+The air thickens around him as he transforms into a living nightmare.
+
+d5 Vampire - Shapechanger - Failures
+### Flavor text for failures a feature
+His body convulses but resists, trapped between forms in agony.
+A searing pain shoots through his veins as the change fails.
+His flesh twitches, but the shadows refuse to answer his call.
+A hollow laugh echoes as the transformation sputters and fades.
+The air grows heavy with dread as his form remains unyielding.
+
+d5 Vampire - Legendary Resistance (3/Day) - Attempts
+### Flavor text for attempts a feature
+The vampire's crimson eyes flicker with ancient defiance as the fateful die is cast.
+A chilling wind howls through the crypt as the undead lord prepares to challenge destiny.
+Fangs glint in the moonlight, a silent oath sworn against the tide of failure.
+Eons of power coalesce within the vampire's withered veins, defying mortality one last time.
+The air grows thick with the scent of decaying roses as the vampire steels itself for defiance.
+
+d5 Vampire - Legendary Resistance (3/Day) - Successes
+### Flavor text for successes a feature
+With a thunderous echo, fate bends to the vampire's will, its essence unbroken by mortal forces.
+The saving throw's failure transforms into triumph, the undead's power shattering the chains of destiny.
+A spectral glow envelops the vampire as it rewrites the script of its demise with bloodied quill.
+Death itself recoils as the vampire's legendary resistance turns the tide in a heartbeat.
+The crypt trembles as the vampire's defiance resounds, the very walls echoing its unyielding resolve.
+
+d5 Vampire - Legendary Resistance (3/Day) - Failures
+### Flavor text for failures a feature
+A guttural snarl escapes the vampire's throat as fate's cruel hand slams down upon it.
+The air crackles with static as the undead lord's defiant will crumbles against the tide of destiny.
+The scent of iron fills the air as the vampire's resistance fails, its legendary power wavering for just a moment.
+With a thunderous roar, the saving throw is shattered by an unseen force beyond the vampire's control.
+Dark whispers slither through the crypt as the vampire's defiance falters against an ancient and malevolent will.
+
+d5 Vampire - Misty Escape - Attempts
+### Flavor text for attempts a feature
+The vampire's body convulses as it clutches its chest, veins blackening with unholy energy.
+A guttural hiss escapes the creature's lips as it twists in agony, shadows writhing around it.
+Blood curdles in the air as the vampire's form trembles on the brink of dissolution.
+The moonlight dims as the undead fiend struggles to unravel its corporeal bonds.
+A chilling mist swirls at the creature's feet, hinting at escape but not yet formed.
+
+d5 Vampire - Misty Escape - Successes
+### Flavor text for successes a feature
+With a final, gurgling scream, the vampire dissolves into a wisp of nightmarish fog and vanishes into the gloom.
+The monster's body disintegrates in a swirl of ebony mist, slipping through cracks like a shadow given life.
+A shriek echoes as the undead vanishes mid-air, leaving only the faint scent of decay in its wake.
+Like smoke on the wind, the vampire evaporates into the darkness, leaving no trace behind but dread.
+Ink-like tendrils of mist coil around the creature's fading form before it dissipates entirely.
+
+d5 Vampire - Misty Escape - Failures
+### Flavor text for failures a feature
+The vampire's body crumbles to dust as sunlight sears its flesh, leaving only a grotesque husk.
+A howl of agony splits the air as running water dissolves the creature into nothingness.
+Shadows recoil in horror as holy fire consumes the vampire where it stands, leaving no remnant behind.
+The monster's form shatters like glass against an unyielding barrier, its essence scattered to the wind.
+A final gasp escapes as the undead collapses, its body dissolving into ash on the desecrated ground.
+
+d5 Vampire - Regeneration - Attempts
+### Flavor text for attempts a feature
+The vampire's withered flesh trembles as it reaches for the lifeblood coursing through its veins.
+A guttural hiss escapes its lips as the undead creature prepares to reclaim its stolen vitality.
+The moonlight flickers as the vampire clutches its chest, yearning for forgotten strength.
+Its hollow eyes gleam with hunger as it draws upon the dark magic of immortality.
+A cold wind howls through the chamber as the vampire's form shivers in anticipation.
+
+d5 Vampire - Regeneration - Successes
+### Flavor text for successes a feature
+With a sickening ripple, its wounds knit together like silk, restored by the cursed embrace of eternal night.
+The vampire's flesh solidifies with an eerie, wet sound as dark energy mends its battered form.
+Life returns to its veins in a rush, the taste of iron sharp on its tongue.
+A pulse of unnatural vitality courses through its body, sealing every gash and bruise.
+The shadows themselves seem to stitch his wounds shut as regeneration surges within.
+
+d5 Vampire - Regeneration - Failures
+### Flavor text for failures a feature
+The vampire gasps in agony as holy fire scorches its essence, halting its unholy recovery.
+A searing light burns away the dark magic, leaving its wounds gaping and raw.
+The sacred water hisses on its skin, rendering its cursed vitality useless against divine wrath.
+Radiant energy flares within, scalding his veins as the regeneration fails him.
+Sunlight's cruel touch steals the night's blessing, leaving him broken and defenseless.
+
+d5 Vampire - Spider Climb - Attempts
+### Flavor text for attempts a feature
+The vampire's crimson eyes lock onto the ceiling, claws flexing with predatory precision before ascent begins.
+A faint hiss echoes as the undead lord prepares to defy gravity once more, shadows writhing beneath him.
+With a bone-chilling whisper, the vampire turns his gaze upward, sensing the cold embrace of stone awaiting.
+The air grows thick with anticipation as the monstrous figure coils, ready to scale the impossible heights.
+A predatory grin spreads across the pale face as claws find purchase on the slick, vertical surface.
+
+d5 Vampire - Spider Climb - Successes
+### Flavor text for successes a feature
+The vampire ascends silently, talons clicking against stone like a macabre metronome in the dead of night.
+With effortless grace, he clings to the ceiling, crimson cloak billowing beneath as if suspended by unseen threads.
+Defying all natural laws, the undead horror crawls upward, leaving only echoes of his passage behind.
+The vampire's ascent is swift and soundless, his form blending into the darkness above like a specter reclaiming its domain.
+With preternatural agility, he scales the wall, claws carving faint grooves where mortal hands would slip.
+
+d5 Vampire - Spider Climb - Failures
+### Flavor text for failures a feature
+A sudden gust of wind betrays him, sending the vampire tumbling back to earth with an unnatural, boneless thud.
+For the first time in centuries, gravity claims victory as his grip falters on the unforgiving stone surface.
+A mocking cackle echoes through the chamber as the vampire's descent is abruptly halted by an unseen force.
+The ceiling resists him this night, his claws finding no purchase against the slick, unyielding surface.
+With a snarl of frustration, the undead lord slumps to the ground, his usual dominance over height momentarily shattered.
+
+d5 Vampire - Vampire Weaknesses - Attempts
+### Flavor text for attempts a feature
+The vampire hesitates at the threshold, fangs bared as a whisper of forbidden air hisses past.
+A wooden stake glints in torchlight, hovering over the resting undead's heart with deadly purpose.
+Rushing water roars like a thousand screams, daring the creature to defy its ancient curse.
+The vampire recoils from blinding sunlight, as if seared by a divine judgment.
+A guest's cold invitation lingers in the air, a key to the undead's nocturnal domain.
+
+d5 Vampire - Vampire Weaknesses - Successes
+### Flavor text for successes a feature
+With a flicker of crimson eyes, the threshold yields--an invitation granted under moonlight.
+The stake plunges deep, freezing the vampire in eternal torment as shadows scream.
+Running water spares its wrath as the beast skulks away from the liquid grave.
+Sunlight's agony is embraced briefly before retreating to the safety of endless night.
+The door groans open, welcoming death itself into the mortal abode.
+
+d5 Vampire - Vampire Weaknesses - Failures
+### Flavor text for failures a feature
+A searing wave of holy fire consumes the vampire as it falters in the sun's glare.
+Water's acidic kiss burns away flesh as the creature thrashes in futile defiance.
+The stake shatters against an unseen barrier--its resting place remains inviolate.
+A guest's refusal echoes like thunder, sealing the vampire out of sanctuary forever.
+The threshold rejects its presence with a violent surge of arcane energy.
+
+d5 Vampire - Move - Attempts
+### Flavor text for attempts a legendary
+The vampire's cloak billows as it readies to move with unholy grace.
+Fangs glint in the moonlight as the undead monster prepares its legendary stride.
+A chilling whisper echoes as the vampire gathers itself to strike unseen.
+Shadows coil around its feet, anticipating the creature's swift, silent motion.
+The air grows cold as the vampire's eyes gleam with predatory intent.
+
+d5 Vampire - Move - Successes
+### Flavor text for successes a legendary
+With a flicker of darkness, the vampire vanishes and reappears beyond reach, leaving only a scent of decay.
+A blur of crimson cloak streaks past foes, too swift for steel to find purchase.
+The undead monster glides like a specter, its movement as effortless as death itself.
+A gust of unnatural wind follows the vampire's passage, leaving enemies gasping in vain.
+In an instant, the creature is gone--only the faintest echo of a heartbeat remains.
+
+d5 Vampire - Move - Failures
+### Flavor text for failures a legendary
+The vampire lurches forward but stumbles, its legendary grace faltering for a breath.
+A sudden gust throws dust into its path, disrupting its unnatural movement.
+An unseen force snags its cloak, leaving it exposed to the glaring torchlight.
+Its fangs clench in frustration as roots erupt from the earth, halting its stride.
+For a fleeting moment, its legendary speed falters--a flicker of mortality in its eyes.
+
+d5 Vampire - Unarmed Strike - Attempts
+### Flavor text for attempts a legendary
+The vampire's crimson eyes narrow as he coils like a serpent preparing to strike.
+With a chilling hiss, the undead predator launches into the fray with terrifying speed.
+His fangs glint in the moonlight as he raises his clawed hands for a devastating blow.
+A shadowy aura swirls around him as he prepares to unleash his legendary fury.
+The air grows heavy with the scent of decay as he readies his unholy attack.
+
+d5 Vampire - Unarmed Strike - Successes
+### Flavor text for successes a legendary
+His strike lands like a blade forged in the fires of damnation, tearing flesh effortlessly.
+Bone cracks and blood sprays as his legendary blow connects with bone-crushing force.
+The vampire's claws rend through armor like paper, leaving a mortal wound behind.
+A guttural snarl escapes his lips as his fist crushes its mark with superhuman strength.
+His strike is swift as death itself, leaving no room for mercy or hesitation.
+
+d5 Vampire - Unarmed Strike - Failures
+### Flavor text for failures a legendary
+The enemy twists away at the last moment, his claws finding only empty air.
+A desperate lunge misses its mark, his fangs clattering against cold steel instead.
+His strike is met with a shield of light, searing his unholy flesh on contact.
+The enemy's reflexes betray his age as they dodge the vampire's deadly blow.
+His claws swipe through smoke and shadow, finding no target to rend.
+
+d5 Vampire - Bite (Costs 2 Actions) - Attempts
+### Flavor text for attempts a legendary
+With a hiss like rustling silk, the undead lord lunges at his prey's throbbing jugular.
+The vampire's crimson eyes gleam as he bares razor fangs in anticipation of the kill.
+Moonlight glints off elongated incisors as the ancient predator strikes with chilling precision.
+A whisper of death on the wind precedes the monstrous bite of the 13th-level nightwalker.
+The air thickens with the scent of decay as the vampire prepares his lethal embrace.
+
+d5 Vampire - Bite (Costs 2 Actions) - Successes
+### Flavor text for successes a legendary
+Fangs pierce flesh like daggers through velvet, a surge of life flooding the undead conqueror's veins.
+With a savage twist, the vampire tears into his victim's neck, savoring their final screams.
+Blood sprays hot and thick as the legendary predator claims another soul for eternity.
+The night's symphony crescendos with the wet crunch of bone beneath the vampire's merciless bite.
+A gush of scarlet cascades down pale cheeks, fueling the undead horror's dark power.
+
+d5 Vampire - Bite (Costs 2 Actions) - Failures
+### Flavor text for failures a legendary
+The target writhes free at the last second, leaving only a shallow graze on their collarbone.
+A flash of steel intercepts the vampire's strike, sending his fangs clashing against cold iron.
+The prey's desperate cry shatters the night, causing the undead lord to hesitate mid-bite.
+His jaws snap shut on empty air as his quarry vanishes into shadowy mist.
+A sudden gust of wind carries the scent of burning garlic, forcing the vampire back with a snarl.

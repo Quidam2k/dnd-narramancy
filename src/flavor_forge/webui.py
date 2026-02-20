@@ -270,10 +270,10 @@ def _export(results_json: str, fmt: str, whisper_gm: bool):
     tmpdir = tempfile.mkdtemp(prefix="flavor_forge_")
 
     if fmt in ("rollable_tables", "all"):
-        tables = export_rollable_tables(creature_name, results)
-        path = os.path.join(tmpdir, f"{slug}-tables.json")
-        with open(path, "w") as f:
-            json.dump(tables, f, indent=2)
+        tables_text = export_rollable_tables(creature_name, results)
+        path = os.path.join(tmpdir, f"{slug}-tables.txt")
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(tables_text)
         files.append(path)
 
     if fmt in ("tokensays", "all"):

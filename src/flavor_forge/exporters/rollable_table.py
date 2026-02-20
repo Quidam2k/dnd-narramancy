@@ -1,11 +1,11 @@
-"""Foundry VTT RollTable JSON exporter.
+"""Foundry VTT RollTable text exporter.
 
-Produces JSON compatible with the Roll Table Importer module:
+Produces plain text compatible with the Roll Table Importer module:
   https://foundryvtt.com/packages/roll-table-importer
 
-Each table uses the "FoundryTable" format (has formula + range/text results).
-Tables are written as individual files for single import, or as a collection
-dict keyed by table name for batch import via macro.
+Uses the multi-table text format where each table starts with a dice
+formula line (e.g. "d5 Table Name"), followed by one entry per line.
+Multiple tables are separated by blank lines in a single file.
 """
 
 from typing import Dict, List
@@ -16,17 +16,20 @@ from ..models import FlavorTextResult
 def export_rollable_tables(
     creature_name: str,
     results: Dict[str, FlavorTextResult],
-) -> List[dict]:
-    """Convert generation results to Roll Table Importer-compatible JSON.
+) -> str:
+    """Convert generation results to Roll Table Importer plain text format.
 
     Produces up to 3 tables per ability (attempts, successes, failures).
     Empty categories are skipped.
 
-    Each table matches the Roll Table Importer "FoundryTable" format:
-        {"name": "...", "formula": "1dN", "description": "...",
-         "results": [{"range": [1,1], "text": "..."}]}
+    Returns a single string with all tables, ready to paste or save as .txt.
+    Format per table:
+        d5 Vampire - Bite - Attempts
+        ### Flavor text for attempts an attack
+        Your fangs glisten...
+        The air chills...
     """
-    tables = []
+    blocks = []
 
     for ability_name, result in results.items():
         for category in ('attempts', 'successes', 'failures'):
@@ -36,20 +39,16 @@ def export_rollable_tables(
 
             category_label = category.capitalize()
             table_name = f"{creature_name} - {ability_name} - {category_label}"
-
-            table_results = []
-            for i, text in enumerate(texts, 1):
-                table_results.append({
-                    "range": [i, i],
-                    "text": text,
-                })
+            n = len(texts)
 
             ability_type = result.metadata.get('ability_type', 'ability')
-            tables.append({
-                "name": table_name,
-                "formula": f"1d{len(texts)}",
-                "description": f"Flavor text for {category} a {ability_type}",
-                "results": table_results,
-            })
+            description = f"Flavor text for {category} a {ability_type}"
 
-    return tables
+            lines = [f"d{n} {table_name}"]
+            lines.append(f"### {description}")
+            for text in texts:
+                lines.append(text)
+
+            blocks.append('\n'.join(lines))
+
+    return '\n\n'.join(blocks)

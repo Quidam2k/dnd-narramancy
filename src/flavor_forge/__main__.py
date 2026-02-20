@@ -105,13 +105,14 @@ def cmd_export(args):
     output_path = args.output
 
     if fmt in ('foundry', 'all'):
-        tables = export_rollable_tables(creature_name, results)
-        path = output_path or f"{creature_name.lower().replace(' ', '-')}-tables.json"
+        tables_text = export_rollable_tables(creature_name, results)
+        path = output_path or f"{creature_name.lower().replace(' ', '-')}-tables.txt"
         if fmt == 'all':
-            path = output_path or f"{creature_name.lower().replace(' ', '-')}-tables.json"
-        with open(path, 'w') as f:
-            json.dump(tables, f, indent=2)
-        print(f"Wrote {len(tables)} rollable tables to {path}")
+            path = output_path or f"{creature_name.lower().replace(' ', '-')}-tables.txt"
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(tables_text)
+        table_count = tables_text.count('\n\n') + 1
+        print(f"Wrote {table_count} rollable tables to {path}")
 
     if fmt in ('tokensays', 'all'):
         sayings = export_token_says(creature_name, results)
@@ -296,15 +297,12 @@ def _export_results(creature_name, results, export_format, output_dir):
     slug = creature_name.lower().replace(' ', '-')
 
     if export_format in ('foundry', 'all'):
-        tables = export_rollable_tables(creature_name, results)
-        tables_dir = os.path.join(output_dir, f"{slug}-tables")
-        os.makedirs(tables_dir, exist_ok=True)
-        for i, table in enumerate(tables):
-            table_slug = table['name'].lower().replace(' ', '-').replace('/', '-')
-            path = os.path.join(tables_dir, f"{table_slug}.json")
-            with open(path, 'w') as f:
-                json.dump(table, f, indent=2)
-        print(f"Wrote {len(tables)} rollable tables to {tables_dir}/")
+        tables_text = export_rollable_tables(creature_name, results)
+        path = os.path.join(output_dir, f"{slug}-tables.txt")
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(tables_text)
+        table_count = tables_text.count('\n\n') + 1
+        print(f"Wrote {table_count} rollable tables to {path}")
 
     if export_format in ('tokensays', 'all'):
         sayings = export_token_says(creature_name, results)

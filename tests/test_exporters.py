@@ -35,32 +35,30 @@ def _make_results():
 
 
 def test_rollable_table_structure():
-    """Verify rollable table JSON schema."""
+    """Verify rollable table text format."""
     results = _make_results()
-    tables = export_rollable_tables('Goblin', results)
+    text = export_rollable_tables('Goblin', results)
+
+    # Should be a string with multiple table blocks separated by blank lines
+    assert isinstance(text, str)
+    blocks = text.strip().split('\n\n')
 
     # 3 for Scimitar (attempts, successes, failures) + 2 for Nimble Escape (no failures)
-    assert len(tables) == 5, f"Expected 5 tables, got {len(tables)}"
+    assert len(blocks) == 5, f"Expected 5 table blocks, got {len(blocks)}"
 
-    for table in tables:
-        assert 'name' in table
-        assert 'formula' in table
-        assert 'results' in table
-        assert table['displayRoll'] is True
-        assert table['replacement'] is True
-        assert table['img'] == 'icons/svg/d20-black.svg'
+    for block in blocks:
+        lines = block.split('\n')
+        # First line: dice formula + name (e.g. "d2 Goblin - Scimitar - Attempts")
+        assert lines[0].startswith('d'), f"Table should start with dice formula: {lines[0]}"
+        # Second line: description starting with ###
+        assert lines[1].startswith('### '), f"Description line missing: {lines[1]}"
+        # Remaining lines are the entries
+        entries = lines[2:]
+        assert len(entries) > 0, "Table should have at least one entry"
 
-        # Check formula matches result count
-        n = len(table['results'])
-        assert table['formula'] == f'1d{n}', f"Formula {table['formula']} != 1d{n}"
-
-        # Check each result entry
-        for i, entry in enumerate(table['results'], 1):
-            assert len(entry['_id']) == 16, f"ID should be 16 hex chars, got {len(entry['_id'])}"
-            assert entry['range'] == [i, i]
-            assert entry['weight'] == 1
-            assert entry['type'] == 0
-            assert isinstance(entry['text'], str) and len(entry['text']) > 0
+        # Check formula matches entry count
+        formula_n = int(lines[0].split(' ', 1)[0][1:])  # extract N from "dN ..."
+        assert formula_n == len(entries), f"Formula d{formula_n} but {len(entries)} entries"
 
     print("PASS: test_rollable_table_structure")
 
@@ -68,16 +66,15 @@ def test_rollable_table_structure():
 def test_table_naming():
     """Verify table naming convention."""
     results = _make_results()
-    tables = export_rollable_tables('Goblin', results)
+    text = export_rollable_tables('Goblin', results)
 
-    names = [t['name'] for t in tables]
-    assert 'Goblin - Scimitar - Attempts' in names
-    assert 'Goblin - Scimitar - Successes' in names
-    assert 'Goblin - Scimitar - Failures' in names
-    assert 'Goblin - Nimble Escape - Attempts' in names
-    assert 'Goblin - Nimble Escape - Successes' in names
+    assert 'Goblin - Scimitar - Attempts' in text
+    assert 'Goblin - Scimitar - Successes' in text
+    assert 'Goblin - Scimitar - Failures' in text
+    assert 'Goblin - Nimble Escape - Attempts' in text
+    assert 'Goblin - Nimble Escape - Successes' in text
     # No failures table for Nimble Escape
-    assert 'Goblin - Nimble Escape - Failures' not in names
+    assert 'Goblin - Nimble Escape - Failures' not in text
 
     print("PASS: test_table_naming")
 
@@ -90,8 +87,8 @@ def test_empty_category_handling():
             metadata={'ability_type': 'feature'},
         ),
     }
-    tables = export_rollable_tables('Test', results)
-    assert len(tables) == 0, f"Expected 0 tables for all-empty, got {len(tables)}"
+    text = export_rollable_tables('Test', results)
+    assert text == '', f"Expected empty string for all-empty, got {repr(text)}"
     print("PASS: test_empty_category_handling")
 
 
@@ -217,7 +214,7 @@ def test_export_cli():
 
     with tempfile.TemporaryDirectory() as tmpdir:
         input_path = os.path.join(tmpdir, 'goblin.json')
-        output_path = os.path.join(tmpdir, 'goblin-tables.json')
+        output_path = os.path.join(tmpdir, 'goblin-tables.txt')
 
         with open(input_path, 'w') as f:
             json.dump(data, f)
@@ -236,8 +233,9 @@ def test_export_cli():
 
         assert os.path.isfile(output_path), f"Output file not created: {output_path}"
         with open(output_path) as f:
-            tables = json.load(f)
-        assert len(tables) == 5, f"Expected 5 tables, got {len(tables)}"
+            text = f.read()
+        blocks = text.strip().split('\n\n')
+        assert len(blocks) == 5, f"Expected 5 table blocks, got {len(blocks)}"
 
     print("PASS: test_export_cli")
 
@@ -273,7 +271,7 @@ def test_export_all_format():
             return
 
         # Check both files created
-        tables_file = os.path.join(tmpdir, 'goblin-tables.json')
+        tables_file = os.path.join(tmpdir, 'goblin-tables.txt')
         sayings_file = os.path.join(tmpdir, 'goblin-sayings.json')
         assert os.path.isfile(tables_file), "Tables file not created"
         assert os.path.isfile(sayings_file), "Sayings file not created"
