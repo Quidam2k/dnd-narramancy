@@ -26,6 +26,10 @@ class FlavorTextResult:
     successes: List[str]
     failures: List[str]
     metadata: Dict[str, Any]
+    crits: List[str] = field(default_factory=list)
+    fumbles: List[str] = field(default_factory=list)
+    barely_hits: List[str] = field(default_factory=list)
+    barely_misses: List[str] = field(default_factory=list)
 
 
 @dataclass
@@ -52,6 +56,8 @@ class ParsedCreature:
     challenge_rating: str = ""
     abilities: List['ParsedAbility'] = field(default_factory=list)
     context_blob: Optional[str] = None
+    skill_proficiencies: Dict[str, int] = field(default_factory=dict)  # e.g. {"perception": 4, "stealth": 10}
+    save_proficiencies: Dict[str, int] = field(default_factory=dict)  # e.g. {"dex": 7, "con": 5}
 
     def to_flavor_request(self, ability: 'ParsedAbility', style: str = 'dramatic', variations: int = 5) -> 'FlavorTextRequest':
         """Build a FlavorTextRequest from one of this creature's abilities."""
@@ -84,16 +90,6 @@ def _cr_to_level(cr: str) -> int:
 
 GENERIC_ACTIONS = [
     ParsedAbility(
-        name='Saving Throw',
-        ability_type='save',
-        description='The creature makes a saving throw against an effect',
-    ),
-    ParsedAbility(
-        name='Skill Check',
-        ability_type='skill',
-        description='The creature attempts a skill check',
-    ),
-    ParsedAbility(
         name='Death Save',
         ability_type='death_save',
         description='The creature makes a death saving throw, clinging to life',
@@ -104,6 +100,50 @@ GENERIC_ACTIONS = [
         description='The creature rolls for initiative at the start of combat',
     ),
 ]
+
+SAVE_ABILITIES = {
+    'str': 'STR Save',
+    'dex': 'DEX Save',
+    'con': 'CON Save',
+    'int': 'INT Save',
+    'wis': 'WIS Save',
+    'cha': 'CHA Save',
+}
+
+# Map skill names (lowercase) to their dnd5e skill IDs
+SKILL_ID_MAP = {
+    'acrobatics': 'acr', 'animal handling': 'ani', 'arcana': 'arc',
+    'athletics': 'ath', 'deception': 'dec', 'history': 'his',
+    'insight': 'ins', 'intimidation': 'itm', 'investigation': 'inv',
+    'medicine': 'med', 'nature': 'nat', 'perception': 'prc',
+    'performance': 'prf', 'persuasion': 'per', 'religion': 'rel',
+    'sleight of hand': 'slt', 'stealth': 'ste', 'survival': 'sur',
+}
+
+
+def get_save_abilities() -> List[ParsedAbility]:
+    """Return ParsedAbility entries for all 6 saving throws."""
+    return [
+        ParsedAbility(
+            name=name,
+            ability_type='save',
+            description=f'The creature makes a {name.split()[0]} saving throw against an effect',
+        )
+        for name in SAVE_ABILITIES.values()
+    ]
+
+
+def get_skill_abilities(skill_proficiencies: Dict[str, int]) -> List[ParsedAbility]:
+    """Return ParsedAbility entries only for skills the creature is proficient in."""
+    abilities = []
+    for skill_name, bonus in skill_proficiencies.items():
+        display_name = skill_name.title()
+        abilities.append(ParsedAbility(
+            name=display_name,
+            ability_type='skill',
+            description=f'The creature makes a {display_name} check (+{bonus})',
+        ))
+    return abilities
 
 
 @dataclass

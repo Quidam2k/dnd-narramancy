@@ -7,7 +7,7 @@ from .config import ConfigManager
 from .cost_tracker import CostTracker
 from .profiler import CharacterProfile, CharacterizationProfiler, CharacterProfileIntegrator
 from .providers import AIProvider, ProviderResult, GeminiProvider, ClaudeProvider, OllamaProvider
-from .exporters import export_rollable_tables, export_token_says
+from .exporters import export_rollable_tables, export_token_says, export_flavor_forge
 
 __all__ = [
     'FlavorTextRequest',
@@ -29,4 +29,5 @@ __all__ = [
     'OllamaProvider',
     'export_rollable_tables',
     'export_token_says',
+    'export_flavor_forge',
 ]

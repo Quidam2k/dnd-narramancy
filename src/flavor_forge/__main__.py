@@ -23,7 +23,7 @@ import json
 import os
 import sys
 
-from .models import ParsedCreature, FlavorTextResult, GENERIC_ACTIONS
+from .models import ParsedCreature, FlavorTextResult, GENERIC_ACTIONS, get_save_abilities, get_skill_abilities
 
 
 def cmd_parse(args):
@@ -73,8 +73,8 @@ def cmd_parse(args):
 
 
 def cmd_export(args):
-    """Handle the 'export' subcommand — convert saved JSON to Foundry/TokenSays."""
-    from .exporters import export_rollable_tables, export_token_says
+    """Handle the 'export' subcommand — convert saved JSON to Foundry/TokenSays/Flavor Forge."""
+    from .exporters import export_rollable_tables, export_token_says, export_flavor_forge
 
     # Read the input JSON
     try:
@@ -103,12 +103,13 @@ def cmd_export(args):
 
     fmt = args.format
     output_path = args.output
+    slug = creature_name.lower().replace(' ', '-')
 
     if fmt in ('foundry', 'all'):
         tables_text = export_rollable_tables(creature_name, results)
-        path = output_path or f"{creature_name.lower().replace(' ', '-')}-tables.txt"
+        path = output_path or f"{slug}-tables.txt"
         if fmt == 'all':
-            path = output_path or f"{creature_name.lower().replace(' ', '-')}-tables.txt"
+            path = f"{slug}-tables.txt"
         with open(path, 'w', encoding='utf-8') as f:
             f.write(tables_text)
         table_count = tables_text.count('\n\n') + 1
@@ -116,12 +117,22 @@ def cmd_export(args):
 
     if fmt in ('tokensays', 'all'):
         sayings = export_token_says(creature_name, results)
-        path = output_path if fmt != 'all' else f"{creature_name.lower().replace(' ', '-')}-sayings.json"
+        path = output_path if fmt != 'all' else f"{slug}-sayings.json"
         if not path:
-            path = f"{creature_name.lower().replace(' ', '-')}-sayings.json"
+            path = f"{slug}-sayings.json"
         with open(path, 'w') as f:
             json.dump(sayings, f, indent=2)
         print(f"Wrote {len(sayings['sayings'])} TokenSays sayings to {path}")
+
+    if fmt in ('flavor-forge', 'all'):
+        creature_obj = _reconstruct_creature_from_results(creature_name, results)
+        ff_data = export_flavor_forge(creature_obj, results)
+        path = output_path if fmt != 'all' else f"{slug}-flavor-forge.json"
+        if not path:
+            path = f"{slug}-flavor-forge.json"
+        with open(path, 'w', encoding='utf-8') as f:
+            json.dump(ff_data, f, indent=2)
+        print(f"Wrote Flavor Forge JSON to {path} ({len(ff_data['tables'])} tables, {len(ff_data['triggers'])} triggers)")
 
     return 0
 
@@ -167,6 +178,15 @@ def cmd_generate(args):
 
     if getattr(args, 'generic', False):
         existing_names = {a.name for a in creature.abilities}
+        # Add per-save abilities (all 6 — any creature can be forced to save)
+        for sa in get_save_abilities():
+            if sa.name not in existing_names:
+                creature.abilities.append(sa)
+        # Add per-skill abilities (only proficient skills)
+        for ska in get_skill_abilities(creature.skill_proficiencies):
+            if ska.name not in existing_names:
+                creature.abilities.append(ska)
+        # Add death save and initiative
         for ga in GENERIC_ACTIONS:
             if ga.name not in existing_names:
                 creature.abilities.append(ga)
@@ -190,19 +210,27 @@ def cmd_generate(args):
         as_json=args.json,
         export_format=getattr(args, 'export', None),
         output_dir=getattr(args, 'output_dir', None),
-        creature_name=creature.name,
+        creature_obj=creature,
+        with_crits=getattr(args, 'with_crits', False),
+        crit_count=getattr(args, 'crit_count', 5),
     ))
 
 
 async def _run_single(generator, creature, provider_name, style, variations,
                       as_json=False, export_format=None, output_dir=None,
-                      creature_name=None):
+                      creature_obj=None, with_crits=False, crit_count=5):
     """Generate flavor text for all abilities with a single provider."""
+    creature_obj = creature_obj or creature
+    creature_name = creature_obj.name
+
     results = {}
     for ability in creature.abilities:
         request = creature.to_flavor_request(ability, style=style, variations=variations)
         try:
-            result = await generator.generate_flavor_text(request, provider_name=provider_name)
+            result = await generator.generate_flavor_text(
+                request, provider_name=provider_name,
+                with_crits=with_crits, crit_count=crit_count,
+            )
             # Stash ability_type in metadata for exporters
             result.metadata['ability_type'] = ability.ability_type
             results[ability.name] = result
@@ -210,19 +238,34 @@ async def _run_single(generator, creature, provider_name, style, variations,
             print(f"Error generating for {ability.name}: {e}", file=sys.stderr)
             continue
 
+    # Generate bloodied table if --with-crits is enabled
+    if with_crits:
+        try:
+            bloodied_request = creature.to_flavor_request(
+                creature.abilities[0], style=style, variations=crit_count,
+            )
+            bloodied_result = await generator.generate_bloodied(
+                bloodied_request, provider_name=provider_name, count=crit_count,
+            )
+            bloodied_result.metadata['ability_type'] = 'bloodied'
+            results['Bloodied'] = bloodied_result
+            print(f"Generated {len(bloodied_result.attempts)} bloodied entries", file=sys.stderr)
+        except Exception as e:
+            print(f"Error generating bloodied: {e}", file=sys.stderr)
+
     if not results:
         print("No flavor text generated.", file=sys.stderr)
         return 1
 
     if as_json:
-        out = _results_to_json(creature_name or 'Unknown', results)
+        out = _results_to_json(creature_name, results)
         print(json.dumps(out, indent=2))
     else:
         _print_results(results)
 
     # Export if requested
     if export_format:
-        _export_results(creature_name or 'Unknown', results, export_format, output_dir)
+        _export_results(creature_name, results, export_format, output_dir, creature_obj=creature_obj)
         if not as_json:
             print("Tip: use --json to also save raw generation results", file=sys.stderr)
 
@@ -263,12 +306,18 @@ def _results_to_json(creature_name, results):
         '_creature': creature_name,
     }
     for name, r in results.items():
-        out[name] = {
+        entry = {
             'attempts': r.attempts,
             'successes': r.successes,
             'failures': r.failures,
             'metadata': r.metadata,
         }
+        # Include conditional fields only when populated
+        for cond_field in ('crits', 'fumbles', 'barely_hits', 'barely_misses'):
+            vals = getattr(r, cond_field, [])
+            if vals:
+                entry[cond_field] = vals
+        out[name] = entry
     return out
 
 
@@ -284,13 +333,32 @@ def _load_results_from_json(data):
                 successes=val.get('successes', []),
                 failures=val.get('failures', []),
                 metadata=val.get('metadata', {}),
+                crits=val.get('crits', []),
+                fumbles=val.get('fumbles', []),
+                barely_hits=val.get('barely_hits', []),
+                barely_misses=val.get('barely_misses', []),
             )
     return results
 
 
-def _export_results(creature_name, results, export_format, output_dir):
+def _reconstruct_creature_from_results(creature_name, results):
+    """Build a ParsedCreature from generation result metadata when no creature object is available."""
+    creature_type = ''
+    cr = ''
+    for result in results.values():
+        meta = result.metadata
+        if not creature_type and meta.get('character_race'):
+            creature_type = meta['character_race']
+        if not cr and meta.get('character_level'):
+            cr = str(meta['character_level'])
+        if creature_type and cr:
+            break
+    return ParsedCreature(name=creature_name, creature_type=creature_type, challenge_rating=cr)
+
+
+def _export_results(creature_name, results, export_format, output_dir, creature_obj=None):
     """Write export files for the given results."""
-    from .exporters import export_rollable_tables, export_token_says
+    from .exporters import export_rollable_tables, export_token_says, export_flavor_forge
 
     output_dir = output_dir or '.'
     os.makedirs(output_dir, exist_ok=True)
@@ -310,6 +378,16 @@ def _export_results(creature_name, results, export_format, output_dir):
         with open(path, 'w') as f:
             json.dump(sayings, f, indent=2)
         print(f"Wrote {len(sayings['sayings'])} TokenSays sayings to {path}")
+
+    if export_format in ('flavor-forge', 'all'):
+        if creature_obj is None:
+            # Build a minimal ParsedCreature for backward compat
+            creature_obj = ParsedCreature(name=creature_name)
+        ff_data = export_flavor_forge(creature_obj, results)
+        path = os.path.join(output_dir, f"{slug}-flavor-forge.json")
+        with open(path, 'w', encoding='utf-8') as f:
+            json.dump(ff_data, f, indent=2)
+        print(f"Wrote Flavor Forge JSON to {path} ({len(ff_data['tables'])} tables, {len(ff_data['triggers'])} triggers)")
 
 
 def _run_batch(args, config):
@@ -375,7 +453,7 @@ def _run_batch(args, config):
                 as_json=args.json,
                 export_format=export_format,
                 output_dir=output_dir,
-                creature_name=creature.name,
+                creature_obj=creature,
             ))
             if rc != 0:
                 errors += 1
@@ -452,6 +530,8 @@ def _dict_to_creature(data: dict) -> ParsedCreature:
         challenge_rating=data.get('cr', ''),
         abilities=abilities,
         context_blob=data.get('context'),
+        skill_proficiencies=data.get('skill_proficiencies', {}),
+        save_proficiencies=data.get('save_proficiencies', {}),
     )
 
 
@@ -463,6 +543,8 @@ def _creature_to_dict(creature: ParsedCreature) -> dict:
         'type': creature.creature_type,
         'cr': creature.challenge_rating,
         'context': creature.context_blob,
+        'skill_proficiencies': creature.skill_proficiencies,
+        'save_proficiencies': creature.save_proficiencies,
         'abilities': [
             {
                 'name': a.name,
@@ -510,8 +592,9 @@ def _print_results(results):
         print(f"\n{'='*60}")
         print(f"  {ability_name}  [{result.metadata.get('provider', '?')}]")
         print(f"{'='*60}")
-        for category in ('attempts', 'successes', 'failures'):
-            texts = getattr(result, category)
+        all_categories = ['attempts', 'successes', 'failures', 'crits', 'fumbles', 'barely_hits', 'barely_misses']
+        for category in all_categories:
+            texts = getattr(result, category, [])
             if texts:
                 print(f"\n  {category.upper()}:")
                 for i, text in enumerate(texts, 1):
@@ -570,7 +653,7 @@ def main():
     gen_cmd.add_argument('--list-providers', action='store_true', help='List available providers and exit')
     gen_cmd.add_argument('--json', action='store_true', help='Output as JSON')
     gen_cmd.add_argument('--stdin', action='store_true', help='Read parsed creature JSON from stdin')
-    gen_cmd.add_argument('--export', choices=['foundry', 'tokensays', 'all'],
+    gen_cmd.add_argument('--export', choices=['foundry', 'tokensays', 'flavor-forge', 'all'],
                          help='Export format (triggers export after generation)')
     gen_cmd.add_argument('--output-dir', metavar='PATH',
                          help='Directory for export output files (default: current dir)')
@@ -578,11 +661,15 @@ def main():
                          help='Directory of creature files for batch processing')
     gen_cmd.add_argument('--generic', action='store_true',
                          help='Include generic actions (saves, skills, initiative, death saves)')
+    gen_cmd.add_argument('--with-crits', action='store_true',
+                         help='Generate crit/fumble/barely tables for attack abilities')
+    gen_cmd.add_argument('--crit-count', type=int, default=5,
+                         help='Number of variations for conditional categories (default: 5)')
 
     # export subcommand
     export_cmd = subparsers.add_parser('export', help='Export saved generation results')
     export_cmd.add_argument('input', help='Path to saved generation JSON')
-    export_cmd.add_argument('--format', choices=['foundry', 'tokensays', 'all'],
+    export_cmd.add_argument('--format', choices=['foundry', 'tokensays', 'flavor-forge', 'all'],
                             default='foundry', help='Export format (default: foundry)')
     export_cmd.add_argument('--output', metavar='PATH',
                             help='Output file path (auto-named if omitted)')

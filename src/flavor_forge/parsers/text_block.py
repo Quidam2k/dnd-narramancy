@@ -65,12 +65,15 @@ def parse_text_block(text: str) -> ParsedCreature:
             creature.creature_type = m.group(2).strip()
             i += 1
 
-    # Scan for CR before parsing abilities
+    # Scan for CR, saves, and skills before parsing abilities
     for line in lines:
         m = _CR_RE.search(line)
         if m:
             creature.challenge_rating = m.group(1)
-            break
+        if line.startswith('Saving Throws'):
+            creature.save_proficiencies = _parse_save_line(line)
+        if line.startswith('Skills'):
+            creature.skill_proficiencies = _parse_skill_line(line)
 
     # Parse the rest of the block
     while i < len(lines):
@@ -186,3 +189,26 @@ def _extract_damage_from_desc(text: str, ability: ParsedAbility):
     m = re.search(r'(\d+d\d+(?:\s*[+-]\s*\d+)?)\s+(\w+)\s+damage', text, re.IGNORECASE)
     if m:
         ability.damage = m.group(0)
+
+
+# "Saving Throws DEX +7, CON +5, WIS +4"
+_SAVE_ENTRY_RE = re.compile(r'(STR|DEX|CON|INT|WIS|CHA)\s*([+-]\d+)', re.IGNORECASE)
+
+def _parse_save_line(line: str) -> dict:
+    """Parse a 'Saving Throws' line into {abbrev: bonus}."""
+    return {m.group(1).lower(): int(m.group(2)) for m in _SAVE_ENTRY_RE.finditer(line)}
+
+
+# "Skills Perception +4, Stealth +10"
+_SKILL_ENTRY_RE = re.compile(r'([A-Za-z ]+?)\s*([+-]\d+)')
+
+def _parse_skill_line(line: str) -> dict:
+    """Parse a 'Skills' line into {skill_name: bonus}."""
+    # Remove the "Skills" prefix
+    rest = line.split('Skills', 1)[-1].strip()
+    result = {}
+    for m in _SKILL_ENTRY_RE.finditer(rest):
+        skill = m.group(1).strip().lower()
+        if skill:
+            result[skill] = int(m.group(2))
+    return result

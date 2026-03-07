@@ -82,8 +82,10 @@ API keys via env vars: `GEMINI_API_KEY`, `ANTHROPIC_API_KEY`
 
 ## Output Guidelines
 
-Generated text should be:
-- Exactly 1 sentence, max 20 words
-- Vivid but concise, with one key sensory detail
+Generated text entries are **three short evocative phrase fragments** separated by " — ":
+- Each phrase is 2-4 words (total ~8-12 words per entry)
+- NOT full sentences — fragments, snapshots, sensory beats
+- A DM glances at the entry and grabs 1-2 phrases to weave into narration
+- Example: `"blade hums eager — sidestep, fluid — cold eyes lock"`
 - Matched to character's race/class/level
 - Appropriate for ability type

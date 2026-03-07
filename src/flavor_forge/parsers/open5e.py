@@ -61,6 +61,21 @@ def _parse_open5e_data(data: dict) -> ParsedCreature:
         challenge_rating=str(data.get('challenge_rating', '')),
     )
 
+    # Parse skill proficiencies: {"stealth": 6, "perception": 7}
+    skills = data.get('skills', {})
+    if isinstance(skills, dict):
+        creature.skill_proficiencies = {k.lower(): v for k, v in skills.items()}
+
+    # Parse save proficiencies from individual fields
+    save_fields = {
+        'str': 'strength_save', 'dex': 'dexterity_save', 'con': 'constitution_save',
+        'int': 'intelligence_save', 'wis': 'wisdom_save', 'cha': 'charisma_save',
+    }
+    for abbrev, field_name in save_fields.items():
+        val = data.get(field_name)
+        if val is not None:
+            creature.save_proficiencies[abbrev] = val
+
     # Map Open5e sections to ability types
     section_map = {
         'actions': 'action',

@@ -1,0 +1,40 @@
+{
+  "id": "flavor-forge",
+  "title": "Flavor Forge",
+  "description": "Automatic flavor text for creature actions. Import pre-generated rollable tables and trigger whispered narration when tokens act.",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Todd",
+      "flags": {}
+    }
+  ],
+  "compatibility": {
+    "minimum": "11",
+    "verified": "12"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "3.0.0"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/flavor-forge.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ]
+}

@@ -29,7 +29,7 @@ def export_rollable_tables(
         Your fangs glisten...
         The air chills...
     """
-    blocks = []
+    blocks = [creature_name]
 
     for ability_name, result in results.items():
         for category in ('attempts', 'successes', 'failures'):

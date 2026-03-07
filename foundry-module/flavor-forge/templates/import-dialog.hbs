@@ -1,0 +1,17 @@
+<form class="flavor-forge-import-form" autocomplete="off">
+  <p class="notes">
+    Select a Flavor Forge JSON file to import. This will create a folder of
+    rollable tables and configure triggers for the creature.
+  </p>
+
+  <div class="form-group">
+    <label for="ff-import-file">Creature JSON File</label>
+    <input type="file" id="ff-import-file" name="file" accept=".json" />
+  </div>
+
+  <footer class="sheet-footer flexrow">
+    <button type="submit" name="import">
+      <i class="fas fa-file-import"></i> Import
+    </button>
+  </footer>
+</form>
