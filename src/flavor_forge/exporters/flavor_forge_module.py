@@ -53,8 +53,8 @@ def export_flavor_forge(
                 'entries': entries,
             })
 
-        # Conditional tables (crits, fumbles, barely_hits, barely_misses)
-        for cond_category in ('crits', 'fumbles', 'barely_hits', 'barely_misses'):
+        # Conditional tables (crits, fumbles, barely_hits, barely_misses, miss_dodge, miss_armor)
+        for cond_category in ('crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor'):
             entries = getattr(result, cond_category, [])
             if not entries:
                 continue
@@ -131,6 +131,18 @@ def _build_triggers(
                 'itemName': ability_name,
                 'table': f'{ability_name}|barely_misses',
             })
+        if result.miss_dodge:
+            triggers.append({
+                'hookType': 'attackRoll_miss_dodge',
+                'itemName': ability_name,
+                'table': f'{ability_name}|miss_dodge',
+            })
+        if result.miss_armor:
+            triggers.append({
+                'hookType': 'attackRoll_miss_armor',
+                'itemName': ability_name,
+                'table': f'{ability_name}|miss_armor',
+            })
 
     elif ability_type == 'save':
         # Per-save abilities: "STR Save", "DEX Save", etc.
@@ -170,6 +182,13 @@ def _build_triggers(
         if result.attempts:
             triggers.append({
                 'hookType': 'bloodied',
+                'table': f'{ability_name}|attempts',
+            })
+
+    elif ability_type == 'death':
+        if result.attempts:
+            triggers.append({
+                'hookType': 'death',
                 'table': f'{ability_name}|attempts',
             })
 

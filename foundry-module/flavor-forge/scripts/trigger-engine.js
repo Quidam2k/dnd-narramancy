@@ -48,14 +48,29 @@ function getNaturalD20(rolls) {
 }
 
 /**
- * Get the AC of the first targeted token (from the user's targets).
+ * Get the first targeted token's actor (from the user's targets).
+ * @returns {Actor5e|null}
+ */
+function getTargetActor() {
+  const targets = game.user.targets;
+  if (!targets?.size) return null;
+  return targets.first()?.actor ?? null;
+}
+
+/**
+ * Get the AC of the first targeted token.
  * @returns {number|null}
  */
 function getTargetAC() {
-  const targets = game.user.targets;
-  if (!targets?.size) return null;
-  const target = targets.first();
-  return target?.actor?.system?.attributes?.ac?.value ?? null;
+  return getTargetActor()?.system?.attributes?.ac?.value ?? null;
+}
+
+/**
+ * Get the DEX modifier of the first targeted token.
+ * @returns {number|null}
+ */
+function getTargetDexMod() {
+  return getTargetActor()?.system?.abilities?.dex?.mod ?? null;
 }
 
 /**
@@ -82,6 +97,18 @@ function classifyAttackRoll(rolls) {
     const margin = total - ac;
     if (margin >= 0 && margin <= 2) return "attackRoll_barely_hits";
     if (margin < 0 && margin >= -2) return "attackRoll_barely_misses";
+
+    // Miss: determine dodge vs armor deflection
+    if (margin < 0) {
+      const dexMod = getTargetDexMod();
+      if (dexMod != null) {
+        const touchAC = 10 + dexMod;
+        // Roll didn't even beat their reflexes → they dodged
+        if (total < touchAC) return "attackRoll_miss_dodge";
+        // Roll beat their reflexes but not their armor → armor stopped it
+        return "attackRoll_miss_armor";
+      }
+    }
   }
 
   return "attackRoll";
@@ -184,6 +211,11 @@ export function registerTriggerHooks() {
       if (bloodiedFired.get(actorId)) return; // Already fired this combat
       bloodiedFired.set(actorId, true);
       handleBloodiedEvent(actor);
+    }
+
+    // Death detection — HP drops to 0
+    if (oldHP > 0 && newHP <= 0) {
+      handleDeathEvent(actor);
     }
   });
 
@@ -289,6 +321,28 @@ function handleBloodiedEvent(actor) {
     if (!wildcardMatch(creature.tokenPattern, tokenName)) continue;
 
     const trigger = creature.triggers.find((t) => t.hookType === "bloodied");
+    if (trigger) {
+      rollAndWhisper(creature, trigger, tokenName);
+      return;
+    }
+  }
+}
+
+/**
+ * Handle the death event — creature HP dropped to 0.
+ *
+ * @param {Actor5e} actor
+ */
+function handleDeathEvent(actor) {
+  const tokenName = getTokenName(actor);
+  if (!tokenName) return;
+
+  const creatures = getCreatureData();
+
+  for (const creature of Object.values(creatures)) {
+    if (!wildcardMatch(creature.tokenPattern, tokenName)) continue;
+
+    const trigger = creature.triggers.find((t) => t.hookType === "death");
     if (trigger) {
       rollAndWhisper(creature, trigger, tokenName);
       return;

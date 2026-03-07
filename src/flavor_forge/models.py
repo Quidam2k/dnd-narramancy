@@ -30,6 +30,8 @@ class FlavorTextResult:
     fumbles: List[str] = field(default_factory=list)
     barely_hits: List[str] = field(default_factory=list)
     barely_misses: List[str] = field(default_factory=list)
+    miss_dodge: List[str] = field(default_factory=list)
+    miss_armor: List[str] = field(default_factory=list)
 
 
 @dataclass

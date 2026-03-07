@@ -238,20 +238,22 @@ async def _run_single(generator, creature, provider_name, style, variations,
             print(f"Error generating for {ability.name}: {e}", file=sys.stderr)
             continue
 
-    # Generate bloodied table if --with-crits is enabled
+    # Generate bloodied and death tables if --with-crits is enabled
     if with_crits:
-        try:
-            bloodied_request = creature.to_flavor_request(
-                creature.abilities[0], style=style, variations=crit_count,
-            )
-            bloodied_result = await generator.generate_bloodied(
-                bloodied_request, provider_name=provider_name, count=crit_count,
-            )
-            bloodied_result.metadata['ability_type'] = 'bloodied'
-            results['Bloodied'] = bloodied_result
-            print(f"Generated {len(bloodied_result.attempts)} bloodied entries", file=sys.stderr)
-        except Exception as e:
-            print(f"Error generating bloodied: {e}", file=sys.stderr)
+        base_request = creature.to_flavor_request(
+            creature.abilities[0], style=style, variations=crit_count,
+        )
+        for gen_name, gen_method, gen_type in [
+            ('Bloodied', generator.generate_bloodied, 'bloodied'),
+            ('Death', generator.generate_death, 'death'),
+        ]:
+            try:
+                result = await gen_method(base_request, provider_name=provider_name, count=crit_count)
+                result.metadata['ability_type'] = gen_type
+                results[gen_name] = result
+                print(f"Generated {len(result.attempts)} {gen_name.lower()} entries", file=sys.stderr)
+            except Exception as e:
+                print(f"Error generating {gen_name.lower()}: {e}", file=sys.stderr)
 
     if not results:
         print("No flavor text generated.", file=sys.stderr)
@@ -313,7 +315,7 @@ def _results_to_json(creature_name, results):
             'metadata': r.metadata,
         }
         # Include conditional fields only when populated
-        for cond_field in ('crits', 'fumbles', 'barely_hits', 'barely_misses'):
+        for cond_field in ('crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor'):
             vals = getattr(r, cond_field, [])
             if vals:
                 entry[cond_field] = vals
@@ -337,6 +339,8 @@ def _load_results_from_json(data):
                 fumbles=val.get('fumbles', []),
                 barely_hits=val.get('barely_hits', []),
                 barely_misses=val.get('barely_misses', []),
+                miss_dodge=val.get('miss_dodge', []),
+                miss_armor=val.get('miss_armor', []),
             )
     return results
 
@@ -592,7 +596,7 @@ def _print_results(results):
         print(f"\n{'='*60}")
         print(f"  {ability_name}  [{result.metadata.get('provider', '?')}]")
         print(f"{'='*60}")
-        all_categories = ['attempts', 'successes', 'failures', 'crits', 'fumbles', 'barely_hits', 'barely_misses']
+        all_categories = ['attempts', 'successes', 'failures', 'crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor']
         for category in all_categories:
             texts = getattr(result, category, [])
             if texts:

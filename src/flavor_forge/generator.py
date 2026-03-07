@@ -140,6 +140,16 @@ Generate exactly {request.variations} variations for each category (attempts, su
                 "Hair's breadth dodges, sparks off armor, the miss that stings. "
                 "Almost had it. Frustrating. The target flinches even though it missed."
             ),
+            'miss_dodge': (
+                "Generate 'dodged' miss flavor text — the target was too agile, too quick. "
+                "They evaded, sidestepped, ducked, or slipped away. The attack never touched them. "
+                "Focus on the TARGET's agility and reflexes, not the attacker's failure."
+            ),
+            'miss_armor': (
+                "Generate 'armor deflection' miss flavor text — the attack connected but couldn't penetrate. "
+                "Steel rings on steel, blade skids off plate, bolt bounces off shield. The hit landed but the armor held. "
+                "Focus on the ARMOR or shield doing its job — the impact, the sparks, the ringing metal."
+            ),
         }
 
         guidance = category_guidance.get(category, "Generate flavor text.")
@@ -218,6 +228,78 @@ Format your response as JSON:
 Generate exactly {count} variations."""
         return prompt
 
+    def generate_death_prompt(self, request: FlavorTextRequest, count: int = 5) -> str:
+        """Create a prompt for death flavor text — creature reaches 0 HP."""
+        style_desc = self.STYLE_DESCRIPTIONS.get(request.style, self.STYLE_DESCRIPTIONS['dramatic'])
+
+        prompt = f"""You are a creative D&D flavor text generator. Generate "death" flavor text — the moment a creature drops to 0 HP and falls.
+
+This is the creature's final moment in combat. Collapse, last breath, final twitch. Dramatic or sudden.
+
+Character: {request.character_name}, Level {request.character_level} {request.character_race} {request.character_class}
+
+Style: Make all descriptions {style_desc}.
+"""
+        if request.context_blob:
+            prompt += f"\nAdditional Context: {request.context_blob}\n"
+
+        creature_type = (request.character_race or '').lower()
+        if 'humanoid' in creature_type:
+            prompt += "\nUse they/them pronouns for the creature.\n"
+        else:
+            prompt += "\nRefer to the creature as 'it'.\n"
+
+        prompt += f"""
+Guidelines:
+- Each entry is exactly THREE short evocative phrases separated by " — "
+- Each phrase is 2-4 words: a sensory snapshot, action beat, or emotional flash
+- Total per entry: 8-12 words across the three phrases
+- NOT full sentences. Fragments. No articles, no filler, no narration
+- Focus on: collapse, final sounds, stillness after, light fading from eyes, weapon falling
+- Vary imagery across entries — different deaths, not the same collapse repeated
+- Example: "knees buckle, folds — blade clatters stone — silence descends"
+
+Format your response as JSON:
+{{
+  "entries": ["phrase — phrase — phrase", ...]
+}}
+
+Generate exactly {count} variations."""
+        return prompt
+
+    async def generate_death(
+        self, request: FlavorTextRequest, provider_name: Optional[str] = None,
+        count: int = 5,
+    ) -> FlavorTextResult:
+        """Generate death flavor text for a creature (0 HP moment)."""
+        if provider_name:
+            providers = self._get_providers()
+            if provider_name not in providers:
+                provider = get_provider(provider_name, self.config_manager)
+            else:
+                provider = providers[provider_name]
+        else:
+            provider = self._get_default_provider()
+
+        prompt = self.generate_death_prompt(request, count)
+        entries = await self._call_provider_simple(provider, prompt, count)
+
+        return FlavorTextResult(
+            attempts=entries,
+            successes=[],
+            failures=[],
+            metadata={
+                'character_name': request.character_name,
+                'character_class': request.character_class,
+                'ability_name': 'Death',
+                'ability_type': 'death',
+                'style': request.style,
+                'variations': count,
+                'model': provider.model,
+                'provider': provider.name,
+            }
+        )
+
     async def generate_flavor_text(
         self, request: FlavorTextRequest, provider_name: Optional[str] = None,
         with_crits: bool = False, crit_count: int = 5,
@@ -263,7 +345,7 @@ Generate exactly {count} variations."""
 
         # Generate conditional tables for attack abilities
         if with_crits and request.ability_type == 'attack':
-            for category in ('crits', 'fumbles', 'barely_hits', 'barely_misses'):
+            for category in ('crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor'):
                 try:
                     cond_prompt = self.generate_conditional_prompt(request, category, crit_count)
                     cond_data = await self._call_provider_simple(provider, cond_prompt, crit_count)
