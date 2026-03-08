@@ -53,8 +53,8 @@ def export_flavor_forge(
                 'entries': entries,
             })
 
-        # Conditional tables (crits, fumbles, barely_hits, barely_misses, miss_dodge, miss_armor)
-        for cond_category in ('crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor'):
+        # Conditional tables (crits, fumbles, barely_hits, barely_misses, miss_dodge, miss_armor, killing_blow)
+        for cond_category in ('crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor', 'killing_blow'):
             entries = getattr(result, cond_category, [])
             if not entries:
                 continue
@@ -143,6 +143,12 @@ def _build_triggers(
                 'itemName': ability_name,
                 'table': f'{ability_name}|miss_armor',
             })
+        if result.killing_blow:
+            triggers.append({
+                'hookType': 'killingBlow',
+                'itemName': ability_name,
+                'table': f'{ability_name}|killing_blow',
+            })
 
     elif ability_type == 'save':
         # Per-save abilities: "STR Save", "DEX Save", etc.
@@ -200,6 +206,14 @@ def _build_triggers(
                 'itemName': ability_name,
                 'table': f'{ability_name}|attempts',
             })
+
+    # Killing blow for any non-attack ability that has one
+    if ability_type != 'attack' and result.killing_blow:
+        triggers.append({
+            'hookType': 'killingBlow',
+            'itemName': ability_name,
+            'table': f'{ability_name}|killing_blow',
+        })
 
     return triggers
 

@@ -315,7 +315,7 @@ def _results_to_json(creature_name, results):
             'metadata': r.metadata,
         }
         # Include conditional fields only when populated
-        for cond_field in ('crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor'):
+        for cond_field in ('crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor', 'killing_blow'):
             vals = getattr(r, cond_field, [])
             if vals:
                 entry[cond_field] = vals
@@ -341,6 +341,7 @@ def _load_results_from_json(data):
                 barely_misses=val.get('barely_misses', []),
                 miss_dodge=val.get('miss_dodge', []),
                 miss_armor=val.get('miss_armor', []),
+                killing_blow=val.get('killing_blow', []),
             )
     return results
 
@@ -596,7 +597,7 @@ def _print_results(results):
         print(f"\n{'='*60}")
         print(f"  {ability_name}  [{result.metadata.get('provider', '?')}]")
         print(f"{'='*60}")
-        all_categories = ['attempts', 'successes', 'failures', 'crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor']
+        all_categories = ['attempts', 'successes', 'failures', 'crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor', 'killing_blow']
         for category in all_categories:
             texts = getattr(result, category, [])
             if texts:

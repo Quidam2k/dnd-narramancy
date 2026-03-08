@@ -20,12 +20,133 @@ from .providers import AIProvider, ProviderResult, get_provider, get_available_p
 logger = logging.getLogger(__name__)
 
 
-class FlavorTextGenerator:
-    """Core flavor text generation system.
+# Shared writing rules appended to all prompts
+_WRITING_RULES = """\
+Rules:
+- Each entry is a single evocative sentence, 8-12 words
+- Write with natural internal phrase boundaries so a DM can use the whole sentence or grab a fragment
+- Stay character-agnostic: use "it" (or "they" for humanoids). No creature names, no class references
+- Stay target-agnostic: don't reference what's being hit or who's affected
+- No game mechanics (HP, AC, damage dice). Pure fiction
+- Avoid fantasy cliches ("mighty blow", "flashing steel") — find fresh imagery
+- Vary sentence structure: mix fragments, dashes, commas, and full clauses
+- Evoke, don't narrate. Sensory fragments over play-by-play"""
 
-    Generates vivid, immersive descriptions for D&D abilities using AI,
-    with support for multiple providers and comparison mode.
-    """
+# Category distribution guidance for generating varied entries
+def _sensory_distribution(count: int) -> str:
+    """Build sensory category distribution guidance for a given entry count."""
+    if count <= 8:
+        return (
+            "Distribute entries across these sensory categories (1 each):\n"
+            "- Kinesthetic (body mechanics, movement)\n"
+            "- Auditory (sounds of the action)\n"
+            "- Visual/Cinematic (light, color, spatial framing)\n"
+            "- Emotional/Expression (face, eyes, attitude, intent)\n"
+            "- Tactile/Impact (vibration, resistance, texture)\n"
+            "- Environmental (terrain, weather, debris)\n"
+            "- Tempo/Rhythm (speed, pacing, timing)\n"
+            "- Tactical/Spatial (positioning, geometry, openings)"
+        )
+    # For larger counts, scale proportionally
+    base = count // 8
+    remainder = count % 8
+    cats = [
+        ("Kinesthetic (body mechanics, movement)", base + (1 if remainder > 0 else 0)),
+        ("Auditory (sounds of the action)", base + (1 if remainder > 1 else 0)),
+        ("Visual/Cinematic (light, color, spatial framing)", base + (1 if remainder > 2 else 0)),
+        ("Emotional/Expression (face, eyes, attitude, intent)", base + (1 if remainder > 3 else 0)),
+        ("Tactile/Impact (vibration, resistance, texture)", base + (1 if remainder > 4 else 0)),
+        ("Environmental (terrain, weather, debris)", base + (1 if remainder > 5 else 0)),
+        ("Tempo/Rhythm (speed, pacing, timing)", base + (1 if remainder > 6 else 0)),
+        ("Tactical/Spatial (positioning, geometry, openings)", base),
+    ]
+    lines = ["Distribute entries across these sensory categories:"]
+    for desc, n in cats:
+        lines.append(f"- {n} {desc}")
+    return "\n".join(lines)
+
+
+def _pronoun_guidance(creature_type: str) -> str:
+    """Return pronoun instruction based on creature type."""
+    if 'humanoid' in (creature_type or '').lower():
+        return 'Use they/them pronouns.'
+    return 'Use "it" as the pronoun.'
+
+
+def _examples_for_event(event_type: str) -> str:
+    """Return style examples appropriate for the event type."""
+    examples = {
+        'attack_attempt': (
+            '- "A quick lunge, weight shifting forward — steel leads."\n'
+            '- "It coils low, then unwinds in a single vicious arc."\n'
+            '- "The blade traces a tight circle before committing to the thrust."'
+        ),
+        'attack_success': (
+            '- "Steel whispers through leather, and something warm follows."\n'
+            '- "The point finds the gap it was looking for — a wet crunch."\n'
+            '- "Impact shudders up through the shaft and into its wrists."'
+        ),
+        'attack_failure': (
+            '- "The swing carves empty air, momentum pulling it off-balance."\n'
+            '- "A scrape of steel on stone where flesh should have been."\n'
+            '- "It overcommits, and the opening closes before the blade arrives."'
+        ),
+        'crit': (
+            '- "Everything aligns — angle, force, timing — and something breaks."\n'
+            '- "The hit lands with the sound of certainty, deep and final."\n'
+            '- "A perfect arc that ends exactly where it was always going to."'
+        ),
+        'fumble': (
+            '- "The swing goes wide, dragging its whole body with it."\n'
+            '- "A misstep turns the attack into an awkward stumble."\n'
+            '- "The weapon catches on nothing, and balance deserts it completely."'
+        ),
+        'barely_hits': (
+            '- "The tip catches a gap it didn\'t know was there — lucky."\n'
+            '- "A scraping blow that almost wasn\'t, but was."\n'
+            '- "It grazes through, more accident than aim."'
+        ),
+        'barely_misses': (
+            '- "So close the air hisses between blade and skin."\n'
+            '- "A hair\'s breadth — the target feels the wind of it."\n'
+            '- "The strike passes close enough to lift fabric, nothing more."'
+        ),
+        'miss_dodge': (
+            '- "The target flows aside like water around a stone."\n'
+            '- "Quick feet carry it clear — the attack finds only air."\n'
+            '- "A sidestep so smooth it looks rehearsed."'
+        ),
+        'miss_armor': (
+            '- "Steel rings on steel — the armor does its job."\n'
+            '- "The blow connects and skids, throwing sparks but drawing nothing."\n'
+            '- "A solid hit that the plate turns aside with a dull clang."'
+        ),
+        'killing_blow': (
+            '- "One last, unhurried strike — it was always going to end like this."\n'
+            '- "The final blow lands with the weight of inevitability behind it."\n'
+            '- "Something decisive in the swing, the kind that ends things."'
+        ),
+        'spell_attempt': (
+            '- "Words tumble out, sharp and precise — the air bends."\n'
+            '- "Fingers trace a pattern that leaves afterimages in the dark."\n'
+            '- "Power builds behind the eyes, looking for a way out."'
+        ),
+        'bloodied': (
+            '- "It staggers, one leg buckling — dark blood threads down."\n'
+            '- "A wet, ragged breath escapes — something inside has shifted."\n'
+            '- "The wound opens its posture, revealing how much it\'s hiding."'
+        ),
+        'death': (
+            '- "It folds forward in slow motion, already gone before it lands."\n'
+            '- "A last exhale, quiet and final — then just weight and stillness."\n'
+            '- "The light behind its eyes gutters out like a spent candle."'
+        ),
+    }
+    return examples.get(event_type, examples['attack_attempt'])
+
+
+class FlavorTextGenerator:
+    """Core flavor text generation system."""
 
     STYLE_DESCRIPTIONS = {
         'dramatic': 'dramatic, epic, and cinematic',
@@ -66,263 +187,224 @@ class FlavorTextGenerator:
             )
         return next(iter(providers.values()))
 
+    def _resolve_provider(self, provider_name: Optional[str] = None) -> AIProvider:
+        """Resolve a provider by name, or return the default."""
+        if provider_name:
+            providers = self._get_providers()
+            if provider_name in providers:
+                return providers[provider_name]
+            return get_provider(provider_name, self.config_manager)
+        return self._get_default_provider()
+
+    # ── Prompt Builders ──────────────────────────────────────────────
+
     def generate_flavor_text_prompt(self, request: FlavorTextRequest) -> str:
-        """Create the AI prompt for flavor text generation."""
+        """Create the AI prompt for flavor text generation (attempts/successes/failures)."""
         style_desc = self.STYLE_DESCRIPTIONS.get(request.style, self.STYLE_DESCRIPTIONS['dramatic'])
-        description_part = f"\nDescription: {request.ability_description}" if request.ability_description else ""
+        description_part = f"\nAbility description: {request.ability_description}" if request.ability_description else ""
+        n = request.variations
+        distribution = _sensory_distribution(n)
+        pronouns = _pronoun_guidance(request.character_race)
 
-        prompt = f"""You are a creative D&D flavor text generator. Create {request.variations} unique variations each for attempting, succeeding, and failing at using an ability.
-
-Character: {request.character_name}, Level {request.character_level} {request.character_race} {request.character_class}
-Ability: {request.ability_name} ({request.ability_type}){description_part}
-
-Style: Make all descriptions {style_desc}.
-"""
-
-        if request.context_blob:
-            prompt += f"\nAdditional Context: {request.context_blob}\n"
-
-        # Pronoun guidance based on creature type
-        creature_type = (request.character_race or '').lower()
-        if 'humanoid' in creature_type:
-            prompt += "\nUse they/them pronouns for the creature.\n"
+        # Pick examples based on ability type
+        if request.ability_type == 'attack':
+            ex_attempt = _examples_for_event('attack_attempt')
+            ex_success = _examples_for_event('attack_success')
+            ex_failure = _examples_for_event('attack_failure')
+        elif request.ability_type in ('spell', 'cantrip'):
+            ex_attempt = _examples_for_event('spell_attempt')
+            ex_success = _examples_for_event('attack_success')
+            ex_failure = _examples_for_event('attack_failure')
         else:
-            prompt += "\nRefer to the creature as 'it'.\n"
+            ex_attempt = _examples_for_event('attack_attempt')
+            ex_success = _examples_for_event('attack_success')
+            ex_failure = _examples_for_event('attack_failure')
+
+        prompt = f"""You are a creative D&D flavor text generator. Generate {n} unique entries each for ATTEMPTING, SUCCEEDING, and FAILING at using an ability.
+
+Creature: {request.character_name} ({request.character_race}, CR {request.character_level})
+Ability: {request.ability_name} ({request.ability_type}){description_part}
+Style: {style_desc}
+{pronouns}
+"""
+        if request.context_blob:
+            prompt += f"Flavor guidance: {request.context_blob}\n"
 
         prompt += f"""
-Guidelines:
-- Each entry is exactly THREE short evocative phrases separated by " — "
-- Each phrase is 2-4 words: a sensory snapshot, action beat, or emotional flash
-- Total per entry: 8-12 words across the three phrases
-- NOT full sentences. Fragments. No articles, no filler, no narration
-- A DM will glance at this and grab one or two phrases to weave into their narration
-- Vary imagery, senses, and word choices across entries
-- Match the character's race, class, and level
-- Keep descriptions appropriate for {request.ability_type} type abilities
-- Example format: "blade hums eager — sidestep, fluid — cold eyes lock"
-- Another example: "steel catches torchlight — sharp exhale — lunges low"
+{distribution}
+
+{_WRITING_RULES}
+
+Examples of ATTEMPT entries:
+{ex_attempt}
+
+Examples of SUCCESS entries:
+{ex_success}
+
+Examples of FAILURE entries:
+{ex_failure}
 
 Format your response as JSON:
 {{
-  "attempts": ["phrase — phrase — phrase", ...],
-  "successes": ["phrase — phrase — phrase", ...],
-  "failures": ["phrase — phrase — phrase", ...]
+  "attempts": ["...", ...],
+  "successes": ["...", ...],
+  "failures": ["...", ...]
 }}
 
-Generate exactly {request.variations} variations for each category (attempts, successes, failures)."""
-
+Generate exactly {n} entries per category ({n} attempts, {n} successes, {n} failures)."""
         return prompt
 
     def generate_conditional_prompt(self, request: FlavorTextRequest, category: str, count: int = 5) -> str:
-        """Create a prompt for conditional flavor categories (crit/fumble/barely)."""
+        """Create a prompt for conditional flavor categories (crit/fumble/barely/killing_blow)."""
         style_desc = self.STYLE_DESCRIPTIONS.get(request.style, self.STYLE_DESCRIPTIONS['dramatic'])
-        description_part = f"\nDescription: {request.ability_description}" if request.ability_description else ""
+        description_part = f"\nAbility description: {request.ability_description}" if request.ability_description else ""
+        pronouns = _pronoun_guidance(request.character_race)
 
         category_guidance = {
             'crits': (
-                "Generate critical hit / natural 20 flavor text. "
-                "These are devastating, emphatic, overwhelming — the hit that changes everything. "
-                "The attack connects perfectly. Maximum impact. The crowd gasps."
+                "Generate CRITICAL HIT flavor text — natural 20, the perfect strike. "
+                "Devastating, emphatic, overwhelming. Maximum impact. More dramatic than a regular hit, "
+                "but still mid-fight — these are exclamation marks, not endings."
             ),
             'fumbles': (
-                "Generate natural 1 / fumble flavor text. "
-                "These are whiffs, overextensions, stumbles — NOT necessarily dropping a weapon. "
-                "The attack goes wrong. Embarrassing, awkward, or just plain unlucky. "
-                "Keep it varied — sometimes comical, sometimes painful, sometimes just a miss."
+                "Generate FUMBLE flavor text — natural 1, something goes wrong. "
+                "Whiffs, overextensions, stumbles, misfires. NOT always dropping a weapon. "
+                "Varied: sometimes comical, sometimes painful, sometimes just unlucky."
             ),
             'barely_hits': (
-                "Generate 'barely hits' flavor text — the attack JUST scrapes by. "
-                "Glancing blows, last-second adjustments, the hit that almost wasn't. "
-                "The margin was razor-thin. Lucky. Scraped armor. Caught a gap in the defense."
+                "Generate BARELY HITS flavor text — the attack JUST scrapes by, razor-thin margin. "
+                "Glancing blows, last-second adjustments, lucky angles. The hit that almost wasn't."
             ),
             'barely_misses': (
-                "Generate 'barely misses' flavor text — SO close but not quite. "
-                "Hair's breadth dodges, sparks off armor, the miss that stings. "
-                "Almost had it. Frustrating. The target flinches even though it missed."
+                "Generate BARELY MISSES flavor text — SO close but not quite. "
+                "Hair's breadth from connecting. The target flinches. Frustrating. Almost."
             ),
             'miss_dodge': (
-                "Generate 'dodged' miss flavor text — the target was too agile, too quick. "
-                "They evaded, sidestepped, ducked, or slipped away. The attack never touched them. "
-                "Focus on the TARGET's agility and reflexes, not the attacker's failure."
+                "Generate DODGE flavor text — the target was too quick, too agile. "
+                "Focus on the TARGET's evasion: sidesteps, ducks, flows aside. "
+                "The attack never touched them. Not the attacker's fault — the target was just better."
             ),
             'miss_armor': (
-                "Generate 'armor deflection' miss flavor text — the attack connected but couldn't penetrate. "
-                "Steel rings on steel, blade skids off plate, bolt bounces off shield. The hit landed but the armor held. "
-                "Focus on the ARMOR or shield doing its job — the impact, the sparks, the ringing metal."
+                "Generate ARMOR DEFLECTION flavor text — the attack connected but armor held. "
+                "Steel on steel, sparks, ringing metal, blade skidding off plate. "
+                "Focus on the ARMOR doing its job. The hit landed but couldn't penetrate."
+            ),
+            'killing_blow': (
+                "Generate KILLING BLOW flavor text — the finishing strike, the one that ends it. "
+                "'How do you want to do this?' Cinematic conclusions: decisive, final, satisfying. "
+                "These are ENDINGS, not mid-fight moments. The fight is over after this. "
+                "Distinct from crits — crits are exclamation marks, killing blows are periods."
             ),
         }
 
         guidance = category_guidance.get(category, "Generate flavor text.")
+        examples = _examples_for_event(category)
+        distribution = _sensory_distribution(count)
 
         prompt = f"""You are a creative D&D flavor text generator. {guidance}
 
-Character: {request.character_name}, Level {request.character_level} {request.character_race} {request.character_class}
+Creature: {request.character_name} ({request.character_race}, CR {request.character_level})
 Ability: {request.ability_name} ({request.ability_type}){description_part}
-
-Style: Make all descriptions {style_desc}.
+Style: {style_desc}
+{pronouns}
 """
         if request.context_blob:
-            prompt += f"\nAdditional Context: {request.context_blob}\n"
-
-        creature_type = (request.character_race or '').lower()
-        if 'humanoid' in creature_type:
-            prompt += "\nUse they/them pronouns for the creature.\n"
-        else:
-            prompt += "\nRefer to the creature as 'it'.\n"
+            prompt += f"Flavor guidance: {request.context_blob}\n"
 
         prompt += f"""
-Guidelines:
-- Each entry is exactly THREE short evocative phrases separated by " — "
-- Each phrase is 2-4 words: a sensory snapshot, action beat, or emotional flash
-- Total per entry: 8-12 words across the three phrases
-- NOT full sentences. Fragments. No articles, no filler, no narration
-- A DM will glance at this and grab one or two phrases to weave into their narration
-- Vary imagery, senses, and word choices across entries
-- Match the character's race, class, and level
-- Example format: "blade hums eager — sidestep, fluid — cold eyes lock"
+{distribution}
+
+{_WRITING_RULES}
+
+Examples:
+{examples}
 
 Format your response as JSON:
 {{
-  "entries": ["phrase — phrase — phrase", ...]
+  "entries": ["...", ...]
 }}
 
-Generate exactly {count} variations."""
+Generate exactly {count} entries."""
         return prompt
 
     def generate_bloodied_prompt(self, request: FlavorTextRequest, count: int = 5) -> str:
-        """Create a prompt for bloodied-threshold flavor text (creature-wide, not per-ability)."""
+        """Create a prompt for bloodied-threshold flavor text."""
         style_desc = self.STYLE_DESCRIPTIONS.get(request.style, self.STYLE_DESCRIPTIONS['dramatic'])
+        pronouns = _pronoun_guidance(request.character_race)
+        distribution = _sensory_distribution(count)
+        examples = _examples_for_event('bloodied')
 
-        prompt = f"""You are a creative D&D flavor text generator. Generate "bloodied" flavor text — the moment a creature crosses half HP for the first time in combat.
+        prompt = f"""You are a creative D&D flavor text generator. Generate BLOODIED flavor text — the moment a creature crosses half HP for the first time in combat.
 
-This is NOT about a specific ability. This is about the creature's overall state changing: it's hurt, weakened, pushed to its limit. Blood, pain, desperation, or fury.
+This is NOT about a specific ability. This is about the creature's overall state changing: hurt, weakened, pushed to its limit. Blood, pain, desperation, or fury.
 
-Character: {request.character_name}, Level {request.character_level} {request.character_race} {request.character_class}
-
-Style: Make all descriptions {style_desc}.
+Creature: {request.character_name} ({request.character_race}, CR {request.character_level})
+Style: {style_desc}
+{pronouns}
 """
         if request.context_blob:
-            prompt += f"\nAdditional Context: {request.context_blob}\n"
-
-        creature_type = (request.character_race or '').lower()
-        if 'humanoid' in creature_type:
-            prompt += "\nUse they/them pronouns for the creature.\n"
-        else:
-            prompt += "\nRefer to the creature as 'it'.\n"
+            prompt += f"Flavor guidance: {request.context_blob}\n"
 
         prompt += f"""
-Guidelines:
-- Each entry is exactly THREE short evocative phrases separated by " — "
-- Each phrase is 2-4 words: a sensory snapshot, action beat, or emotional flash
-- Total per entry: 8-12 words across the three phrases
-- NOT full sentences. Fragments. No articles, no filler, no narration
+{distribution}
+
+{_WRITING_RULES}
 - Focus on: visible wounds, changed posture, sounds of pain, blood, desperation, fury, fear
-- Vary imagery across entries — don't repeat the same wound or reaction
-- Example: "staggers, knee buckling — blood trails dark — snarls through clenched teeth"
+
+Examples:
+{examples}
 
 Format your response as JSON:
 {{
-  "entries": ["phrase — phrase — phrase", ...]
+  "entries": ["...", ...]
 }}
 
-Generate exactly {count} variations."""
+Generate exactly {count} entries."""
         return prompt
 
     def generate_death_prompt(self, request: FlavorTextRequest, count: int = 5) -> str:
         """Create a prompt for death flavor text — creature reaches 0 HP."""
         style_desc = self.STYLE_DESCRIPTIONS.get(request.style, self.STYLE_DESCRIPTIONS['dramatic'])
+        pronouns = _pronoun_guidance(request.character_race)
+        distribution = _sensory_distribution(count)
+        examples = _examples_for_event('death')
 
-        prompt = f"""You are a creative D&D flavor text generator. Generate "death" flavor text — the moment a creature drops to 0 HP and falls.
+        prompt = f"""You are a creative D&D flavor text generator. Generate DEATH flavor text — the moment a creature drops to 0 HP and falls.
 
-This is the creature's final moment in combat. Collapse, last breath, final twitch. Dramatic or sudden.
+This is creature-specific: how THIS creature dies. Complements the attacker's Killing Blow text (which is weapon-specific). A zombie crumbles differently than a dragon.
 
-Character: {request.character_name}, Level {request.character_level} {request.character_race} {request.character_class}
-
-Style: Make all descriptions {style_desc}.
+Creature: {request.character_name} ({request.character_race}, CR {request.character_level})
+Style: {style_desc}
+{pronouns}
 """
         if request.context_blob:
-            prompt += f"\nAdditional Context: {request.context_blob}\n"
-
-        creature_type = (request.character_race or '').lower()
-        if 'humanoid' in creature_type:
-            prompt += "\nUse they/them pronouns for the creature.\n"
-        else:
-            prompt += "\nRefer to the creature as 'it'.\n"
+            prompt += f"Flavor guidance: {request.context_blob}\n"
 
         prompt += f"""
-Guidelines:
-- Each entry is exactly THREE short evocative phrases separated by " — "
-- Each phrase is 2-4 words: a sensory snapshot, action beat, or emotional flash
-- Total per entry: 8-12 words across the three phrases
-- NOT full sentences. Fragments. No articles, no filler, no narration
-- Focus on: collapse, final sounds, stillness after, light fading from eyes, weapon falling
-- Vary imagery across entries — different deaths, not the same collapse repeated
-- Example: "knees buckle, folds — blade clatters stone — silence descends"
+{distribution}
+
+{_WRITING_RULES}
+- Focus on: collapse, final sounds, stillness, light fading, the specific way THIS creature falls
+
+Examples:
+{examples}
 
 Format your response as JSON:
 {{
-  "entries": ["phrase — phrase — phrase", ...]
+  "entries": ["...", ...]
 }}
 
-Generate exactly {count} variations."""
+Generate exactly {count} entries."""
         return prompt
 
-    async def generate_death(
-        self, request: FlavorTextRequest, provider_name: Optional[str] = None,
-        count: int = 5,
-    ) -> FlavorTextResult:
-        """Generate death flavor text for a creature (0 HP moment)."""
-        if provider_name:
-            providers = self._get_providers()
-            if provider_name not in providers:
-                provider = get_provider(provider_name, self.config_manager)
-            else:
-                provider = providers[provider_name]
-        else:
-            provider = self._get_default_provider()
-
-        prompt = self.generate_death_prompt(request, count)
-        entries = await self._call_provider_simple(provider, prompt, count)
-
-        return FlavorTextResult(
-            attempts=entries,
-            successes=[],
-            failures=[],
-            metadata={
-                'character_name': request.character_name,
-                'character_class': request.character_class,
-                'ability_name': 'Death',
-                'ability_type': 'death',
-                'style': request.style,
-                'variations': count,
-                'model': provider.model,
-                'provider': provider.name,
-            }
-        )
+    # ── Generation Methods ───────────────────────────────────────────
 
     async def generate_flavor_text(
         self, request: FlavorTextRequest, provider_name: Optional[str] = None,
         with_crits: bool = False, crit_count: int = 5,
     ) -> FlavorTextResult:
-        """Generate flavor text using a single AI provider.
-
-        Args:
-            request: FlavorTextRequest with character and ability details
-            provider_name: Specific provider to use (default: first available)
-            with_crits: Also generate crit/fumble/barely_hits/barely_misses tables
-            crit_count: Number of variations for conditional categories
-
-        Returns:
-            FlavorTextResult with attempts/successes/failures descriptions
-        """
-        if provider_name:
-            providers = self._get_providers()
-            if provider_name not in providers:
-                provider = get_provider(provider_name, self.config_manager)
-            else:
-                provider = providers[provider_name]
-        else:
-            provider = self._get_default_provider()
+        """Generate flavor text using a single AI provider."""
+        provider = self._resolve_provider(provider_name)
 
         prompt = self.generate_flavor_text_prompt(request)
         result_data = await self._call_provider(provider, prompt, request.variations)
@@ -339,13 +421,13 @@ Generate exactly {count} variations."""
                 'variations': request.variations,
                 'model': provider.model,
                 'provider': provider.name,
-                'prompt_version': '1.0',
+                'prompt_version': '2.0',
             }
         )
 
         # Generate conditional tables for attack abilities
         if with_crits and request.ability_type == 'attack':
-            for category in ('crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor'):
+            for category in ('crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor', 'killing_blow'):
                 try:
                     cond_prompt = self.generate_conditional_prompt(request, category, crit_count)
                     cond_data = await self._call_provider_simple(provider, cond_prompt, crit_count)
@@ -353,6 +435,16 @@ Generate exactly {count} variations."""
                     logger.info(f"Generated {len(cond_data)} {category} entries for {request.ability_name}")
                 except Exception as e:
                     logger.warning(f"Failed to generate {category} for {request.ability_name}: {e}")
+
+        # Generate killing blow for non-attack damage-dealing abilities
+        if with_crits and request.ability_type != 'attack' and _is_damage_dealing(request):
+            try:
+                kb_prompt = self.generate_conditional_prompt(request, 'killing_blow', crit_count)
+                kb_data = await self._call_provider_simple(provider, kb_prompt, crit_count)
+                result.killing_blow = kb_data
+                logger.info(f"Generated {len(kb_data)} killing_blow entries for {request.ability_name}")
+            except Exception as e:
+                logger.warning(f"Failed to generate killing_blow for {request.ability_name}: {e}")
 
         logger.info(
             f"Generated flavor text for {request.character_name}'s {request.ability_name} "
@@ -365,18 +457,8 @@ Generate exactly {count} variations."""
         self, request: FlavorTextRequest, provider_name: Optional[str] = None,
         count: int = 5,
     ) -> FlavorTextResult:
-        """Generate bloodied-threshold flavor text for a creature.
-
-        Returns a FlavorTextResult with entries in 'attempts' (the only category that matters).
-        """
-        if provider_name:
-            providers = self._get_providers()
-            if provider_name not in providers:
-                provider = get_provider(provider_name, self.config_manager)
-            else:
-                provider = providers[provider_name]
-        else:
-            provider = self._get_default_provider()
+        """Generate bloodied-threshold flavor text for a creature."""
+        provider = self._resolve_provider(provider_name)
 
         prompt = self.generate_bloodied_prompt(request, count)
         entries = await self._call_provider_simple(provider, prompt, count)
@@ -397,17 +479,36 @@ Generate exactly {count} variations."""
             }
         )
 
+    async def generate_death(
+        self, request: FlavorTextRequest, provider_name: Optional[str] = None,
+        count: int = 5,
+    ) -> FlavorTextResult:
+        """Generate death flavor text for a creature (0 HP moment)."""
+        provider = self._resolve_provider(provider_name)
+
+        prompt = self.generate_death_prompt(request, count)
+        entries = await self._call_provider_simple(provider, prompt, count)
+
+        return FlavorTextResult(
+            attempts=entries,
+            successes=[],
+            failures=[],
+            metadata={
+                'character_name': request.character_name,
+                'character_class': request.character_class,
+                'ability_name': 'Death',
+                'ability_type': 'death',
+                'style': request.style,
+                'variations': count,
+                'model': provider.model,
+                'provider': provider.name,
+            }
+        )
+
     async def generate_comparison(
         self, request: FlavorTextRequest, provider_names: List[str],
     ) -> Dict[str, FlavorTextResult]:
-        """Generate flavor text from multiple providers for comparison.
-
-        Runs all providers concurrently. Individual provider failures don't
-        kill the whole batch — failed providers get error metadata instead.
-
-        Returns:
-            Dict mapping provider name to FlavorTextResult (or error result).
-        """
+        """Generate flavor text from multiple providers for comparison."""
         prompt = self.generate_flavor_text_prompt(request)
 
         async def _run_one(name: str) -> tuple[str, FlavorTextResult]:
@@ -441,6 +542,8 @@ Generate exactly {count} variations."""
         tasks = [_run_one(name) for name in provider_names]
         pairs = await asyncio.gather(*tasks)
         return dict(pairs)
+
+    # ── Provider Communication ───────────────────────────────────────
 
     async def _call_provider_simple(
         self, provider: AIProvider, prompt: str, expected_count: int,
@@ -512,7 +615,6 @@ Generate exactly {count} variations."""
                 for key in ('attempts', 'successes', 'failures'):
                     if key in topup_parsed and isinstance(topup_parsed[key], list):
                         parsed[key].extend(topup_parsed[key])
-                        # Trim to exact count if we got too many
                         parsed[key] = parsed[key][:expected_variations]
             except Exception as e:
                 logger.warning(f"Top-up attempt {attempt + 1} failed: {e}")
@@ -520,6 +622,8 @@ Generate exactly {count} variations."""
 
         self._check_output_quality(parsed)
         return parsed
+
+    # ── Parsing & Validation ─────────────────────────────────────────
 
     def _parse_ai_response(self, response_text: str) -> Dict[str, List[str]]:
         """Parse AI response JSON, handling various formatting issues."""
@@ -568,12 +672,15 @@ Generate exactly {count} variations."""
                 continue
             for i, text in enumerate(texts):
                 words = text.split()
-                if len(words) > 25:
+                if len(words) > 18:
                     logger.warning(
-                        f"{category}[{i}] is {len(words)} words (target: <=20): {text[:60]}..."
+                        f"{category}[{i}] is {len(words)} words (target: 8-12): {text[:60]}..."
                     )
-                sentences = [s.strip() for s in text.split('.') if s.strip()]
-                if len(sentences) > 2:
-                    logger.warning(
-                        f"{category}[{i}] has {len(sentences)} sentences (target: 1)"
-                    )
+
+
+def _is_damage_dealing(request: FlavorTextRequest) -> bool:
+    """Check if an ability deals damage based on its description."""
+    if not request.ability_description:
+        return False
+    desc = request.ability_description.lower()
+    return any(kw in desc for kw in ('damage', 'hit:', 'attack:', 'saving throw, taking'))

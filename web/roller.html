@@ -206,6 +206,7 @@
   .sub-btn[data-cat="miss_armor"]    { border-color: var(--text-dim); color: var(--text-dim); }
   .sub-btn[data-cat="successes"]     { border-color: var(--green);  color: var(--green); }
   .sub-btn[data-cat="failures"]      { border-color: var(--red);    color: var(--red); }
+  .sub-btn[data-cat="killing_blow"]  { border-color: var(--gold);   color: var(--gold); }
 
   /* ── Reset bar ── */
   #controls {
@@ -430,7 +431,7 @@
         row.appendChild(btn);
 
         // Sub-buttons for conditional/additional categories
-        const subOrder = ['successes', 'failures', 'crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor'];
+        const subOrder = ['successes', 'failures', 'crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor', 'killing_blow'];
         for (const cat of subOrder) {
           if (cat === primaryCat) continue;
           if (!cats.has(cat)) continue;
@@ -463,6 +464,7 @@
       barely_misses: 'Barely Miss',
       miss_dodge: 'Dodge',
       miss_armor: 'Armor',
+      killing_blow: 'Kill',
     };
     return labels[cat] || cat;
   }

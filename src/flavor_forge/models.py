@@ -32,6 +32,7 @@ class FlavorTextResult:
     barely_misses: List[str] = field(default_factory=list)
     miss_dodge: List[str] = field(default_factory=list)
     miss_armor: List[str] = field(default_factory=list)
+    killing_blow: List[str] = field(default_factory=list)
 
 
 @dataclass
