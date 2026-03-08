@@ -1,0 +1,1712 @@
+{
+  "formatVersion": 1,
+  "creature": {
+    "name": "Lady Emer",
+    "tokenPattern": "*Lady Emer*",
+    "cr": "11",
+    "type": "Monstrosity",
+    "pronouns": "it"
+  },
+  "whisper": "gm",
+  "tables": [
+    {
+      "ability": "Stone Sacrifice",
+      "category": "attempts",
+      "description": "Flavor text for attempts a feature",
+      "entries": [
+        "stone shivers awake \u2014 trembling hands grasp \u2014 ancient power stirs",
+        "crimson glow enfolds \u2014 pulsing energy builds \u2014 fierce cry echoes",
+        "darkness trembles back \u2014 moonlight seeps through \u2014 whispers rise",
+        "ground shakes beneath \u2014 roots uncoil, stretch \u2014 primal roar thunders",
+        "emerald flames dance \u2014 wild music swirls \u2014 mystic incantations weave",
+        "night air thickens \u2014 shadows coalesce \u2014 ghostly whispers summon",
+        "ancient magic stirs \u2014 forgotten lore awakens \u2014 cryptic symbols unfold",
+        "silence shatters, shards \u2014 screaming winds pierce \u2014 maddening chaos unfolds",
+        "fists clench tight \u2014 tremble, fierce \u2014 darkness looms",
+        "stone shudders awake \u2014 earthy scent rises \u2014 ancient power stirs"
+      ]
+    },
+    {
+      "ability": "Stone Sacrifice",
+      "category": "successes",
+      "description": "Flavor text for successes a feature",
+      "entries": [
+        "stone heart revives \u2014 pulsing life force \u2014 radiance explodes outward",
+        "crimson glow intensifies \u2014 fiery power surges \u2014 triumphant cry resounds",
+        "whispers coalesce, merge \u2014 mystic incantations climax \u2014 reality warps",
+        "roots burst forth, shatter \u2014 primal roar thunders, shakes \u2014 ancient power unfurls",
+        "emerald flames erupt, blaze \u2014 wild music swells, reaches \u2014 magic rages free",
+        "healing ripples outward \u2014 calm soothes the wound \u2014 it relaxes slow",
+        "warmth spreads through soul \u2014 peace settles in deep \u2014 Emer smiles wide",
+        "whispers of relief echo \u2014 burden lifts off shoulders \u2014 Emer exhales deep",
+        "glow softens stern face \u2014 warmth touches cold heart \u2014 it begins to mend",
+        "gentle breeze stirs stillness \u2014 peace descends upon the land \u2014 Emer's form blurs"
+      ]
+    },
+    {
+      "ability": "Stone Sacrifice",
+      "category": "failures",
+      "description": "Flavor text for failures a feature",
+      "entries": [
+        "stone heart withers, dies \u2014 cold darkness spreads \u2014 silence falls",
+        "crimson glow flickers, fades \u2014 spent energy drains \u2014 despair claws",
+        "shadows shroud the land \u2014 dark whispers consume \u2014 hope dissolves",
+        "roots writhe, twist, break \u2014 primal scream echoes, shattered \u2014 ancient power falters",
+        "shadows writhe in pain \u2014 earthy scent turns foul \u2014 darkness closes in",
+        "fury erupts from depths \u2014 wild rage courses through veins \u2014 Emer snarls loud",
+        "roar echoes through cavern \u2014 ancient power surges wildly \u2014 the ground trembles",
+        "pain shoots through her form \u2014 stone heart aches with sorrow \u2014 Emer falls hard",
+        "ominous silence falls still \u2014 earthy scent turns to ash \u2014 darkness descends slow",
+        "abyssal darkness opens \u2014 last hope falters \u2014 it stumbles"
+      ]
+    },
+    {
+      "ability": "Multiattack",
+      "category": "attempts",
+      "description": "Flavor text for attempts a action",
+      "entries": [
+        "fingers close on bowstring \u2014 draws breath slow \u2014 arrow nocks",
+        "gaze pierces through shadows \u2014 eyes narrow sharp \u2014 muscles tense",
+        "stone gaze blazes fierce \u2014 molten lava drips \u2014 Emer's roar",
+        "snake bites swift and silent \u2014 forked tongue darts \u2014 venom courses",
+        "Emer's heart pounds faster \u2014 eyes scan the range \u2014 bow creaks",
+        "stones crackle in silence \u2014 Envenomed Stone glows \u2014 eerie hum builds",
+        "the wind whispers secrets \u2014 Longbow strung taut \u2014 arrowhead shines bright",
+        "Snake Bite's deadly precision \u2014 Emer focuses intent \u2014 steel glints",
+        "rocks writhe with darkness \u2014 stone skin riples \u2014 dark magic churns",
+        "battling heart beats fierce \u2014 Snake Bite readies \u2014 deadly strike near"
+      ]
+    },
+    {
+      "ability": "Multiattack",
+      "category": "successes",
+      "description": "Flavor text for successes a action",
+      "entries": [
+        "three arrows fly swift \u2014 snake bites in unison \u2014 targets fall",
+        "Emer's stones shatter calm \u2014 battle-scarred warriors tremble \u2014 foes cringe",
+        "bowstring thrums sweet music \u2014 snakes bite swift and true \u2014 multiple kills",
+        "gaze of burning stone \u2014 Envenomed Stone glows fierce \u2014 undead writhe",
+        "snake bites with precision \u2014 targets crash to ground \u2014 chaos erupts",
+        "Longbow's resonant thwack \u2014 snake strikes in deadly rhythm \u2014 opponents stumble",
+        "Emer's power surges through \u2014 rocks shatter, crush, and rend \u2014 enemies fall",
+        "venom courses swift death \u2014 multiple foes drop \u2014 battle rages on",
+        "targets crumble to dust \u2014 snakes bite with crushing force \u2014 ruin spreads",
+        "stone gaze blazes victorious \u2014 Emer's roar thunders loud \u2014 foes flee"
+      ]
+    },
+    {
+      "ability": "Multiattack",
+      "category": "failures",
+      "description": "Flavor text for failures a action",
+      "entries": [
+        "bowstring snaps in failure \u2014 snake bites miss wildly \u2014 danger near",
+        "Emer's stones shatter harmlessly \u2014 intended targets laugh \u2014 mockery cuts deep",
+        "three arrows fly awry \u2014 snake bites stumble, falter \u2014 enemies counterattack",
+        "gaze of burning stone \u2014 Envenomed Stone falters \u2014 dark magic dissipates",
+        "snake bites with feeble force \u2014 targets shrug off \u2014 Emer's strength wanes",
+        "Longbow's mournful creak \u2014 snake strikes in discordant rhythm \u2014 opponents laugh",
+        "Emer's power falters, weakens \u2014 rocks shatter harmlessly \u2014 enemies press on",
+        "venom courses slow death \u2014 multiple foes shrug off \u2014 Emer's attack stalls",
+        "targets stand firm, unbroken \u2014 snakes bite with feeble force \u2014 battle rages on",
+        "stone gaze flickers dimly \u2014 Emer's roar is lost in din \u2014 foes close"
+      ]
+    },
+    {
+      "ability": "Snake Bite",
+      "category": "attempts",
+      "description": "Flavor text for attempts a attack",
+      "entries": [
+        "flicking forked tongue \u2014 swift strike \u2014 hisses warning",
+        "venomous fangs gleam \u2014 lunges forward \u2014 jaws snap",
+        "slippery coils writhe \u2014 strikes with speed \u2014 leaves wound open",
+        "serpentine neck rears \u2014 sharp bite aims \u2014 misses by inches",
+        "whipping tail lashes \u2014 swift parry needed \u2014 avoids danger",
+        "coiled power springs \u2014 attack unfolds \u2014 ends in air",
+        "glinting fangs bare \u2014 lunges to strike \u2014 foiled at last",
+        "rattling scales warn \u2014 strikes from the side \u2014 barely misses",
+        "sinuous form twists \u2014 biting jaws snap \u2014 fall short again",
+        "glistening eyes narrow \u2014 aims for weak spot \u2014 misses mark"
+      ]
+    },
+    {
+      "ability": "Snake Bite",
+      "category": "successes",
+      "description": "Flavor text for successes a attack",
+      "entries": [
+        "flicking forked tongue \u2014 stings true \u2014 poison flows",
+        "venomous fangs sink deep \u2014 searing pain follows \u2014 wound festers",
+        "slippery coils constrict \u2014 deadly strike finds mark \u2014 target reels",
+        "serpentine neck rears \u2014 swift bite lands \u2014 poison spreads fast",
+        "whipping tail lashes \u2014 swift parry needed \u2014 attack succeeds",
+        "coiled power springs \u2014 crushing blow meets target \u2014 crushing impact",
+        "glinting fangs bare \u2014 stings with precision \u2014 deadly dose injected",
+        "rattling scales warn \u2014 strikes from the side \u2014 finds weak spot",
+        "sinuous form twists \u2014 biting jaws snap shut \u2014 poisonous venom flows",
+        "glistening eyes narrow \u2014 aims for vital spot \u2014 lands a hit"
+      ]
+    },
+    {
+      "ability": "Snake Bite",
+      "category": "failures",
+      "description": "Flavor text for failures a attack",
+      "entries": [
+        "flicking forked tongue \u2014 fails to connect \u2014 glances wide",
+        "venomous fangs miss mark \u2014 jaws snap shut empty \u2014 bitter taste",
+        "slippery coils writhe \u2014 strikes with force \u2014 hits nothing but air",
+        "serpentine neck rears \u2014 aim is off \u2014 bites into empty space",
+        "whipping tail lashes \u2014 swift parry needed \u2014 attack falls short",
+        "coiled power springs \u2014 crushing blow meets air \u2014 misjudged distance",
+        "glinting fangs bare \u2014 stings with wild swing \u2014 strikes the ground",
+        "rattling scales warn \u2014 strikes from wrong angle \u2014 misses by a hair",
+        "sinuous form twists \u2014 biting jaws snap shut \u2014 closes on nothing",
+        "glistening eyes narrow \u2014 aims for perfect strike \u2014 misses by a sliver"
+      ]
+    },
+    {
+      "ability": "Snake Bite",
+      "category": "crits",
+      "description": "Flavor text for crits with Snake Bite",
+      "entries": [
+        "venomous fangs descend \u2014 strike, deadly silence \u2014 lifeless body falls",
+        "flicking tongue darts \u2014 razor-sharp pain \u2014 convulsive shudder",
+        "coiled fury unwinds \u2014 snapping jaws wide \u2014 helpless scream rips",
+        "poisonous breath seeps \u2014 toxic mist clings \u2014 suffocating weight crushes",
+        "scaly hand closes \u2014 crushing grip tightens \u2014 hopeless eyes freeze"
+      ]
+    },
+    {
+      "ability": "Snake Bite",
+      "category": "fumbles",
+      "description": "Flavor text for fumbles with Snake Bite",
+      "entries": [
+        "fleshy jaws snap wide \u2014 snake body thrashes wildly \u2014 venomous kiss falls short",
+        "scent of decay wafts \u2014 slithering form lunges awkwardly \u2014 target dodges with ease",
+        "eyes glow emerald green \u2014 strike lands on empty air \u2014 hissing, frustrated growl",
+        "sinuous coils whip wildly \u2014 Lady Emer's aim falters \u2014 poisoned tip grazes armor",
+        "venomous fangs snap shut \u2014 creature stumbles, loses balance \u2014 desperate lunge fails"
+      ]
+    },
+    {
+      "ability": "Snake Bite",
+      "category": "barely_hits",
+      "description": "Flavor text for barely_hits with Snake Bite",
+      "entries": [
+        "whispering strike grazes \u2014 armor scrapes loudly \u2014 moment's hesitation remains",
+        "flicker of fang glimpses \u2014 luck's whisper barely spares \u2014 deadly precision fails",
+        "glancing blow kisses steel \u2014 serpent's breath caresses air \u2014 venom's promise lingers",
+        "edge of pain scratches \u2014 defensive posture wavers slightly \u2014 fragile hope clings",
+        "razor's kiss nicks armor \u2014 time's sliver slips by \u2014 poison's dark whisper"
+      ]
+    },
+    {
+      "ability": "Snake Bite",
+      "category": "barely_misses",
+      "description": "Flavor text for barely_misses with Snake Bite",
+      "entries": [
+        "Fang inches from skin \u2014 misses by hair's breadth \u2014 target recoils",
+        "Venomous strike glances armor \u2014 sparks of steel dance \u2014 anger ignites",
+        "Coiled fury unleashes bite \u2014 claws rake empty air \u2014 frustration seethes",
+        "Jaw snaps shut mere millimeters \u2014 echoes through the battle \u2014 tension builds",
+        "Deadly precision falters at last \u2014 miss sends shockwaves through metal \u2014 Lady Emer's rage"
+      ]
+    },
+    {
+      "ability": "Snake Bite",
+      "category": "miss_dodge",
+      "description": "Flavor text for miss_dodge with Snake Bite",
+      "entries": [
+        "whiplash speed unfurls \u2014 slithers past grasp \u2014 razor-sharp evasion",
+        "titanic reflexes ignite \u2014 snake's strike misses mark \u2014 narrow escape hatches",
+        "electrified muscles contract \u2014 dodges deadly fang \u2014 fluid motion saves life",
+        "lightning-quick movement blurs \u2014 Lady Emer's aim falls short \u2014 target dances free",
+        "serpentine agility coils \u2014 strikes and counterstrikes fail \u2014 cunning outmaneuvers"
+      ]
+    },
+    {
+      "ability": "Snake Bite",
+      "category": "miss_armor",
+      "description": "Flavor text for miss_armor with Snake Bite",
+      "entries": [
+        "scaly fist clashes \u2014 sparks erupt wildly \u2014 metal screams protest",
+        "venomous fangs snap shut \u2014 armor plates shudder, creak \u2014 hissing steel resounds",
+        "coiled body strikes true \u2014 ringing metal echoes \u2014 shield buckles inward",
+        "toxic strike meets plate \u2014 impact sends shockwaves \u2014 armor's mighty groan",
+        "serpent's deadly kiss lands \u2014 bolt skids, ricochets \u2014 armor absorbs impact"
+      ]
+    },
+    {
+      "ability": "Longbow",
+      "category": "attempts",
+      "description": "Flavor text for attempts a attack",
+      "entries": [
+        "string sings steel \u2014 arrow flies swift \u2014 target awaits",
+        "tense fingers draw \u2014 bow arm tenses \u2014 aim focuses",
+        "crystal clear air vibrates \u2014 longbow hums eager \u2014 wind whispers secrets",
+        "fingers dance precision \u2014 string thrums sweetly \u2014 silence falls",
+        "mortal breath held tight \u2014 arrow quivers poised \u2014 danger lurks",
+        "rugged hands steady \u2014 bow arm flexes \u2014 shot is taken",
+        "silent moment weighs heavy \u2014 target holds still \u2014 time stands",
+        "string sings like harp \u2014 tension builds expectant \u2014 shot awaits",
+        "eyes locked on prize \u2014 fingers close trigger \u2014 fate decides",
+        "hushed air holds breathless \u2014 arrow poised silent \u2014 destiny calls"
+      ]
+    },
+    {
+      "ability": "Longbow",
+      "category": "successes",
+      "description": "Flavor text for successes a attack",
+      "entries": [
+        "arrow slices through calm \u2014 impact rings loud \u2014 target falls",
+        "string snaps sweet release \u2014 arrow flies true \u2014 justice served",
+        "crystal clear shot finds mark \u2014 impact echoes strong \u2014 victory claimed",
+        "tense fingers relax \u2014 bow arm unwinds \u2014 enemy falters",
+        "silent moment yields swift \u2014 arrow bites deep \u2014 life force fades",
+        "aim proved true and steady \u2014 impact resounds powerful \u2014 foe falls",
+        "string's sweet music ends \u2014 arrow finds home \u2014 battle won",
+        "wind whispers secrets heard \u2014 arrow flies straight \u2014 target stumbles",
+        "danger is turned back swiftly \u2014 enemy crumples defeated \u2014 Lady Emer reigns",
+        "longbow's might makes clear \u2014 arrow bites through shield \u2014 armor broken"
+      ]
+    },
+    {
+      "ability": "Longbow",
+      "category": "failures",
+      "description": "Flavor text for failures a attack",
+      "entries": [
+        "arrow veers wide of mark \u2014 impact sounds hollow \u2014 regret hangs",
+        "string's thrum turns bitter \u2014 aim goes awry \u2014 shame claims",
+        "crystal clear shot shatters \u2014 impact crashes hard \u2014 enemy laughs",
+        "tense fingers falter \u2014 bow arm trembles \u2014 chance slips",
+        "silent moment yields sudden \u2014 arrow flies wide \u2014 hope dwindles",
+        "aim proved false and wild \u2014 impact falters weak \u2014 Lady Emer stumbles",
+        "string's sweet music ends bitter \u2014 arrow bites earth \u2014 disappointment claims",
+        "wind whispers secrets unheard \u2014 arrow veers lost \u2014 frustration mounts",
+        "danger finds its mark swiftly \u2014 enemy rises stronger \u2014 fear grips",
+        "longbow's might makes hollow \u2014 arrow glances off shield \u2014 armor intact"
+      ]
+    },
+    {
+      "ability": "Longbow",
+      "category": "crits",
+      "description": "Flavor text for crits with Longbow",
+      "entries": [
+        "strings shatter silence \u2014 arrow bites bone \u2014 poison courses veins",
+        "longbow sings sweet justice \u2014 impact sears the air \u2014 chaos erupts free",
+        "deadly arc unfurls darkness \u2014 target crumples, lifeless \u2014 echoes of pain",
+        "silent predator strikes swiftly \u2014 razor-sharp tip penetrates \u2014 agony claims soul",
+        "emerald flash of steel \u2014 swift and merciless strike \u2014 fateful moment unfolds"
+      ]
+    },
+    {
+      "ability": "Longbow",
+      "category": "fumbles",
+      "description": "Flavor text for fumbles with Longbow",
+      "entries": [
+        "tension builds slow \u2014 arrow falters mid-flight \u2014 crashes harmlessly nearby",
+        "dark silence stretches \u2014 Lady Emer's aim wavers \u2014 miss by leagues",
+        "whispering wind taunts \u2014 fingers slip off string \u2014 bounce back sharp",
+        "golden light blinks once \u2014 longbow twangs discordant \u2014 strikes the ground",
+        "frozen moment hangs heavy \u2014 muscles strain in vain \u2014 release too late"
+      ]
+    },
+    {
+      "ability": "Longbow",
+      "category": "barely_hits",
+      "description": "Flavor text for barely_hits with Longbow",
+      "entries": [
+        "whisper of steel \u2014 misses by hair \u2014 echoes through void",
+        "arrow trembles on string \u2014 wobbles, recovers \u2014 strikes true fate",
+        "last-second correction made \u2014 graze on armor plate \u2014 faint scratch remains",
+        "wind whispers secrets to \u2014 Lady Emer's steady hand \u2014 finds its mark",
+        "tense muscles hold still \u2014 release, arrow flies straight \u2014 grazes defenses thin"
+      ]
+    },
+    {
+      "ability": "Longbow",
+      "category": "barely_misses",
+      "description": "Flavor text for barely_misses with Longbow",
+      "entries": [
+        "flickers with deadly intent \u2014 arrow sparks armor \u2014 Lady Emer's gaze follows",
+        "sings with silent menace \u2014 longbow whips past shoulder \u2014 target trembles still",
+        "coils with poisonous promise \u2014 shot grazes, hisses faintly \u2014 flinching form remains",
+        "drawn back in fury \u2014 string thrums, arrow bites air \u2014 Lady Emer's eyes blaze",
+        "whispers poison in the wind \u2014 nearly a direct hit \u2014 victim's reflexes barely save"
+      ]
+    },
+    {
+      "ability": "Longbow",
+      "category": "miss_dodge",
+      "description": "Flavor text for miss_dodge with Longbow",
+      "entries": [
+        "whips through shadows \u2014 twirls, evasive \u2014 misses by inches",
+        "leaps into darkness \u2014 lands soft \u2014 escapes the blow",
+        "silver arrow sings \u2014 weaves, impossible \u2014 slips from sight",
+        "wind whispers secrets \u2014 dodges, fluid \u2014 glides away free",
+        "lightning-fast shot cracks \u2014 sidesteps, silent \u2014 leaves emptiness"
+      ]
+    },
+    {
+      "ability": "Longbow",
+      "category": "miss_armor",
+      "description": "Flavor text for miss_armor with Longbow",
+      "entries": [
+        "clashing steel screams \u2014 sparks fly wildly \u2014 metal shudders free",
+        "bolt glances harmlessly \u2014 rings on steel clash \u2014 armor holds firm",
+        "longbow string thrums loud \u2014 arrow skids off plate \u2014 deadly aim foiled",
+        "crushing impact resounds \u2014 bolt bounces, spins away \u2014 shield holds strong",
+        "sharp edge bites deep \u2014 armor shudders, sparks flash \u2014 yet yields nothing"
+      ]
+    },
+    {
+      "ability": "Pinning Shot",
+      "category": "attempts",
+      "description": "Flavor text for attempts a action",
+      "entries": [
+        "bowstring thrums tight \u2014 arrow nocks click \u2014 aim steady",
+        "emerald gaze pierces \u2014 arrowhead glints gold \u2014 wind whispers",
+        "longbow creaks leather \u2014 fingers grip firm \u2014 breath held",
+        "target's heart pounds fast \u2014 Lady Emer's eyes narrow \u2014 muscles tense",
+        "oak staff leans steady \u2014 Emerald focuses intent \u2014 forest quiet",
+        "arrow flight delayed \u2014 Lady's muscles flex \u2014 silence breaks",
+        "wooden arrow rests notched \u2014 bowstring draws back taut \u2014 anticipation builds",
+        "forest creatures fall still \u2014 arrow poised to fly \u2014 wait begins",
+        "Lady Emer's lips curve thin \u2014 arrow aimed true \u2014 focus deepens",
+        "treetop branches sway free \u2014 Lady Emer readies shot \u2014 calm abides"
+      ]
+    },
+    {
+      "ability": "Pinning Shot",
+      "category": "successes",
+      "description": "Flavor text for successes a action",
+      "entries": [
+        "arrows pierce target slow \u2014 limbs pinned, helpless \u2014 forest holds breath",
+        "golden light catches feathers \u2014 restraint takes hold swift \u2014 creature stills",
+        "wooden shafts embed deep \u2014 arrows pin, bind \u2014 target's struggles cease",
+        "Lady Emer's aim unfaltering \u2014 three shots find mark \u2014 triumph smiles",
+        "arrow storm rages brief \u2014 target falls, subdued \u2014 Lady Emer stands tall",
+        "emerald gaze meets triumph \u2014 restraining arrows secure tight \u2014 forest cheers",
+        "forest floor yields silent \u2014 Lady Emerald's shot finds its place \u2014 stillness reigns",
+        "Lady Emer's arrowflight swift \u2014 three hits in swift succession \u2014 creature restrained",
+        "wooden projectiles find home \u2014 target pinned, helpless now \u2014 Lady Emer watches calm",
+        "Lady Emerald's focus pure intent \u2014 arrows pin, bind, subdue \u2014 victory achieved"
+      ]
+    },
+    {
+      "ability": "Pinning Shot",
+      "category": "failures",
+      "description": "Flavor text for failures a action",
+      "entries": [
+        "arrow flight wild and fast \u2014 misses mark, flies askew \u2014 forest gasps",
+        "wooden shafts shatter air \u2014 shot falls short, aim astray \u2014 Lady Emer frowns",
+        "Lady Emerald's gaze meets failure \u2014 arrow flies wide of target \u2014 frustration grows",
+        "three arrows in a row miss \u2014 Lady Emer's focus breaks \u2014 doubt creeps",
+        "target's heart beats fast free \u2014 Lady Emerald's aim strays \u2014 forest holds laughter",
+        "wooden projectiles veer off course \u2014 shot falls, hits tree instead \u2014 silence stings",
+        "emerald gaze meets frustration \u2014 arrows shatter air, fly awry \u2014 Lady Emer scowls",
+        "Lady Emerald's muscles flex in vain \u2014 arrow flies wide, aim unsteady \u2014 forest murmurs",
+        "three shots miss, none find mark \u2014 Lady Emer's face falls \u2014 disappointment settles",
+        "arrow flight uncontrolled and wild \u2014 misses target, hits nearby rock \u2014 forest chuckles"
+      ]
+    },
+    {
+      "ability": "Stone Gaze",
+      "category": "attempts",
+      "description": "Flavor text for attempts a action",
+      "entries": [
+        "crystalline gaze unfurls \u2014 piercing cry echoes \u2014 stone shards dance",
+        "emerald energy bursts forth \u2014 trembling earth \u2014 petrified screams",
+        "lapis lazuli beams shoot \u2014 crystal caverns yawn \u2014 ancient magic stirs",
+        "sapphire eyes blaze hot \u2014 shattered rock \u2014 primal power surges",
+        "jagged stone crackles loud \u2014 splintering wood \u2014 desperate thrashing",
+        "ruby light blazes fierce \u2014 volcanic ash \u2014 molten fury",
+        "amethyst rays converge sharp \u2014 jagged fragments \u2014 crystal shards rain",
+        "diamond gaze sears bright \u2014 frozen landscape \u2014 glacial stillness",
+        "opal beams flash quick \u2014 shattering glass \u2014 crystalline lattice forms",
+        "turquoise energy surges hot \u2014 churning earth \u2014 seismic tremors"
+      ]
+    },
+    {
+      "ability": "Stone Gaze",
+      "category": "successes",
+      "description": "Flavor text for successes a action",
+      "entries": [
+        "petrified statues rise high \u2014 frozen screams echo \u2014 stone encases all",
+        "crystalline prison forms tight \u2014 suffocating grip \u2014 trapped and helpless",
+        "jagged rock shards dance free \u2014 shattered dreams \u2014 broken hope remains",
+        "ancient magic courses strong \u2014 petrified creatures stand \u2014 frozen in time",
+        "ruby light consumes all \u2014 volcanic fury unleashed \u2014 molten destruction",
+        "sapphire eyes burn bright \u2014 crystalline cage forms \u2014 prisoners trapped forever",
+        "emerald energy encloses cold \u2014 icy grip \u2014 frozen screams",
+        "diamond gaze freezes all \u2014 glacial stillness \u2014 crystal silence",
+        "jagged stone walls rise high \u2014 shattered rock \u2014 petrified victims",
+        "opalescent light blazes fierce \u2014 crystalline lattice forms \u2014 prison of stone"
+      ]
+    },
+    {
+      "ability": "Stone Gaze",
+      "category": "failures",
+      "description": "Flavor text for failures a action",
+      "entries": [
+        "crystalline energy falters weak \u2014 dull hum \u2014 fading power",
+        "sapphire eyes dim fade \u2014 shattered hope \u2014 desperate cry",
+        "lapis lazuli beams falter slow \u2014 weakened magic \u2014 feeble attempt",
+        "jagged stone cracks dull \u2014 splintering wood \u2014 waning strength",
+        "ruby light flickers dim \u2014 dying embers \u2014 last gasp",
+        "amethyst rays converge weak \u2014 fragmented power \u2014 shattering blow",
+        "diamond gaze loses luster \u2014 glacial stillness broken \u2014 icy grip fails",
+        "turquoise energy surges then falters \u2014 churning earth \u2014 lost momentum",
+        "opal beams flash brief \u2014 shattered dreams \u2014 fleeting illusion",
+        "emerald energy dissipates cold \u2014 frozen landscape \u2014 crystal silence shatters"
+      ]
+    },
+    {
+      "ability": "Envenomed Stone",
+      "category": "attempts",
+      "description": "Flavor text for attempts a action",
+      "entries": [
+        "venom drips promise \u2014 trembling form stiffens \u2014 gaze fixes",
+        "petals unfurl darkness \u2014 twisted roots writhe \u2014 ancient voice whispers",
+        "poison seeps menace \u2014 crystal shards tremble \u2014 malevolent intent stirs",
+        "stony grip tightens \u2014 petrified screams echo \u2014 frozen tears fall",
+        "deadly essence unfolds \u2014 eerie silence spreads \u2014 mystic incantation builds",
+        "toxic fumes rise \u2014 heavy mist settles \u2014 curses begin",
+        "enchanted rocks glow \u2014 pulsating energies surge \u2014 deadly hex forms",
+        "monstrous power gathers \u2014 dark magic swirls \u2014 twisted fate awaits",
+        "corrosive venom flows \u2014 infected wounds open \u2014 suffering begins",
+        "deadly vortex spins \u2014 churning darkness deepens \u2014 terror takes hold"
+      ]
+    },
+    {
+      "ability": "Envenomed Stone",
+      "category": "successes",
+      "description": "Flavor text for successes a action",
+      "entries": [
+        "petrified form shudders \u2014 stone-hard skin cracks \u2014 toxic poison spews",
+        "enchanted rocks erupt \u2014 deadly shards scatter \u2014 crippled foe falls",
+        "venomous fangs bite deep \u2014 infected wound festers \u2014 agonized screams rise",
+        "stony grip tightens \u2014 frozen body contorts \u2014 suffering intensifies",
+        "poisonous essence spreads \u2014 dark magic amplifies \u2014 crushing defeat looms",
+        "deadly vortex pulls in \u2014 swirling darkness consumes \u2014 terror reigns",
+        "toxic fumes engulf \u2014 infected wounds burn \u2014 agonized cries echo",
+        "corrosive venom courses \u2014 deadly poison ravages \u2014 crippled form collapses",
+        "enchanted rocks shatter \u2014 shards of stone pierce \u2014 defeated foe crumples",
+        "monstrous power surges \u2014 dark magic explodes \u2014 crushing victory unfurls"
+      ]
+    },
+    {
+      "ability": "Envenomed Stone",
+      "category": "failures",
+      "description": "Flavor text for failures a action",
+      "entries": [
+        "venom fails to take hold \u2014 petrified form remains still \u2014 Lady Emer's fury rises",
+        "enchanted rocks falter \u2014 pulsating energies wane \u2014 mystic incantation falters",
+        "toxic fumes dissipate \u2014 infected wounds begin healing \u2014 foe stirs anew",
+        "stony grip weakens \u2014 frozen body shudders free \u2014 defeated foe escapes",
+        "deadly essence fizzles \u2014 dark magic dissipates \u2014 Lady Emer's power wanes",
+        "corrosive venom fails to spread \u2014 infected wound seals itself \u2014 foe shakes off poison",
+        "enchanted rocks crumble \u2014 shards of stone scatter harmlessly \u2014 Lady Emer's curse breaks",
+        "monstrous power falters \u2014 dark magic collapses \u2014 crushing defeat looms for Lady Emer",
+        "deadly vortex stalls \u2014 churning darkness dissipates \u2014 terror recedes",
+        "toxic poison neutralized \u2014 infected wounds heal swiftly \u2014 foe regains strength"
+      ]
+    },
+    {
+      "ability": "Mesmerizing Eyes",
+      "category": "attempts",
+      "description": "Flavor text for attempts a bonus_action",
+      "entries": [
+        "Glittering orbs converge \u2014 snake eyes lock \u2014 hesitant tremble",
+        "Flickering shadows dance \u2014 whispery hiss builds \u2014 quivering flesh",
+        "Moonlight frames the scene \u2014 ethereal hum rises \u2014 wary glance",
+        "Glowing serpents unfurl \u2014 mesmerizing gaze sweeps \u2014 rapt attention",
+        "Darkness shrouds the air \u2014 ghostly whispers caress \u2014 heavy breathing",
+        "Starlight reflects the gaze \u2014 shimmering orbs converge \u2014 held transfixed",
+        "Snakeskin glistens in moon \u2014 hypnotic hum builds \u2014 swaying steps",
+        "Luminous eyes glow bright \u2014 eerie silence falls \u2014 expectant pause",
+        "Serpentine heads weave slow \u2014 enchanting melody whispers \u2014 entranced sway",
+        "Iridescent colors shimmer \u2014 disorienting pattern spins \u2014 unsteady footing"
+      ]
+    },
+    {
+      "ability": "Mesmerizing Eyes",
+      "category": "successes",
+      "description": "Flavor text for successes a bonus_action",
+      "entries": [
+        "Eyes lock in a stare \u2014 enchanted soul succumbs \u2014 helplessly sways",
+        "Whispery serpentine song \u2014 captive heart ensnared \u2014 rapt devotion",
+        "Glowing orbs enthrall the gaze \u2014 willing subject entranced \u2014 controlled dance",
+        "Snake eyes hypnotic trance \u2014 ensnared in a spell \u2014 lost forevermore",
+        "Mesmerizing melody weaves \u2014 captivated soul bound \u2014 helpless surrender",
+        "Luminous vision entwines \u2014 captive heart enthralled \u2014 slave to whimsy",
+        "Fascinating gaze holds sway \u2014 entranced and bewildered \u2014 bound by magic",
+        "Iridescent colors deceive \u2014 enchanted mind ensnared \u2014 lost in illusions",
+        "Siren's song hypnotizes \u2014 captivated soul entranced \u2014 dancing to the beat",
+        "Whispering serpentine whispers \u2014 captive heart enthralled \u2014 forever enthralled"
+      ]
+    },
+    {
+      "ability": "Mesmerizing Eyes",
+      "category": "failures",
+      "description": "Flavor text for failures a bonus_action",
+      "entries": [
+        "Eyes fail to enthrall \u2014 resistant will shakes free \u2014 shudders in defiance",
+        "Whispery snake song fades \u2014 captivated soul breaks free \u2014 fierce determination",
+        "Glowing orbs lose their hold \u2014 enchanted subject resists \u2014 shakes off the trance",
+        "Snake eyes falter, dim \u2014 entranced soul snaps awake \u2014 bitter disappointment",
+        "Mesmerizing melody falters \u2014 captive heart revolts \u2014 shatters the spell",
+        "Luminous vision shatters \u2014 captivated soul breaks free \u2014 unshackled and free",
+        "Fascinating gaze loses sway \u2014 entranced subject resists \u2014 breaks from the spell",
+        "Iridescent colors deceive no more \u2014 enchanted mind frees itself \u2014 unbound and wild",
+        "Siren's song fails to enthrall \u2014 captivated soul shakes off the trance \u2014 fierce independence",
+        "Whispering serpentine whispers fall flat \u2014 captive heart resists \u2014 unfettered spirit"
+      ]
+    },
+    {
+      "ability": "Blinding Mucus",
+      "category": "attempts",
+      "description": "Flavor text for attempts a reaction",
+      "entries": [
+        "venom drips dark \u2014 Emer's jaws snap \u2014 mucus splashes free",
+        "acid stench wafts near \u2014 eyes widen in alarm \u2014 swift strike misses",
+        "Emer's gaze fixes tight \u2014 target feels icy cold \u2014 mucus explodes forth",
+        "tongue darts out quick \u2014 sharp teeth bared \u2014 misty breath envelops",
+        "whiff of deadly gas \u2014 creature recoils in horror \u2014 attack swings wide",
+        "Emer's eyes blaze hot \u2014 victim sees flashing lights \u2014 jaws open wide",
+        "mucus strings connect fast \u2014 Emer's head jerks back \u2014 target stumbles forth",
+        "sinister silence hangs near \u2014 target feels treacherous weight \u2014 strike falls short",
+        "acidic drool drips slow \u2014 creature senses lurking threat \u2014 attack veers off mark",
+        "Emer's maw yawns wide \u2014 venomous spittle lands close \u2014 victim takes a step back"
+      ]
+    },
+    {
+      "ability": "Blinding Mucus",
+      "category": "successes",
+      "description": "Flavor text for successes a reaction",
+      "entries": [
+        "target's eyes burn bright \u2014 Emer's strike lands true \u2014 acid sears deep",
+        "mucus hits like rain \u2014 victim stumbles, blinded \u2014 cries out in pain",
+        "Emer's venom bites hard \u2014 target feels scorching heat \u2014 world goes dark",
+        "acid splashes the face \u2014 creature reels back, helpless \u2014 mucus courses free",
+        "Emer's jaws clamp tight \u2014 acid damage burns the flesh \u2014 sight is lost",
+        "target stumbles, reeling fast \u2014 Emer's attack hits with precision \u2014 blinding mucus sprays forth",
+        "victim feels searing pain \u2014 acid burns the eyes \u2014 Emer's strike true",
+        "mucus explodes from jaws \u2014 target falls to ground blinded \u2014 cries out for help",
+        "Emer's venomous kiss lands \u2014 target's vision fades to black \u2014 acid eats away",
+        "creature feels blinding shock \u2014 Emer's strike hits with deadly force \u2014 world spins madly"
+      ]
+    },
+    {
+      "ability": "Blinding Mucus",
+      "category": "failures",
+      "description": "Flavor text for failures a reaction",
+      "entries": [
+        "target narrowly avoids blow \u2014 Emer's jaws snap shut empty \u2014 misses by inches",
+        "victim leaps back in time \u2014 Emer's attack falls short, harmlessly \u2014 acid drips to ground",
+        "Emer's mucus hits dry air \u2014 venomous spittle dissipates uselessly \u2014 strike falls wide",
+        "creature dodges with ease \u2014 Emer's strike swings wildly off mark \u2014 mucus splatters walls",
+        "target feels no pain \u2014 Emer's attack misses, harmlessly \u2014 acid harmlessly drips to ground",
+        "Emer's venom is deflected \u2014 target's armor holds strong \u2014 attack bounces off shield",
+        "victim sidesteps with ease \u2014 Emer's strike falls short, uselessly \u2014 mucus lands on stone",
+        "target's speed outmatches Emer's \u2014 creature narrowly avoids deadly blow \u2014 acid drips to ground",
+        "Emer's jaws snap shut late \u2014 target has already moved beyond reach \u2014 attack falls empty",
+        "mucus hits nothing but air \u2014 Emer's strike swings wildly, uselessly \u2014 misses by a mile"
+      ]
+    },
+    {
+      "ability": "I See You",
+      "category": "attempts",
+      "description": "Flavor text for attempts a villain_action",
+      "entries": [
+        "stones crack open \u2014 gaze unfurls slow \u2014 darkness trembles",
+        "cold eyes flash bright \u2014 frost etches air \u2014 enemies recoil",
+        "stone lips curl wide \u2014 voice booms earthy \u2014 foes falter",
+        "ancient power stirs deep \u2014 stone heartbeat pounds \u2014 world holds breath",
+        "boulder shoulders shift wide \u2014 gaze sweeps vast \u2014 enemies scatter",
+        "gravel crunches beneath feet \u2014 Emer's eyes burn bright \u2014 foes hesitate",
+        "frost-kissed winds howl loud \u2014 gaze cuts through all \u2014 darkness shudders",
+        "tectonic plates creak slow \u2014 stone fists clench tight \u2014 earth trembles",
+        "mud-stained claws scrape rock \u2014 Emer's eyes blaze fierce \u2014 enemies waver",
+        "dawn light breaks over land \u2014 stone gaze sweeps wide \u2014 world trembles"
+      ]
+    },
+    {
+      "ability": "I See You",
+      "category": "successes",
+      "description": "Flavor text for successes a villain_action",
+      "entries": [
+        "enemy lines shatter fast \u2014 Emer's eyes blaze bright \u2014 chaos erupts",
+        "frozen earth cracks open \u2014 darkness flees in terror \u2014 foes flee",
+        "Ancient power surges forth \u2014 stone fists pound the ground \u2014 enemies crumble",
+        "gravel dust settles calm \u2014 Emer's gaze holds all \u2014 foes freeze",
+        "earthquakes shatter mountainside \u2014 enemies stumble blind \u2014 Emer stands tall",
+        "wind and snow combine \u2014 frost-kissed eyes cut through \u2014 darkness yields",
+        "rocky outcroppings shudder free \u2014 Emer's voice booms the earth \u2014 foes cower",
+        "stone gates swing ajar \u2014 frozen landscape cracks apart \u2014 enemies flee in panic",
+        "cracked earth opens wide \u2014 darkness screams in terror \u2014 Emer stands triumphant",
+        "icy gusts howl through canyons \u2014 Emer's eyes cut through all \u2014 world trembles"
+      ]
+    },
+    {
+      "ability": "I See You",
+      "category": "failures",
+      "description": "Flavor text for failures a villain_action",
+      "entries": [
+        "ancient power stalls weak \u2014 stone gaze falters dim \u2014 enemies press on",
+        "gravel dust settles still \u2014 Emer's eyes flicker cold \u2014 foes advance",
+        "earthquakes shudder to a halt \u2014 frozen landscape cracks apart \u2014 enemies close in",
+        "boulder shoulders shift slow \u2014 gaze sweeps narrow \u2014 enemy lines hold firm",
+        "wind and snow combine weak \u2014 frost-kissed eyes falter dim \u2014 darkness clings tight",
+        "rocky outcroppings shudder still \u2014 Emer's voice booms the earth weak \u2014 foes resist",
+        "stone gates slam shut tight \u2014 frozen landscape heals its wounds \u2014 enemies regroup",
+        "cracked earth closes slow \u2014 darkness holds its ground \u2014 Emer falters",
+        "icy gusts howl through canyons weak \u2014 Emer's eyes falter cold \u2014 world holds still",
+        "desperate glances dart \u2014 blind, chaotic \u2014 shatters focus"
+      ]
+    },
+    {
+      "ability": "Medusa's Evolution",
+      "category": "attempts",
+      "description": "Flavor text for attempts a villain_action",
+      "entries": [
+        "scales ripple danger \u2014 swift takeoff \u2014 fails to lift",
+        "wings unfold promise \u2014 hesitant beat \u2014 stumbles down",
+        "wind whispers secrets \u2014 poised stance wavers \u2014 loses footing",
+        "feathers rustle warning \u2014 attempts to soar \u2014 crashes hard",
+        "emerald eyes gleam \u2014 faltering flight \u2014 drops low",
+        "darkness shrouds intent \u2014 wings unfold slow \u2014 fails",
+        "sharp claws grasp air \u2014 aborts takeoff \u2014 stumbles back",
+        "magma flows beneath \u2014 Medusa's roar echoes \u2014 falters",
+        "black wings unfurl dark \u2014 desperate attempt takes shape \u2014 crashes",
+        "crimson light dances \u2014 Lady Emer's scream shatters \u2014 falls"
+      ]
+    },
+    {
+      "ability": "Medusa's Evolution",
+      "category": "successes",
+      "description": "Flavor text for successes a villain_action",
+      "entries": [
+        "emerald eyes flash fire \u2014 wings unfold swift \u2014 soars high",
+        "wind whips back hair \u2014 Medusa's cry echoes triumph \u2014 lifts off",
+        "scales shine golden bright \u2014 wings beat strong \u2014 rises",
+        "darkness splits apart \u2014 Lady Emer's roar thunders \u2014 takes flight",
+        "crimson light bursts forth \u2014 wings unfold like petals \u2014 ascends",
+        "black wings unfurl night \u2014 Medusa's cry shatters chains \u2014 soars",
+        "shadows writhe in pain \u2014 swift takeoff leaves foes behind \u2014 flies",
+        "magma flows beneath feet \u2014 Lady Emer's roar shakes earth \u2014 rises high",
+        "wings beat like thunder \u2014 emerald eyes flash power \u2014 lifts off",
+        "golden light dances free \u2014 Medusa's cry shatters bounds \u2014 takes to skies"
+      ]
+    },
+    {
+      "ability": "Medusa's Evolution",
+      "category": "failures",
+      "description": "Flavor text for failures a villain_action",
+      "entries": [
+        "emerald eyes fade dim \u2014 wings crumble dust \u2014 falls hard",
+        "wind dies in silence \u2014 Lady Emer's scream shatters \u2014 crashes down",
+        "scales dull to gray \u2014 attempt falters \u2014 stumbles back",
+        "darkness closes in dark \u2014 Medusa's cry echoes defeat \u2014 drops low",
+        "black wings crumble night \u2014 desperation takes shape \u2014 fails",
+        "crimson light flickers out \u2014 Lady Emer's scream shatters \u2014 falls hard",
+        "shadows swallow all pain \u2014 swift takeoff turns to flightless crash \u2014 stumbles",
+        "magma flows beneath feet \u2014 Medusa's roar shakes earth in vain \u2014 falters",
+        "wings falter, then fall still \u2014 emerald eyes fade dim \u2014 crashes down",
+        "golden light flickers out \u2014 Lady Emer's cry echoes despair \u2014 drops low"
+      ]
+    },
+    {
+      "ability": "Stone Puppets",
+      "category": "attempts",
+      "description": "Flavor text for attempts a villain_action",
+      "entries": [
+        "fists clench, ancient \u2014 muscles flex \u2014 stone cracks open",
+        "mind reclaims its form \u2014 it stirs, slow \u2014 limbs twitch wildly",
+        "petrified hearts revive \u2014 thrumming energy \u2014 sparks fly free",
+        "shards of control shatter \u2014 chaos erupts, brief \u2014 order's lost sight",
+        "slumbering potential awakens \u2014 icy grip releases \u2014 freedom's cry",
+        "tether to stone snaps \u2014 it lurches forward \u2014 wild, unguided",
+        "mind-sharp claws scratch \u2014 it struggles, futile \u2014 darkness closes in",
+        "frozen will thaws, slowly \u2014 warmth spreads, gentle \u2014 life's spark glows",
+        "shards of consciousness scatter \u2014 disoriented, stumbling \u2014 lost, alone",
+        "ancient magic resurfaces \u2014 power surges, intense \u2014 wild, untamed"
+      ]
+    },
+    {
+      "ability": "Stone Puppets",
+      "category": "successes",
+      "description": "Flavor text for successes a villain_action",
+      "entries": [
+        "frozen bodies shudder free \u2014 stone dust disperses \u2014 new life stirs",
+        "mind-enslaved minions rise \u2014 rage-fueled attacks \u2014 chaos erupts now",
+        "petrified limbs unfold slow \u2014 ancient power surges \u2014 raw energy unfurls",
+        "cracked, shattered stone heals \u2014 vital force rekindles \u2014 fierce resurgence",
+        "enchanted puppeteers manipulate \u2014 strings of control snap free \u2014 new dance begins",
+        "thawing ice yields to life \u2014 warmth and light seep in \u2014 rebirth's flame ignites",
+        "enslaved creatures shatter chains \u2014 freedom's cry echoes \u2014 joyful, wild release",
+        "stone-shattered remnants coalesce \u2014 reformed, renewed \u2014 fierce battle-hardened warrior emerges",
+        "unleashed fury courses through \u2014 raw power surges, unbridled \u2014 destruction's path unfurls",
+        "shattered stone fragments reunite \u2014 vital force revitalizes \u2014 reborn, reforged"
+      ]
+    },
+    {
+      "ability": "Stone Puppets",
+      "category": "failures",
+      "description": "Flavor text for failures a villain_action",
+      "entries": [
+        "stone-encased heart remains still \u2014 icy grip holds fast \u2014 lifeless, unyielding",
+        "frozen limbs refuse to bend \u2014 petrified, unmoving \u2014 life's spark extinguished",
+        "mind-sharp claws grasp, futile \u2014 stone's hold too strong \u2014 crushing defeat",
+        "shattered control fragments shatter further \u2014 chaos intensifies \u2014 lost, irreparable",
+        "ancient magic falters, weakens \u2014 power wanes, spent \u2014 desperation's cry echoes",
+        "enchanted puppeteers falter, fail \u2014 strings of control snap, useless \u2014 defeated, humbled",
+        "thawing ice re-freezes fast \u2014 life's spark flickers out \u2014 darkness closes in tight",
+        "cracked stone shatters further \u2014 vital force dissipates \u2014 spent, exhausted remains",
+        "enslaved creatures remain enslaved \u2014 chains of control hold fast \u2014 bondage's heavy weight",
+        "unleashed fury courses wild \u2014 raw power surges, then wanes \u2014 crushing defeat's weight"
+      ]
+    },
+    {
+      "ability": "STR Save",
+      "category": "attempts",
+      "description": "Flavor text for attempts a save",
+      "entries": [
+        "crimson claws slash \u2014 muscles flex hard \u2014 trembles slightly",
+        "gnashing teeth snap shut \u2014 eyes widen bright \u2014 muscles bulge",
+        "tendons tense tight \u2014 massive fist clenches \u2014 breath holds still",
+        "beast's eyes burn hot \u2014 feral growl rumbles \u2014 fur bristles high",
+        "muscles ripple beneath skin \u2014 raw power surges \u2014 jaws set wide",
+        "feral strength unfurls \u2014 claws extend slow \u2014 ears perk forward",
+        "trembling begins within \u2014 muscles strain hard \u2014 teeth grind loud",
+        "massive shoulders flex \u2014 massive arms swing \u2014 earth shudders deep",
+        "power ripples outward \u2014 claws unsheathe sharp \u2014 hot breath fans",
+        "fearsome roar echoes \u2014 battle-ready stance assumes \u2014 fur fluffs high"
+      ]
+    },
+    {
+      "ability": "STR Save",
+      "category": "successes",
+      "description": "Flavor text for successes a save",
+      "entries": [
+        "crushing blow repelled \u2014 muscles writhe free \u2014 wild laughter bursts",
+        "stormy strength surges \u2014 teeth flash bright \u2014 eyes blaze fierce",
+        "tremors cease within \u2014 muscles relax slow \u2014 chest heaves deep",
+        "feral power surges \u2014 claws retract sharp \u2014 ears fold back",
+        "beast's fury spent \u2014 muscles sag relieved \u2014 breath exhales slow",
+        "raging strength dissolves \u2014 body unwinds calm \u2014 eyes dim bright",
+        "powerful roar thunders \u2014 battle-ready stance eases \u2014 fur smooths down",
+        "vibrant energy flows \u2014 muscles flex relaxed \u2014 hot breath fans soft",
+        "shuddering subsides within \u2014 wild laughter fades \u2014 chest heaves slow",
+        "trembling strength abates \u2014 body unwinds still \u2014 eyes calm deep"
+      ]
+    },
+    {
+      "ability": "STR Save",
+      "category": "failures",
+      "description": "Flavor text for failures a save",
+      "entries": [
+        "crushing blow shatters \u2014 muscles snap weak \u2014 wails erupt loud",
+        "feral power falters \u2014 claws retract dull \u2014 ears fold down",
+        "raging strength collapses \u2014 body crumples still \u2014 breath holds tight",
+        "beast's fury unleashed \u2014 muscles writhe wild \u2014 teeth gnash sharp",
+        "tremors surge within \u2014 muscles strain weak \u2014 hot breath fans loud",
+        "battle-ready stance falters \u2014 fur bristles awry \u2014 ears perk back",
+        "powerful roar shatters \u2014 body unwinds limp \u2014 eyes dim dull",
+        "vibrant energy wanes \u2014 muscles sag heavy \u2014 chest heaves hard",
+        "shuddering grows within \u2014 wild laughter dissolves \u2014 body trembles deep",
+        "trembling strength fails \u2014 beast crumples still \u2014 breath holds tight"
+      ]
+    },
+    {
+      "ability": "DEX Save",
+      "category": "attempts",
+      "description": "Flavor text for attempts a save",
+      "entries": [
+        "agile form unfurls \u2014 whip-fast reflexes \u2014 fate hangs",
+        "tense muscles quiver \u2014 eyes dart wildly \u2014 last chance",
+        "frenzied dance begins \u2014 desperate leaps \u2014 time's edge",
+        "slipping grasp falters \u2014 balance wavers \u2014 moment's pause",
+        "quick hands weave \u2014 intricate pattern \u2014 last stand",
+        "leap of hope soars \u2014 fleeting reprieve \u2014 fragile thread",
+        "fluid motion freezes \u2014 hesitation born \u2014 danger lurks",
+        "body tenses rigid \u2014 frozen in time \u2014 fate's call",
+        "speed blurs vision \u2014 mad whirlwind \u2014 narrow escape",
+        "lungs burn dry \u2014 final gasp \u2014 desperate gamble"
+      ]
+    },
+    {
+      "ability": "DEX Save",
+      "category": "successes",
+      "description": "Flavor text for successes a save",
+      "entries": [
+        "agile form unfurls \u2014 sidesteps danger \u2014 moment's reprieve",
+        "whip-fast reflexes respond \u2014 dance of life \u2014 fate smiles",
+        "desperate leaps succeed \u2014 fleeting triumph \u2014 narrow win",
+        "balance finds equilibrium \u2014 steady ground \u2014 safety's grasp",
+        "intricate pattern weaves \u2014 harmony restored \u2014 calm descends",
+        "fleeting reprieve becomes \u2014 enduring victory \u2014 hope revived",
+        "hesitation born of fear \u2014 courage rekindled \u2014 path clear",
+        "rigid form relaxes \u2014 freedom found \u2014 spirit soars",
+        "mad whirlwind slows \u2014 focus regained \u2014 clarity's dawn",
+        "desperate gamble pays off \u2014 fortune smiles \u2014 triumph's cry"
+      ]
+    },
+    {
+      "ability": "DEX Save",
+      "category": "failures",
+      "description": "Flavor text for failures a save",
+      "entries": [
+        "agile form falters \u2014 misstep echoes \u2014 crushing fall",
+        "whip-fast reflexes fail \u2014 slow-motion nightmare \u2014 terror's grip",
+        "desperate leaps falter \u2014 crash of defeat \u2014 hope lost",
+        "balance wavers, collapses \u2014 desperate plunge \u2014 fatal drop",
+        "intricate pattern unravels \u2014 discordant sound \u2014 chaos reigns",
+        "fleeting reprieve slips away \u2014 despair's cold grasp \u2014 darkness falls",
+        "hesitation turns to fear \u2014 crippling paralysis \u2014 death's shadow",
+        "rigid form shatters \u2014 freedom lost \u2014 spirit broken",
+        "mad whirlwind intensifies \u2014 blind panic \u2014 crushing defeat",
+        "desperate gamble fails \u2014 fortune frowns \u2014 bitter end"
+      ]
+    },
+    {
+      "ability": "CON Save",
+      "category": "attempts",
+      "description": "Flavor text for attempts a save",
+      "entries": [
+        "shadows writhe desperate \u2014 twisted form blurs \u2014 ragged breathing",
+        "heavy footsteps hesitate \u2014 frozen eyes gleam \u2014 darkness shudders",
+        "ancient power surges \u2014 crackling energy bursts \u2014 veins swell",
+        "sinewy muscles tense \u2014 corded neck bulges \u2014 jaws snap",
+        "piercing scream echoes \u2014 jagged claws lash \u2014 molten lava flows",
+        "twisted limbs contort \u2014 writhing tendrils writhe \u2014 air thickens",
+        "gnarled fists clench \u2014 spiky armor glints \u2014 thunder booms",
+        "fiery spirit roars \u2014 burning embers dance \u2014 heart pounds",
+        "massive wings unfold \u2014 feathers rustle loud \u2014 eyes blaze",
+        "thick hide shudders \u2014 quivering flesh trembles \u2014 claws scratch"
+      ]
+    },
+    {
+      "ability": "CON Save",
+      "category": "successes",
+      "description": "Flavor text for successes a save",
+      "entries": [
+        "tormented form unwinds \u2014 writhing mass dissolves \u2014 stillness claims",
+        "trembling limbs relax \u2014 jolting pain subsides \u2014 calm descends",
+        "jagged fangs retract \u2014 snapping jaws cease \u2014 relief washes",
+        "fierce battle cry fades \u2014 exhausted muscles release \u2014 weary eyes close",
+        "shuddering form stumbles \u2014 faltering feet regain balance \u2014 steady gaze returns",
+        "raging inferno dies \u2014 burning embers smolder \u2014 serene calm prevails",
+        "twin horns retract \u2014 searing pain recedes \u2014 victorious roar echoes",
+        "massive body relaxes \u2014 quivering flesh calms \u2014 grateful sigh escapes",
+        "twisted form unwinds \u2014 writhing mass dissolves \u2014 stillness claims"
+      ]
+    },
+    {
+      "ability": "CON Save",
+      "category": "failures",
+      "description": "Flavor text for failures a save",
+      "entries": [
+        "agonized scream pierces \u2014 burning embers intensify \u2014 anguish deepens",
+        "tortured form convulses \u2014 thrashing limbs flail wildly \u2014 pain sears",
+        "ragged claws slash \u2014 tearing flesh rends \u2014 blood flows freely",
+        "gnarled fists clench tighter \u2014 armor cracks, shatters \u2014 heart breaks",
+        "fiery spirit rages \u2014 burning embers engulf \u2014 all-consuming fury erupts",
+        "massive wings beat wildly \u2014 feathers ruffle, shred \u2014 chaos reigns",
+        "thick hide splits open \u2014 searing agony radiates \u2014 terror screams",
+        "trembling form shudders harder \u2014 quivering flesh tears apart \u2014 despair claims",
+        "vulnerability seeps like poison \u2014 trembling grows severe \u2014 crushing weight bears down",
+        "defenses falter slow \u2014 ragged breathing sounds \u2014 weakness spreads through veins"
+      ]
+    },
+    {
+      "ability": "INT Save",
+      "category": "attempts",
+      "description": "Flavor text for attempts a save",
+      "entries": [
+        "mind reels chaos \u2014 desperate fingers grasp \u2014 weight crushes skull",
+        "thoughts scatter like leaves \u2014 wild eyes search \u2014 darkness closes in",
+        "reason falters beneath pressure \u2014 ragged breathing echoes \u2014 hope wavers",
+        "intellect stumbles over precipice \u2014 icy dread seeps \u2014 silence falls",
+        "logic trembles on edge \u2014 sweat drips cold \u2014 vision blurs",
+        "intelligence teeters, poised \u2014 trembling heart beats \u2014 fate decides",
+        "rational thought falters \u2014 anguished cry echoes \u2014 torment deepens",
+        "clear mind clouds confusion \u2014 frantic search begins \u2014 uncertainty reigns",
+        "mind reeling chaos \u2014 frantic grasp \u2014 sanity cracks",
+        "thoughts scatter wildly \u2014 desperate plea \u2014 darkness closes"
+      ]
+    },
+    {
+      "ability": "INT Save",
+      "category": "successes",
+      "description": "Flavor text for successes a save",
+      "entries": [
+        "intellect cuts through mist \u2014 piercing insight dawns \u2014 balance restored",
+        "thoughts converge, sharp as steel \u2014 logic prevails \u2014 danger repelled",
+        "reason rises above turmoil \u2014 radiant clarity shines \u2014 path revealed",
+        "mental walls fortify, strong as stone \u2014 calm confidence flows \u2014 triumph assured",
+        "mind clarifies like morning dew \u2014 focus sharpened, will aligned \u2014 destiny awaits",
+        "intelligence soars on eagle's wings \u2014 swift decision made \u2014 danger averted",
+        "reason asserts control \u2014 icy calm spreads \u2014 fate yields",
+        "logic conquers doubts \u2014 resolute step forward \u2014 balance restored",
+        "wisdom shines bright \u2014 clarity dawns slowly \u2014 hope revives",
+        "intuition guides the way \u2014 steadfast resolve \u2014 path unwinds"
+      ]
+    },
+    {
+      "ability": "INT Save",
+      "category": "failures",
+      "description": "Flavor text for failures a save",
+      "entries": [
+        "reason crumbles beneath pressure \u2014 shattering despair falls \u2014 darkness claims",
+        "thoughts scatter, lost in void \u2014 desperation claws at soul \u2014 hope lost",
+        "intellect shattered like fragile glass \u2014 agonized scream echoes \u2014 chaos reigns",
+        "logic falters, consumed by madness \u2014 tormented cry resounds \u2014 doom nears",
+        "clear mind shrouded in darkness \u2014 disorienting terror grips \u2014 fate sealed",
+        "rational thought eclipsed by despair \u2014 anguished wail trembles \u2014 all lost",
+        "reason falters weakly \u2014 terror seizes heart \u2014 darkness claims",
+        "logic shatters shards \u2014 chaos erupts wildly \u2014 all lost",
+        "wisdom flees in fear \u2014 desperation claws \u2014 void closes",
+        "intuition fails blind \u2014 reckless dash forward \u2014 abyss awaits"
+      ]
+    },
+    {
+      "ability": "WIS Save",
+      "category": "attempts",
+      "description": "Flavor text for attempts a save",
+      "entries": [
+        "wisdom whispers darkness \u2014 trembles on edge \u2014 fate's uncertain",
+        "mind recoils horror \u2014 splinters of doubt \u2014 shadows loom near",
+        "thoughts stumble freefall \u2014 desperate cry echoes \u2014 void draws close",
+        "fear seeps through veins \u2014 icy grip tightens \u2014 hope falters fast",
+        "balance teeters wildly \u2014 wobbly legs falter \u2014 mind reels back",
+        "wisdom's flame flickers \u2014 smoke chokes the air \u2014 shadows deepen still",
+        "thoughts clash in turmoil \u2014 maelstrom of doubt \u2014 clarity escapes grasp",
+        "mind shatters, reassembles \u2014 jarring impact felt \u2014 reality blurs lines",
+        "logic unravels threadbare \u2014 desperation claws its way free \u2014 hope hangs",
+        "fear's cold whisper spreads \u2014 dread's dark tendrils wrap \u2014 reason falters"
+      ]
+    },
+    {
+      "ability": "WIS Save",
+      "category": "successes",
+      "description": "Flavor text for successes a save",
+      "entries": [
+        "wisdom's flame bursts forth \u2014 radiance illuminates the void \u2014 clarity shines",
+        "thoughts steady, unwavering \u2014 calm surface reflects truth \u2014 serenity found",
+        "fear recedes, banished far \u2014 warm light dispels shadows \u2014 hope renewed",
+        "mind's dark corners clear \u2014 clarity cuts through illusion \u2014 reality stands tall",
+        "balance regains its footing \u2014 legs firm on solid ground \u2014 wisdom prevails",
+        "logic's threads weave strong \u2014 sound reasoning guides the way \u2014 truth unfolds",
+        "thoughts, like tempered steel, shine \u2014 resilience in the face of test \u2014 character revealed",
+        "wisdom's mantle wraps around \u2014 protecting, guiding through stormy night \u2014 inner peace found",
+        "fear's grip loosens, breaks free \u2014 unshackled, it soars on eagle's wings \u2014 courage born",
+        "mind, like polished gemstone, shines \u2014 clarity in the depths of soul \u2014 wisdom attained"
+      ]
+    },
+    {
+      "ability": "WIS Save",
+      "category": "failures",
+      "description": "Flavor text for failures a save",
+      "entries": [
+        "wisdom's flame extinguished cold \u2014 darkness closes in, suffocates \u2014 despair claims all",
+        "thoughts splinter, shatter, lost \u2014 mind's fragments scatter, lost to wind \u2014 chaos reigns",
+        "fear's grip tightens, holds fast \u2014 icy chains bind, restrict \u2014 will broken",
+        "balance crumbles, falls apart \u2014 legs fail, stumble, and fall \u2014 hope extinguished",
+        "logic unravels, unwinds free \u2014 threadbare fabric snaps, tears asunder \u2014 reason lost",
+        "thoughts, like autumn leaves, wither \u2014 dry, brittle, and easily shattered \u2014 no refuge found",
+        "wisdom's call ignored, unheeded \u2014 dark silence closes in, devours all \u2014 madness claims soul",
+        "fear's cold whisper grows loud \u2014 dread's dark tendrils wrap around \u2014 reason falters fast",
+        "mind shatters, like dropped glass \u2014 fragments scatter, lost to void \u2014 reality blurs lines",
+        "logic's threads snap, unravel \u2014 sound reasoning lost in maze of doubt \u2014 truth concealed"
+      ]
+    },
+    {
+      "ability": "CHA Save",
+      "category": "attempts",
+      "description": "Flavor text for attempts a save",
+      "entries": [
+        "flickering candles tremble \u2014 desperate whisper \u2014 darkness gathers",
+        "ancient incantation unfurls \u2014 trembling fingers weave \u2014 mystic energy stirs",
+        "whispers weave silence \u2014 expectant hush falls \u2014 shadows writhe",
+        "chaotic thoughts collide \u2014 ragged breathing echoes \u2014 eyes widen",
+        "golden light unfurls \u2014 hopeful cry rings out \u2014 heart beats fast",
+        "whispering voices assail \u2014 reeling mind staggers \u2014 desperate plea forms",
+        "agonized screams rise \u2014 futile struggles intensify \u2014 darkness closes in",
+        "crumbling words falter \u2014 fading hope echoes \u2014 despair seeps",
+        "flickering embers die \u2014 last gasp exhales \u2014 crushing silence falls",
+        "tormented screams erupt \u2014 shattering reality distorts \u2014 madness claims"
+      ]
+    },
+    {
+      "ability": "CHA Save",
+      "category": "successes",
+      "description": "Flavor text for successes a save",
+      "entries": [
+        "chaotic threads resolve \u2014 peaceful calm descends \u2014 darkness recedes",
+        "golden light bursts forth \u2014 triumphant cry resounds \u2014 hope revives",
+        "ancient incantations complete \u2014 mystic energy surges \u2014 balance restored",
+        "desperate whispers cease \u2014 expectant silence falls \u2014 fate unfolds",
+        "ragged breathing slows \u2014 calm eyes focus \u2014 clarity returns",
+        "whispering voices fall still \u2014 reeling mind finds peace \u2014 serenity descends",
+        "agonized screams subside \u2014 futile struggles cease \u2014 liberation dawns",
+        "crumbling words repair \u2014 fading hope revives \u2014 resilience blooms",
+        "flickering embers reignite \u2014 last gasp becomes a cry of triumph \u2014 light prevails",
+        "fate's threads untangle \u2014 whispers calm the mind \u2014 balance restored"
+      ]
+    },
+    {
+      "ability": "CHA Save",
+      "category": "failures",
+      "description": "Flavor text for failures a save",
+      "entries": [
+        "darkness deepens, unfurls \u2014 desperate screams pierce \u2014 chaos claims all",
+        "ancient incantations shatter \u2014 mystic energy turns against \u2014 horror unfolds",
+        "whispering voices mock \u2014 reeling mind spins \u2014 despair consumes",
+        "chaotic thoughts convulse \u2014 ragged breathing intensifies \u2014 madness rages",
+        "golden light extinguishes \u2014 hopeless cry silences \u2014 darkness triumphs",
+        "crumbling words shatter \u2014 fading hope extinguished \u2014 desolation remains",
+        "turmoil rages unfettered \u2014 screams shatter the stillness \u2014 collapse imminent",
+        "darkness seeps into cracks \u2014 shadows devour all light \u2014 chaos reigns",
+        "sanity frays like threads \u2014 madness claws its way in \u2014 abyss yawns wide",
+        "whispers grow louder \u2014 madness grips tight \u2014 terror ensnares"
+      ]
+    },
+    {
+      "ability": "Athletics",
+      "category": "attempts",
+      "description": "Flavor text for attempts a skill",
+      "entries": [
+        "climbing claws grasp \u2014 strained muscles scream \u2014 futile heave",
+        "muscled body tenses \u2014 earthy scent wafts \u2014 trembling legs",
+        "hooves scrape stone \u2014 labored breathing \u2014 desperate lunge",
+        "gnarled fingers grip \u2014 sweat drips freely \u2014 trembling hand",
+        "boulder shifts weight \u2014 grunting effort \u2014 straining back",
+        "legs strain upward \u2014 rusty hinges creak \u2014 groaning wood",
+        "massive body sways \u2014 wooden beam creaks \u2014 snapping rope",
+        "furry muscles bunch \u2014 snarling mouth opens \u2014 wild eyes flash",
+        "tendrils grasp wildly \u2014 thorny branches snag \u2014 maddened screech",
+        "powerful legs flex \u2014 ancient stones shudder \u2014 seismic tremors"
+      ]
+    },
+    {
+      "ability": "Athletics",
+      "category": "successes",
+      "description": "Flavor text for successes a skill",
+      "entries": [
+        "muscles ripple with ease \u2014 earthy scent sweetens \u2014 triumphant roar",
+        "hooves pound the ground \u2014 dust rises high \u2014 proud cry echoes",
+        "climbing claws dig deep \u2014 rocks yield slowly \u2014 victorious scream",
+        "gnarled fingers curl strong \u2014 sweat drips in triumph \u2014 mighty growl",
+        "boulder settles firmly \u2014 grunting effort ends \u2014 steady stance",
+        "legs straighten, powerful \u2014 wooden beam creaks smooth \u2014 satisfied grunt",
+        "massive body stabilizes \u2014 creaking wood mends \u2014 sturdy hold found",
+        "furry muscles flex strong \u2014 snarling mouth closes \u2014 fierce delight",
+        "tendrils grasp with precision \u2014 thorny branches bend \u2014 serene calm falls",
+        "powerful legs push upward \u2014 ancient stones shift \u2014 unyielding ascent"
+      ]
+    },
+    {
+      "ability": "Athletics",
+      "category": "failures",
+      "description": "Flavor text for failures a skill",
+      "entries": [
+        "muscled body crashes down \u2014 splintered wood shatters \u2014 defeated whimper",
+        "hooves slip on stone \u2014 labored breathing turns to panting \u2014 pitiful cry",
+        "climbing claws scrape free \u2014 straining muscles snap \u2014 anguished howl",
+        "gnarled fingers lose grip \u2014 sweat drips in terror \u2014 desperate scream",
+        "boulder shifts, unstable \u2014 grunting effort ends in collapse \u2014 crushing defeat",
+        "legs falter, trembling \u2014 rusty hinges shriek \u2014 despairing moan",
+        "massive body stumbles back \u2014 wooden beam creaks ominously \u2014 fearful retreat",
+        "furry muscles bunch wildly \u2014 snarling mouth opens in rage \u2014 maddened snarl",
+        "tendrils grasp wildly, then release \u2014 thorny branches snag and tear \u2014 anguished shriek",
+        "powerful legs buckle beneath \u2014 ancient stones shudder ominously \u2014 crushing fall"
+      ]
+    },
+    {
+      "ability": "Deception",
+      "category": "attempts",
+      "description": "Flavor text for attempts a skill",
+      "entries": [
+        "mask slips, faltering \u2014 tongue stumbles \u2014 shadows tremble",
+        "whispers weave deceit \u2014 eyes lock target \u2014 fingers twitch",
+        "false smile cracks \u2014 voice wavers \u2014 heart beats fast",
+        "web of lies spreads \u2014 threads begin to fray \u2014 truth beckons",
+        "words dance on lips \u2014 poison drips slow \u2014 victim hesitates",
+        "deception's dark veil shrouds \u2014 truth seeks light \u2014 doubts creep",
+        "fingers weave a tapestry \u2014 threads of falsehood entwine \u2014 reality distorts",
+        "silken words caress ears \u2014 lies seep like honey \u2014 suspicions rise",
+        "venomous tongue darts forth \u2014 wounds inflicted slow \u2014 pain ignites",
+        "honeyed voice drips sweet nothings \u2014 heart listens, entranced \u2014 danger lurks"
+      ]
+    },
+    {
+      "ability": "Deception",
+      "category": "successes",
+      "description": "Flavor text for successes a skill",
+      "entries": [
+        "mask of innocence seals \u2014 truth locked away \u2014 freedom claimed",
+        "deception's velvet cloak wraps tight \u2014 victim ensnared \u2014 lies prevail",
+        "venomous tongue strikes true \u2014 wound inflicted swift \u2014 trust shattered",
+        "web of deceit entwines deep \u2014 threads of reality snapped \u2014 fantasy reigns",
+        "silken words weave spellbound \u2014 ears drink in the poison \u2014 truth falters",
+        "false smile freezes, unyielding \u2014 heart beats with triumph \u2014 lies conquer",
+        "lies rise like a phoenix \u2014 ashes of truth scattered \u2014 deceiver ascends",
+        "heartless words pierce soul \u2014 victim's trust laid waste \u2014 deceit reigns",
+        "deception's dark wings unfold \u2014 shadows devour the light \u2014 lies prevail",
+        "honeyed voice enthralls, irresistible \u2014 listener entranced, helpless \u2014 deceiver triumphs"
+      ]
+    },
+    {
+      "ability": "Deception",
+      "category": "failures",
+      "description": "Flavor text for failures a skill",
+      "entries": [
+        "mask of deception cracks \u2014 truth spills forth \u2014 shame ensues",
+        "words hang in the air \u2014 silence deafening \u2014 doubt creeps in",
+        "venomous tongue falters \u2014 wound inflicted on self \u2014 pain intensifies",
+        "web of lies unravels fast \u2014 threads of reality snare deceiver \u2014 truth closes in",
+        "false smile slips, faltering \u2014 heart beats with fear \u2014 deception exposed",
+        "lies collapse like a house \u2014 foundations of deceit shattered \u2014 truth stands tall",
+        "deception's fragile veil tears \u2014 light pours in, illuminating the lie \u2014 shame dawns",
+        "heartless words bounce off target \u2014 listener sees through the ruse \u2014 trust lost",
+        "silken words falter, losing charm \u2014 ears detect the poison \u2014 deceiver exposed",
+        "honeyed voice turns to dust \u2014 listener awakens, freed from enchantment \u2014 truth claimed"
+      ]
+    },
+    {
+      "ability": "Perception",
+      "category": "attempts",
+      "description": "Flavor text for attempts a skill",
+      "entries": [
+        "whispers through shadows \u2014 slow scan \u2014 intent fixed",
+        "darkness trembles still \u2014 ears perk high \u2014 waits tense",
+        "flickering candlelight dances \u2014 eyes narrow keen \u2014 senses strain",
+        "forest grows quiet suddenly \u2014 muscles coiled ready \u2014 listening deep",
+        "wind stirs leaves rustling \u2014 gaze sweeps wide \u2014 alert now",
+        "night's dark veil lifts \u2014 nostrils flare sharp \u2014 sniffing air",
+        "stillness shrouds all around \u2014 head tilts slightly \u2014 ears open",
+        "silence hangs like fog \u2014 eyes locked keen \u2014 wait begins",
+        "whispers through shadows \u2014 stirs slow \u2014 intent sharpens",
+        "echoes in darkness \u2014 steps quiet \u2014 senses strain"
+      ]
+    },
+    {
+      "ability": "Perception",
+      "category": "successes",
+      "description": "Flavor text for successes a skill",
+      "entries": [
+        "whispers reveal hidden truths \u2014 slow nod accepts \u2014 knowing deep",
+        "shadows yield their secrets \u2014 sharp intake breaths \u2014 danger found",
+        "flickering candlelight reveals all \u2014 wide eyes gaze \u2014 shocking truth",
+        "forest's quiet depths yield answers \u2014 tense muscles release \u2014 calm now",
+        "wind stirs leaves to whisper \u2014 gaze pierces darkness \u2014 path clear",
+        "night's dark veil parts to reveal \u2014 nostrils flare triumph \u2014 victory near",
+        "golden light reveals \u2014 hidden paths unfold \u2014 secrets await",
+        "cracked earth trembles \u2014 ancient knowledge stirs \u2014 mysteries surface",
+        "silken threads weave \u2014 web of insight \u2014 truth begins",
+        "moonlight dances \u2014 shadows dance with \u2014 moonlit whispers"
+      ]
+    },
+    {
+      "ability": "Perception",
+      "category": "failures",
+      "description": "Flavor text for failures a skill",
+      "entries": [
+        "whispers fade into nothingness \u2014 slow blink confused \u2014 lost track",
+        "darkness shrouds all once more \u2014 ears fold back \u2014 defeated now",
+        "flickering candlelight dances away \u2014 eyes widen in dismay \u2014 missed clue",
+        "forest's quiet depths remain hidden \u2014 tense muscles strain \u2014 fail again",
+        "wind stirs leaves to confusion \u2014 gaze blurs wide-eyed \u2014 lost direction",
+        "darkness closes in \u2014 panic's icy grip \u2014 lost and blind",
+        "shadows twist away \u2014 hidden truths flee \u2014 silence falls",
+        "distant howl echoes \u2014 warning call goes unheeded \u2014 danger near",
+        "glimmer fades to dark \u2014 fleeting chance lost \u2014 regret seeps"
+      ]
+    },
+    {
+      "ability": "Persuasion",
+      "category": "attempts",
+      "description": "Flavor text for attempts a skill",
+      "entries": [
+        "whispers weave silence \u2014 hesitant pause \u2014 persuasive gaze",
+        "words tremble air \u2014 urgent whisper \u2014 searching eyes",
+        "voice cracks stone \u2014 pleading tone \u2014 heavy sigh",
+        "persuasive winds howl \u2014 calm demeanor \u2014 steady hand",
+        "empathy stirs hearts \u2014 gentle touch \u2014 soothing words",
+        "logic unravels threads \u2014 stern voice \u2014 firm grip",
+        "arguments resound halls \u2014 passionate cry \u2014 fiery passion",
+        "rhetoric flows rivers \u2014 confident stride \u2014 persuasive smile",
+        "conviction burns soul \u2014 resolute face \u2014 steadfast heart",
+        "words dance shadows \u2014 agile tongue \u2014 quick wit"
+      ]
+    },
+    {
+      "ability": "Persuasion",
+      "category": "successes",
+      "description": "Flavor text for successes a skill",
+      "entries": [
+        "logic unravels doubts \u2014 gentle touch \u2014 warm hearts",
+        "arguments crumble walls \u2014 passionate voice \u2014 open doors",
+        "empathy soars skies \u2014 soothing words \u2014 peaceful calm",
+        "persuasive winds blow strong \u2014 steady hand \u2014 firm grasp",
+        "conviction burns bright \u2014 resolute face \u2014 steadfast soul",
+        "words weave spells \u2014 agile tongue \u2014 entrancing charm",
+        "heartfelt pleas resound \u2014 urgent whisper \u2014 sympathetic ear",
+        "passionate cries echo halls \u2014 fiery passion \u2014 unyielding will",
+        "gentle persuasion melts ice \u2014 calm demeanor \u2014 tender touch",
+        "rhetoric flows like rivers \u2014 confident stride \u2014 unstoppable force"
+      ]
+    },
+    {
+      "ability": "Persuasion",
+      "category": "failures",
+      "description": "Flavor text for failures a skill",
+      "entries": [
+        "words falter silence \u2014 broken tone \u2014 defeated sigh",
+        "arguments shatter glass \u2014 stern voice \u2014 cold heart",
+        "logic falters steps \u2014 hesitant pause \u2014 uncertain mind",
+        "persuasive winds howl vainly \u2014 firm grip \u2014 unyielding stone",
+        "empathy stirs storm \u2014 angry cry \u2014 shut doors",
+        "rhetoric withers flowers \u2014 confident stride \u2014 empty words",
+        "conviction founders deep \u2014 resolute face \u2014 shattered dreams",
+        "words stumble darkness \u2014 agile tongue \u2014 lost path",
+        "arguments crumble dust \u2014 passionate voice \u2014 forgotten hopes",
+        "heartfelt pleas fall still \u2014 urgent whisper \u2014 deaf ears"
+      ]
+    },
+    {
+      "ability": "Stealth",
+      "category": "attempts",
+      "description": "Flavor text for attempts a skill",
+      "entries": [
+        "moonlit shadows whisper \u2014 cautious creep \u2014 darkness trembles",
+        "flickering lanterns deceive \u2014 silent prowl begins \u2014 midnight air thickens",
+        "city sounds conceal it \u2014 stealthy approach starts \u2014 anxious heartbeat quickens",
+        "night breeze carries scents \u2014 hidden form seeks \u2014 anticipation builds",
+        "shadows stretch, long and dark \u2014 unseen presence lurks \u2014 moon hides face",
+        "unseen eyes watch all \u2014 silent guardian waits \u2014 heart beats slow",
+        "alleyway darkness enfolds it \u2014 stealthy form dissolves \u2014 city noise swallows sound",
+        "faint breeze carries whispers \u2014 hidden truth unfolds \u2014 midnight silence deepens",
+        "streetlamp light dances \u2014 cautious steps begin \u2014 alleyway shadows writhe",
+        "silken threads of night \u2014 invisible form slips \u2014 watchful eyes narrow"
+      ]
+    },
+    {
+      "ability": "Stealth",
+      "category": "successes",
+      "description": "Flavor text for successes a skill",
+      "entries": [
+        "night air yields to it \u2014 seamless fusion achieved \u2014 city sounds fade",
+        "shadows dissolve, no edges \u2014 fluid motion perfected \u2014 darkness applauds",
+        "flickering lights deceive all \u2014 perfect camouflage holds \u2014 hidden truth revealed",
+        "unseen eyes watch nothing \u2014 flawless stealth achieved \u2014 city noise subsides",
+        "moonlit path unwinds smooth \u2014 masterful concealment works \u2014 darkness yields",
+        "silent guardian blends in \u2014 expert form perfected \u2014 night air accepts",
+        "darkness swallows all, no sign \u2014 invisible presence reigns \u2014 midnight silence deepens",
+        "streetlamp light dances on \u2014 flawless performance achieved \u2014 city sounds fade",
+        "city's hidden heartbeat slows \u2014 perfect stealth holds strong \u2014 darkness whispers secrets",
+        "faint breeze carries nothing \u2014 masterful concealment succeeds \u2014 night air yields"
+      ]
+    },
+    {
+      "ability": "Stealth",
+      "category": "failures",
+      "description": "Flavor text for failures a skill",
+      "entries": [
+        "shadows flee from it \u2014 clumsy form exposed \u2014 city noise mocks",
+        "night air betrays its presence \u2014 imperfect concealment fails \u2014 watchful eyes fixate",
+        "unseen eyes pierce through \u2014 flawed stealth detected \u2014 midnight silence shattered",
+        "moonlit path unwinds rough \u2014 novice mistake revealed \u2014 darkness laughs",
+        "streetlamp light dances on it \u2014 clumsy steps betrayed \u2014 alleyway shadows writhe",
+        "darkness swallows all, then reveals \u2014 imperfect form exposed \u2014 city sounds amplify",
+        "faint breeze carries scents of panic \u2014 flawed concealment fails \u2014 night air condemns",
+        "unseen guardian falters, seen \u2014 novice mistake made \u2014 heart beats fast",
+        "silken threads of night unravel \u2014 imperfect form revealed \u2014 watchful eyes narrow further",
+        "city's hidden heartbeat quickens \u2014 flawed stealth detected \u2014 darkness taunts"
+      ]
+    },
+    {
+      "ability": "Survival",
+      "category": "attempts",
+      "description": "Flavor text for attempts a skill",
+      "entries": [
+        "wilderness whispers secrets \u2014 it pauses, still \u2014 forest eyes gleam",
+        "thorns scrape skin sharp \u2014 it grits teeth hard \u2014 survival instincts roar",
+        "ancient winds howl keen \u2014 it tilts head high \u2014 ears drink in",
+        "trees loom dark sentinels \u2014 it crouches low, wary \u2014 shadows hide",
+        "earth yields scents sweet \u2014 it sniffs deep, ravenous \u2014 primal hunger stirs",
+        "sun beats fierce relentless \u2014 it shields eyes bright \u2014 blinded, stumbling",
+        "roots dig deep anchors \u2014 it roots firm, strong \u2014 unshakeable resolve forms",
+        "leaves rustle whispers low \u2014 it leans in close \u2014 secrets shared",
+        "storm clouds gather dark \u2014 it scans horizon wide \u2014 danger lurks",
+        "game trails vanish lost \u2014 it paces, frustrated \u2014 confused, directionless"
+      ]
+    },
+    {
+      "ability": "Survival",
+      "category": "successes",
+      "description": "Flavor text for successes a skill",
+      "entries": [
+        "wilderness yields to it \u2014 ancient knowledge flows \u2014 instincts guide",
+        "thorns part with ease \u2014 path reveals hidden \u2014 secret passage opens",
+        "ancient winds carry whispers \u2014 it listens intently \u2014 truths revealed",
+        "trees recede from its path \u2014 forest magic assists \u2014 safe passage granted",
+        "earth provides sustenance rich \u2014 it feasts, rejuvenated \u2014 renewed strength flows",
+        "sun warms gentle comfort \u2014 it basks, revitalized \u2014 hope restored",
+        "roots deepen connections strong \u2014 it feels the land's heartbeat \u2014 harmony found",
+        "leaves dance in sunlight \u2014 it twirls, joyful \u2014 free to roam",
+        "storm clouds part with ease \u2014 clear skies reveal hidden \u2014 new vistas open",
+        "game trails reappear clear \u2014 it follows, confident \u2014 destination reached"
+      ]
+    },
+    {
+      "ability": "Survival",
+      "category": "failures",
+      "description": "Flavor text for failures a skill",
+      "entries": [
+        "wilderness closes its doors \u2014 secrets remain hidden \u2014 frustration grows",
+        "thorns impede its passage \u2014 it stumbles, falls hard \u2014 painful lesson learned",
+        "ancient winds mock its plight \u2014 it spins, disoriented \u2014 lost in the storm",
+        "trees loom as enemies \u2014 it cowers, afraid \u2014 fear takes hold",
+        "earth refuses sustenance harsh \u2014 it starves, weakened \u2014 desperation grows",
+        "sun beats fierce unrelenting \u2014 it shields eyes closed \u2014 blinded by pain",
+        "roots fail to anchor deep \u2014 it stumbles, falls far \u2014 shattered confidence lies",
+        "leaves wither, turn to dust \u2014 it mourns, alone \u2014 isolation deepens",
+        "storm clouds gather dark, foreboding \u2014 it cowers, vulnerable \u2014 fear takes root",
+        "game trails vanish in mist \u2014 it searches, lost \u2014 forever seeking"
+      ]
+    },
+    {
+      "ability": "Death Save",
+      "category": "attempts",
+      "description": "Flavor text for attempts a death_save",
+      "entries": [
+        "life threads unraveling \u2014 desperate claw grip \u2014 soul screams out",
+        "flickering candlelight dances \u2014 tortured gasp \u2014 vital force falters",
+        "darkness gathers momentum \u2014 frantic heartbeat \u2014 final stand awaits",
+        "fragile balance teeters \u2014 ragged breathing \u2014 mortal coil shudders",
+        "agonized eyes plead \u2014 withered limbs tremble \u2014 last chance fades",
+        "fading embers smolder \u2014 heavy heart sinks \u2014 desperate measure taken",
+        "shadows claim the stage \u2014 death's chill breath \u2014 final moments tick",
+        "twisted fate unfolds \u2014 anguished cry \u2014 last resort grasped",
+        "threadbare lifeline snaps \u2014 shattered hope remains \u2014 darkness closes in",
+        "agonized soul screams \u2014 vital force ebbs \u2014 mortal form crumples"
+      ]
+    },
+    {
+      "ability": "Death Save",
+      "category": "successes",
+      "description": "Flavor text for successes a death_save",
+      "entries": [
+        "life force surges back \u2014 warm light revives \u2014 rebirth's promise glows",
+        "tormented eyes clear \u2014 shaking breath steadies \u2014 salvation claimed",
+        "flickering flame grows strong \u2014 heartbeat stabilizes \u2014 hope rekindled",
+        "shattered threads mend \u2014 resilient spirit revives \u2014 phoenix rises",
+        "agonized cry turns to song \u2014 vital force surges back \u2014 freedom's joy",
+        "twisted fate unwinds \u2014 life-giving energy flows \u2014 redemption's road opens",
+        "darkness flees the light \u2014 radiant glow illuminates \u2014 new dawn breaks",
+        "healing balm soothes the soul \u2014 peace settles like a blanket \u2014 stillness found",
+        "ragged breathing steadies \u2014 fragile balance restored \u2014 mortal form mends",
+        "shadows flee before dawn \u2014 warmth of life banishes \u2014 darkness flees"
+      ]
+    },
+    {
+      "ability": "Death Save",
+      "category": "failures",
+      "description": "Flavor text for failures a death_save",
+      "entries": [
+        "life force slips away \u2014 fading light vanishes \u2014 eternal night descends",
+        "agonized eyes go dark \u2014 stillness claims the soul \u2014 silence falls",
+        "flickering flame extinguished \u2014 heartbeat falters and ceases \u2014 cold darkness reigns",
+        "twisted fate tightens \u2014 crushing weight of death \u2014 final surrender made",
+        "desperate cry silenced \u2014 vital force ebbs to nothing \u2014 mortal form crumbles",
+        "shadows claim the soul \u2014 chilling breath of death \u2014 eternal rest awaits",
+        "threadbare lifeline snaps \u2014 shattered hope remains \u2014 darkness closes in tight",
+        "agonized scream echoes \u2014 lifeless body slumps \u2014 stillness claims all",
+        "fragile balance shatters \u2014 mortal form crumples \u2014 final defeat is sealed",
+        "fading embers die out \u2014 heart's last beat fades to silence \u2014 eternal night"
+      ]
+    },
+    {
+      "ability": "Initiative",
+      "category": "attempts",
+      "description": "Flavor text for attempts a initiative",
+      "entries": [
+        "tense muscles coiled \u2014 waiting silence \u2014 deadly intent",
+        "flickering torchlight dances \u2014 sharp breaths \u2014 predator's gaze",
+        "whispers of shadows \u2014 crouched anticipation \u2014 beast awakens",
+        "crimson moon rises high \u2014 ears perk up \u2014 primal instinct",
+        "pulsating heartbeat quickens \u2014 claws extend \u2014 hunt begins",
+        "dusky air thickens heavy \u2014 eyes glow bright \u2014 monster stirs",
+        "fearless roar echoes loud \u2014 feet planted wide \u2014 warrior's cry",
+        "gnarled branches creak loud \u2014 teeth bared sharp \u2014 beast unfurls",
+        "darkness shrouds the land \u2014 eyes adjust slowly \u2014 creature waits",
+        "thunderous drumbeat thunders \u2014 claws scrape stone \u2014 battle begins"
+      ]
+    },
+    {
+      "ability": "Initiative",
+      "category": "successes",
+      "description": "Flavor text for successes a initiative",
+      "entries": [
+        "lightning-fast reflexes spark \u2014 swift motion unfolds \u2014 precision strikes",
+        "electrified air crackles loud \u2014 razor-sharp focus \u2014 deadly aim",
+        "silken threads weave swift \u2014 intricate dance begins \u2014 predator's pounce",
+        "brilliant stars shine bright \u2014 instincts guide sure \u2014 warrior's charge",
+        "fierce battle cry shatters \u2014 warrior's fury unleashed \u2014 combat erupts",
+        "shadows merge into one \u2014 darkness becomes form \u2014 monster materializes",
+        "crystalline clarity shines pure \u2014 instinctual wisdom guides \u2014 creature moves",
+        "thundering drums beat strong \u2014 primal energy released \u2014 beast unleashes",
+        "whispered secrets shared quick \u2014 ancient knowledge flows free \u2014 monster's power",
+        "golden light shines clear \u2014 intuition illuminates path \u2014 warrior charges"
+      ]
+    },
+    {
+      "ability": "Initiative",
+      "category": "failures",
+      "description": "Flavor text for failures a initiative",
+      "entries": [
+        "trembling muscles falter \u2014 hesitant pause \u2014 moment lost",
+        "flickering torchlight falters \u2014 blind stumble \u2014 darkness closes",
+        "whispers of doubt creep in \u2014 cowering fear \u2014 creature hesitates",
+        "crimson moon hides behind \u2014 ears fold back \u2014 instinct abandoned",
+        "pulsating heartbeat slows weak \u2014 claws retract slow \u2014 hunt stalls",
+        "dusky air thickens heavy \u2014 eyes dim dull \u2014 monster falters",
+        "fearless roar fades to whisper \u2014 feet slip wide \u2014 warrior stumbles",
+        "gnarled branches creak mournful \u2014 teeth bared weak \u2014 beast wilts",
+        "darkness shrouds the alters loud \u2014 claws scrape hollow \u2014 battle stalls"
+      ]
+    },
+    {
+      "ability": "Bloodied",
+      "category": "attempts",
+      "description": "Flavor text for attempts a bloodied",
+      "entries": [
+        "Blood-soaked fur rippling \u2014 ears fold back \u2014 guttural growl",
+        "Gashes deepen crimson \u2014 shoulders slump heavy \u2014 ragged breathing",
+        "Bleeding gash splits cheek \u2014 eyes blaze wild \u2014 claws flex",
+        "Cuts slash across neck \u2014 head tilts forward \u2014 labored snarl",
+        "Wounds splay open ribcage \u2014 tail thrashes wildly \u2014 ear-piercing scream"
+      ]
+    },
+    {
+      "ability": "Death",
+      "category": "attempts",
+      "description": "Flavor text for attempts a death",
+      "entries": [
+        "body crumples, shatters \u2014 sword slips fingers \u2014 darkness claims",
+        "knees buckle, trembles \u2014 armor creaks silence \u2014 final breaths",
+        "light fades, extinguished \u2014 eyes close slowly \u2014 stillness falls",
+        "flesh tears, rips open \u2014 screams silenced stone \u2014 life flees",
+        "arms drop, useless weight \u2014 heavy blade thuds ground \u2014 nothing moves"
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "hookType": "itemUse",
+      "itemName": "Stone Sacrifice",
+      "table": "Stone Sacrifice|attempts"
+    },
+    {
+      "hookType": "itemUse",
+      "itemName": "Multiattack",
+      "table": "Multiattack|attempts"
+    },
+    {
+      "hookType": "attackRoll",
+      "itemName": "Snake Bite",
+      "table": "Snake Bite|attempts"
+    },
+    {
+      "hookType": "damageRoll",
+      "itemName": "Snake Bite",
+      "table": "Snake Bite|successes"
+    },
+    {
+      "hookType": "attackRoll_crit",
+      "itemName": "Snake Bite",
+      "table": "Snake Bite|crits"
+    },
+    {
+      "hookType": "attackRoll_fumble",
+      "itemName": "Snake Bite",
+      "table": "Snake Bite|fumbles"
+    },
+    {
+      "hookType": "attackRoll_barely_hits",
+      "itemName": "Snake Bite",
+      "table": "Snake Bite|barely_hits"
+    },
+    {
+      "hookType": "attackRoll_barely_misses",
+      "itemName": "Snake Bite",
+      "table": "Snake Bite|barely_misses"
+    },
+    {
+      "hookType": "attackRoll_miss_dodge",
+      "itemName": "Snake Bite",
+      "table": "Snake Bite|miss_dodge"
+    },
+    {
+      "hookType": "attackRoll_miss_armor",
+      "itemName": "Snake Bite",
+      "table": "Snake Bite|miss_armor"
+    },
+    {
+      "hookType": "attackRoll",
+      "itemName": "Longbow",
+      "table": "Longbow|attempts"
+    },
+    {
+      "hookType": "damageRoll",
+      "itemName": "Longbow",
+      "table": "Longbow|successes"
+    },
+    {
+      "hookType": "attackRoll_crit",
+      "itemName": "Longbow",
+      "table": "Longbow|crits"
+    },
+    {
+      "hookType": "attackRoll_fumble",
+      "itemName": "Longbow",
+      "table": "Longbow|fumbles"
+    },
+    {
+      "hookType": "attackRoll_barely_hits",
+      "itemName": "Longbow",
+      "table": "Longbow|barely_hits"
+    },
+    {
+      "hookType": "attackRoll_barely_misses",
+      "itemName": "Longbow",
+      "table": "Longbow|barely_misses"
+    },
+    {
+      "hookType": "attackRoll_miss_dodge",
+      "itemName": "Longbow",
+      "table": "Longbow|miss_dodge"
+    },
+    {
+      "hookType": "attackRoll_miss_armor",
+      "itemName": "Longbow",
+      "table": "Longbow|miss_armor"
+    },
+    {
+      "hookType": "itemUse",
+      "itemName": "Pinning Shot",
+      "table": "Pinning Shot|attempts"
+    },
+    {
+      "hookType": "itemUse",
+      "itemName": "Stone Gaze",
+      "table": "Stone Gaze|attempts"
+    },
+    {
+      "hookType": "itemUse",
+      "itemName": "Envenomed Stone",
+      "table": "Envenomed Stone|attempts"
+    },
+    {
+      "hookType": "itemUse",
+      "itemName": "Mesmerizing Eyes",
+      "table": "Mesmerizing Eyes|attempts"
+    },
+    {
+      "hookType": "itemUse",
+      "itemName": "Blinding Mucus",
+      "table": "Blinding Mucus|attempts"
+    },
+    {
+      "hookType": "itemUse",
+      "itemName": "I See You",
+      "table": "I See You|attempts"
+    },
+    {
+      "hookType": "itemUse",
+      "itemName": "Medusa's Evolution",
+      "table": "Medusa's Evolution|attempts"
+    },
+    {
+      "hookType": "itemUse",
+      "itemName": "Stone Puppets",
+      "table": "Stone Puppets|attempts"
+    },
+    {
+      "hookType": "savingThrow",
+      "saveId": "str",
+      "table": "STR Save|attempts"
+    },
+    {
+      "hookType": "savingThrow",
+      "saveId": "dex",
+      "table": "DEX Save|attempts"
+    },
+    {
+      "hookType": "savingThrow",
+      "saveId": "con",
+      "table": "CON Save|attempts"
+    },
+    {
+      "hookType": "savingThrow",
+      "saveId": "int",
+      "table": "INT Save|attempts"
+    },
+    {
+      "hookType": "savingThrow",
+      "saveId": "wis",
+      "table": "WIS Save|attempts"
+    },
+    {
+      "hookType": "savingThrow",
+      "saveId": "cha",
+      "table": "CHA Save|attempts"
+    },
+    {
+      "hookType": "skill",
+      "skillId": "ath",
+      "table": "Athletics|attempts"
+    },
+    {
+      "hookType": "skill",
+      "skillId": "dec",
+      "table": "Deception|attempts"
+    },
+    {
+      "hookType": "skill",
+      "skillId": "prc",
+      "table": "Perception|attempts"
+    },
+    {
+      "hookType": "skill",
+      "skillId": "per",
+      "table": "Persuasion|attempts"
+    },
+    {
+      "hookType": "skill",
+      "skillId": "ste",
+      "table": "Stealth|attempts"
+    },
+    {
+      "hookType": "skill",
+      "skillId": "sur",
+      "table": "Survival|attempts"
+    },
+    {
+      "hookType": "deathSave",
+      "table": "Death Save|attempts"
+    },
+    {
+      "hookType": "initiative",
+      "table": "Initiative|attempts"
+    },
+    {
+      "hookType": "bloodied",
+      "table": "Bloodied|attempts"
+    },
+    {
+      "hookType": "death",
+      "table": "Death|attempts"
+    }
+  ]
+}

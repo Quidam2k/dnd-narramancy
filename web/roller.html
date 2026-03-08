@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flavor Roller</title>
+<style>
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface-2: #1f2f50;
+    --accent: #e94560;
+    --accent-dim: #a83248;
+    --gold: #d4a843;
+    --text: #e0e0e0;
+    --text-dim: #8899aa;
+    --green: #4ecca3;
+    --red: #e94560;
+    --blue: #5eb5f7;
+    --purple: #b565e0;
+    --orange: #e8883a;
+    --radius: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--surface);
+    border-bottom: 2px solid var(--accent);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+
+  .load-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .load-btn:hover { background: var(--accent-dim); }
+  .load-btn:active { transform: scale(0.97); }
+
+  #file-input { display: none; }
+
+  .creature-info {
+    margin-left: auto;
+    text-align: right;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+  .creature-info .name {
+    color: var(--gold);
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  /* ── Result Display ── */
+  #result-area {
+    background: var(--surface);
+    border-bottom: 1px solid var(--surface-2);
+    min-height: 80px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  #result-label {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  #result-text {
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.5;
+    max-width: 700px;
+    min-height: 1.5em;
+    color: var(--text);
+    transition: opacity 0.15s ease-in;
+  }
+  #result-text.fade-in {
+    animation: fadeIn 0.25s ease-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  #result-meta {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  /* ── Main Content ── */
+  main {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+  }
+
+  /* ── Empty State ── */
+  #empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    color: var(--text-dim);
+    text-align: center;
+    gap: 12px;
+  }
+  #empty-state .icon { font-size: 3rem; }
+  #empty-state p { max-width: 320px; line-height: 1.5; }
+
+  /* ── Ability Groups ── */
+  .ability-group {
+    margin-bottom: 16px;
+  }
+  .group-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    padding: 4px 8px;
+    border-bottom: 1px solid var(--surface-2);
+    margin-bottom: 8px;
+  }
+
+  .ability-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  /* ── Buttons ── */
+  .ability-btn {
+    background: var(--surface-2);
+    color: var(--text);
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.1s, border-color 0.1s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .ability-btn:hover {
+    background: #2a3f65;
+    border-color: var(--accent);
+  }
+  .ability-btn:active {
+    transform: scale(0.96);
+  }
+  .ability-btn.exhausted {
+    opacity: 0.4;
+    border-color: var(--text-dim);
+  }
+
+  /* Category-colored sub-buttons */
+  .sub-btn {
+    font-size: 0.72rem;
+    padding: 5px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+  .sub-btn[data-cat="crits"]         { border-color: var(--red);    color: var(--red); }
+  .sub-btn[data-cat="fumbles"]       { border-color: var(--purple); color: var(--purple); }
+  .sub-btn[data-cat="barely_hits"]   { border-color: var(--green);  color: var(--green); }
+  .sub-btn[data-cat="barely_misses"] { border-color: var(--blue);   color: var(--blue); }
+  .sub-btn[data-cat="miss_dodge"]    { border-color: var(--orange); color: var(--orange); }
+  .sub-btn[data-cat="miss_armor"]    { border-color: var(--text-dim); color: var(--text-dim); }
+  .sub-btn[data-cat="successes"]     { border-color: var(--green);  color: var(--green); }
+  .sub-btn[data-cat="failures"]      { border-color: var(--red);    color: var(--red); }
+
+  /* ── Reset bar ── */
+  #controls {
+    display: none;
+    background: var(--surface);
+    border-top: 1px solid var(--surface-2);
+    padding: 8px 16px;
+    text-align: center;
+  }
+  #controls button {
+    background: none;
+    border: 1px solid var(--text-dim);
+    color: var(--text-dim);
+    padding: 6px 14px;
+    border-radius: var(--radius);
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  #controls button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 480px) {
+    header { padding: 8px 10px; }
+    header h1 { font-size: 1rem; }
+    #result-text { font-size: 1.1rem; padding: 0 8px; }
+    .ability-btn { padding: 10px 10px; font-size: 0.85rem; flex: 1 1 auto; min-width: 0; text-align: center; }
+    .sub-btn { padding: 8px 6px; flex: 1 1 auto; text-align: center; }
+    main { padding: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Flavor Roller</h1>
+  <button class="load-btn" onclick="document.getElementById('file-input').click()">Load JSON</button>
+  <input type="file" id="file-input" accept=".json">
+  <div class="creature-info" id="creature-info"></div>
+</header>
+
+<div id="result-area">
+  <div id="result-label"></div>
+  <div id="result-text"></div>
+  <div id="result-meta"></div>
+</div>
+
+<main id="main">
+  <div id="empty-state">
+    <div class="icon">&#127922;</div>
+    <p>Load a Flavor Forge JSON file to get started. Tap ability buttons to roll random flavor text.</p>
+  </div>
+  <div id="ability-grid"></div>
+</main>
+
+<div id="controls">
+  <button onclick="resetTracking()">Reset No-Repeat Tracking</button>
+</div>
+
+<script>
+(function() {
+  // ── State ──
+  let data = null;
+  // tableLookup: "AbilityName|category" -> [entries]
+  const tableLookup = {};
+  // noRepeat: "AbilityName|category" -> Set of used indices
+  const usedIndices = {};
+
+  // ── DOM refs ──
+  const fileInput   = document.getElementById('file-input');
+  const creatureEl  = document.getElementById('creature-info');
+  const resultLabel = document.getElementById('result-label');
+  const resultText  = document.getElementById('result-text');
+  const resultMeta  = document.getElementById('result-meta');
+  const abilityGrid = document.getElementById('ability-grid');
+  const emptyState  = document.getElementById('empty-state');
+  const controls    = document.getElementById('controls');
+
+  // ── File Load ──
+  fileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try {
+        data = JSON.parse(ev.target.result);
+        loadCreature(data);
+      } catch (err) {
+        resultText.textContent = 'Error: Invalid JSON file';
+        resultLabel.textContent = '';
+        resultMeta.textContent = err.message;
+      }
+    };
+    reader.readAsText(file);
+    // Reset so same file can be reloaded
+    fileInput.value = '';
+  });
+
+  // ── Load Creature ──
+  function loadCreature(d) {
+    // Clear state
+    Object.keys(tableLookup).forEach(k => delete tableLookup[k]);
+    Object.keys(usedIndices).forEach(k => delete usedIndices[k]);
+
+    // Build table lookup
+    for (const t of d.tables) {
+      const key = t.ability + '|' + t.category;
+      tableLookup[key] = t.entries;
+    }
+
+    // Header info
+    const c = d.creature;
+    creatureEl.innerHTML =
+      '<span class="name">' + esc(c.name) + '</span><br>' +
+      esc((c.type || '') + (c.cr ? ' CR ' + c.cr : ''));
+
+    // Clear result
+    resultLabel.textContent = '';
+    resultText.textContent = '';
+    resultMeta.textContent = '';
+
+    // Build ability grid
+    buildGrid(d);
+    emptyState.style.display = 'none';
+    controls.style.display = 'block';
+  }
+
+  // ── Build Grid ──
+  function buildGrid(d) {
+    abilityGrid.innerHTML = '';
+
+    // Collect unique abilities preserving order, with their categories
+    const abilityMap = new Map(); // ability -> Set of categories
+    for (const t of d.tables) {
+      if (!abilityMap.has(t.ability)) abilityMap.set(t.ability, new Set());
+      abilityMap.get(t.ability).add(t.category);
+    }
+
+    // Classify abilities into groups by examining triggers or category heuristics
+    const triggerTypes = {};
+    if (d.triggers) {
+      for (const tr of d.triggers) {
+        const abilityKey = tr.itemName || tr.table.split('|')[0];
+        if (!triggerTypes[abilityKey]) triggerTypes[abilityKey] = tr.hookType;
+      }
+    }
+
+    const groups = {
+      'Attacks':        [],
+      'Actions':        [],
+      'Villain Actions':[],
+      'Features':       [],
+      'Bonus Actions':  [],
+      'Reactions':      [],
+      'Spells':         [],
+      'Special':        [],
+    };
+
+    const specialAbilities = new Set([
+      'Bloodied', 'Death', 'Death Save', 'Initiative',
+      'STR Save', 'DEX Save', 'CON Save', 'INT Save', 'WIS Save', 'CHA Save',
+    ]);
+
+    // Known skills from SKILL_ID_MAP
+    const skills = new Set([
+      'Acrobatics','Animal Handling','Arcana','Athletics','Deception',
+      'History','Insight','Intimidation','Investigation','Medicine',
+      'Nature','Perception','Performance','Persuasion','Religion',
+      'Sleight of Hand','Stealth','Survival'
+    ]);
+
+    for (const [ability, cats] of abilityMap) {
+      const hook = triggerTypes[ability];
+      if (specialAbilities.has(ability) || (hook && (hook === 'savingThrow' || hook === 'deathSave' || hook === 'initiative' || hook === 'bloodied' || hook === 'death'))) {
+        groups['Special'].push({ ability, cats });
+      } else if (skills.has(ability) || hook === 'skill') {
+        groups['Special'].push({ ability, cats });
+      } else if (hook === 'attackRoll' || hook === 'damageRoll' || cats.has('crits') || cats.has('fumbles') || cats.has('miss_dodge') || cats.has('miss_armor')) {
+        groups['Attacks'].push({ ability, cats });
+      } else if (hook === 'itemUse') {
+        // Guess group from ability description in table data
+        const desc = findDescription(d, ability);
+        if (desc.includes('villain_action')) {
+          groups['Villain Actions'].push({ ability, cats });
+        } else if (desc.includes('bonus_action')) {
+          groups['Bonus Actions'].push({ ability, cats });
+        } else if (desc.includes('reaction')) {
+          groups['Reactions'].push({ ability, cats });
+        } else if (desc.includes('spell')) {
+          groups['Spells'].push({ ability, cats });
+        } else if (desc.includes('feature')) {
+          groups['Features'].push({ ability, cats });
+        } else {
+          groups['Actions'].push({ ability, cats });
+        }
+      } else {
+        groups['Actions'].push({ ability, cats });
+      }
+    }
+
+    // Render non-empty groups
+    for (const [groupName, abilities] of Object.entries(groups)) {
+      if (abilities.length === 0) continue;
+
+      const groupEl = document.createElement('div');
+      groupEl.className = 'ability-group';
+
+      const title = document.createElement('div');
+      title.className = 'group-title';
+      title.textContent = groupName;
+      groupEl.appendChild(title);
+
+      for (const { ability, cats } of abilities) {
+        const row = document.createElement('div');
+        row.className = 'ability-row';
+
+        // Primary button — rolls from "attempts"
+        const primaryCat = cats.has('attempts') ? 'attempts' : cats.values().next().value;
+        const btn = makeButton(ability, ability, primaryCat);
+        row.appendChild(btn);
+
+        // Sub-buttons for conditional/additional categories
+        const subOrder = ['successes', 'failures', 'crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor'];
+        for (const cat of subOrder) {
+          if (cat === primaryCat) continue;
+          if (!cats.has(cat)) continue;
+          const subLabel = catLabel(cat);
+          const sub = makeButton(subLabel, ability, cat, true);
+          row.appendChild(sub);
+        }
+
+        groupEl.appendChild(row);
+      }
+
+      abilityGrid.appendChild(groupEl);
+    }
+  }
+
+  function findDescription(d, ability) {
+    for (const t of d.tables) {
+      if (t.ability === ability && t.description) return t.description.toLowerCase();
+    }
+    return '';
+  }
+
+  function catLabel(cat) {
+    const labels = {
+      successes: 'Hit',
+      failures: 'Miss',
+      crits: 'Crit',
+      fumbles: 'Fumble',
+      barely_hits: 'Barely Hit',
+      barely_misses: 'Barely Miss',
+      miss_dodge: 'Dodge',
+      miss_armor: 'Armor',
+    };
+    return labels[cat] || cat;
+  }
+
+  function makeButton(label, ability, category, isSub) {
+    const btn = document.createElement('button');
+    btn.className = 'ability-btn' + (isSub ? ' sub-btn' : '');
+    btn.textContent = label;
+    if (isSub) btn.dataset.cat = category;
+    btn.addEventListener('click', () => rollEntry(ability, category, btn));
+    return btn;
+  }
+
+  // ── Roll Entry ──
+  function rollEntry(ability, category, btn) {
+    const key = ability + '|' + category;
+    const entries = tableLookup[key];
+    if (!entries || entries.length === 0) {
+      showResult(ability, category, '(no entries)', 0, 0);
+      return;
+    }
+
+    // Initialize used tracking
+    if (!usedIndices[key]) usedIndices[key] = new Set();
+    const used = usedIndices[key];
+
+    // If all used, reset
+    if (used.size >= entries.length) {
+      used.clear();
+      // Remove exhausted state from all buttons for this key
+      document.querySelectorAll('.ability-btn.exhausted').forEach(b => {
+        // Only un-exhaust buttons for this same key (handled by checking after roll)
+      });
+    }
+
+    // Pick random unused index
+    const available = [];
+    for (let i = 0; i < entries.length; i++) {
+      if (!used.has(i)) available.push(i);
+    }
+    const idx = available[Math.floor(Math.random() * available.length)];
+    used.add(idx);
+
+    showResult(ability, category, entries[idx], used.size, entries.length);
+
+    // Mark exhausted if all used
+    if (used.size >= entries.length) {
+      btn.classList.add('exhausted');
+    }
+  }
+
+  function showResult(ability, category, text, usedCount, total) {
+    resultLabel.textContent = ability + (category !== 'attempts' ? ' / ' + catLabel(category) : '');
+    resultText.textContent = text;
+    resultMeta.textContent = total > 0 ? usedCount + ' / ' + total + ' used' : '';
+
+    // Re-trigger animation
+    resultText.classList.remove('fade-in');
+    void resultText.offsetWidth; // force reflow
+    resultText.classList.add('fade-in');
+  }
+
+  // ── Reset ──
+  window.resetTracking = function() {
+    Object.keys(usedIndices).forEach(k => delete usedIndices[k]);
+    document.querySelectorAll('.ability-btn.exhausted').forEach(b => b.classList.remove('exhausted'));
+    resultLabel.textContent = '';
+    resultText.textContent = 'Tracking reset';
+    resultMeta.textContent = '';
+  };
+
+  // ── Util ──
+  function esc(s) {
+    const el = document.createElement('span');
+    el.textContent = s;
+    return el.innerHTML;
+  }
+})();
+</script>
+</body>
+</html>

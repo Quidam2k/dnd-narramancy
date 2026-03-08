@@ -534,11 +534,22 @@ Generate exactly {count} variations."""
         clean_text = re.sub(r',\s*([\]}])', r'\1', clean_text)
 
         try:
-            return json.loads(clean_text)
+            parsed = json.loads(clean_text)
         except json.JSONDecodeError as e:
             logger.error(f"Failed to parse AI response as JSON: {e}")
             logger.error(f"Raw response: {response_text}")
             raise ValueError("Failed to parse AI response as valid JSON")
+
+        # Sanitize: strip control characters (newlines, tabs) from string entries
+        for key, val in parsed.items():
+            if isinstance(val, list):
+                parsed[key] = [
+                    re.sub(r'[\x00-\x1f\x7f]', ' ', entry).strip()
+                    if isinstance(entry, str) else entry
+                    for entry in val
+                ]
+
+        return parsed
 
     def _validate_response_structure(self, response: Dict[str, Any], expected_variations: int):
         """Validate that the AI response has the expected structure."""

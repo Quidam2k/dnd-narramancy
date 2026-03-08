@@ -1,0 +1,833 @@
+{
+  "formatVersion": 1,
+  "creature": {
+    "name": "Young Blue Dragon",
+    "tokenPattern": "*Young Blue Dragon*",
+    "cr": "9",
+    "type": "Dragon",
+    "pronouns": "it"
+  },
+  "whisper": "gm",
+  "tables": [
+    {
+      "ability": "Multiattack",
+      "category": "attempts",
+      "description": "Flavor text for attempts a action",
+      "entries": [
+        "Electricity crackles anticipation \u2014 claws flex open \u2014 thunder growls near",
+        "Sand swirls around frenzy \u2014 jaws snap wildly \u2014 blue flames dance",
+        "Lightning sparks reckless abandon \u2014 teeth bare threat \u2014 winds howl loud",
+        "Scales shimmer fury rising \u2014 claws swipe blindly \u2014 earth trembles hard",
+        "Thunder booms eager promise \u2014 fangs glisten sharp \u2014 battle cries echo"
+      ]
+    },
+    {
+      "ability": "Multiattack",
+      "category": "successes",
+      "description": "Flavor text for successes a action",
+      "entries": [
+        "Bite rips through armor \u2014 claws shred defenses \u2014 triumphal roar resounds",
+        "Electricity courses mightily \u2014 jaws crush bone \u2014 opponents falter weak",
+        "Blue flames engulf foe \u2014 claws rake open wounds \u2014 dominance asserted clear",
+        "Claws slash with precision \u2014 teeth sink deep \u2014 enemy falls still",
+        "Lightning bolts strike true \u2014 fangs pierce vital spots \u2014 victory claimed loud"
+      ]
+    },
+    {
+      "ability": "Multiattack",
+      "category": "failures",
+      "description": "Flavor text for failures a action",
+      "entries": [
+        "Electricity fizzles out quickly \u2014 jaws miss wildly \u2014 awkward stumble made",
+        "Sand clouds vision blurry \u2014 claws swipe harmlessly \u2014 chance slips away",
+        "Thunder booms hollow promise \u2014 fangs glance off armor \u2014 momentum lost fast",
+        "Scales shudder weakly \u2014 claws flail futile \u2014 hope dwindles thin",
+        "Lightning flickers dimly \u2014 jaws snap shut empty \u2014 disappointment hangs"
+      ]
+    },
+    {
+      "ability": "Bite",
+      "category": "attempts",
+      "description": "Flavor text for attempts a attack",
+      "entries": [
+        "crackling energy surges \u2014 claws extend slow \u2014 eyes narrow intent",
+        "flickering sandstorms dance \u2014 jaws part wide \u2014 air shimmers tense",
+        "electric whispers build \u2014 muscles flex coiled \u2014 power seethes within",
+        "thunderheads gather dark \u2014 teeth bare in snarl \u2014 lightning's call",
+        "sparkling dust devils whirl \u2014 young dragon's fury builds \u2014 target trembles"
+      ]
+    },
+    {
+      "ability": "Bite",
+      "category": "successes",
+      "description": "Flavor text for successes a attack",
+      "entries": [
+        "jaws snap with authority \u2014 lightning arcs swift \u2014 target crumples beneath",
+        "electric claws connect \u2014 blue dragon roars victoriously \u2014 foe lies vanquished",
+        "crackling force shatters \u2014 biting teeth sink deep \u2014 lifeblood flows free",
+        "shockwave ripples through air \u2014 enemy staggers, blinded \u2014 dragon stands supreme",
+        "fierce lightning bursts forth \u2014 jaws lock in triumph \u2014 dominance asserted"
+      ]
+    },
+    {
+      "ability": "Bite",
+      "category": "failures",
+      "description": "Flavor text for failures a attack",
+      "entries": [
+        "electric sparks misfire \u2014 claws swipe wildly \u2014 dragon recoils shocked",
+        "sandstorms blind and confuse \u2014 jaws snap at air \u2014 miss by inches",
+        "power surges out of control \u2014 blue dragon rears, enraged \u2014 attack falter",
+        "thunderheads boil over \u2014 biting attempt falters \u2014 lightning's fury turns inward",
+        "young dragon's fury misdirects \u2014 claws swipe harmlessly past \u2014 target unharmed"
+      ]
+    },
+    {
+      "ability": "Bite",
+      "category": "crits",
+      "description": "Flavor text for crits with Bite",
+      "entries": [
+        "lightning crackles fierce \u2014 sand scatters wildly \u2014 dragon's jaws snap",
+        "electric storm brews dark \u2014 target trembles frozen \u2014 bite strikes true",
+        "thunder rumbles ominous \u2014 scales shimmer sharp \u2014 claws flash swift",
+        "chaotic energy erupts blue \u2014 air splits open wide \u2014 young dragon bites",
+        "static sparks eagerly await \u2014 prey stands helpless still \u2014 mighty jaws descend"
+      ]
+    },
+    {
+      "ability": "Bite",
+      "category": "fumbles",
+      "description": "Flavor text for fumbles with Bite",
+      "entries": [
+        "Sand swirls wildly \u2014 tail swings wildly \u2014 thunder rumbles ominously",
+        "Electric sparks dance \u2014 claws rake the air \u2014 jaws snap shut",
+        "Cracked earth trembles \u2014 scales scrape stone \u2014 roar echoes loudly",
+        "Lightning crackles near \u2014 wings beat frantically \u2014 target flees quickly",
+        "Static charges air \u2014 teeth bare in snarl \u2014 attack misfires badly"
+      ]
+    },
+    {
+      "ability": "Bite",
+      "category": "barely_hits",
+      "description": "Flavor text for barely_hits with Bite",
+      "entries": [
+        "crackling lightning dances \u2014 tip of claw grazes \u2014 armor scrapes loudly",
+        "electrified scales shimmer \u2014 jaws barely miss \u2014 defender's breath catches",
+        "sand swirls wildly \u2014 teeth graze leather \u2014 tension snaps loose",
+        "lightning crackles around \u2014 young dragon bites down \u2014 metal groans softly",
+        "air shimmers with force \u2014 claw flashes in sun \u2014 armor yields fractionally"
+      ]
+    },
+    {
+      "ability": "Bite",
+      "category": "barely_misses",
+      "description": "Flavor text for barely_misses with Bite",
+      "entries": [
+        "Crackles electric fury \u2014 fangs snap shut \u2014 target flinches hard",
+        "Sand devils dance around \u2014 lightning sparks armor plate \u2014 miss by hair's breadth",
+        "Young dragon's claws flash \u2014 bolt of lightning arcs \u2014 strike falls short",
+        "Static charged the air \u2014 jaws wide, teeth bared \u2014 opponent dodges close",
+        "Electricity crackles through scales \u2014 dragon bites with force \u2014 teeth scrape armor"
+      ]
+    },
+    {
+      "ability": "Bite",
+      "category": "miss_dodge",
+      "description": "Flavor text for miss_dodge with Bite",
+      "entries": [
+        "electric air crackles \u2014 lightning-fast dodge \u2014 scales shimmer escape",
+        "sand dances wildly \u2014 dragon's claws swipe vainly \u2014 target vanishes instantly",
+        "blue claws flash wide \u2014 agility proves matchless \u2014 breath hisses harmlessly",
+        "stormy eyes dart left \u2014 snapping jaws miss mark \u2014 feet barely touch ground",
+        "static crackles like fury \u2014 lightning bolt fizzles \u2014 creature slips free"
+      ]
+    },
+    {
+      "ability": "Bite",
+      "category": "miss_armor",
+      "description": "Flavor text for miss_armor with Bite",
+      "entries": [
+        "crimson sparks fly \u2014 hammering steel shudders \u2014 dragon's fury spent",
+        "electric air crackles \u2014 biting force connects \u2014 armor holds firm",
+        "bolt skids off plate \u2014 glancing blow rings out \u2014 young beast seethes",
+        "scales bristle with lightning \u2014 churning sand swirls \u2014 dragon's power unleashed",
+        "ringing metal echoes \u2014 teeth sink in hard \u2014 bolt bounces free"
+      ]
+    },
+    {
+      "ability": "Claw",
+      "category": "attempts",
+      "description": "Flavor text for attempts a attack",
+      "entries": [
+        "electric claws unfurl \u2014 strikes swift \u2014 air shimmers bright",
+        "sharp scales glinting \u2014 lunges forward \u2014 power surges within",
+        "stormy energy builds \u2014 muscles tense \u2014 lightning dances",
+        "blue steel flashes \u2014 attacks low \u2014 ground shakes beneath",
+        "raging tempest brews \u2014 claw swipes wide \u2014 chaos erupts"
+      ]
+    },
+    {
+      "ability": "Claw",
+      "category": "successes",
+      "description": "Flavor text for successes a attack",
+      "entries": [
+        "claws slice through air \u2014 bites deep \u2014 victim screams",
+        "electrified claws connect \u2014 sears flesh \u2014 burns intense",
+        "razor-sharp talons rake \u2014 slashes true \u2014 opponent falls",
+        "powerful swipe crashes down \u2014 crushes bones \u2014 deafening roar",
+        "raging dragon strikes pure \u2014 cuts to the heart \u2014 darkness claims"
+      ]
+    },
+    {
+      "ability": "Claw",
+      "category": "failures",
+      "description": "Flavor text for failures a attack",
+      "entries": [
+        "claws falter, miss mark \u2014 sparks die out \u2014 air goes still",
+        "electric charge fails \u2014 claw stumbles free \u2014 wild swings",
+        "power wavers, then fades \u2014 swipe misses wide \u2014 opponent laughs",
+        "stormy fury collapses \u2014 claws clatter useless \u2014 ground trembles",
+        "raging blue dragon strikes blind \u2014 hits empty space \u2014 echoes"
+      ]
+    },
+    {
+      "ability": "Claw",
+      "category": "crits",
+      "description": "Flavor text for crits with Claw",
+      "entries": [
+        "thunder crackles fierce \u2014 claws outstretched deadly \u2014 dragon's roar thunders",
+        "sandstorm swallows target \u2014 lightning flashes, blinding \u2014 razor-sharp slice rips",
+        "electricity licks air \u2014 claw hooks, precise \u2014 molten pain erupts",
+        "stormy fury uncoils \u2014 young dragon strikes swift \u2014 slashing talons shred armor",
+        "static builds, charged air \u2014 claws flash, fatal \u2014 thunderclap shatters silence"
+      ]
+    },
+    {
+      "ability": "Claw",
+      "category": "fumbles",
+      "description": "Flavor text for fumbles with Claw",
+      "entries": [
+        "electric air crackles \u2014 claws lash wildly \u2014 target laughs loudly",
+        "sand dances on scales \u2014 clumsy strike misses mark \u2014 thunder rumbles close",
+        "cracked earth trembles \u2014 overextended claws falter \u2014 lightning crackles bright",
+        "stormy eyes flash hot \u2014 awkward swipe flails off \u2014 young dragon roars",
+        "dazzling spark ignites air \u2014 fumbling claw scrapes stone \u2014 embarrassed silence falls"
+      ]
+    },
+    {
+      "ability": "Claw",
+      "category": "barely_hits",
+      "description": "Flavor text for barely_hits with Claw",
+      "entries": [
+        "Electric sparks dance \u2014 claw swipes wildly \u2014 shudders to stop",
+        "Sand swirls madly \u2014 blade scrapes armor thin \u2014 lucky strike",
+        "Static crackles hot \u2014 claw hesitates, then strikes \u2014 razor's edge",
+        "Air shimmers bright \u2014 claws flash in sun \u2014 nearly missed",
+        "Thunder rumbles deep \u2014 young dragon lunges forward \u2014 gap found"
+      ]
+    },
+    {
+      "ability": "Claw",
+      "category": "barely_misses",
+      "description": "Flavor text for barely_misses with Claw",
+      "entries": [
+        "crackle of power unfurls \u2014 claws swiping close \u2014 victim recoils",
+        "electricity crackles around it \u2014 claw barely grazes armor \u2014 sparks fly",
+        "sand devils dance nearby \u2014 razor-sharp talons whisper past \u2014 skin shudders",
+        "lightning forks from its back \u2014 fangs snap shut with fury \u2014 just out of range",
+        "raging blue storm coils tight \u2014 claws lash wildly, almost striking \u2014 air splits"
+      ]
+    },
+    {
+      "ability": "Claw",
+      "category": "miss_dodge",
+      "description": "Flavor text for miss_dodge with Claw",
+      "entries": [
+        "Electricity crackles fierce \u2014 dodges at the last \u2014 razor-sharp claws miss",
+        "Sand devils dance wildly \u2014 agile form slips free \u2014 dragon's wrath is foiled",
+        "Lightning-fast reflexes flash bright \u2014 scales shimmer as it moves \u2014 claws close on air",
+        "Whirlwind of motion blinds \u2014 quick target darts aside \u2014 dragon's fury is spent",
+        "Static-charged scales zip past \u2014 dodging a hair's breadth \u2014 blue dragon's attack falters"
+      ]
+    },
+    {
+      "ability": "Claw",
+      "category": "miss_armor",
+      "description": "Flavor text for miss_armor with Claw",
+      "entries": [
+        "forged steel shudders \u2014 sparks erupt wildly \u2014 armor stands firm",
+        "crackling energy surrounds \u2014 claws swipe, biting \u2014 metal shivers hard",
+        "clashing steel screams loud \u2014 bolt skids off plate \u2014 impact shakes ground",
+        "static air crackles hot \u2014 claw slices through \u2014 ringing echoes cold",
+        "thunder booms in sky \u2014 dragon's power unleashed \u2014 shield deflects all"
+      ]
+    },
+    {
+      "ability": "Lightning Breath",
+      "category": "attempts",
+      "description": "Flavor text for attempts a action",
+      "entries": [
+        "crackling air thickens \u2014 claws extend slow \u2014 warning growl rumbles",
+        "static dances scales \u2014 jaws part wide \u2014 furious eyes flash",
+        "sand swirls wild \u2014 wings unfold tense \u2014 electric snarl builds",
+        "lightning trembles close \u2014 flames lick scales \u2014 dragon's fury kindles",
+        "electrified muscles flex \u2014 roar starts low \u2014 stormy winds awaken"
+      ]
+    },
+    {
+      "ability": "Lightning Breath",
+      "category": "successes",
+      "description": "Flavor text for successes a action",
+      "entries": [
+        "blazing bolt erupts \u2014 burning line clears \u2014 foe stumbles back",
+        "electric shockwave ripples \u2014 thunder booms loud \u2014 defeated crumble",
+        "crackling energy bursts \u2014 enemies recoil swift \u2014 victorious cry echoes",
+        "flaming tempest rages \u2014 chaos spreads wide \u2014 survivors scatter",
+        "stormy fury unleashes \u2014 lightning sears bright \u2014 opponents fall still"
+      ]
+    },
+    {
+      "ability": "Lightning Breath",
+      "category": "failures",
+      "description": "Flavor text for failures a action",
+      "entries": [
+        "flickering spark falters \u2014 dragon's roar weakens \u2014 disappointment seeps in",
+        "electric energy wanes \u2014 lightning dies out \u2014 momentary pause falls",
+        "crackling air fizzles \u2014 jaws snap shut slow \u2014 failed fury lingers",
+        "burning line sputters \u2014 flames dwindle weak \u2014 embarrassed growl mumbles",
+        "stormy winds dissipate \u2014 lightning's roar fades \u2014 temporary defeat stings"
+      ]
+    },
+    {
+      "ability": "STR Save",
+      "category": "attempts",
+      "description": "Flavor text for attempts a save",
+      "entries": [
+        "flickers with power \u2014 sparks fly wildly \u2014 muscles tense",
+        "cracks with electricity \u2014 sand swirls fiercely \u2014 claws snap",
+        "emits a charge \u2014 static crackles loud \u2014 eyes blaze",
+        "builds electric might \u2014 air shimmers bright \u2014 breaths deep",
+        "gathers elemental force \u2014 lightning lingers near \u2014 tail quivers"
+      ]
+    },
+    {
+      "ability": "STR Save",
+      "category": "successes",
+      "description": "Flavor text for successes a save",
+      "entries": [
+        "cracks with triumph \u2014 sparks dance free \u2014 wings unfurl",
+        "unleashes fierce power \u2014 stormy winds howl \u2014 claws release",
+        "shatters resistance \u2014 electricity surges wild \u2014 roar resounds",
+        "channels raw energy \u2014 air shimmers calm \u2014 eyes shine bright",
+        "summons primal force \u2014 lightning bolts streak \u2014 dragon takes flight"
+      ]
+    },
+    {
+      "ability": "STR Save",
+      "category": "failures",
+      "description": "Flavor text for failures a save",
+      "entries": [
+        "falters, electric spark \u2014 sand swirls in rage \u2014 claws falter",
+        "stutters with weakness \u2014 static crackles weakly \u2014 body trembles",
+        "loses charge slowly \u2014 air shimmers dull \u2014 eyes dim",
+        "unleashes too much \u2014 stormy winds rage on \u2014 dragon stumbles",
+        "overreaches, loses control \u2014 lightning bolts go wild \u2014 chaos erupts"
+      ]
+    },
+    {
+      "ability": "DEX Save",
+      "category": "attempts",
+      "description": "Flavor text for attempts a save",
+      "entries": [
+        "Electric claws outstretched \u2014 lightning coils tight \u2014 balance falters",
+        "Sand swirls around scales \u2014 swift wings beat \u2014 DEX straining",
+        "Thunderclap echoes through air \u2014 dragon's eyes narrow \u2014 muscles tense",
+        "Static crackles on hide \u2014 claws swipe wildly \u2014 body sways",
+        "Stiff wind buffets its form \u2014 lightning bolts dance nearby \u2014 focus wavers"
+      ]
+    },
+    {
+      "ability": "DEX Save",
+      "category": "successes",
+      "description": "Flavor text for successes a save",
+      "entries": [
+        "Lightning's wild path clears \u2014 dragon lands steady \u2014 calm spreads",
+        "Electricity dissipates, spent \u2014 wings unfurl strong \u2014 triumph sings",
+        "Furious storm subsides fast \u2014 calm eyes shine bright \u2014 balance restored",
+        "Claws unsheathe with ease now \u2014 power flows free and smooth \u2014 confidence soars",
+        "Bolts of lightning cease their dance \u2014 dragon's stance unwavering \u2014 control asserted"
+      ]
+    },
+    {
+      "ability": "DEX Save",
+      "category": "failures",
+      "description": "Flavor text for failures a save",
+      "entries": [
+        "Electric claws falter, lost \u2014 body tumbles to ground \u2014 shock waves",
+        "Lightning seizes its form now \u2014 muscles spasm wildly \u2014 collapse follows",
+        "Thunderclap drowns all else out \u2014 dragon stumbles, blind \u2014 darkness closes",
+        "Static charge ignites a spark \u2014 flames lick at scales \u2014 panic sets in",
+        "Wind's wild fury overpowers now \u2014 wings thrash, helpless \u2014 fall begins"
+      ]
+    },
+    {
+      "ability": "CON Save",
+      "category": "attempts",
+      "description": "Flavor text for attempts a save",
+      "entries": [
+        "flickering lightning dances \u2014 claws snap wildly \u2014 thunder rumbles",
+        "electricity crackles fiercely \u2014 jaws open wide \u2014 stormy gaze",
+        "stormy air swirls \u2014 tail thrashes wildly \u2014 piercing roar",
+        "blue scales shimmer darkly \u2014 eyes blaze with fury \u2014 raw power builds",
+        "static sparks fly swiftly \u2014 teeth glint menacingly \u2014 battle cry echoes"
+      ]
+    },
+    {
+      "ability": "CON Save",
+      "category": "successes",
+      "description": "Flavor text for successes a save",
+      "entries": [
+        "crackling energy dissipates \u2014 wings relax slowly \u2014 calm settles",
+        "stormy winds subside gently \u2014 tail drops limp \u2014 relief seeps",
+        "electricity's grip falters \u2014 jaws close softly \u2014 peaceful gaze",
+        "blue scales shine warmly \u2014 eyes dim with calm \u2014 stillness falls",
+        "static charge fades swiftly \u2014 teeth retract safely \u2014 tranquility returns"
+      ]
+    },
+    {
+      "ability": "CON Save",
+      "category": "failures",
+      "description": "Flavor text for failures a save",
+      "entries": [
+        "crackling energy surges wildly \u2014 claws rake frantically \u2014 chaos erupts",
+        "stormy winds howl fiercely \u2014 wings beat wildly \u2014 panic spreads",
+        "electricity's grip tightens fiercely \u2014 jaws snap shut \u2014 agony rips",
+        "blue scales darken ominously \u2014 eyes blaze with fury \u2014 terror grips",
+        "static charge builds explosively \u2014 teeth bare menacingly \u2014 disaster looms"
+      ]
+    },
+    {
+      "ability": "INT Save",
+      "category": "attempts",
+      "description": "Flavor text for attempts a save",
+      "entries": [
+        "lightning claws the air \u2014 tense muscles coiled \u2014 mind racing fast",
+        "electricity crackles through scales \u2014 focused eyes narrowing \u2014 mind sharpens edge",
+        "blue fire dances within \u2014 restless energy building \u2014 reason falters slightly",
+        "static clings to its hide \u2014 anticipation builds slowly \u2014 thought stumbles forward",
+        "power surges beneath skin \u2014 determined heart beats strong \u2014 logic falters briefly"
+      ]
+    },
+    {
+      "ability": "INT Save",
+      "category": "successes",
+      "description": "Flavor text for successes a save",
+      "entries": [
+        "blue lightning arcs free \u2014 mental clarity shines bright \u2014 doubt vanishes now",
+        "electricity bursts forth swift \u2014 confident thoughts prevail \u2014 danger recedes far",
+        "reason's steady flame burns \u2014 inner calm descends slow \u2014 fears subside deep",
+        "mind sharp as a blade \u2014 focus cuts through haze \u2014 threat dissolves clear",
+        "thoughts untangle like silk \u2014 clarity seeps in calm \u2014 balance restored now"
+      ]
+    },
+    {
+      "ability": "INT Save",
+      "category": "failures",
+      "description": "Flavor text for failures a save",
+      "entries": [
+        "mental fog rolls in dark \u2014 doubt creeps, spreads slow \u2014 reason falters deep",
+        "blue flames flicker out cold \u2014 uncertainty grips tight \u2014 danger looms near",
+        "thoughts tangle like thorns \u2014 confusion gnaws, eats away \u2014 panic stirs within",
+        "electricity short-circuits mind bright \u2014 chaos erupts wild \u2014 terror seizes hold",
+        "mental chains bind strong now \u2014 fear holds fast, will not yield \u2014 reason lost"
+      ]
+    },
+    {
+      "ability": "WIS Save",
+      "category": "attempts",
+      "description": "Flavor text for attempts a save",
+      "entries": [
+        "cracks the air still \u2014 lightning trembles \u2014 dragon's focus",
+        "wisdom flares bright red \u2014 eyes narrow sharply \u2014 sand swirls",
+        "static crackles wildly free \u2014 claws snap wildly \u2014 sparks fly",
+        "electrical charge gathers dark \u2014 muscles tense tightly \u2014 breath hisses",
+        "blue scales glint angry \u2014 the air vibrates strongly \u2014 thunder rumbles"
+      ]
+    },
+    {
+      "ability": "WIS Save",
+      "category": "successes",
+      "description": "Flavor text for successes a save",
+      "entries": [
+        "wisdom's calm washes over \u2014 stormy fury subsides slowly \u2014 peace returns",
+        "dragon's focus clears bright \u2014 lightning dissipates swiftly \u2014 danger passes",
+        "electrical charge drains slow \u2014 claws relax, open wide \u2014 tension eases",
+        "blue scales shine relieved \u2014 air quiets its wild thrumming \u2014 stillness falls",
+        "dragon's heart beats steady \u2014 the tempest's fury breaks \u2014 calm prevails"
+      ]
+    },
+    {
+      "ability": "WIS Save",
+      "category": "failures",
+      "description": "Flavor text for failures a save",
+      "entries": [
+        "wisdom's spark flickers dim \u2014 dragon's eyes widen wildly \u2014 chaos erupts",
+        "electrical charge surges wild \u2014 claws lash out, reckless \u2014 destruction rages",
+        "blue scales darken, grow cold \u2014 stormy fury intensifies sharply \u2014 danger grows",
+        "dragon's heart pounds swiftly \u2014 air crackles with dark energy \u2014 terror mounts",
+        "static crackles wildly free \u2014 the world around it shatters \u2014 devastation spreads"
+      ]
+    },
+    {
+      "ability": "CHA Save",
+      "category": "attempts",
+      "description": "Flavor text for attempts a save",
+      "entries": [
+        "electric air crackles \u2014 claws flex tense \u2014 jaws open wide",
+        "sparkling dust dances \u2014 scales ripple smooth \u2014 eyes narrow cold",
+        "thunder rumbles distant \u2014 wings spread wide \u2014 tail thrashes loud",
+        "blue flames flicker bright \u2014 claws dig deep \u2014 roar echoes deep",
+        "sand swirls fierce storm \u2014 lightning crackles near \u2014 dragon breathes slow"
+      ]
+    },
+    {
+      "ability": "CHA Save",
+      "category": "successes",
+      "description": "Flavor text for successes a save",
+      "entries": [
+        "chaotic energy disperses \u2014 wings beat swift \u2014 thunder fades calm",
+        "electrified air clears \u2014 scales shine bright \u2014 eyes sparkle free",
+        "roar of triumph echoes \u2014 claws flex proud \u2014 blue flames dance high",
+        "static sparks vanish fast \u2014 dragon breathes slow \u2014 calm settles deep",
+        "lightning bolts miss true \u2014 wings beat strong \u2014 victorious cry rings"
+      ]
+    },
+    {
+      "ability": "CHA Save",
+      "category": "failures",
+      "description": "Flavor text for failures a save",
+      "entries": [
+        "chaotic energy builds \u2014 lightning seizes close \u2014 dragon roars pain",
+        "electric shock courses \u2014 scales ripple weak \u2014 eyes flash panic",
+        "thunder booms deafening \u2014 wings falter slow \u2014 claws flail wildly",
+        "blue flames flicker dim \u2014 dragon stumbles lost \u2014 roar of fear rings",
+        "sandstorms rage on strong \u2014 lightning bolts strike true \u2014 dragon crashes hard"
+      ]
+    },
+    {
+      "ability": "Perception",
+      "category": "attempts",
+      "description": "Flavor text for attempts a skill",
+      "entries": [
+        "crackling lightning dances \u2014 claws snap forward \u2014 uncertain gaze",
+        "static swirls around \u2014 tense muscles ripple \u2014 poised breath",
+        "blue scales glimmer \u2014 ears perk up \u2014 listening silence",
+        "sand storms its hide \u2014 eyes narrow sharply \u2014 alert crouch",
+        "electrical charge builds \u2014 tail twitches rapidly \u2014 coiled power"
+      ]
+    },
+    {
+      "ability": "Perception",
+      "category": "successes",
+      "description": "Flavor text for successes a skill",
+      "entries": [
+        "sand yields secrets \u2014 ancient knowledge revealed \u2014 triumphant roar",
+        "distant whispers clear \u2014 hidden paths unveiled \u2014 eager leap",
+        "crackling sparks illuminate \u2014 invisible dangers exposed \u2014 watchful gaze",
+        "electric senses resonate \u2014 hidden currents detected \u2014 decisive strike",
+        "peripheral vision expands \u2014 unseen threats revealed \u2014 swift response"
+      ]
+    },
+    {
+      "ability": "Perception",
+      "category": "failures",
+      "description": "Flavor text for failures a skill",
+      "entries": [
+        "darkness obscures truth \u2014 blind stumble forward \u2014 frustrated snarl",
+        "electrical charge falters \u2014 lost in shadows \u2014 defeated sigh",
+        "static fails to guide \u2014 misguided step forward \u2014 warning growl",
+        "sand clouds its judgment \u2014 critical error made \u2014 anxious glance",
+        "crackling lightning misfires \u2014 startled yelp echoes \u2014 bruised pride"
+      ]
+    },
+    {
+      "ability": "Stealth",
+      "category": "attempts",
+      "description": "Flavor text for attempts a skill",
+      "entries": [
+        "electrified scales shimmer \u2014 tenses, coiled \u2014 silence broken",
+        "sand swirls around it \u2014 pauses, poised \u2014 watchful eyes gleam",
+        "crackling air thickens \u2014 stills, statue-like \u2014 breath held",
+        "blue form blurs edges \u2014 freezes, alert \u2014 charged muscles tense",
+        "static crackles, sparks dance \u2014 holds, unmoving \u2014 lightning-laced gaze"
+      ]
+    },
+    {
+      "ability": "Stealth",
+      "category": "successes",
+      "description": "Flavor text for successes a skill",
+      "entries": [
+        "shadows swallow it whole \u2014 melts, unseen \u2014 silent as stone",
+        "electric aura dissolves \u2014 slips, unnoticed \u2014 glides on darkness",
+        "form blurs, edges fade \u2014 vanishes, unspotted \u2014 gone like mist",
+        "static charge disperses \u2014 becomes one \u2014 merges with the night",
+        "blue dragon blends seamless \u2014 lost in shadows \u2014 unseen and still"
+      ]
+    },
+    {
+      "ability": "Stealth",
+      "category": "failures",
+      "description": "Flavor text for failures a skill",
+      "entries": [
+        "scales rattle, sparks flash \u2014 missteps, exposed \u2014 caught off guard",
+        "electrified form flares bright \u2014 falters, awkward \u2014 clumsy as stone",
+        "crackling air shatters calm \u2014 lurches, revealed \u2014 fails to conceal",
+        "charged muscles betray it \u2014 stumbles, visible \u2014 betrayed by speed",
+        "static charge betrays it \u2014 stands out \u2014 lit up like a beacon"
+      ]
+    },
+    {
+      "ability": "Death Save",
+      "category": "attempts",
+      "description": "Flavor text for attempts a death_save",
+      "entries": [
+        "cracks open lightning \u2014 sparks flash wildly \u2014 claws snap tight",
+        "stormy breath billows \u2014 blue fire crackles hot \u2014 razor-sharp edge",
+        "sand swirls tempestuous \u2014 static dances across scales \u2014 thunderous growl",
+        "electrified claws lash out \u2014 crackling energy builds high \u2014 furious snarl",
+        "air shimmers electric \u2014 lightning coils tautly \u2014 ancient power stirs"
+      ]
+    },
+    {
+      "ability": "Death Save",
+      "category": "successes",
+      "description": "Flavor text for successes a death_save",
+      "entries": [
+        "crystal clear calm settles \u2014 warmth spreads, soothing pain \u2014 golden light",
+        "peaceful silence descends slow \u2014 stormy breath exhales gentle \u2014 tranquil sleep",
+        "turbulent energy disperses \u2014 blue fire flickers low \u2014 serene smile",
+        "static dissipates, clearing air \u2014 sparks fade into stillness \u2014 quiet triumph",
+        "claws release, limp fall \u2014 crackling power ebbs soft \u2014 respite found"
+      ]
+    },
+    {
+      "ability": "Death Save",
+      "category": "failures",
+      "description": "Flavor text for failures a death_save",
+      "entries": [
+        "shattered calm crumbles fast \u2014 darkness closes in tight \u2014 hopeless cry",
+        "thunderous roar booms loud \u2014 electric claws slash wide \u2014 chaos erupts",
+        "flickering blue fire dies \u2014 stormy breath freezes cold \u2014 mortal pain",
+        "tempestuous sand devours all \u2014 static screams, deafening white \u2014 lost cause",
+        "crackling energy surges wild \u2014 lightning bolts rend flesh \u2014 agony's grasp"
+      ]
+    },
+    {
+      "ability": "Initiative",
+      "category": "attempts",
+      "description": "Flavor text for attempts a initiative",
+      "entries": [
+        "Electric claws twitching \u2014 swift calculations \u2014 feral eyes narrow",
+        "Sand swirls around \u2014 calculating gaze \u2014 lightning sparks",
+        "Air crackles tense \u2014 instinctual leap \u2014 burning intent",
+        "Frozen moment hangs \u2014 weighty silence \u2014 unyielding glare",
+        "Stormy winds howl \u2014 reckless energy \u2014 blue flames dance"
+      ]
+    },
+    {
+      "ability": "Initiative",
+      "category": "successes",
+      "description": "Flavor text for successes a initiative",
+      "entries": [
+        "Blue blaze erupts \u2014 rapid strike \u2014 opponent stumbles",
+        "Electrified air shimmers \u2014 fluid motion \u2014 swift victory",
+        "Frozen moment breaks \u2014 lightning-fast reflexes \u2014 triumph unfurls",
+        "Thunder booms loud \u2014 bold initiative \u2014 foes falter",
+        "Tense silence snaps \u2014 razor-sharp instincts \u2014 dominance claimed"
+      ]
+    },
+    {
+      "ability": "Initiative",
+      "category": "failures",
+      "description": "Flavor text for failures a initiative",
+      "entries": [
+        "Electric sparks fizzle \u2014 hesitant pause \u2014 opening created",
+        "Sand devils whirl \u2014 momentary lapse \u2014 vulnerable exposed",
+        "Air grows heavy \u2014 delayed reaction \u2014 counterattack launched",
+        "Frozen moment freezes \u2014 crushing defeat \u2014 opponent seizes",
+        "Stormy winds die \u2014 faltering energy \u2014 chance lost"
+      ]
+    },
+    {
+      "ability": "Bloodied",
+      "category": "attempts",
+      "description": "Flavor text for attempts a bloodied",
+      "entries": [
+        "Electric sparks dance \u2014 scales crackle with fury \u2014 wounds glisten crimson",
+        "Furious thunder booms within \u2014 lightning claws rip the air \u2014 blood drips slow",
+        "Arms tremble, wings falter \u2014 sand and dust cling to scars \u2014 snarls low rumble",
+        "Scorched feathers ruffle wildly \u2014 electric aura crackles bright \u2014 pain screams silent",
+        "Wounds blaze with lightning fire \u2014 claws swipe blindly \u2014 fury's wild cry echoes"
+      ]
+    },
+    {
+      "ability": "Death",
+      "category": "attempts",
+      "description": "Flavor text for attempts a death",
+      "entries": [
+        "lightning dies within \u2014 claws scrape stone \u2014 darkness claims",
+        "sand swirls up \u2014 last spark falters \u2014 stillness falls",
+        "frenzied heartbeat slows \u2014 claws drop limp \u2014 final shudder",
+        "electricity crackles out \u2014 vision blurs to black \u2014 weightless fall",
+        "thunder silenced now \u2014 lightning scarred scales fade \u2014 peaceful end"
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "hookType": "itemUse",
+      "itemName": "Multiattack",
+      "table": "Multiattack|attempts"
+    },
+    {
+      "hookType": "attackRoll",
+      "itemName": "Bite",
+      "table": "Bite|attempts"
+    },
+    {
+      "hookType": "damageRoll",
+      "itemName": "Bite",
+      "table": "Bite|successes"
+    },
+    {
+      "hookType": "attackRoll_crit",
+      "itemName": "Bite",
+      "table": "Bite|crits"
+    },
+    {
+      "hookType": "attackRoll_fumble",
+      "itemName": "Bite",
+      "table": "Bite|fumbles"
+    },
+    {
+      "hookType": "attackRoll_barely_hits",
+      "itemName": "Bite",
+      "table": "Bite|barely_hits"
+    },
+    {
+      "hookType": "attackRoll_barely_misses",
+      "itemName": "Bite",
+      "table": "Bite|barely_misses"
+    },
+    {
+      "hookType": "attackRoll_miss_dodge",
+      "itemName": "Bite",
+      "table": "Bite|miss_dodge"
+    },
+    {
+      "hookType": "attackRoll_miss_armor",
+      "itemName": "Bite",
+      "table": "Bite|miss_armor"
+    },
+    {
+      "hookType": "attackRoll",
+      "itemName": "Claw",
+      "table": "Claw|attempts"
+    },
+    {
+      "hookType": "damageRoll",
+      "itemName": "Claw",
+      "table": "Claw|successes"
+    },
+    {
+      "hookType": "attackRoll_crit",
+      "itemName": "Claw",
+      "table": "Claw|crits"
+    },
+    {
+      "hookType": "attackRoll_fumble",
+      "itemName": "Claw",
+      "table": "Claw|fumbles"
+    },
+    {
+      "hookType": "attackRoll_barely_hits",
+      "itemName": "Claw",
+      "table": "Claw|barely_hits"
+    },
+    {
+      "hookType": "attackRoll_barely_misses",
+      "itemName": "Claw",
+      "table": "Claw|barely_misses"
+    },
+    {
+      "hookType": "attackRoll_miss_dodge",
+      "itemName": "Claw",
+      "table": "Claw|miss_dodge"
+    },
+    {
+      "hookType": "attackRoll_miss_armor",
+      "itemName": "Claw",
+      "table": "Claw|miss_armor"
+    },
+    {
+      "hookType": "itemUse",
+      "itemName": "Lightning Breath",
+      "table": "Lightning Breath|attempts"
+    },
+    {
+      "hookType": "savingThrow",
+      "saveId": "str",
+      "table": "STR Save|attempts"
+    },
+    {
+      "hookType": "savingThrow",
+      "saveId": "dex",
+      "table": "DEX Save|attempts"
+    },
+    {
+      "hookType": "savingThrow",
+      "saveId": "con",
+      "table": "CON Save|attempts"
+    },
+    {
+      "hookType": "savingThrow",
+      "saveId": "int",
+      "table": "INT Save|attempts"
+    },
+    {
+      "hookType": "savingThrow",
+      "saveId": "wis",
+      "table": "WIS Save|attempts"
+    },
+    {
+      "hookType": "savingThrow",
+      "saveId": "cha",
+      "table": "CHA Save|attempts"
+    },
+    {
+      "hookType": "skill",
+      "skillId": "prc",
+      "table": "Perception|attempts"
+    },
+    {
+      "hookType": "skill",
+      "skillId": "ste",
+      "table": "Stealth|attempts"
+    },
+    {
+      "hookType": "deathSave",
+      "table": "Death Save|attempts"
+    },
+    {
+      "hookType": "initiative",
+      "table": "Initiative|attempts"
+    },
+    {
+      "hookType": "bloodied",
+      "table": "Bloodied|attempts"
+    },
+    {
+      "hookType": "death",
+      "table": "Death|attempts"
+    }
+  ]
+}
