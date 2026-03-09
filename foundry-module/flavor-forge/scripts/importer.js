@@ -70,11 +70,16 @@ export async function importCreatureData(data) {
   }
 
   // Create folder for this creature's tables
-  const folder = await Folder.create({
-    name: creatureName,
-    type: "RollTable",
-    color: "#7b2d8e",
-  });
+  let folder;
+  try {
+    folder = await Folder.create({
+      name: creatureName,
+      type: "RollTable",
+      color: "#7b2d8e",
+    });
+  } catch (err) {
+    throw new Error(`Failed to create folder for "${creatureName}": ${err.message}`);
+  }
 
   // Create each RollTable
   let tableCount = 0;
@@ -106,19 +111,23 @@ export async function importCreatureData(data) {
       weight: 1,
     }));
 
-    const rollTable = await RollTable.create({
-      name: fullName,
-      description: tableData.description || "",
-      formula: `1d${n}`,
-      replacement: true,
-      displayRoll: false,
-      folder: folder.id,
-      results: results,
-    });
+    try {
+      const rollTable = await RollTable.create({
+        name: fullName,
+        description: tableData.description || "",
+        formula: `1d${n}`,
+        replacement: true,
+        displayRoll: false,
+        folder: folder.id,
+        results: results,
+      });
 
-    const tableKey = `${tableData.ability}|${tableData.category}`;
-    tableIdMap[tableKey] = rollTable.id;
-    tableCount++;
+      const tableKey = `${tableData.ability}|${tableData.category}`;
+      tableIdMap[tableKey] = rollTable.id;
+      tableCount++;
+    } catch (err) {
+      console.error(`Flavor Forge | Failed to create table "${fullName}":`, err);
+    }
   }
 
   // Store creature config in settings

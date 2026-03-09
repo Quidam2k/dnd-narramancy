@@ -53,9 +53,14 @@ class ConfigManager:
         has_anthropic = bool(os.environ.get('ANTHROPIC_API_KEY'))
         has_ollama = bool(os.environ.get('OLLAMA_BASE_URL'))
 
-        if not has_gemini and not has_anthropic and not has_ollama:
+        has_groq = bool(os.environ.get('GROQ_API_KEY'))
+        has_openrouter = bool(os.environ.get('OPENROUTER_API_KEY'))
+        has_together = bool(os.environ.get('TOGETHER_API_KEY'))
+
+        if not any([has_gemini, has_anthropic, has_ollama, has_groq, has_openrouter, has_together]):
             warnings.append(
                 "No API keys configured. Set GEMINI_API_KEY, ANTHROPIC_API_KEY, "
+                "GROQ_API_KEY, OPENROUTER_API_KEY, TOGETHER_API_KEY, "
                 "or OLLAMA_BASE_URL to use a provider."
             )
 
@@ -88,6 +93,9 @@ class ConfigManager:
             'claude': 'ANTHROPIC_API_KEY',
             'ollama': 'OLLAMA_BASE_URL',
             'lmstudio': 'LMSTUDIO_BASE_URL',
+            'groq': 'GROQ_API_KEY',
+            'openrouter': 'OPENROUTER_API_KEY',
+            'together': 'TOGETHER_API_KEY',
         }
         env_name = key_map.get(provider.lower())
         if env_name:

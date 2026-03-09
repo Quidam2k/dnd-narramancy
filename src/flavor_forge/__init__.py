@@ -6,7 +6,7 @@ from .parser import CharacterAbilityParser
 from .config import ConfigManager
 from .cost_tracker import CostTracker
 from .profiler import CharacterProfile, CharacterizationProfiler, CharacterProfileIntegrator
-from .providers import AIProvider, ProviderResult, GeminiProvider, ClaudeProvider, OllamaProvider
+from .providers import AIProvider, ProviderResult, GeminiProvider, ClaudeProvider, OllamaProvider, OpenAICompatibleProvider, LMStudioProvider
 from .exporters import export_rollable_tables, export_token_says, export_flavor_forge
 
 __all__ = [
@@ -27,6 +27,8 @@ __all__ = [
     'GeminiProvider',
     'ClaudeProvider',
     'OllamaProvider',
+    'OpenAICompatibleProvider',
+    'LMStudioProvider',
     'export_rollable_tables',
     'export_token_says',
     'export_flavor_forge',

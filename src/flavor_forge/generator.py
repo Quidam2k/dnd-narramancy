@@ -683,4 +683,4 @@ def _is_damage_dealing(request: FlavorTextRequest) -> bool:
     if not request.ability_description:
         return False
     desc = request.ability_description.lower()
-    return any(kw in desc for kw in ('damage', 'hit:', 'attack:', 'saving throw, taking'))
+    return any(kw in desc for kw in ('damage', 'hit:', 'attack:', 'takes', 'deals', 'dealing'))

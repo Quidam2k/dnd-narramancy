@@ -18,7 +18,7 @@
  *   dnd5e.rollInitiative(actor, combatants)
  */
 
-import { wildcardMatch, resolveTableKey } from "./utils.js";
+import { wildcardMatch } from "./utils.js";
 import { getCreatureData, isEnabled } from "./settings.js";
 
 const MODULE_ID = "flavor-forge";
@@ -30,6 +30,16 @@ const shownEntries = new Map();
 
 /** Map<string, boolean> keyed by actor ID — tracks if bloodied already fired */
 const bloodiedFired = new Map();
+
+/** Map<string, boolean> keyed by actor ID — tracks if death already fired */
+const deathFired = new Map();
+
+/**
+ * Last damage source — tracks the most recent rollDamage so we can
+ * attribute killing blows to the attacker when a target reaches 0 HP.
+ * @type {{ actorId: string, tokenName: string, itemName: string } | null}
+ */
+let lastDamageSource = null;
 
 /**
  * Extract the natural d20 result from a rolls array.
@@ -134,11 +144,17 @@ export function registerTriggerHooks() {
   });
 
   // Damage rolls — dnd5e 3.x: (rolls, data) where data.subject is Activity
+  // Also stores last damage source for killing blow attribution.
   Hooks.on("dnd5e.rollDamage", (rolls, data) => {
     const activity = data?.subject;
     const item = activity?.item;
     const actor = item?.parent ?? activity?.actor;
     if (item && actor) {
+      lastDamageSource = {
+        actorId: actor.id,
+        tokenName: getTokenName(actor),
+        itemName: item.name,
+      };
       handleItemHook("damageRoll", actor, item.name);
     }
   });
@@ -215,14 +231,21 @@ export function registerTriggerHooks() {
 
     // Death detection — HP drops to 0
     if (oldHP > 0 && newHP <= 0) {
-      handleDeathEvent(actor);
+      const actorId = actor.id;
+      if (!deathFired.get(actorId)) {
+        deathFired.set(actorId, true);
+        handleDeathEvent(actor);
+        handleKillingBlowEvent(actor);
+      }
     }
   });
 
-  // Reset no-repeat tracking and bloodied flags when combat ends
+  // Reset no-repeat tracking and bloodied/death flags when combat ends
   Hooks.on("deleteCombat", () => {
     shownEntries.clear();
     bloodiedFired.clear();
+    deathFired.clear();
+    lastDamageSource = null;
     console.log("Flavor Forge | Combat ended — reset tracking");
   });
 
@@ -351,6 +374,38 @@ function handleDeathEvent(actor) {
 }
 
 /**
+ * Handle the killing blow event — attribute to the ATTACKER when a creature dies.
+ * Uses the last stored damage source to find matching killingBlow triggers
+ * on the attacker's creature data.
+ *
+ * @param {Actor5e} dyingActor - The actor that just reached 0 HP
+ */
+function handleKillingBlowEvent(dyingActor) {
+  if (!lastDamageSource) return;
+
+  const { tokenName, itemName } = lastDamageSource;
+  if (!tokenName || !itemName) return;
+
+  const creatures = getCreatureData();
+
+  for (const creature of Object.values(creatures)) {
+    if (!wildcardMatch(creature.tokenPattern, tokenName)) continue;
+
+    const trigger = creature.triggers.find(
+      (t) =>
+        t.hookType === "killingBlow" &&
+        t.itemName &&
+        itemName.toLowerCase() === t.itemName.toLowerCase()
+    );
+
+    if (trigger) {
+      rollAndWhisper(creature, trigger, tokenName);
+      return;
+    }
+  }
+}
+
+/**
  * Roll the table referenced by a trigger and send a whispered chat message.
  * Includes no-repeat tracking — avoids showing the same result twice in a combat.
  *
@@ -385,7 +440,13 @@ async function rollAndWhisper(creature, trigger, tokenName) {
   // Roll the table, re-rolling up to 3 times to avoid repeats
   let resultText = null;
   for (let attempt = 0; attempt < Math.min(3, totalEntries); attempt++) {
-    const roll = await table.roll({ displayChat: false });
+    let roll;
+    try {
+      roll = await table.roll({ displayChat: false });
+    } catch (err) {
+      console.error(`Flavor Forge | Error rolling table "${tableKey}":`, err);
+      return;
+    }
     const text = roll.results?.[0]?.text;
     if (!text) return;
 
@@ -404,11 +465,15 @@ async function rollAndWhisper(creature, trigger, tokenName) {
   const whisperIds = getWhisperTargets(creature);
 
   // Send the flavor message
-  await ChatMessage.create({
-    content: `<div class="flavor-forge-msg"><em>${resultText}</em></div>`,
-    whisper: whisperIds,
-    speaker: { alias: tokenName },
-  });
+  try {
+    await ChatMessage.create({
+      content: `<div class="flavor-forge-msg"><em>${resultText}</em></div>`,
+      whisper: whisperIds,
+      speaker: { alias: tokenName },
+    });
+  } catch (err) {
+    console.error(`Flavor Forge | Error sending chat message for "${tableKey}":`, err);
+  }
 }
 
 /**

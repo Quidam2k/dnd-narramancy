@@ -1,6 +1,7 @@
 """AI provider abstraction for Flavor Forge.
 
-Supports Gemini, Claude, Ollama, and LM Studio (OpenAI-compatible) providers.
+Supports Gemini, Claude, Ollama, and OpenAI-compatible providers
+(LM Studio, Groq, OpenRouter, Together AI).
 """
 
 import asyncio
@@ -149,14 +150,18 @@ class OllamaProvider(AIProvider):
         )
 
 
-class LMStudioProvider(AIProvider):
-    """LM Studio / OpenAI-compatible API provider."""
+class OpenAICompatibleProvider(AIProvider):
+    """Generic OpenAI-compatible API provider.
 
-    name = "lmstudio"
+    Works with any service that implements the /v1/chat/completions endpoint:
+    LM Studio, Groq, OpenRouter, Together AI, etc.
+    """
 
-    def __init__(self, base_url: str = "http://localhost:1234", model: str = "local-model"):
+    def __init__(self, base_url: str, model: str, api_key: Optional[str] = None, name: str = "openai-compatible"):
         self.base_url = base_url.rstrip("/")
         self.model = model
+        self.api_key = api_key
+        self.name = name
 
     async def generate(self, prompt: str) -> ProviderResult:
         import urllib.request
@@ -170,10 +175,14 @@ class LMStudioProvider(AIProvider):
             "stream": False,
         }).encode("utf-8")
 
+        headers = {"Content-Type": "application/json"}
+        if self.api_key:
+            headers["Authorization"] = f"Bearer {self.api_key}"
+
         req = urllib.request.Request(
             url,
             data=payload,
-            headers={"Content-Type": "application/json"},
+            headers=headers,
         )
 
         def _do_request():
@@ -193,6 +202,34 @@ class LMStudioProvider(AIProvider):
             model=data.get("model", self.model),
             provider_name=self.name,
         )
+
+
+class LMStudioProvider(OpenAICompatibleProvider):
+    """LM Studio local provider (no API key needed)."""
+
+    def __init__(self, base_url: str = "http://localhost:1234", model: str = "local-model"):
+        super().__init__(base_url=base_url, model=model, name="lmstudio")
+
+
+class GroqProvider(OpenAICompatibleProvider):
+    """Groq cloud provider (free tier available)."""
+
+    def __init__(self, api_key: str, model: str = "llama-3.1-8b-instant"):
+        super().__init__(base_url="https://api.groq.com/openai/v1", model=model, api_key=api_key, name="groq")
+
+
+class OpenRouterProvider(OpenAICompatibleProvider):
+    """OpenRouter cloud provider (free models available)."""
+
+    def __init__(self, api_key: str, model: str = "meta-llama/llama-3.1-8b-instruct:free"):
+        super().__init__(base_url="https://openrouter.ai/api/v1", model=model, api_key=api_key, name="openrouter")
+
+
+class TogetherProvider(OpenAICompatibleProvider):
+    """Together AI cloud provider (free tier available)."""
+
+    def __init__(self, api_key: str, model: str = "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"):
+        super().__init__(base_url="https://api.together.xyz/v1", model=model, api_key=api_key, name="together")
 
 
 def get_provider(name: str, config: ConfigManager) -> AIProvider:
@@ -226,8 +263,32 @@ def get_provider(name: str, config: ConfigManager) -> AIProvider:
         model = config.get("ai_generation", "lmstudio_model", fallback="local-model")
         return LMStudioProvider(base_url=base_url, model=model)
 
+    elif name == "groq":
+        api_key = config.get_api_key("groq")
+        if not api_key:
+            raise ValueError("Groq not configured: set GROQ_API_KEY")
+        model = config.get("ai_generation", "groq_model", fallback="llama-3.1-8b-instant")
+        return GroqProvider(api_key=api_key, model=model)
+
+    elif name == "openrouter":
+        api_key = config.get_api_key("openrouter")
+        if not api_key:
+            raise ValueError("OpenRouter not configured: set OPENROUTER_API_KEY")
+        model = config.get("ai_generation", "openrouter_model", fallback="meta-llama/llama-3.1-8b-instruct:free")
+        return OpenRouterProvider(api_key=api_key, model=model)
+
+    elif name == "together":
+        api_key = config.get_api_key("together")
+        if not api_key:
+            raise ValueError("Together not configured: set TOGETHER_API_KEY")
+        model = config.get("ai_generation", "together_model", fallback="meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo")
+        return TogetherProvider(api_key=api_key, model=model)
+
     else:
-        raise ValueError(f"Unknown provider: {name!r}. Available: gemini, claude, ollama, lmstudio")
+        raise ValueError(
+            f"Unknown provider: {name!r}. "
+            "Available: gemini, claude, ollama, lmstudio, groq, openrouter, together"
+        )
 
 
 def get_available_providers(config: ConfigManager) -> list[str]:
@@ -244,5 +305,11 @@ def get_available_providers(config: ConfigManager) -> list[str]:
 
     if config.get_api_key("lmstudio"):
         available.append("lmstudio")
+    if config.get_api_key("groq"):
+        available.append("groq")
+    if config.get_api_key("openrouter"):
+        available.append("openrouter")
+    if config.get_api_key("together"):
+        available.append("together")
 
     return available

@@ -3,7 +3,7 @@
 ## 1. Launch the Web UI
 
 ```bash
-cd C:\Users\athen\Desktop\devs\dnd-flavor-forge
+cd /path/to/dnd-flavor-forge
 PYTHONPATH=src python -m flavor_forge webui
 ```
 

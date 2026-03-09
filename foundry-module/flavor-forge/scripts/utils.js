@@ -41,14 +41,3 @@ export function tableName(creatureName, ability, category) {
   const label = category.charAt(0).toUpperCase() + category.slice(1);
   return `${creatureName} - ${ability} - ${label}`;
 }
-
-/**
- * Resolve a table key ("Shortsword|attempts") to a full Foundry table name.
- * @param {string} creatureName
- * @param {string} tableKey - "ability|category"
- * @returns {string}
- */
-export function resolveTableKey(creatureName, tableKey) {
-  const [ability, category] = tableKey.split("|");
-  return tableName(creatureName, ability, category);
-}

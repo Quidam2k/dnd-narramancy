@@ -1,147 +1,296 @@
 # D&D Flavor Forge
 
-Generate vivid, immersive narration text for D&D monster abilities. Creates rollable tables with multiple variations for attempt/success/failure scenarios.
+Generate vivid narration text for D&D creatures and use it at the table — whether you run Foundry VTT, TaleSpire, or theater of the mind. Feed in a stat block, pick an AI provider (local or cloud), and get back rollable tables full of evocative one-liners for every ability, attack, and reaction.
 
-**Input:**
-```
-Longsword Attack - Melee Weapon Attack, 1d8+4 slashing damage
-```
+**Input:** A creature stat block (pasted text, Open5e search, PDF, HTML, or Foundry JSON)
 
-**Output (rollable table):**
-- **Attempt**: "Thorin raises his ancestral blade, firelight dancing along its edge..."
-- **Success**: "Steel bites deep as the dwarf's strike finds its mark with a satisfying crunch..."
-- **Failure**: "The longsword whistles through empty air as his foe sidesteps at the last moment..."
+**Output:** Dozens of short, punchy narration lines per ability — organized into rollable tables with attempt/success/failure variations, plus optional critical hits, fumbles, killing blows, bloodied triggers, and more.
+
+> *"A quick lunge, weight shifting forward — steel leads."*
+> *"It drops low, jaws snapping shut like a sprung trap."*
+> *"The blade finds only air — a half-step too slow."*
 
 ## Quick Start
 
 ```bash
-pip install google-generativeai   # Gemini (default, free tier)
-# or: pip install anthropic       # Claude (higher quality)
+# 1. Clone the repo
+git clone https://github.com/Quidam2k/dnd-flavor-forge.git
+cd dnd-flavor-forge
 
-export GEMINI_API_KEY=your-key
-# or: export ANTHROPIC_API_KEY=your-key
+# 2. Install Python dependencies
+pip install -r requirements.txt
 
-python -m flavor_forge generate --open5e goblin --style dramatic
+# 3. Set up a provider (see Provider Setup below)
+#    Easiest: install LM Studio and load a model — no API key needed
+
+# 4. Generate flavor text
+PYTHONPATH=src python -m flavor_forge generate --open5e goblin \
+  --provider lmstudio --with-crits --generic --variations 20 \
+  --export flavor-forge --output-dir output
+
+# 5. Use the output
+#    - Foundry VTT: import the JSON via the Flavor Forge module
+#    - Other VTTs: open web/roller.html in a browser and load the JSON
 ```
+
+## Provider Setup
+
+You need at least one AI provider. Local providers are free and work offline; cloud providers need an API key.
+
+### LM Studio (free, local — recommended for bulk generation)
+
+1. Download [LM Studio](https://lmstudio.ai/) and install it
+2. Download a model — `meta-llama-3.1-8b-instruct` works well
+3. Load the model and start the local server (it runs on `localhost:1234`)
+4. That's it — no environment variables needed
+
+```bash
+PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider lmstudio
+```
+
+### Ollama (free, local)
+
+1. Install [Ollama](https://ollama.com/)
+2. Pull a model: `ollama pull llama3.1`
+3. Ollama runs on `localhost:11434` by default
+
+```bash
+# Optional: set a custom URL if Ollama isn't on the default port
+export OLLAMA_BASE_URL=http://localhost:11434
+
+PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider ollama
+```
+
+### Gemini (free tier available — recommended if you can't run local)
+
+1. Get a free API key from [Google AI Studio](https://aistudio.google.com/apikey)
+2. Set the environment variable:
+
+```bash
+export GEMINI_API_KEY=your-key-here
+
+PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider gemini
+```
+
+### Groq (free tier — fast cloud inference)
+
+1. Get a free API key from [Groq Console](https://console.groq.com/)
+2. Set the environment variable:
+
+```bash
+export GROQ_API_KEY=your-key-here
+
+PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider groq
+```
+
+### OpenRouter (free models available — model marketplace)
+
+1. Get an API key from [OpenRouter](https://openrouter.ai/keys)
+2. Set the environment variable:
+
+```bash
+export OPENROUTER_API_KEY=your-key-here
+
+PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider openrouter
+```
+
+### Together AI (free tier — open-source models)
+
+1. Get a free API key from [Together](https://api.together.xyz/)
+2. Set the environment variable:
+
+```bash
+export TOGETHER_API_KEY=your-key-here
+
+PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider together
+```
+
+### Claude (paid, highest quality)
+
+1. Get an API key from [Anthropic Console](https://console.anthropic.com/)
+2. Set the environment variable:
+
+```bash
+export ANTHROPIC_API_KEY=your-key-here
+
+PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider claude
+```
+
+## Foundry VTT Module
+
+Flavor Forge includes a Foundry VTT module that automatically whispers narration to the GM when creatures use abilities in combat.
+
+### Install
+
+1. Download or build the module zip
+2. Extract to your Foundry data folder: `Data/modules/flavor-forge/`
+3. Enable the module in your world's module settings
+4. Import a flavor-forge JSON file via the module's import dialog
+
+### Features
+
+- Whispers flavor text to GM when creatures attack, cast spells, use features, etc.
+- Conditional triggers: different text for critical hits, fumbles, near-misses, and barely-hits
+- Killing blow narration when an attack drops a target to 0 HP
+- Bloodied trigger when a creature crosses the half-HP threshold
+- Death narration when a creature dies
+- No-repeat tracking — cycles through all entries before repeating
+
+## Flavor Roller (non-Foundry users)
+
+If you don't use Foundry VTT, you can use the **Flavor Roller** — a standalone HTML page that loads a flavor-forge JSON file and gives you clickable buttons for every ability.
+
+- Open `web/roller.html` in any browser (or use the [hosted version](https://quidam2k.github.io/dnd-flavor-forge/web/roller.html))
+- Load a generated JSON file
+- Click ability buttons to get random narration lines
+- Works great on mobile — tap a button during a game session
+
+## Features
+
+- **Multiple input formats**: Open5e API, pasted text, PDF, HTML (D&D Beyond), Foundry actor JSON
+- **4 styles**: dramatic, comedic, gritty, heroic
+- **Conditional triggers**: critical hits, fumbles, barely-hit, barely-miss, dodge, armor deflection
+- **Killing blow**: special narration for the final strike that drops a target
+- **Bloodied & death**: triggered when a creature crosses half HP or drops to 0
+- **Generic actions**: saves (all 6), skill checks (proficient skills only), initiative, death saves
+- **Batch generation**: process a folder of creature files at once
+- **Context blobs**: add flavor guidance like "swamp-dwelling goblins who worship a hag" to steer the AI
+- **Provider comparison**: generate the same creature with multiple providers side-by-side
+- **Multiple export formats**: Foundry rollable tables, Flavor Forge module JSON, TokenSays
 
 ## CLI Reference
 
-Flavor Forge has three subcommands: `parse`, `generate`, and `export`.
+Flavor Forge has four subcommands: `parse`, `generate`, `export`, and `webui`.
+
+All commands should be run from the project root with `PYTHONPATH=src`.
 
 ### `parse` — Extract abilities from a stat block
 
 ```bash
 # Fetch from Open5e and display parsed abilities
-python -m flavor_forge parse --open5e goblin
+PYTHONPATH=src python -m flavor_forge parse --open5e goblin
 
-# Output as JSON (for piping)
-python -m flavor_forge parse --open5e goblin --json
+# Output as JSON (for piping to generate)
+PYTHONPATH=src python -m flavor_forge parse --open5e goblin --json
 
 # Parse a local text file
-python -m flavor_forge parse goblin.txt
+PYTHONPATH=src python -m flavor_forge parse goblin.txt
 
-# Search by name (fuzzy match)
-python -m flavor_forge parse --open5e "adult red dragon"
+# Parse a PDF stat block (specify page number)
+PYTHONPATH=src python -m flavor_forge parse monster-manual.pdf --page 5
 
 # Add context for flavor generation
-python -m flavor_forge parse --open5e goblin --context "Swamp-dwelling goblins who worship a hag"
+PYTHONPATH=src python -m flavor_forge parse --open5e goblin --context "Swamp-dwelling goblins who worship a hag"
 ```
 
 ### `generate` — Generate flavor text
 
 ```bash
-# Basic generation (Gemini default)
-python -m flavor_forge generate --open5e goblin
+# Basic generation (uses first available provider)
+PYTHONPATH=src python -m flavor_forge generate --open5e goblin
 
 # Choose provider and style
-python -m flavor_forge generate --open5e goblin --provider claude --style gritty
+PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider lmstudio --style gritty
 
-# Output as JSON
-python -m flavor_forge generate --open5e goblin --json
-
-# Generate + export to Foundry VTT in one step
-python -m flavor_forge generate --open5e goblin --export foundry --output-dir ./output/
-
-# Export all formats at once
-python -m flavor_forge generate --open5e goblin --export all --output-dir ./output/
+# Full generation with all the bells and whistles
+PYTHONPATH=src python -m flavor_forge generate --open5e goblin \
+  --provider lmstudio --style dramatic --variations 20 \
+  --with-crits --crit-count 10 --generic \
+  --export flavor-forge --output-dir ./output/
 
 # Batch process a folder of creature files
-python -m flavor_forge generate --batch ./monsters/ --export all --output-dir ./output/
-
-# Pipe from parse (useful for adding context mid-pipeline)
-python -m flavor_forge parse --open5e goblin --json | python -m flavor_forge generate --stdin --export foundry
+PYTHONPATH=src python -m flavor_forge generate --batch ./monsters/ \
+  --export flavor-forge --output-dir ./output/
 
 # Compare providers side by side
-python -m flavor_forge generate --open5e goblin --providers gemini,claude --compare
+PYTHONPATH=src python -m flavor_forge generate --open5e goblin \
+  --providers gemini,lmstudio --compare
 
 # List configured providers
-python -m flavor_forge generate --list-providers
+PYTHONPATH=src python -m flavor_forge generate --list-providers
 ```
 
 ### `export` — Convert saved results to VTT format
 
 ```bash
 # Export to Foundry VTT rollable tables
-python -m flavor_forge export goblin.json --format foundry
+PYTHONPATH=src python -m flavor_forge export results.json --format foundry
 
-# Export to TokenSays format
-python -m flavor_forge export goblin.json --format tokensays
+# Export to Flavor Forge module format
+PYTHONPATH=src python -m flavor_forge export results.json --format flavor-forge
 
-# Export both formats
-python -m flavor_forge export goblin.json --format all
+# Export all formats
+PYTHONPATH=src python -m flavor_forge export results.json --format all
+```
 
-# Custom output path
-python -m flavor_forge export goblin.json --format foundry --output my-tables.json
+### `webui` — Launch the web interface
+
+```bash
+PYTHONPATH=src python -m flavor_forge webui
+# Opens at http://localhost:7870
 ```
 
 ## Providers
 
-| Provider | Env Var | Default Model | Notes |
-|----------|---------|---------------|-------|
-| Gemini | `GEMINI_API_KEY` | `gemini-2.0-flash-exp` | Default. Free tier available. |
-| Claude | `ANTHROPIC_API_KEY` | `claude-sonnet-4-5-20250929` | Higher quality, paid. |
-| Ollama | `OLLAMA_BASE_URL` | `llama3.2` @ `localhost:11434` | Local, free. Requires Ollama running. |
-
-## Foundry VTT Integration
-
-After generating with `--export foundry`:
-
-1. **Rollable Tables**: Import the `-tables.json` file via Foundry's RollTable import. Each ability gets an Attempt/Success/Failure table.
-2. **TokenSays**: Import the `-sayings.json` file into the TokenSays module for automatic narration on token actions.
-
-## Project Structure
-
-```
-src/flavor_forge/
-  __main__.py        # CLI entry point
-  generator.py       # Core AI generation
-  models.py          # Data structures
-  config.py          # Configuration management
-  providers.py       # AI provider abstraction (Gemini, Claude, Ollama)
-  cost_tracker.py    # API cost logging
-  profiler.py        # Character profiling
-  parsers/           # Stat block parsing
-    open5e.py        # Open5e API fetcher
-    text_block.py    # Raw text stat block parser
-    foundry.py       # Foundry JSON parser
-  exporters/         # VTT export
-    rollable_table.py  # Foundry rollable tables
-    token_says.py      # TokenSays format
-tests/               # Test suite
-config.yaml.example  # Configuration template
-```
+| Provider | CLI Name | Env Var | Default Model | Cost |
+|----------|----------|---------|---------------|------|
+| LM Studio | `lmstudio` | — | whatever you load | Free (local) |
+| Ollama | `ollama` | `OLLAMA_BASE_URL` | `llama3.2` | Free (local) |
+| Gemini | `gemini` | `GEMINI_API_KEY` | `gemini-2.0-flash-exp` | Free tier available |
+| Groq | `groq` | `GROQ_API_KEY` | `llama-3.1-8b-instant` | Free tier |
+| OpenRouter | `openrouter` | `OPENROUTER_API_KEY` | `meta-llama/llama-3.1-8b-instruct:free` | Free models available |
+| Together | `together` | `TOGETHER_API_KEY` | `Meta-Llama-3.1-8B-Instruct-Turbo` | Free tier |
+| Claude | `claude` | `ANTHROPIC_API_KEY` | `claude-sonnet-4-5-20250929` | Paid |
 
 ## Configuration
 
-Copy `config.yaml.example` to `config.yaml`, or use environment variables:
+You can set provider credentials via environment variables (recommended) or in a `config.yaml` file. Copy `config.yaml.example` to `config.yaml` to get started.
 
 | Env Var | Purpose |
 |---------|---------|
 | `GEMINI_API_KEY` | Google Gemini API key |
 | `ANTHROPIC_API_KEY` | Anthropic Claude API key |
 | `OLLAMA_BASE_URL` | Ollama server URL (default: `http://localhost:11434`) |
-| `FLAVOR_FORGE_AI_GENERATION_MODEL` | Override default model for any provider |
+| `GROQ_API_KEY` | Groq API key |
+| `OPENROUTER_API_KEY` | OpenRouter API key |
+| `TOGETHER_API_KEY` | Together AI API key |
+
+## Project Structure
+
+```
+dnd-flavor-forge/
+├── src/flavor_forge/          # Main package
+│   ├── __main__.py            # CLI entry point (parse/generate/export/webui)
+│   ├── generator.py           # Core AI generation engine
+│   ├── models.py              # Data structures (ParsedCreature, FlavorTextResult)
+│   ├── config.py              # Configuration management
+│   ├── providers.py           # AI provider abstraction
+│   ├── cost_tracker.py        # API cost logging
+│   ├── profiler.py            # Character profiling
+│   ├── parsers/               # Stat block parsing
+│   │   ├── open5e.py          # Open5e API fetcher
+│   │   ├── text_block.py      # Raw text stat block parser
+│   │   ├── foundry.py         # Foundry actor JSON parser
+│   │   ├── html_block.py      # HTML page parser
+│   │   └── pdf_block.py       # PDF parser
+│   └── exporters/             # VTT export formats
+│       ├── rollable_table.py  # Foundry rollable tables (Roll Table Importer)
+│       ├── flavor_forge_module.py  # Flavor Forge module JSON
+│       └── token_says.py      # TokenSays format
+├── foundry-module/            # Foundry VTT module source
+│   └── flavor-forge/
+│       ├── module.json
+│       ├── scripts/           # trigger-engine.js, import, settings
+│       ├── templates/         # Handlebars templates
+│       ├── styles/            # CSS
+│       └── lang/              # Localization
+├── web/
+│   └── roller.html            # Flavor Roller (standalone, no dependencies)
+├── tests/                     # Test suite
+├── config.yaml.example        # Configuration template
+└── requirements.txt           # Python dependencies
+```
 
 ## License
 
-Private project - not for distribution.
+MIT License — see [LICENSE](LICENSE) for details.

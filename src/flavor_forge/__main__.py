@@ -619,8 +619,9 @@ def _print_comparison(all_comparisons):
                 continue
 
             print(f"\n  [{pname}] (model: {result.metadata.get('model', '?')})")
-            for category in ('attempts', 'successes', 'failures'):
-                texts = getattr(result, category)
+            all_categories = ['attempts', 'successes', 'failures', 'crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor', 'killing_blow']
+            for category in all_categories:
+                texts = getattr(result, category, [])
                 if texts:
                     print(f"    {category.upper()}:")
                     for i, text in enumerate(texts, 1):

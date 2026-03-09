@@ -31,3 +31,7 @@ Thumbs.db
 screengrab/
 *.log
 .claude/
+output/
+*.zip
+plan-*.md
+test-*-stderr.txt

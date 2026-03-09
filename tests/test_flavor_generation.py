@@ -14,6 +14,16 @@ from flavor_forge import (
     FlavorTextRequest,
     CharacterAbilityParser,
     ConfigManager,
+    AIProvider,
+    LMStudioProvider,
+    OpenAICompatibleProvider,
+)
+from flavor_forge.providers import (
+    get_provider,
+    get_available_providers,
+    GroqProvider,
+    OpenRouterProvider,
+    TogetherProvider,
 )
 
 
@@ -168,6 +178,144 @@ def test_generator_init():
         return False
 
 
+def test_provider_interface():
+    """Test that provider classes implement the AIProvider interface correctly."""
+    print("\nTesting provider interface")
+    print("-" * 40)
+
+    try:
+        # LMStudioProvider is a subclass of OpenAICompatibleProvider
+        lm = LMStudioProvider()
+        assert isinstance(lm, OpenAICompatibleProvider)
+        assert isinstance(lm, AIProvider)
+        assert lm.name == "lmstudio"
+        assert lm.base_url == "http://localhost:1234"
+        assert lm.api_key is None
+
+        # OpenAICompatibleProvider with API key
+        oai = OpenAICompatibleProvider(
+            base_url="https://example.com/v1",
+            model="test-model",
+            api_key="test-key",
+            name="test-provider",
+        )
+        assert oai.api_key == "test-key"
+        assert oai.name == "test-provider"
+
+        # Preset subclasses
+        groq = GroqProvider(api_key="gk")
+        assert groq.name == "groq"
+        assert groq.api_key == "gk"
+        assert "groq.com" in groq.base_url
+
+        ortr = OpenRouterProvider(api_key="ok")
+        assert ortr.name == "openrouter"
+        assert "openrouter.ai" in ortr.base_url
+
+        tog = TogetherProvider(api_key="tk")
+        assert tog.name == "together"
+        assert "together.xyz" in tog.base_url
+
+        print("  PASS")
+        return True
+
+    except Exception as e:
+        print(f"  FAIL: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+
+
+def test_get_provider_new_providers():
+    """Test get_provider() for groq, openrouter, together."""
+    print("\nTesting get_provider for new providers")
+    print("-" * 40)
+
+    try:
+        config = ConfigManager()
+
+        # Should raise ValueError when no key is set
+        for name in ("groq", "openrouter", "together"):
+            # Make sure key is not set
+            env_var = {'groq': 'GROQ_API_KEY', 'openrouter': 'OPENROUTER_API_KEY', 'together': 'TOGETHER_API_KEY'}[name]
+            old_val = os.environ.pop(env_var, None)
+            try:
+                get_provider(name, config)
+                print(f"  FAIL: {name} should raise ValueError without key")
+                return False
+            except ValueError:
+                pass  # Expected
+            finally:
+                if old_val is not None:
+                    os.environ[env_var] = old_val
+
+        # Should succeed when key is set
+        os.environ['GROQ_API_KEY'] = 'test-groq-key'
+        p = get_provider("groq", config)
+        assert isinstance(p, GroqProvider)
+        assert p.api_key == 'test-groq-key'
+        del os.environ['GROQ_API_KEY']
+
+        os.environ['OPENROUTER_API_KEY'] = 'test-or-key'
+        p = get_provider("openrouter", config)
+        assert isinstance(p, OpenRouterProvider)
+        del os.environ['OPENROUTER_API_KEY']
+
+        os.environ['TOGETHER_API_KEY'] = 'test-tog-key'
+        p = get_provider("together", config)
+        assert isinstance(p, TogetherProvider)
+        del os.environ['TOGETHER_API_KEY']
+
+        print("  PASS")
+        return True
+
+    except Exception as e:
+        print(f"  FAIL: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+
+
+def test_get_available_providers_new():
+    """Test that new providers appear in get_available_providers when keys are set."""
+    print("\nTesting get_available_providers with new providers")
+    print("-" * 40)
+
+    try:
+        config = ConfigManager()
+
+        # Baseline — no new provider keys set
+        for var in ('GROQ_API_KEY', 'OPENROUTER_API_KEY', 'TOGETHER_API_KEY'):
+            os.environ.pop(var, None)
+        available = get_available_providers(config)
+        assert "groq" not in available
+        assert "openrouter" not in available
+        assert "together" not in available
+
+        # Set keys and verify they appear
+        os.environ['GROQ_API_KEY'] = 'k'
+        os.environ['OPENROUTER_API_KEY'] = 'k'
+        os.environ['TOGETHER_API_KEY'] = 'k'
+        available = get_available_providers(config)
+        assert "groq" in available
+        assert "openrouter" in available
+        assert "together" in available
+
+        # Cleanup
+        del os.environ['GROQ_API_KEY']
+        del os.environ['OPENROUTER_API_KEY']
+        del os.environ['TOGETHER_API_KEY']
+
+        print("  PASS")
+        return True
+
+    except Exception as e:
+        print(f"  FAIL: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+
+
 async def test_ai_generation():
     """Test actual AI generation (requires API key). Skipped if no key available."""
     print("\nTesting AI Generation (requires API key)")
@@ -215,6 +363,9 @@ async def main():
     results = {}
     results['parser'] = test_character_ability_parser()
     results['config'] = test_config_manager()
+    results['provider_interface'] = test_provider_interface()
+    results['get_provider_new'] = test_get_provider_new_providers()
+    results['available_providers_new'] = test_get_available_providers_new()
     results['generator_init'] = test_generator_init()
     results['ai_generation'] = await test_ai_generation()
 

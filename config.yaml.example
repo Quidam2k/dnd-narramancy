@@ -1,13 +1,17 @@
 # Flavor Forge Configuration
 # Copy to config.yaml and fill in your values.
 # Environment variables override these settings.
+# You can also use the --provider flag on the CLI to pick a provider per-run.
 
 ai_generation:
-  # Model to use for generation. Options:
-  #   gemini-2.0-flash-exp (default, cheap)
-  #   claude-sonnet-4-5-20250929 (higher quality)
-  #   llama3.2 (Ollama, local)
-  model: gemini-2.0-flash-exp
+  # Model overrides per provider (usually not needed — defaults are sensible):
+  #   gemini_model: gemini-2.0-flash-exp
+  #   claude_model: claude-sonnet-4-5-20250929
+  #   ollama_model: llama3.2
+  #   lmstudio_model: local-model
+  #   groq_model: llama-3.1-8b-instant
+  #   openrouter_model: meta-llama/llama-3.1-8b-instruct:free
+  #   together_model: meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo
 
 # API keys (prefer env vars: GEMINI_API_KEY, ANTHROPIC_API_KEY)
 # api_keys:
@@ -18,3 +22,23 @@ ai_generation:
 # ollama:
 #   base_url: http://localhost:11434
 #   model: llama3.2
+
+# LM Studio — runs on localhost:1234 by default, no API key needed.
+# Just download LM Studio, load a model, and use --provider lmstudio.
+# lmstudio:
+#   base_url: http://localhost:1234
+
+# Groq — free tier, fast cloud inference (prefer env var: GROQ_API_KEY)
+# Get a key at https://console.groq.com/
+# groq:
+#   api_key: your-groq-key-here
+
+# OpenRouter — model marketplace with free models (prefer env var: OPENROUTER_API_KEY)
+# Get a key at https://openrouter.ai/keys
+# openrouter:
+#   api_key: your-openrouter-key-here
+
+# Together AI — free tier, open-source models (prefer env var: TOGETHER_API_KEY)
+# Get a key at https://api.together.xyz/
+# together:
+#   api_key: your-together-key-here

@@ -165,21 +165,25 @@ class FlavorForgeManageMenu extends FormApplication {
       if (!confirm) return;
 
       // Delete the folder and its tables
-      if (creature.folderId) {
-        const folder = game.folders.get(creature.folderId);
-        if (folder) {
-          // Delete all tables in the folder
-          const tables = game.tables.filter(
-            (t) => t.folder?.id === creature.folderId
-          );
-          for (const table of tables) {
-            await table.delete();
+      try {
+        if (creature.folderId) {
+          const folder = game.folders.get(creature.folderId);
+          if (folder) {
+            const tables = game.tables.filter(
+              (t) => t.folder?.id === creature.folderId
+            );
+            for (const table of tables) {
+              await table.delete();
+            }
+            await folder.delete();
           }
-          await folder.delete();
         }
+      } catch (err) {
+        console.error(`Flavor Forge | Error deleting tables/folder for ${creature.name}:`, err);
+        ui.notifications.error(`Error cleaning up tables for ${creature.name}. Check console.`);
       }
 
-      // Remove from settings
+      // Remove from settings regardless — don't leave orphaned config
       delete creatures[slug];
       await setCreatureData(creatures);
       ui.notifications.info(`Deleted ${creature.name}`);
