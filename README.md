@@ -1,4 +1,4 @@
-# D&D Flavor Forge
+# D&D Narramancy
 
 Generate vivid narration text for D&D creatures and use it at the table — whether you run Foundry VTT, TaleSpire, or theater of the mind. Feed in a stat block, pick an AI provider (local or cloud), and get back rollable tables full of evocative one-liners for every ability, attack, and reaction.
 
@@ -14,8 +14,8 @@ Generate vivid narration text for D&D creatures and use it at the table — whet
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/Quidam2k/dnd-flavor-forge.git
-cd dnd-flavor-forge
+git clone https://github.com/Quidam2k/dnd-narramancy.git
+cd dnd-narramancy
 
 # 2. Install Python dependencies
 pip install -r requirements.txt
@@ -24,12 +24,12 @@ pip install -r requirements.txt
 #    Easiest: install LM Studio and load a model — no API key needed
 
 # 4. Generate flavor text
-PYTHONPATH=src python -m flavor_forge generate --open5e goblin \
+PYTHONPATH=src python -m narramancy generate --open5e goblin \
   --provider lmstudio --with-crits --generic --variations 20 \
-  --export flavor-forge --output-dir output
+  --export narramancy --output-dir output
 
 # 5. Use the output
-#    - Foundry VTT: import the JSON via the Flavor Forge module
+#    - Foundry VTT: import the JSON via the Narramancy module
 #    - Other VTTs: open web/roller.html in a browser and load the JSON
 ```
 
@@ -45,7 +45,7 @@ You need at least one AI provider. Local providers are free and work offline; cl
 4. That's it — no environment variables needed
 
 ```bash
-PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider lmstudio
+PYTHONPATH=src python -m narramancy generate --open5e goblin --provider lmstudio
 ```
 
 ### Ollama (free, local)
@@ -58,7 +58,7 @@ PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider lmstud
 # Optional: set a custom URL if Ollama isn't on the default port
 export OLLAMA_BASE_URL=http://localhost:11434
 
-PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider ollama
+PYTHONPATH=src python -m narramancy generate --open5e goblin --provider ollama
 ```
 
 ### Gemini (free tier available — recommended if you can't run local)
@@ -69,7 +69,7 @@ PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider ollama
 ```bash
 export GEMINI_API_KEY=your-key-here
 
-PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider gemini
+PYTHONPATH=src python -m narramancy generate --open5e goblin --provider gemini
 ```
 
 ### Groq (free tier — fast cloud inference)
@@ -80,7 +80,7 @@ PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider gemini
 ```bash
 export GROQ_API_KEY=your-key-here
 
-PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider groq
+PYTHONPATH=src python -m narramancy generate --open5e goblin --provider groq
 ```
 
 ### OpenRouter (free models available — model marketplace)
@@ -91,7 +91,7 @@ PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider groq
 ```bash
 export OPENROUTER_API_KEY=your-key-here
 
-PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider openrouter
+PYTHONPATH=src python -m narramancy generate --open5e goblin --provider openrouter
 ```
 
 ### Together AI (free tier — open-source models)
@@ -102,7 +102,7 @@ PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider openro
 ```bash
 export TOGETHER_API_KEY=your-key-here
 
-PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider together
+PYTHONPATH=src python -m narramancy generate --open5e goblin --provider together
 ```
 
 ### Claude (paid, highest quality)
@@ -113,19 +113,19 @@ PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider togeth
 ```bash
 export ANTHROPIC_API_KEY=your-key-here
 
-PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider claude
+PYTHONPATH=src python -m narramancy generate --open5e goblin --provider claude
 ```
 
 ## Foundry VTT Module
 
-Flavor Forge includes a Foundry VTT module that automatically whispers narration to the GM when creatures use abilities in combat.
+Narramancy includes a Foundry VTT module that automatically whispers narration to the GM when creatures use abilities in combat.
 
 ### Install
 
 1. Download or build the module zip
-2. Extract to your Foundry data folder: `Data/modules/flavor-forge/`
+2. Extract to your Foundry data folder: `Data/modules/narramancy/`
 3. Enable the module in your world's module settings
-4. Import a flavor-forge JSON file via the module's import dialog
+4. Import a narramancy JSON file via the module's import dialog
 
 ### Features
 
@@ -138,9 +138,9 @@ Flavor Forge includes a Foundry VTT module that automatically whispers narration
 
 ## Flavor Roller (non-Foundry users)
 
-If you don't use Foundry VTT, you can use the **Flavor Roller** — a standalone HTML page that loads a flavor-forge JSON file and gives you clickable buttons for every ability.
+If you don't use Foundry VTT, you can use the **Flavor Roller** — a standalone HTML page that loads a narramancy JSON file and gives you clickable buttons for every ability.
 
-- Open `web/roller.html` in any browser (or use the [hosted version](https://quidam2k.github.io/dnd-flavor-forge/web/roller.html))
+- Open `web/roller.html` in any browser (or use the [hosted version](https://quidam2k.github.io/dnd-narramancy/web/roller.html))
 - Load a generated JSON file
 - Click ability buttons to get random narration lines
 - Works great on mobile — tap a button during a game session
@@ -156,11 +156,11 @@ If you don't use Foundry VTT, you can use the **Flavor Roller** — a standalone
 - **Batch generation**: process a folder of creature files at once
 - **Context blobs**: add flavor guidance like "swamp-dwelling goblins who worship a hag" to steer the AI
 - **Provider comparison**: generate the same creature with multiple providers side-by-side
-- **Multiple export formats**: Foundry rollable tables, Flavor Forge module JSON, TokenSays
+- **Multiple export formats**: Foundry rollable tables, Narramancy module JSON, TokenSays
 
 ## CLI Reference
 
-Flavor Forge has four subcommands: `parse`, `generate`, `export`, and `webui`.
+Narramancy has four subcommands: `parse`, `generate`, `export`, and `webui`.
 
 All commands should be run from the project root with `PYTHONPATH=src`.
 
@@ -168,65 +168,65 @@ All commands should be run from the project root with `PYTHONPATH=src`.
 
 ```bash
 # Fetch from Open5e and display parsed abilities
-PYTHONPATH=src python -m flavor_forge parse --open5e goblin
+PYTHONPATH=src python -m narramancy parse --open5e goblin
 
 # Output as JSON (for piping to generate)
-PYTHONPATH=src python -m flavor_forge parse --open5e goblin --json
+PYTHONPATH=src python -m narramancy parse --open5e goblin --json
 
 # Parse a local text file
-PYTHONPATH=src python -m flavor_forge parse goblin.txt
+PYTHONPATH=src python -m narramancy parse goblin.txt
 
 # Parse a PDF stat block (specify page number)
-PYTHONPATH=src python -m flavor_forge parse monster-manual.pdf --page 5
+PYTHONPATH=src python -m narramancy parse monster-manual.pdf --page 5
 
 # Add context for flavor generation
-PYTHONPATH=src python -m flavor_forge parse --open5e goblin --context "Swamp-dwelling goblins who worship a hag"
+PYTHONPATH=src python -m narramancy parse --open5e goblin --context "Swamp-dwelling goblins who worship a hag"
 ```
 
 ### `generate` — Generate flavor text
 
 ```bash
 # Basic generation (uses first available provider)
-PYTHONPATH=src python -m flavor_forge generate --open5e goblin
+PYTHONPATH=src python -m narramancy generate --open5e goblin
 
 # Choose provider and style
-PYTHONPATH=src python -m flavor_forge generate --open5e goblin --provider lmstudio --style gritty
+PYTHONPATH=src python -m narramancy generate --open5e goblin --provider lmstudio --style gritty
 
 # Full generation with all the bells and whistles
-PYTHONPATH=src python -m flavor_forge generate --open5e goblin \
+PYTHONPATH=src python -m narramancy generate --open5e goblin \
   --provider lmstudio --style dramatic --variations 20 \
   --with-crits --crit-count 10 --generic \
-  --export flavor-forge --output-dir ./output/
+  --export narramancy --output-dir ./output/
 
 # Batch process a folder of creature files
-PYTHONPATH=src python -m flavor_forge generate --batch ./monsters/ \
-  --export flavor-forge --output-dir ./output/
+PYTHONPATH=src python -m narramancy generate --batch ./monsters/ \
+  --export narramancy --output-dir ./output/
 
 # Compare providers side by side
-PYTHONPATH=src python -m flavor_forge generate --open5e goblin \
+PYTHONPATH=src python -m narramancy generate --open5e goblin \
   --providers gemini,lmstudio --compare
 
 # List configured providers
-PYTHONPATH=src python -m flavor_forge generate --list-providers
+PYTHONPATH=src python -m narramancy generate --list-providers
 ```
 
 ### `export` — Convert saved results to VTT format
 
 ```bash
 # Export to Foundry VTT rollable tables
-PYTHONPATH=src python -m flavor_forge export results.json --format foundry
+PYTHONPATH=src python -m narramancy export results.json --format foundry
 
-# Export to Flavor Forge module format
-PYTHONPATH=src python -m flavor_forge export results.json --format flavor-forge
+# Export to Narramancy module format
+PYTHONPATH=src python -m narramancy export results.json --format narramancy
 
 # Export all formats
-PYTHONPATH=src python -m flavor_forge export results.json --format all
+PYTHONPATH=src python -m narramancy export results.json --format all
 ```
 
 ### `webui` — Launch the web interface
 
 ```bash
-PYTHONPATH=src python -m flavor_forge webui
+PYTHONPATH=src python -m narramancy webui
 # Opens at http://localhost:7870
 ```
 
@@ -258,8 +258,8 @@ You can set provider credentials via environment variables (recommended) or in a
 ## Project Structure
 
 ```
-dnd-flavor-forge/
-├── src/flavor_forge/          # Main package
+dnd-narramancy/
+├── src/narramancy/          # Main package
 │   ├── __main__.py            # CLI entry point (parse/generate/export/webui)
 │   ├── generator.py           # Core AI generation engine
 │   ├── models.py              # Data structures (ParsedCreature, FlavorTextResult)
@@ -275,10 +275,10 @@ dnd-flavor-forge/
 │   │   └── pdf_block.py       # PDF parser
 │   └── exporters/             # VTT export formats
 │       ├── rollable_table.py  # Foundry rollable tables (Roll Table Importer)
-│       ├── flavor_forge_module.py  # Flavor Forge module JSON
+│       ├── narramancy_module.py  # Narramancy module JSON
 │       └── token_says.py      # TokenSays format
 ├── foundry-module/            # Foundry VTT module source
-│   └── flavor-forge/
+│   └── narramancy/
 │       ├── module.json
 │       ├── scripts/           # trigger-engine.js, import, settings
 │       ├── templates/         # Handlebars templates

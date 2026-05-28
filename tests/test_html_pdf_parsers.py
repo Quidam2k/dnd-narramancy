@@ -5,7 +5,7 @@ import tempfile
 
 import pytest
 
-from flavor_forge.parsers import parse_stat_block, parse_html_block, parse_pdf_block, list_pdf_pages
+from narramancy.parsers import parse_stat_block, parse_html_block, parse_pdf_block, list_pdf_pages
 
 
 # ---------------------------------------------------------------------------

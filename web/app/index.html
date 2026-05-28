@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Narramancy</title>
+<style>
+  :root {
+    --bg: #1a1a2e;
+    --surface: #16213e;
+    --surface-2: #1f2f50;
+    --accent: #e94560;
+    --accent-dim: #a83248;
+    --gold: #d4a843;
+    --text: #e0e0e0;
+    --text-dim: #8899aa;
+    --green: #4ecca3;
+    --red: #e94560;
+    --blue: #5eb5f7;
+    --purple: #b565e0;
+    --orange: #e8883a;
+    --radius: 8px;
+    --sidebar-w: 240px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--surface);
+    border-bottom: 2px solid var(--accent);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    z-index: 10;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+
+  .header-spacer { flex: 1; }
+
+  .creature-info {
+    text-align: right;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+  .creature-info .name {
+    color: var(--gold);
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  /* ── Mode Toggle ── */
+  .mode-toggle {
+    display: flex;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--text-dim);
+  }
+  .mode-btn {
+    padding: 4px 14px;
+    font-size: 0.8rem;
+    background: none;
+    color: var(--text-dim);
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .mode-btn.active {
+    background: var(--accent);
+    color: white;
+  }
+
+  /* ── Forge Controls (header) ── */
+  .forge-controls {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+  }
+  .forge-controls select,
+  .forge-controls input {
+    background: var(--surface-2);
+    color: var(--text);
+    border: 1px solid var(--text-dim);
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 0.8rem;
+  }
+  .forge-controls label {
+    color: var(--text-dim);
+    font-size: 0.75rem;
+  }
+  .forge-controls input[type="number"] {
+    width: 60px;
+  }
+
+  /* ── Sidebar toggle (mobile) ── */
+  .sidebar-toggle {
+    display: none;
+    background: var(--surface-2);
+    color: var(--text);
+    border: 1px solid var(--text-dim);
+    padding: 6px 10px;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  /* ── Layout ── */
+  .layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    width: var(--sidebar-w);
+    min-width: var(--sidebar-w);
+    background: var(--surface);
+    border-right: 1px solid var(--surface-2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  #import-section {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--surface-2);
+  }
+  #import-section button {
+    width: 100%;
+    padding: 8px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  #import-section button:hover {
+    background: var(--accent-dim);
+  }
+
+  .sidebar-header {
+    padding: 10px 12px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--surface-2);
+  }
+
+  .sidebar-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 4px 0;
+  }
+
+  .file-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    border-left: 3px solid transparent;
+    transition: background 0.1s;
+    word-break: break-all;
+  }
+  .file-item:hover {
+    background: var(--surface-2);
+  }
+  .file-item.active {
+    background: var(--surface-2);
+    border-left-color: var(--accent);
+    color: var(--gold);
+  }
+  .file-item .file-meta {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+
+  .sidebar-empty {
+    padding: 16px 12px;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .sidebar-refresh {
+    padding: 8px 12px;
+    border-top: 1px solid var(--surface-2);
+    text-align: center;
+  }
+  .sidebar-refresh button {
+    background: none;
+    border: 1px solid var(--text-dim);
+    color: var(--text-dim);
+    padding: 4px 12px;
+    border-radius: var(--radius);
+    font-size: 0.75rem;
+    cursor: pointer;
+    width: 100%;
+  }
+  .sidebar-refresh button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ── Main Content ── */
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ── Roller Mode ── */
+  #roller-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  #roller-content.hidden { display: none; }
+
+  /* ── Result Display ── */
+  #result-area {
+    background: var(--surface);
+    border-bottom: 1px solid var(--surface-2);
+    min-height: 80px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #result-label {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  #result-text {
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.5;
+    max-width: 700px;
+    min-height: 1.5em;
+    color: var(--text);
+    transition: opacity 0.15s ease-in;
+  }
+  #result-text.fade-in {
+    animation: fadeIn 0.25s ease-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  #result-meta {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  /* ── Ability Grid ── */
+  #main-scroll {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+  }
+
+  #empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    color: var(--text-dim);
+    text-align: center;
+    gap: 12px;
+  }
+  #empty-state .icon { font-size: 3rem; }
+  #empty-state p { max-width: 320px; line-height: 1.5; }
+
+  .ability-group {
+    margin-bottom: 16px;
+  }
+  .group-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    padding: 4px 8px;
+    border-bottom: 1px solid var(--surface-2);
+    margin-bottom: 8px;
+  }
+
+  .ability-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  /* ── Buttons ── */
+  .ability-btn {
+    background: var(--surface-2);
+    color: var(--text);
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.1s, border-color 0.1s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .ability-btn:hover {
+    background: #2a3f65;
+    border-color: var(--accent);
+  }
+  .ability-btn:active {
+    transform: scale(0.96);
+  }
+  .ability-btn.exhausted {
+    opacity: 0.4;
+    border-color: var(--text-dim);
+  }
+
+  .sub-btn {
+    font-size: 0.72rem;
+    padding: 5px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+  .sub-btn[data-cat="crits"]         { border-color: var(--red);    color: var(--red); }
+  .sub-btn[data-cat="fumbles"]       { border-color: var(--purple); color: var(--purple); }
+  .sub-btn[data-cat="barely_hits"]   { border-color: var(--green);  color: var(--green); }
+  .sub-btn[data-cat="barely_misses"] { border-color: var(--blue);   color: var(--blue); }
+  .sub-btn[data-cat="miss_dodge"]    { border-color: var(--orange); color: var(--orange); }
+  .sub-btn[data-cat="miss_armor"]    { border-color: var(--text-dim); color: var(--text-dim); }
+  .sub-btn[data-cat="successes"]     { border-color: var(--green);  color: var(--green); }
+  .sub-btn[data-cat="failures"]      { border-color: var(--red);    color: var(--red); }
+  .sub-btn[data-cat="killing_blow"]  { border-color: var(--gold);   color: var(--gold); }
+
+  /* ── Controls bar ── */
+  #controls {
+    display: none;
+    background: var(--surface);
+    border-top: 1px solid var(--surface-2);
+    padding: 8px 16px;
+    text-align: center;
+  }
+  #controls button {
+    background: none;
+    border: 1px solid var(--text-dim);
+    color: var(--text-dim);
+    padding: 6px 14px;
+    border-radius: var(--radius);
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  #controls button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ══════════════════════════════════════════════════════════ */
+  /* ── Forge Mode ── */
+  /* ══════════════════════════════════════════════════════════ */
+
+  #forge-content {
+    display: none;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  #forge-content.active { display: flex; }
+
+  /* Context blob */
+  #forge-context {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--surface-2);
+    background: var(--surface);
+  }
+  #forge-context textarea {
+    width: 100%;
+    background: var(--surface-2);
+    color: var(--text);
+    border: 1px solid var(--text-dim);
+    border-radius: var(--radius);
+    padding: 8px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    resize: vertical;
+    line-height: 1.4;
+  }
+  #forge-context textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  /* Two-column layout */
+  #forge-layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* Left column: ability list */
+  #forge-left {
+    width: 280px;
+    min-width: 280px;
+    border-right: 1px solid var(--surface-2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  #forge-ability-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 4px 0;
+  }
+
+  .forge-group-title {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    padding: 6px 12px 2px;
+    margin-top: 4px;
+  }
+
+  .forge-ability-item {
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-left: 3px solid transparent;
+    transition: background 0.1s;
+  }
+  .forge-ability-item:hover { background: var(--surface-2); }
+  .forge-ability-item.active {
+    background: var(--surface-2);
+    border-left-color: var(--accent);
+  }
+  .forge-ability-item .ability-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .forge-ability-item .status-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .status-badge.ready { color: var(--green); }
+  .status-badge.missing { color: var(--text-dim); }
+  .status-badge.generating {
+    color: var(--blue);
+    animation: pulse 1s infinite;
+  }
+  .status-badge.error { color: var(--red); }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* Generate controls */
+  #forge-generate {
+    padding: 8px 12px;
+    border-top: 1px solid var(--surface-2);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  #forge-generate button {
+    padding: 8px;
+    border-radius: var(--radius);
+    font-size: 0.8rem;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+  }
+  #btn-generate-all {
+    background: var(--green);
+    color: #111;
+  }
+  #btn-generate-all:hover { opacity: 0.9; }
+  #btn-generate-all:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  #btn-cancel {
+    background: var(--red);
+    color: white;
+  }
+  #forge-generate label {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+  }
+  #forge-generate input[type="checkbox"] {
+    accent-color: var(--accent);
+  }
+
+  /* Progress bar */
+  #progress-bar {
+    height: 6px;
+    background: var(--surface-2);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  #progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 3px;
+    transition: width 0.3s;
+    width: 0%;
+  }
+  #progress-text {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-align: center;
+    min-height: 1em;
+  }
+
+  /* Right column: curation panel */
+  #forge-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  #curation-header {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--surface-2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: var(--surface);
+  }
+  #curation-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--gold);
+  }
+  #btn-generate-selected {
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    border: 1px solid var(--blue);
+    background: none;
+    color: var(--blue);
+    font-weight: 600;
+  }
+  #btn-generate-selected:hover {
+    background: var(--blue);
+    color: #111;
+  }
+
+  /* Category tabs */
+  #curation-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--surface-2);
+    min-height: 36px;
+  }
+  .cat-tab {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    cursor: pointer;
+    background: var(--surface-2);
+    color: var(--text-dim);
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    transition: all 0.1s;
+  }
+  .cat-tab:hover { border-color: var(--text-dim); }
+  .cat-tab.active {
+    border-color: var(--accent);
+    color: var(--text);
+    background: #2a3f65;
+  }
+  .cat-tab .tab-count {
+    font-size: 0.6rem;
+    opacity: 0.7;
+    margin-left: 3px;
+  }
+
+  /* Entry list */
+  #curation-entries {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 12px;
+  }
+
+  .entry-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 6px 8px;
+    border-radius: var(--radius);
+    margin-bottom: 4px;
+    transition: background 0.1s;
+  }
+  .entry-row:hover { background: var(--surface-2); }
+  .entry-row.favorited { background: rgba(212, 168, 67, 0.08); }
+
+  .entry-num {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    min-width: 20px;
+    padding-top: 2px;
+    flex-shrink: 0;
+  }
+  .entry-text {
+    flex: 1;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    cursor: default;
+    word-break: break-word;
+  }
+  .entry-text.editing {
+    outline: 1px solid var(--accent);
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--surface-2);
+    cursor: text;
+  }
+
+  .entry-actions {
+    display: flex;
+    gap: 2px;
+    flex-shrink: 0;
+    opacity: 0.5;
+    transition: opacity 0.1s;
+  }
+  .entry-row:hover .entry-actions { opacity: 1; }
+
+  .entry-btn {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 2px 4px;
+    border-radius: 3px;
+    transition: color 0.1s;
+    line-height: 1;
+  }
+  .entry-btn:hover { color: var(--text); }
+  .entry-btn.favorited { color: var(--gold); opacity: 1; }
+  .entry-btn.rerolling {
+    animation: spin 0.8s linear infinite;
+    color: var(--blue);
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .curation-empty {
+    color: var(--text-dim);
+    text-align: center;
+    padding: 40px 20px;
+    line-height: 1.5;
+  }
+
+  /* Curation actions */
+  #curation-actions {
+    padding: 8px 12px;
+    border-top: 1px solid var(--surface-2);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: var(--surface);
+  }
+  #curation-actions button {
+    padding: 6px 16px;
+    border-radius: var(--radius);
+    font-size: 0.8rem;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+  }
+  #curation-actions button:first-child {
+    background: var(--green);
+    color: #111;
+  }
+  #curation-actions button:nth-child(2) {
+    background: none;
+    border: 1px solid var(--text-dim);
+    color: var(--text-dim);
+  }
+  #curation-actions button:hover { opacity: 0.9; }
+  #dirty-indicator {
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-style: italic;
+    margin-left: auto;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .sidebar-toggle { display: block; }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 100;
+      transform: translateX(-100%);
+      transition: transform 0.2s ease;
+      box-shadow: 4px 0 20px rgba(0,0,0,0.5);
+    }
+    .sidebar.open {
+      transform: translateX(0);
+    }
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 99;
+    }
+    .sidebar-overlay.open { display: block; }
+
+    header { padding: 8px 10px; gap: 8px; }
+    header h1 { font-size: 1rem; }
+    #result-text { font-size: 1.1rem; padding: 0 8px; }
+    .ability-btn { padding: 10px 10px; font-size: 0.85rem; flex: 1 1 auto; min-width: 0; text-align: center; }
+    .sub-btn { padding: 8px 6px; flex: 1 1 auto; text-align: center; }
+    #main-scroll { padding: 8px; }
+
+    /* Forge mobile */
+    .forge-controls { font-size: 0.7rem; gap: 4px; }
+    #forge-layout { flex-direction: column; }
+    #forge-left {
+      width: 100%;
+      min-width: 100%;
+      max-height: 35vh;
+      border-right: none;
+      border-bottom: 1px solid var(--surface-2);
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <button class="sidebar-toggle" id="sidebar-toggle">Files</button>
+  <h1>Narramancy</h1>
+  <div class="mode-toggle">
+    <button class="mode-btn active" data-mode="roller" onclick="switchMode('roller')">Roll</button>
+    <button class="mode-btn" data-mode="forge" onclick="switchMode('forge')">Forge</button>
+  </div>
+  <div class="forge-controls" id="forge-controls">
+    <label>Provider</label>
+    <select id="provider-select"></select>
+    <label>Style</label>
+    <select id="style-select">
+      <option value="dramatic">Dramatic</option>
+      <option value="comedic">Comedic</option>
+      <option value="gritty">Gritty</option>
+      <option value="heroic">Heroic</option>
+    </select>
+    <label>Vars</label>
+    <input type="number" id="variations-input" value="20" min="1" max="100">
+  </div>
+  <div class="header-spacer"></div>
+  <div class="creature-info" id="creature-info"></div>
+</header>
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div id="import-section">
+      <button onclick="triggerImport()">Import Character</button>
+      <input type="file" id="import-file" accept=".json,.pdf" style="display:none">
+    </div>
+    <div class="sidebar-header">JSON Files</div>
+    <div class="sidebar-list" id="file-list"></div>
+    <div class="sidebar-refresh">
+      <button onclick="loadFileList()">Refresh</button>
+    </div>
+  </aside>
+
+  <div class="content">
+    <!-- Roller mode -->
+    <div id="roller-content">
+      <div id="result-area">
+        <div id="result-label"></div>
+        <div id="result-text"></div>
+        <div id="result-meta"></div>
+      </div>
+
+      <div id="main-scroll">
+        <div id="empty-state">
+          <div class="icon">&#9876;</div>
+          <p>Select a JSON file from the sidebar to load a creature and roll flavor text.</p>
+        </div>
+        <div id="ability-grid"></div>
+      </div>
+
+      <div id="controls">
+        <button onclick="resetTracking()">Reset No-Repeat Tracking</button>
+      </div>
+    </div>
+
+    <!-- Forge mode -->
+    <div id="forge-content">
+      <div id="forge-context">
+        <textarea id="context-blob" rows="2"
+          placeholder="Flavor guidance &#8212; differentiates jungle zombies from desert zombies. Optional but fun way to put your thumb on the thematic scales."></textarea>
+      </div>
+      <div id="forge-layout">
+        <div id="forge-left">
+          <div id="forge-ability-list">
+            <div class="curation-empty">Import a character or load a JSON file to see abilities.</div>
+          </div>
+          <div id="forge-generate">
+            <button id="btn-generate-all" onclick="generateAll()">Generate All Missing</button>
+            <button id="btn-cancel" onclick="cancelGeneration()" style="display:none">Cancel</button>
+            <div id="progress-bar" style="display:none">
+              <div id="progress-fill"></div>
+            </div>
+            <div id="progress-text"></div>
+            <label><input type="checkbox" id="chk-crits" checked> Crits / fumbles / killing blow</label>
+            <label><input type="checkbox" id="chk-generic"> Saves, skills, death, initiative</label>
+          </div>
+        </div>
+        <div id="forge-right">
+          <div id="curation-header">
+            <span id="curation-title">Select an ability</span>
+            <button id="btn-generate-selected" onclick="generateSelected()" style="display:none">Generate</button>
+          </div>
+          <div id="curation-tabs"></div>
+          <div id="curation-entries">
+            <div class="curation-empty">Click an ability to view and curate its entries.</div>
+          </div>
+          <div id="curation-actions" style="display:none">
+            <button onclick="saveFile()">Save</button>
+            <button onclick="saveFileAs()">Save As...</button>
+            <span id="dirty-indicator" style="display:none">Unsaved changes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  // ══════════════════════════════════════════════════════
+  // ── State ──
+  // ══════════════════════════════════════════════════════
+  let data = null;              // loaded narramancy JSON (roller)
+  let activeFile = null;
+  const tableLookup = {};
+  const usedIndices = {};
+
+  // Forge state
+  let appMode = 'roller';
+  let flavorData = null;        // narramancy JSON (forge, editable)
+  let parsedCreature = null;    // from /api/parse {creature, abilities, ...}
+  let selectedAbility = null;
+  let selectedCategory = null;
+  let isDirty = false;
+  let generationAbort = null;
+  let providers = [];
+
+  // ══════════════════════════════════════════════════════
+  // ── DOM refs ──
+  // ══════════════════════════════════════════════════════
+  const sidebar      = document.getElementById('sidebar');
+  const sidebarToggle = document.getElementById('sidebar-toggle');
+  const overlay      = document.getElementById('sidebar-overlay');
+  const fileList     = document.getElementById('file-list');
+  const creatureEl   = document.getElementById('creature-info');
+  const resultLabel  = document.getElementById('result-label');
+  const resultText   = document.getElementById('result-text');
+  const resultMeta   = document.getElementById('result-meta');
+  const abilityGrid  = document.getElementById('ability-grid');
+  const emptyState   = document.getElementById('empty-state');
+  const controls     = document.getElementById('controls');
+
+  // ══════════════════════════════════════════════════════
+  // ── Sidebar toggle (mobile) ──
+  // ══════════════════════════════════════════════════════
+  sidebarToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('open');
+  });
+  overlay.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('open');
+  });
+
+  // ══════════════════════════════════════════════════════
+  // ── Mode Switching ──
+  // ══════════════════════════════════════════════════════
+  window.switchMode = function(mode) {
+    appMode = mode;
+    document.querySelectorAll('.mode-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.mode === mode);
+    });
+    const rollerEl = document.getElementById('roller-content');
+    const forgeEl = document.getElementById('forge-content');
+    const forgeCtrl = document.getElementById('forge-controls');
+
+    if (mode === 'roller') {
+      rollerEl.classList.remove('hidden');
+      rollerEl.style.display = 'flex';
+      forgeEl.classList.remove('active');
+      forgeCtrl.style.display = 'none';
+    } else {
+      rollerEl.classList.add('hidden');
+      rollerEl.style.display = 'none';
+      forgeEl.classList.add('active');
+      forgeCtrl.style.display = 'flex';
+      buildForgeAbilityList();
+    }
+  };
+
+  // ══════════════════════════════════════════════════════
+  // ── File list ──
+  // ══════════════════════════════════════════════════════
+  window.loadFileList = async function() {
+    try {
+      const resp = await fetch('/api/files');
+      const files = await resp.json();
+      fileList.innerHTML = '';
+      if (files.length === 0) {
+        fileList.innerHTML = '<div class="sidebar-empty">No JSON files found in the working directory.<br><br>Generate some creatures first, or use --work-dir to point at your output folder.</div>';
+        return;
+      }
+      for (const f of files) {
+        const el = document.createElement('div');
+        el.className = 'file-item' + (f.name === activeFile ? ' active' : '');
+        const sizeKB = (f.size / 1024).toFixed(1);
+        el.innerHTML = esc(f.name) + '<div class="file-meta">' + sizeKB + ' KB</div>';
+        el.addEventListener('click', () => loadFile(f.name));
+        fileList.appendChild(el);
+      }
+    } catch (err) {
+      fileList.innerHTML = '<div class="sidebar-empty">Error loading file list.</div>';
+    }
+  };
+
+  async function loadFile(name) {
+    try {
+      const resp = await fetch('/api/files/' + encodeURIComponent(name));
+      if (!resp.ok) throw new Error('Failed to load');
+      const json = await resp.json();
+      activeFile = name;
+
+      // Roller uses data directly, forge gets a deep copy
+      data = json;
+      flavorData = JSON.parse(JSON.stringify(json));
+
+      if (appMode === 'roller') {
+        loadCreature(data);
+      } else {
+        loadForgeFromFile();
+      }
+
+      // Update active state in sidebar
+      document.querySelectorAll('.file-item').forEach(el => {
+        el.classList.toggle('active', el.textContent.startsWith(name));
+      });
+      sidebar.classList.remove('open');
+      overlay.classList.remove('open');
+    } catch (err) {
+      resultText.textContent = 'Error loading file: ' + err.message;
+      resultLabel.textContent = '';
+      resultMeta.textContent = '';
+    }
+  }
+
+  // ══════════════════════════════════════════════════════
+  // ── Load Creature (Roller) ──
+  // ══════════════════════════════════════════════════════
+  function loadCreature(d) {
+    Object.keys(tableLookup).forEach(k => delete tableLookup[k]);
+    Object.keys(usedIndices).forEach(k => delete usedIndices[k]);
+
+    for (const t of d.tables) {
+      const key = t.ability + '|' + t.category;
+      tableLookup[key] = t.entries;
+    }
+
+    const c = d.creature;
+    creatureEl.innerHTML =
+      '<span class="name">' + esc(c.name) + '</span><br>' +
+      esc((c.type || '') + (c.cr ? ' CR ' + c.cr : ''));
+
+    resultLabel.textContent = '';
+    resultText.textContent = '';
+    resultMeta.textContent = '';
+
+    buildGrid(d);
+    emptyState.style.display = 'none';
+    controls.style.display = 'block';
+  }
+
+  // ══════════════════════════════════════════════════════
+  // ── Build Grid (Roller) ──
+  // ══════════════════════════════════════════════════════
+  function buildGrid(d) {
+    abilityGrid.innerHTML = '';
+
+    const abilityMap = new Map();
+    for (const t of d.tables) {
+      if (!abilityMap.has(t.ability)) abilityMap.set(t.ability, new Set());
+      abilityMap.get(t.ability).add(t.category);
+    }
+
+    const triggerTypes = {};
+    if (d.triggers) {
+      for (const tr of d.triggers) {
+        const abilityKey = tr.itemName || tr.table.split('|')[0];
+        if (!triggerTypes[abilityKey]) triggerTypes[abilityKey] = tr.hookType;
+      }
+    }
+
+    const groups = {
+      'Attacks':        [],
+      'Actions':        [],
+      'Villain Actions':[],
+      'Features':       [],
+      'Bonus Actions':  [],
+      'Reactions':      [],
+      'Spells':         [],
+      'Special':        [],
+    };
+
+    const specialAbilities = new Set([
+      'Bloodied', 'Death', 'Death Save', 'Initiative',
+      'STR Save', 'DEX Save', 'CON Save', 'INT Save', 'WIS Save', 'CHA Save',
+    ]);
+
+    const skills = new Set([
+      'Acrobatics','Animal Handling','Arcana','Athletics','Deception',
+      'History','Insight','Intimidation','Investigation','Medicine',
+      'Nature','Perception','Performance','Persuasion','Religion',
+      'Sleight of Hand','Stealth','Survival'
+    ]);
+
+    for (const [ability, cats] of abilityMap) {
+      const hook = triggerTypes[ability];
+      if (specialAbilities.has(ability) || (hook && (hook === 'savingThrow' || hook === 'deathSave' || hook === 'initiative' || hook === 'bloodied' || hook === 'death'))) {
+        groups['Special'].push({ ability, cats });
+      } else if (skills.has(ability) || hook === 'skill') {
+        groups['Special'].push({ ability, cats });
+      } else if (hook === 'attackRoll' || hook === 'damageRoll' || cats.has('crits') || cats.has('fumbles') || cats.has('miss_dodge') || cats.has('miss_armor')) {
+        groups['Attacks'].push({ ability, cats });
+      } else if (hook === 'itemUse') {
+        const desc = findDescription(d, ability);
+        if (desc.includes('villain_action')) {
+          groups['Villain Actions'].push({ ability, cats });
+        } else if (desc.includes('bonus_action')) {
+          groups['Bonus Actions'].push({ ability, cats });
+        } else if (desc.includes('reaction')) {
+          groups['Reactions'].push({ ability, cats });
+        } else if (desc.includes('spell')) {
+          groups['Spells'].push({ ability, cats });
+        } else if (desc.includes('feature')) {
+          groups['Features'].push({ ability, cats });
+        } else {
+          groups['Actions'].push({ ability, cats });
+        }
+      } else {
+        groups['Actions'].push({ ability, cats });
+      }
+    }
+
+    for (const [groupName, abilities] of Object.entries(groups)) {
+      if (abilities.length === 0) continue;
+
+      const groupEl = document.createElement('div');
+      groupEl.className = 'ability-group';
+
+      const title = document.createElement('div');
+      title.className = 'group-title';
+      title.textContent = groupName;
+      groupEl.appendChild(title);
+
+      for (const { ability, cats } of abilities) {
+        const row = document.createElement('div');
+        row.className = 'ability-row';
+
+        const primaryCat = cats.has('attempts') ? 'attempts' : cats.values().next().value;
+        const btn = makeButton(ability, ability, primaryCat);
+        row.appendChild(btn);
+
+        const subOrder = ['successes', 'failures', 'crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor', 'killing_blow'];
+        for (const cat of subOrder) {
+          if (cat === primaryCat) continue;
+          if (!cats.has(cat)) continue;
+          const isAttack = groupName === 'Attacks';
+          const subLabel = catLabel(cat, isAttack);
+          const sub = makeButton(subLabel, ability, cat, true);
+          row.appendChild(sub);
+        }
+
+        groupEl.appendChild(row);
+      }
+
+      abilityGrid.appendChild(groupEl);
+    }
+  }
+
+  function findDescription(d, ability) {
+    for (const t of d.tables) {
+      if (t.ability === ability && t.description) return t.description.toLowerCase();
+    }
+    return '';
+  }
+
+  function catLabel(cat, isAttack) {
+    if (isAttack) {
+      const labels = {
+        attempts: 'Attempt',
+        successes: 'Hit',
+        failures: 'Miss',
+        crits: 'Crit',
+        fumbles: 'Fumble',
+        barely_hits: 'Barely Hit',
+        barely_misses: 'Barely Miss',
+        miss_dodge: 'Dodge',
+        miss_armor: 'Armor',
+        killing_blow: 'Kill',
+      };
+      return labels[cat] || cat;
+    }
+    const labels = {
+      attempts: 'Attempt',
+      successes: 'Success',
+      failures: 'Fail',
+      crits: 'Crit',
+      fumbles: 'Fumble',
+      killing_blow: 'Kill',
+    };
+    return labels[cat] || cat;
+  }
+
+  function makeButton(label, ability, category, isSub) {
+    const btn = document.createElement('button');
+    btn.className = 'ability-btn' + (isSub ? ' sub-btn' : '');
+    btn.textContent = label;
+    if (isSub) btn.dataset.cat = category;
+    btn.addEventListener('click', () => rollEntry(ability, category, btn));
+    return btn;
+  }
+
+  // ── Roll Entry ──
+  function rollEntry(ability, category, btn) {
+    const key = ability + '|' + category;
+    const entries = tableLookup[key];
+    if (!entries || entries.length === 0) {
+      showResult(ability, category, '(no entries)', 0, 0);
+      return;
+    }
+
+    if (!usedIndices[key]) usedIndices[key] = new Set();
+    const used = usedIndices[key];
+
+    if (used.size >= entries.length) {
+      used.clear();
+      btn.closest('.ability-row')?.querySelectorAll('.ability-btn.exhausted').forEach(b => b.classList.remove('exhausted'));
+    }
+
+    const available = [];
+    for (let i = 0; i < entries.length; i++) {
+      if (!used.has(i)) available.push(i);
+    }
+    const idx = available[Math.floor(Math.random() * available.length)];
+    used.add(idx);
+
+    showResult(ability, category, entries[idx], used.size, entries.length);
+
+    if (used.size >= entries.length) {
+      btn.classList.add('exhausted');
+    }
+  }
+
+  function showResult(ability, category, text, usedCount, total) {
+    resultLabel.textContent = ability + (category !== 'attempts' ? ' / ' + catLabel(category) : '');
+    resultText.textContent = text;
+    resultMeta.textContent = total > 0 ? usedCount + ' / ' + total + ' used' : '';
+
+    resultText.classList.remove('fade-in');
+    void resultText.offsetWidth;
+    resultText.classList.add('fade-in');
+  }
+
+  // ── Reset ──
+  window.resetTracking = function() {
+    Object.keys(usedIndices).forEach(k => delete usedIndices[k]);
+    document.querySelectorAll('.ability-btn.exhausted').forEach(b => b.classList.remove('exhausted'));
+    resultLabel.textContent = '';
+    resultText.textContent = 'Tracking reset';
+    resultMeta.textContent = '';
+  };
+
+  // ══════════════════════════════════════════════════════
+  // ── Forge: Providers ──
+  // ══════════════════════════════════════════════════════
+  async function loadProviders() {
+    try {
+      const resp = await fetch('/api/providers');
+      providers = await resp.json();
+      const sel = document.getElementById('provider-select');
+      sel.innerHTML = '';
+      for (const p of providers) {
+        const opt = document.createElement('option');
+        opt.value = p.name;
+        opt.textContent = p.name + ' (' + p.model + ')';
+        sel.appendChild(opt);
+      }
+      // Default to lmstudio if available
+      const lms = providers.find(p => p.name === 'lmstudio');
+      if (lms) sel.value = 'lmstudio';
+    } catch (err) {
+      console.error('Failed to load providers:', err);
+    }
+  }
+
+  // ══════════════════════════════════════════════════════
+  // ── Forge: Import Character ──
+  // ══════════════════════════════════════════════════════
+  window.triggerImport = function() {
+    document.getElementById('import-file').click();
+  };
+
+  document.getElementById('import-file').addEventListener('change', async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    try {
+      if (file.name.toLowerCase().endsWith('.pdf')) {
+        // PDF upload — send to /api/parse-pdf
+        const formData = new FormData();
+        formData.append('file', file);
+        const resp = await fetch('/api/parse-pdf', {
+          method: 'POST',
+          body: formData,
+        });
+        if (!resp.ok) {
+          const err = await resp.json();
+          throw new Error(err.detail || 'PDF parse failed');
+        }
+        parsedCreature = await resp.json();
+        flavorData = null;
+        activeFile = null;
+      } else {
+        const text = await file.text();
+        const json = JSON.parse(text);
+
+        // Detect format: combined Foundry export, narramancy JSON, or raw character export
+        if (json.narramancyExport) {
+          // Combined Foundry module export — parse actor via server
+          const resp = await fetch('/api/parse', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(json.actor),
+          });
+          if (!resp.ok) {
+            const err = await resp.json();
+            throw new Error(err.detail || 'Parse failed');
+          }
+          parsedCreature = await resp.json();
+          flavorData = json.existingTables || null;
+          activeFile = null;
+        } else if (json.tables && json.creature) {
+          // Flavor-forge JSON — load as existing data
+          flavorData = json;
+          parsedCreature = {
+            creature: json.creature,
+            abilities: deriveAbilitiesFromTables(json),
+            skill_proficiencies: {},
+            save_proficiencies: {},
+          };
+        } else {
+          // Character export — parse via server
+          const resp = await fetch('/api/parse', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: text,
+          });
+          if (!resp.ok) {
+            const err = await resp.json();
+            throw new Error(err.detail || 'Parse failed');
+          }
+          parsedCreature = await resp.json();
+          flavorData = null;
+          activeFile = null;
+        }
+      }
+
+      switchMode('forge');
+      updateCreatureHeader(parsedCreature.creature);
+      document.getElementById('context-blob').value = parsedCreature.creature.context_blob || '';
+      buildForgeAbilityList();
+      isDirty = false;
+      updateDirtyIndicator();
+      showCurationActions();
+    } catch (err) {
+      alert('Import failed: ' + err.message);
+    }
+
+    e.target.value = '';
+  });
+
+  function deriveAbilitiesFromTables(fd) {
+    const seen = new Map();
+    const triggerMap = {};
+    for (const tr of (fd.triggers || [])) {
+      const name = tr.itemName || (tr.table || '').split('|')[0];
+      if (name && !triggerMap[name]) triggerMap[name] = tr.hookType;
+    }
+    for (const t of (fd.tables || [])) {
+      if (!seen.has(t.ability)) {
+        const hookType = triggerMap[t.ability] || 'itemUse';
+        seen.set(t.ability, {
+          name: t.ability,
+          ability_type: hookTypeToAbilityType(hookType),
+          description: t.description || '',
+        });
+      }
+    }
+    return Array.from(seen.values());
+  }
+
+  function hookTypeToAbilityType(ht) {
+    if (ht === 'attackRoll' || ht === 'damageRoll' || ht.startsWith('attackRoll_')) return 'attack';
+    if (ht === 'savingThrow') return 'save';
+    if (ht === 'skill') return 'skill';
+    if (ht === 'deathSave') return 'death_save';
+    if (ht === 'initiative') return 'initiative';
+    if (ht === 'bloodied') return 'bloodied';
+    if (ht === 'death') return 'death';
+    if (ht === 'killingBlow') return 'attack';
+    return 'action';
+  }
+
+  // ══════════════════════════════════════════════════════
+  // ── Forge: Load From File ──
+  // ══════════════════════════════════════════════════════
+  function loadForgeFromFile() {
+    if (!flavorData) return;
+
+    // Derive parsedCreature from flavorData if not already set from import
+    if (!parsedCreature) {
+      parsedCreature = {
+        creature: flavorData.creature,
+        abilities: deriveAbilitiesFromTables(flavorData),
+        skill_proficiencies: {},
+        save_proficiencies: {},
+      };
+    }
+
+    updateCreatureHeader(flavorData.creature);
+    document.getElementById('context-blob').value = flavorData.creature?.context_blob || '';
+    buildForgeAbilityList();
+    isDirty = false;
+    updateDirtyIndicator();
+    showCurationActions();
+  }
+
+  function updateCreatureHeader(c) {
+    if (!c) return;
+    creatureEl.innerHTML =
+      '<span class="name">' + esc(c.name) + '</span><br>' +
+      esc((c.type || '') + (c.cr ? ' CR ' + c.cr : ''));
+  }
+
+  // ══════════════════════════════════════════════════════
+  // ── Forge: Ability List ──
+  // ══════════════════════════════════════════════════════
+  function buildForgeAbilityList() {
+    const listEl = document.getElementById('forge-ability-list');
+    listEl.innerHTML = '';
+
+    if (!parsedCreature) {
+      listEl.innerHTML = '<div class="curation-empty">Import a character or load a JSON file to see abilities.</div>';
+      return;
+    }
+
+    const abilities = parsedCreature.abilities || [];
+    if (abilities.length === 0) {
+      listEl.innerHTML = '<div class="curation-empty">No abilities found.</div>';
+      return;
+    }
+
+    // Group by type
+    const groupOrder = ['Attacks', 'Actions', 'Spells', 'Features', 'Bonus Actions', 'Reactions', 'Special'];
+    const groups = {};
+    for (const g of groupOrder) groups[g] = [];
+
+    for (const a of abilities) {
+      const group = classifyAbilityType(a.ability_type);
+      groups[group].push(a);
+    }
+
+    for (const groupName of groupOrder) {
+      const items = groups[groupName];
+      if (items.length === 0) continue;
+
+      const titleEl = document.createElement('div');
+      titleEl.className = 'forge-group-title';
+      titleEl.textContent = groupName;
+      listEl.appendChild(titleEl);
+
+      for (const a of items) {
+        const status = getAbilityStatus(a.name);
+        const el = document.createElement('div');
+        el.className = 'forge-ability-item' + (a.name === selectedAbility ? ' active' : '');
+        el.innerHTML =
+          '<span class="ability-name">' + esc(a.name) + '</span>' +
+          '<span class="status-badge ' + status + '">' + statusIcon(status) + '</span>';
+        el.addEventListener('click', () => selectForgeAbility(a.name));
+        listEl.appendChild(el);
+      }
+    }
+  }
+
+  function classifyAbilityType(type) {
+    if (type === 'attack') return 'Attacks';
+    if (type === 'villain_action') return 'Actions';
+    if (type === 'bonus_action') return 'Bonus Actions';
+    if (type === 'reaction') return 'Reactions';
+    if (type === 'spell' || type === 'cantrip') return 'Spells';
+    if (type === 'feature') return 'Features';
+    if (['save', 'skill', 'death_save', 'initiative', 'bloodied', 'death'].includes(type)) return 'Special';
+    return 'Actions';
+  }
+
+  function getAbilityStatus(name) {
+    if (!flavorData) return 'missing';
+    for (const t of flavorData.tables) {
+      if (t.ability === name) return 'ready';
+    }
+    return 'missing';
+  }
+
+  function statusIcon(status) {
+    if (status === 'ready') return '\u2713';       // ✓
+    if (status === 'generating') return '\u21BB';   // ↻
+    if (status === 'error') return '\u2717';        // ✗
+    return '\u2717';                                 // ✗ (missing)
+  }
+
+  // ══════════════════════════════════════════════════════
+  // ── Forge: Select Ability ──
+  // ══════════════════════════════════════════════════════
+  function selectForgeAbility(name) {
+    selectedAbility = name;
+    selectedCategory = null;
+
+    // Update active state in list
+    document.querySelectorAll('.forge-ability-item').forEach(el => {
+      const itemName = el.querySelector('.ability-name')?.textContent;
+      el.classList.toggle('active', itemName === name);
+    });
+
+    // Update curation header
+    document.getElementById('curation-title').textContent = name;
+    const btnGen = document.getElementById('btn-generate-selected');
+    btnGen.style.display = 'inline-block';
+
+    // Build category tabs
+    buildCurationTabs();
+  }
+
+  function buildCurationTabs() {
+    const tabsEl = document.getElementById('curation-tabs');
+    tabsEl.innerHTML = '';
+
+    if (!selectedAbility) return;
+
+    const entries = getAbilityEntries(selectedAbility);
+    const allCats = ['attempts', 'successes', 'failures', 'crits', 'fumbles',
+                     'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor', 'killing_blow'];
+
+    let firstCat = null;
+    for (const cat of allCats) {
+      if (!entries[cat] || entries[cat].entries.length === 0) continue;
+      if (!firstCat) firstCat = cat;
+
+      const tab = document.createElement('button');
+      tab.className = 'cat-tab' + (cat === selectedCategory ? ' active' : '');
+      tab.innerHTML = catLabel(cat) + '<span class="tab-count">(' + entries[cat].entries.length + ')</span>';
+      tab.addEventListener('click', () => selectForgeCategory(cat));
+      tabsEl.appendChild(tab);
+    }
+
+    // Auto-select first tab
+    if (!selectedCategory || !entries[selectedCategory]) {
+      selectedCategory = firstCat;
+    }
+    if (selectedCategory) {
+      tabsEl.querySelectorAll('.cat-tab').forEach((tab, i) => {
+        const cats = Object.keys(entries).filter(c => entries[c].entries.length > 0);
+        // Re-apply active based on selectedCategory
+      });
+      renderCurationEntries();
+    } else {
+      document.getElementById('curation-entries').innerHTML =
+        '<div class="curation-empty">No entries generated yet. Click "Generate" to create flavor text.</div>';
+    }
+
+    // Reapply active class to tabs
+    tabsEl.querySelectorAll('.cat-tab').forEach(tab => {
+      const label = tab.textContent.replace(/\(\d+\)/, '').trim();
+      const cat = labelToCat(label);
+      tab.classList.toggle('active', cat === selectedCategory);
+    });
+  }
+
+  function labelToCat(label) {
+    const map = {
+      'Attempt': 'attempts', 'Hit': 'successes', 'Miss': 'failures', 'Success': 'successes', 'Fail': 'failures',
+      'Crit': 'crits', 'Fumble': 'fumbles', 'Barely Hit': 'barely_hits',
+      'Barely Miss': 'barely_misses', 'Dodge': 'miss_dodge',
+      'Armor': 'miss_armor', 'Kill': 'killing_blow',
+    };
+    return map[label] || label;
+  }
+
+  function selectForgeCategory(cat) {
+    selectedCategory = cat;
+    document.querySelectorAll('.cat-tab').forEach(tab => {
+      const label = tab.textContent.replace(/\(\d+\)/, '').trim();
+      tab.classList.toggle('active', labelToCat(label) === cat);
+    });
+    renderCurationEntries();
+  }
+
+  function getAbilityEntries(name) {
+    if (!flavorData) return {};
+    const result = {};
+    for (const t of flavorData.tables) {
+      if (t.ability === name) {
+        result[t.category] = {
+          entries: t.entries,
+          weights: t.weights || t.entries.map(() => 1),
+        };
+      }
+    }
+    return result;
+  }
+
+  // ══════════════════════════════════════════════════════
+  // ── Forge: Render Curation Entries ──
+  // ══════════════════════════════════════════════════════
+  function renderCurationEntries() {
+    const el = document.getElementById('curation-entries');
+    el.innerHTML = '';
+
+    if (!selectedAbility || !selectedCategory) {
+      el.innerHTML = '<div class="curation-empty">Select a category to view entries.</div>';
+      return;
+    }
+
+    const entries = getAbilityEntries(selectedAbility);
+    const catData = entries[selectedCategory];
+    if (!catData || catData.entries.length === 0) {
+      el.innerHTML = '<div class="curation-empty">No entries for this category.</div>';
+      return;
+    }
+
+    for (let i = 0; i < catData.entries.length; i++) {
+      const text = catData.entries[i];
+      const weight = catData.weights[i] || 1;
+      const isFav = weight > 1;
+
+      const row = document.createElement('div');
+      row.className = 'entry-row' + (isFav ? ' favorited' : '');
+      row.dataset.index = i;
+
+      row.innerHTML =
+        '<span class="entry-num">' + (i + 1) + '.</span>' +
+        '<span class="entry-text">' + esc(text) + '</span>' +
+        '<div class="entry-actions">' +
+          '<button class="entry-btn' + (isFav ? ' favorited' : '') + '" onclick="toggleFavorite(' + i + ')" title="Favorite">' + (isFav ? '\u2605' : '\u2606') + '</button>' +
+          '<button class="entry-btn" onclick="rerollEntry(' + i + ')" title="Reroll">\u21BB</button>' +
+          '<button class="entry-btn" onclick="deleteEntry(' + i + ')" title="Delete">\u2715</button>' +
+        '</div>';
+
+      // Double-click to edit
+      const textEl = row.querySelector('.entry-text');
+      textEl.addEventListener('dblclick', () => startEditEntry(textEl, i));
+
+      el.appendChild(row);
+    }
+  }
+
+  // ══════════════════════════════════════════════════════
+  // ── Forge: Entry Operations ──
+  // ══════════════════════════════════════════════════════
+  window.toggleFavorite = function(index) {
+    const table = findTable(selectedAbility, selectedCategory);
+    if (!table) return;
+    if (!table.weights) table.weights = table.entries.map(() => 1);
+    table.weights[index] = table.weights[index] > 1 ? 1 : 3;
+    markDirty();
+    renderCurationEntries();
+  };
+
+  window.deleteEntry = function(index) {
+    const table = findTable(selectedAbility, selectedCategory);
+    if (!table) return;
+    table.entries.splice(index, 1);
+    if (table.weights) table.weights.splice(index, 1);
+    markDirty();
+    renderCurationEntries();
+    buildCurationTabs(); // update count
+  };
+
+  window.rerollEntry = async function(index) {
+    if (!selectedAbility || !selectedCategory || !parsedCreature) return;
+
+    // Find ability info
+    const ability = parsedCreature.abilities.find(a => a.name === selectedAbility);
+    if (!ability) return;
+
+    // Visual feedback
+    const rows = document.querySelectorAll('#curation-entries .entry-row');
+    const rerollBtn = rows[index]?.querySelector('.entry-btn:nth-child(2)');
+    if (rerollBtn) rerollBtn.classList.add('rerolling');
+
+    try {
+      const resp = await fetch('/api/reroll', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          creature: parsedCreature.creature,
+          ability: ability,
+          category: selectedCategory,
+          provider: document.getElementById('provider-select').value,
+          style: document.getElementById('style-select').value,
+        }),
+      });
+      if (!resp.ok) throw new Error('Reroll failed');
+      const result = await resp.json();
+      if (result.entry) {
+        const table = findTable(selectedAbility, selectedCategory);
+        if (table) {
+          table.entries[index] = result.entry;
+          markDirty();
+          renderCurationEntries();
+        }
+      }
+    } catch (err) {
+      alert('Reroll failed: ' + err.message);
+    }
+
+    if (rerollBtn) rerollBtn.classList.remove('rerolling');
+  };
+
+  function startEditEntry(textEl, index) {
+    textEl.contentEditable = 'true';
+    textEl.classList.add('editing');
+    textEl.focus();
+
+    // Select all text
+    const range = document.createRange();
+    range.selectNodeContents(textEl);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+
+    function finishEdit() {
+      textEl.contentEditable = 'false';
+      textEl.classList.remove('editing');
+      const newText = textEl.textContent.trim();
+      const table = findTable(selectedAbility, selectedCategory);
+      if (table && newText && newText !== table.entries[index]) {
+        table.entries[index] = newText;
+        markDirty();
+      }
+      textEl.removeEventListener('blur', finishEdit);
+      textEl.removeEventListener('keydown', handleKey);
+    }
+
+    function handleKey(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        finishEdit();
+      }
+      if (e.key === 'Escape') {
+        textEl.textContent = findTable(selectedAbility, selectedCategory)?.entries[index] || '';
+        finishEdit();
+      }
+    }
+
+    textEl.addEventListener('blur', finishEdit);
+    textEl.addEventListener('keydown', handleKey);
+  }
+
+  function findTable(ability, category) {
+    if (!flavorData) return null;
+    return flavorData.tables.find(t => t.ability === ability && t.category === category);
+  }
+
+  // ══════════════════════════════════════════════════════
+  // ── Forge: Generation (SSE) ──
+  // ══════════════════════════════════════════════════════
+  window.generateAll = function() {
+    const missing = getMissingAbilities();
+    if (missing.length === 0) {
+      alert('All abilities already have tables!');
+      return;
+    }
+    runGeneration(missing);
+  };
+
+  window.generateSelected = function() {
+    if (!selectedAbility || !parsedCreature) return;
+    const ability = parsedCreature.abilities.find(a => a.name === selectedAbility);
+    if (!ability) return;
+    runGeneration([ability]);
+  };
+
+  function getMissingAbilities() {
+    if (!parsedCreature) return [];
+    return parsedCreature.abilities.filter(a => getAbilityStatus(a.name) === 'missing');
+  }
+
+  async function runGeneration(abilities) {
+    const abortCtrl = new AbortController();
+    generationAbort = abortCtrl;
+
+    const btnGen = document.getElementById('btn-generate-all');
+    const btnCancel = document.getElementById('btn-cancel');
+    const progressBar = document.getElementById('progress-bar');
+    const progressFill = document.getElementById('progress-fill');
+    const progressText = document.getElementById('progress-text');
+
+    btnGen.disabled = true;
+    btnCancel.style.display = 'inline-block';
+    progressBar.style.display = 'block';
+    progressFill.style.width = '0%';
+    progressText.textContent = 'Starting...';
+
+    // Update context_blob from textarea
+    const contextBlob = document.getElementById('context-blob').value.trim();
+
+    try {
+      const resp = await fetch('/api/generate', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          creature: parsedCreature.creature,
+          abilities: abilities,
+          provider: document.getElementById('provider-select').value,
+          style: document.getElementById('style-select').value,
+          variations: parseInt(document.getElementById('variations-input').value) || 20,
+          with_crits: document.getElementById('chk-crits').checked,
+          crit_count: 5,
+          context_blob: contextBlob,
+          include_generic: document.getElementById('chk-generic').checked,
+          skill_proficiencies: parsedCreature.skill_proficiencies || {},
+          save_proficiencies: parsedCreature.save_proficiencies || {},
+        }),
+        signal: abortCtrl.signal,
+      });
+
+      if (!resp.ok) {
+        const err = await resp.json().catch(() => ({detail: 'Server error'}));
+        throw new Error(err.detail || 'Generation failed');
+      }
+
+      // Read SSE stream
+      const reader = resp.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+
+      while (true) {
+        const {done, value} = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, {stream: true});
+
+        // Parse complete SSE events
+        const parts = buffer.split('\n\n');
+        buffer = parts.pop(); // keep incomplete
+
+        for (const part of parts) {
+          if (!part.trim()) continue;
+          const lines = part.split('\n');
+          let eventType = '';
+          let eventData = '';
+          for (const line of lines) {
+            if (line.startsWith('event: ')) eventType = line.slice(7);
+            else if (line.startsWith('data: ')) eventData = line.slice(6);
+          }
+          if (!eventType || !eventData) continue;
+
+          try {
+            const payload = JSON.parse(eventData);
+            handleSSEEvent(eventType, payload, progressFill, progressText);
+          } catch (e) {
+            console.error('SSE parse error:', e);
+          }
+        }
+      }
+    } catch (err) {
+      if (err.name === 'AbortError') {
+        progressText.textContent = 'Cancelled';
+      } else {
+        progressText.textContent = 'Error: ' + err.message;
+        alert('Generation failed: ' + err.message);
+      }
+    }
+
+    btnGen.disabled = false;
+    btnCancel.style.display = 'none';
+    generationAbort = null;
+  }
+
+  function handleSSEEvent(eventType, payload, progressFill, progressText) {
+    if (eventType === 'progress') {
+      const pct = Math.round((payload.index / payload.total) * 100);
+      progressFill.style.width = pct + '%';
+      const statusEmoji = payload.status === 'done' ? '\u2713' : '\u21BB';
+      progressText.textContent = statusEmoji + ' ' + payload.ability + ' (' + payload.index + '/' + payload.total + ')';
+
+      // Update status badge in ability list
+      setAbilityBadge(payload.ability, payload.status === 'done' ? 'ready' : 'generating');
+    }
+    else if (eventType === 'complete') {
+      mergeResult(payload);
+      progressText.textContent = 'Complete!';
+      progressFill.style.width = '100%';
+      markDirty();
+      buildForgeAbilityList();
+      // Refresh curation if an ability is selected
+      if (selectedAbility) {
+        buildCurationTabs();
+      }
+      // Also update roller data
+      data = JSON.parse(JSON.stringify(flavorData));
+    }
+    else if (eventType === 'error') {
+      setAbilityBadge(payload.ability, 'error');
+      console.error('Generation error for', payload.ability, ':', payload.error);
+    }
+  }
+
+  function setAbilityBadge(name, status) {
+    document.querySelectorAll('.forge-ability-item').forEach(el => {
+      const itemName = el.querySelector('.ability-name')?.textContent;
+      if (itemName === name) {
+        const badge = el.querySelector('.status-badge');
+        if (badge) {
+          badge.className = 'status-badge ' + status;
+          badge.textContent = statusIcon(status);
+        }
+      }
+    });
+  }
+
+  window.cancelGeneration = function() {
+    if (generationAbort) {
+      generationAbort.abort();
+      generationAbort = null;
+    }
+  };
+
+  // ══════════════════════════════════════════════════════
+  // ── Forge: Merge Results ──
+  // ══════════════════════════════════════════════════════
+  function mergeResult(newJson) {
+    if (!flavorData) {
+      flavorData = newJson;
+      return;
+    }
+
+    // Build set of existing table keys
+    const existing = new Set();
+    for (const t of flavorData.tables) {
+      existing.add(t.ability + '|' + t.category);
+    }
+
+    // Add only new tables
+    for (const t of newJson.tables) {
+      const key = t.ability + '|' + t.category;
+      if (!existing.has(key)) {
+        flavorData.tables.push(t);
+      }
+    }
+
+    // Merge triggers
+    const existingTriggers = new Set(
+      flavorData.triggers.map(tr => JSON.stringify(tr))
+    );
+    for (const tr of newJson.triggers) {
+      if (!existingTriggers.has(JSON.stringify(tr))) {
+        flavorData.triggers.push(tr);
+      }
+    }
+
+    // Update creature and format info
+    flavorData.creature = newJson.creature;
+    flavorData.formatVersion = newJson.formatVersion;
+    flavorData.whisper = newJson.whisper;
+
+    // Also merge any new abilities into parsedCreature
+    if (parsedCreature && newJson.tables) {
+      const existingNames = new Set(parsedCreature.abilities.map(a => a.name));
+      for (const t of newJson.tables) {
+        if (!existingNames.has(t.ability)) {
+          existingNames.add(t.ability);
+          parsedCreature.abilities.push({
+            name: t.ability,
+            ability_type: hookTypeToAbilityType(getHookTypeForAbility(t.ability, newJson)),
+            description: t.description || '',
+          });
+        }
+      }
+    }
+  }
+
+  function getHookTypeForAbility(name, fd) {
+    for (const tr of (fd.triggers || [])) {
+      const trName = tr.itemName || (tr.table || '').split('|')[0];
+      if (trName === name) return tr.hookType;
+    }
+    return 'itemUse';
+  }
+
+  // ══════════════════════════════════════════════════════
+  // ── Forge: Save / Export ──
+  // ══════════════════════════════════════════════════════
+  window.saveFile = async function() {
+    if (!flavorData) return;
+    if (!activeFile) {
+      saveFileAs();
+      return;
+    }
+
+    try {
+      const resp = await fetch('/api/files/' + encodeURIComponent(activeFile), {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(flavorData),
+      });
+      if (!resp.ok) throw new Error('Save failed');
+      isDirty = false;
+      updateDirtyIndicator();
+      // Refresh file list to show new/updated file
+      loadFileList();
+    } catch (err) {
+      alert('Save failed: ' + err.message);
+    }
+  };
+
+  window.saveFileAs = function() {
+    let suggested = activeFile || '';
+    if (!suggested && flavorData?.creature?.name) {
+      suggested = flavorData.creature.name.toLowerCase().replace(/\s+/g, '-') + '-narramancy.json';
+    }
+    if (!suggested) suggested = 'narramancy.json';
+
+    const name = prompt('Save as:', suggested);
+    if (!name) return;
+    activeFile = name.endsWith('.json') ? name : name + '.json';
+    saveFile();
+  };
+
+  function markDirty() {
+    isDirty = true;
+    updateDirtyIndicator();
+  }
+
+  function updateDirtyIndicator() {
+    const el = document.getElementById('dirty-indicator');
+    if (el) el.style.display = isDirty ? 'inline' : 'none';
+  }
+
+  function showCurationActions() {
+    const el = document.getElementById('curation-actions');
+    if (el) el.style.display = 'flex';
+  }
+
+  // ══════════════════════════════════════════════════════
+  // ── Util ──
+  // ══════════════════════════════════════════════════════
+  function esc(s) {
+    if (!s) return '';
+    const el = document.createElement('span');
+    el.textContent = s;
+    return el.innerHTML;
+  }
+
+  // ══════════════════════════════════════════════════════
+  // ── Init ──
+  // ══════════════════════════════════════════════════════
+  loadFileList();
+  loadProviders();
+})();
+</script>
+</body>
+</html>

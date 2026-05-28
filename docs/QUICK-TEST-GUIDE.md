@@ -1,10 +1,10 @@
-# Flavor Forge Quick Test Guide
+# Narramancy Quick Test Guide
 
 ## 1. Launch the Web UI
 
 ```bash
-cd /path/to/dnd-flavor-forge
-PYTHONPATH=src python -m flavor_forge webui
+cd /path/to/dnd-narramancy
+PYTHONPATH=src python -m narramancy webui
 ```
 
 Opens at **http://localhost:7870**
@@ -45,10 +45,10 @@ Click **Generate** — wait for it to process each ability. Results appear on th
 
 ```bash
 # Parse + generate + export in one shot
-PYTHONPATH=src python -m flavor_forge generate --open5e goblin --style dramatic --variations 5 --export tokensays --output-dir ./output/
+PYTHONPATH=src python -m narramancy generate --open5e goblin --style dramatic --variations 5 --export tokensays --output-dir ./output/
 
 # Or from a saved HTML page
-PYTHONPATH=src python -m flavor_forge generate goblin-page.html --export all --output-dir ./output/
+PYTHONPATH=src python -m narramancy generate goblin-page.html --export all --output-dir ./output/
 ```
 
 ## Config Required

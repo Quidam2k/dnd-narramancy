@@ -1,0 +1,31 @@
+<form autocomplete="off">
+  {{#if isEmpty}}
+    <p>{{localize "NARRAMANCY.export.noCharacters"}}</p>
+  {{else}}
+    <ul class="narramancy-creature-list">
+      {{#each characters}}
+        <li>
+          <div class="ff-creature-info">
+            <span class="ff-creature-name">{{this.name}}</span>
+            <span class="ff-creature-meta">
+              &mdash; {{this.class}} Level {{this.level}}
+            </span>
+          </div>
+          <div class="ff-creature-actions">
+            <button type="button" class="ff-export-character" data-id="{{this.id}}">
+              <i class="fas fa-file-export"></i> Export
+            </button>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+
+    {{#if isGM}}
+      <footer class="sheet-footer flexrow">
+        <button type="button" class="ff-export-all">
+          <i class="fas fa-file-export"></i> {{localize "NARRAMANCY.export.exportAll"}}
+        </button>
+      </footer>
+    {{/if}}
+  {{/if}}
+</form>

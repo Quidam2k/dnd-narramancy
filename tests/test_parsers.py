@@ -7,12 +7,12 @@ import sys
 import os
 from pathlib import Path
 
-# Add src/ to path so flavor_forge package is importable
+# Add src/ to path so narramancy package is importable
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from flavor_forge.models import ParsedCreature, ParsedAbility, FlavorTextRequest
-from flavor_forge.parsers import parse_stat_block, parse_text_block
-from flavor_forge.parsers.foundry import parse_foundry_actor
+from narramancy.models import ParsedCreature, ParsedAbility, FlavorTextRequest
+from narramancy.parsers import parse_stat_block, parse_text_block
+from narramancy.parsers.foundry import parse_foundry_actor
 
 # ---------------------------------------------------------------------------
 # Test data: real stat blocks as string constants
@@ -254,7 +254,7 @@ def test_open5e_fetch():
     print("-" * 40)
 
     try:
-        from flavor_forge.parsers.open5e import fetch_creature, search_creatures
+        from narramancy.parsers.open5e import fetch_creature, search_creatures
 
         creature = fetch_creature("goblin")
         assert creature.name.lower() == "goblin", f"Name: {creature.name}"
@@ -282,6 +282,103 @@ def test_open5e_fetch():
         return False
 
 
+MULTI_PHASE_FOUNDRY_ACTOR = {
+    "name": "Gimbal",
+    "type": "character",
+    "system": {
+        "details": {"type": {"value": "humanoid"}},
+        "traits": {"size": "sm"},
+    },
+    "items": [
+        {
+            "name": "Produce Flame",
+            "type": "spell",
+            "system": {
+                "description": {"value": "A flame appears in your hand."},
+                "level": 0,
+                "activation": {"type": "bonus"},
+                "activities": {
+                    "attackProdFlame": {"type": "attack", "_id": "attackProdFlame"},
+                    "ddbmacroProdFl": {"type": "ddbmacro", "_id": "ddbmacroProdFl"},
+                },
+            },
+        },
+        {
+            "name": "Call Lightning",
+            "type": "spell",
+            "system": {
+                "description": {"value": "Storm cloud appears, call bolts."},
+                "level": 3,
+                "activation": {"type": "action"},
+                "activities": {
+                    "utilityCallLig": {"type": "utility", "_id": "utilityCallLig"},
+                    "saveCallLig1": {"type": "save", "_id": "saveCallLig1"},
+                    "saveCallLig2": {"type": "save", "_id": "saveCallLig2"},
+                },
+            },
+        },
+        {
+            "name": "Thunderwave",
+            "type": "spell",
+            "system": {
+                "description": {"value": "A wave of thunderous force."},
+                "level": 1,
+                "activation": {"type": "action"},
+                "activities": {
+                    "saveThunder": {"type": "save", "_id": "saveThunder"},
+                },
+            },
+        },
+        {
+            "name": "Starry Form",
+            "type": "feat",
+            "system": {
+                "description": {"value": "Assume a starry form."},
+                "activation": {"type": "bonus"},
+                "activities": {
+                    "enchantStarry": {"type": "enchant", "_id": "enchantStarry"},
+                    "attackArcher": {"type": "attack", "_id": "attackArcher"},
+                },
+            },
+        },
+    ],
+}
+
+
+def test_foundry_multi_phase_detection():
+    """Foundry parser detects multi-phase abilities from activity types."""
+    print("\nTest: foundry_multi_phase_detection")
+    print("-" * 40)
+
+    creature = parse_foundry_actor(MULTI_PHASE_FOUNDRY_ACTOR)
+
+    # Produce Flame: attack + ddbmacro = multi-phase
+    pf = next(a for a in creature.abilities if a.name == 'Produce Flame')
+    assert pf.is_multi_phase, "Produce Flame should be multi-phase"
+    assert set(pf.activity_types) == {'attack', 'ddbmacro'}, f"Got {pf.activity_types}"
+
+    # Call Lightning: utility + save = multi-phase
+    cl = next(a for a in creature.abilities if a.name == 'Call Lightning')
+    assert cl.is_multi_phase, "Call Lightning should be multi-phase"
+    assert 'utility' in cl.activity_types
+    assert 'save' in cl.activity_types
+
+    # Thunderwave: only save = single-phase
+    tw = next(a for a in creature.abilities if a.name == 'Thunderwave')
+    assert not tw.is_multi_phase, f"Thunderwave should be single-phase, got activity_types={tw.activity_types}"
+
+    # Starry Form: enchant + attack = multi-phase
+    sf = next(a for a in creature.abilities if a.name == 'Starry Form')
+    assert sf.is_multi_phase, "Starry Form should be multi-phase"
+
+    print("  Produce Flame: multi-phase OK")
+    print("  Call Lightning: multi-phase OK")
+    print("  Thunderwave: single-phase OK")
+    print("  Starry Form: multi-phase OK")
+    print("  PASS")
+    return True
+
+
 def test_cli_smoke():
     """Smoke test the CLI with --help and a piped stat block."""
     print("\nTest: cli_smoke")
@@ -291,15 +388,15 @@ def test_cli_smoke():
 
     # Test --help
     result = subprocess.run(
-        [sys.executable, "-m", "flavor_forge", "--help"],
+        [sys.executable, "-m", "narramancy", "--help"],
         capture_output=True, text=True, cwd=src_dir,
     )
     assert result.returncode == 0, f"--help failed: {result.stderr}"
-    assert "flavor_forge" in result.stdout.lower() or "flavor" in result.stdout.lower()
+    assert "narramancy" in result.stdout.lower() or "flavor" in result.stdout.lower()
 
     # Test parse subcommand with piped text
     result = subprocess.run(
-        [sys.executable, "-m", "flavor_forge", "parse", "--json"],
+        [sys.executable, "-m", "narramancy", "parse", "--json"],
         input=GOBLIN_TEXT, capture_output=True, text=True, cwd=src_dir,
     )
     assert result.returncode == 0, f"parse failed: {result.stderr}"
@@ -318,7 +415,7 @@ def test_cli_smoke():
 # ---------------------------------------------------------------------------
 
 def main():
-    print("Flavor Forge Parser Test Suite")
+    print("Narramancy Parser Test Suite")
     print("=" * 60)
 
     results = {}
@@ -328,6 +425,7 @@ def main():
     results['auto_detect_json'] = test_auto_detect_json()
     results['to_flavor_request'] = test_to_flavor_request()
     results['open5e_fetch'] = test_open5e_fetch()
+    results['foundry_multi_phase'] = test_foundry_multi_phase_detection()
     results['cli_smoke'] = test_cli_smoke()
 
     print(f"\n{'=' * 60}")

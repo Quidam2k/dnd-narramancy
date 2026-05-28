@@ -1,0 +1,3578 @@
+{
+  "_creature": "Gimbal Starwhisper",
+  "Produce Flame": {
+    "attempts": [
+      "Kinesthetic: It bends low, fingers curling around the spark.",
+      "Auditory: A faint hiss as air dances over the nascent flame."
+    ],
+    "successes": [
+      "Kinesthetic: Heat blooms in its palm, a living pulse of energy.",
+      "Auditory: The crackle of fire ignites with an eager sigh."
+    ],
+    "failures": [
+      "Kinesthetic: It clenches tight but feels only cool air between fingers.",
+      "Auditory: A disappointed sizzle as the attempt flickers and fades."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Produce Flame",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "attack"
+    }
+  },
+  "Shillelagh": {
+    "attempts": [
+      "Kinesthetic: It bends low, the staff a third leg in the fluid dance.",
+      "Auditory: The wood creaks expectantly, a quiet promise of force."
+    ],
+    "successes": [
+      "Kinesthetic: Power surges through it, each muscle tensing as one.",
+      "Auditory: A deep thump resonates, like earth itself giving its assent."
+    ],
+    "failures": [
+      "Kinesthetic: It stumbles forward, the staff missing by a hair's breadth.",
+      "Auditory: An audible sigh of missed opportunity fills the air."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Shillelagh",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "attack"
+    }
+  },
+  "Magic Stone": {
+    "attempts": [
+      "Kinesthetic: It twirls the stone lightly, feeling its weight in delicate arcs.",
+      "Auditory: A soft hum rises as it prepares, the air vibrating with intent."
+    ],
+    "successes": [
+      "Kinesthetic: Stone and hand part ways \u2014 a clean release, pure grace.",
+      "Auditory: The whistle of wind through stone cuts sharp and true."
+    ],
+    "failures": [
+      "Kinesthetic: It releases too soon, the stone wobbling in mid-air.",
+      "Auditory: A disappointing thud as it misses, silence mocking its effort."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Magic Stone",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "attack"
+    }
+  },
+  "Thorn Whip": {
+    "attempts": [
+      "Kinesthetic: It twirls the whip, muscles tensing with each twist of the wrist.",
+      "Auditory: A sharp snap echoes as it whips the air, seeking its mark."
+    ],
+    "successes": [
+      "Kinesthetic: The coil tightens just before impact, pulling with a sudden jolt.",
+      "Auditory: A soft thud accompanies the crackling vines as they seize their prey."
+    ],
+    "failures": [
+      "Kinesthetic: It overextends, feeling the whip's resistance in its weary arms.",
+      "Auditory: An empty snap resounds, punctuated by the rustle of ungraspable leaves."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Thorn Whip",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "attack"
+    }
+  },
+  "Wild Shape": {
+    "attempts": [
+      "Kinesthetic \u2014 \"A brief flex of muscles, the body poised between forms.",
+      "Auditory \u2014 \"A subtle rustling, like wind through leaves, heralds the change."
+    ],
+    "successes": [
+      "Kinesthetic \u2014 \"Muscles ripple as form shifts, seamless as a river's flow.",
+      "Auditory \u2014 \"Whispers of nature hum faintly, bridging two shapes in perfect harmony."
+    ],
+    "failures": [
+      "Kinesthetic \u2014 \"A momentary stiffness, muscles failing to follow through the shift.",
+      "Auditory \u2014 \"A discordant crackle, as if the world itself hesitates on the edge of change."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Wild Shape",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "bonus_action"
+    }
+  },
+  "Wild Companion": {
+    "attempts": [
+      "Kinesthetic: \"It feels the world shift beneath its feet, roots stirring in unseen soil.",
+      "Auditory: \"A distant hum begins \u2014 nature's orchestra tuning for a performance."
+    ],
+    "successes": [
+      "Kinesthetic: \"The familiar manifests with effortless grace, as if born from the breeze itself.",
+      "Auditory: \"A soft chime resonates, a secret song only the wild knows."
+    ],
+    "failures": [
+      "Kinesthetic: \"It stumbles briefly \u2014 the connection just out of reach like grasping at fog.",
+      "Auditory: \"A hollow echo interrupts \u2014 nature's whispers fail to materialize."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Wild Companion",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "feature"
+    }
+  },
+  "Starry Form": {
+    "attempts": [
+      "Kinesthetic: It feels the cosmos stir within, muscles tensing in delicate alignment.",
+      "Auditory: A soft hum builds beneath it, like distant stars whispering into being."
+    ],
+    "successes": [
+      "Kinesthetic: Each cell pulses with celestial light, as if drawing from a vast cosmic reservoir.",
+      "Auditory: The universe hums in harmony, a low, ethereal resonance that fills the air."
+    ],
+    "failures": [
+      "Kinesthetic: It strains, body flickering but failing to fully embrace the starry glow.",
+      "Auditory: A brief crackle, like distant stars struggling to connect \u2014 then silence."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Starry Form",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "bonus_action"
+    }
+  },
+  "Wild Resurgence": {
+    "attempts": [
+      "Kinesthetic: \"Muscles tense, straining to bridge the gap between forms.",
+      "Auditory: \"A whisper of nature's breath, stirring but not quite breaking free."
+    ],
+    "successes": [
+      "Kinesthetic: \"The body shifts effortlessly, a leaf turning with the breeze.",
+      "Auditory: \"Nature hums in approval, a soft chorus welcoming the transformation."
+    ],
+    "failures": [
+      "Kinesthetic: \"A moment of resistance \u2014 muscles lock up, unwilling to bend.",
+      "Auditory: \"An eerie silence, as if nature itself holds its breath, disappointed."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Wild Resurgence",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "feature"
+    }
+  },
+  "Child of the Wood": {
+    "attempts": [
+      "Kinesthetic: It leans into the earth, searching for ancient roots to weave.",
+      "Auditory: A faint whisper in the wind\u2014nature hums a tentative tune."
+    ],
+    "successes": [
+      "Kinesthetic: The ground shifts as if breathing with newfound life.",
+      "Auditory: Leaves rustle in perfect unison, speaking secrets only they understand."
+    ],
+    "failures": [
+      "Kinesthetic: It stumbles slightly, roots tangling mid-cast like forgotten memories.",
+      "Auditory: A soft sigh escapes the wind, nature hesitating on its call."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Child of the Wood",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "feature"
+    }
+  },
+  "Inspiring Leader": {
+    "attempts": [
+      "Kinesthetic: \"It shifts weight subtly, muscles tensing in quiet anticipation.",
+      "Auditory: \"A low hum begins\u2014notes floating free as if from the wind itself."
+    ],
+    "successes": [
+      "Kinesthetic: \"With a fluid motion, it channels grace into every fiber of its being.",
+      "Auditory: \"Notes swell like dawn breaking over a quiet forest, filling the air with hope."
+    ],
+    "failures": [
+      "Kinesthetic: \"The body tenses, but something holds back\u2014like frozen limbs in winter\u2019s grip.",
+      "Auditory: \"A note falters, quivering in the silence before dissolving into nothingness."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Inspiring Leader",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "feature"
+    }
+  },
+  "Fleeting Luck": {
+    "attempts": [
+      "Kinesthetic: It feels the cosmos tugging at its core, a fleeting pull.",
+      "Auditory: A distant chime echoes within, signaling the attempt to grasp luck."
+    ],
+    "successes": [
+      "Kinesthetic: Its body moves with an ephemeral grace, as if carried by the wind.",
+      "Auditory: A soft tinkling fills the air, like stars whispering in tandem."
+    ],
+    "failures": [
+      "Kinesthetic: It stumbles slightly, the fleeting luck slipping just out of reach.",
+      "Auditory: The chime falters, a momentary silence before the world resumes."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Fleeting Luck",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "feature"
+    }
+  },
+  "Bael's Sacrifice of Insight": {
+    "attempts": [
+      "Kinesthetic: \"It bends slightly, body aligning with an unseen force.",
+      "Auditory: \"A soft hum begins \u2014 like the distant whisper of ancient knowledge."
+    ],
+    "successes": [
+      "Kinesthetic: \"Each movement becomes a dance with precision and purpose.",
+      "Auditory: \"The world quiets as clarity descends, unspoken but undeniable."
+    ],
+    "failures": [
+      "Kinesthetic: \"It stumbles mid-step, as if the earth beneath shifts without warning.",
+      "Auditory: \"A discordant note rings out \u2014 a momentary clash of conflicting insights."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Bael's Sacrifice of Insight",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "feature"
+    }
+  },
+  "Archer: Luminous Arrow": {
+    "attempts": [
+      "Kinesthetic: \"The body tenses, a subtle shift in balance before the arrow.",
+      "Auditory: \"A faint whisper of bowstring hums through the silence."
+    ],
+    "successes": [
+      "It draws the stars into an unbreakable line, true and steady.",
+      "Power surges through the arrow's flight, leaving trails of light."
+    ],
+    "failures": [
+      "Kinesthetic: \"The body hesitates \u2014 a fraction too late to catch the moment.",
+      "Auditory: \"A hollow echo where the arrow should have sung."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Archer: Luminous Arrow",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "bonus_action"
+    }
+  },
+  "Create Bonfire": {
+    "attempts": [
+      "A whisper of flame kindles in the palm \u2014 elemental will stirs.",
+      "It hums a tune ancient, threads of fire weaving through silence."
+    ],
+    "successes": [
+      "Arcane warmth blooms, lighting shadows with precise intent.",
+      "The crackling heat dances to an unheard rhythm, perfect and pure."
+    ],
+    "failures": [
+      "A spark flickers \u2014 then dies in the void, unfulfilled.",
+      "Silence clings as the incantation fails, leaving only cold air."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Create Bonfire",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "cantrip"
+    }
+  },
+  "Resistance": {
+    "attempts": [
+      "It hums a tune of arcane threads, weaving them into the air.",
+      "A whispered incantation stirs the fabric of reality, seeking a seam."
+    ],
+    "successes": [
+      "Energy blooms in a soft pulse, cradling the target within its glow.",
+      "The spell alights like a beacon, illuminating a moment of resilience."
+    ],
+    "failures": [
+      "A brief spark sputters and fades into the void, unfulfilled.",
+      "The incantation hangs heavy in the air, then vanishes without effect."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Resistance",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "cantrip"
+    }
+  },
+  "Druidcraft": {
+    "attempts": [
+      "It hums a melody too subtle for ears, weaving through the air's fabric.",
+      "Energy flickers at the fingertips, searching for a foothold in reality."
+    ],
+    "successes": [
+      "The incantation latches onto the weather spirits, coaxing secrets from the sky.",
+      "A tiny storm of petals unfolds \u2014 nature's whispers materialize perfectly."
+    ],
+    "failures": [
+      "The air shivers but resists, leaving the spell hanging in mid-cast.",
+      "It feels the magic slip away, like water through cupped hands."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Druidcraft",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "cantrip"
+    }
+  },
+  "Guidance": {
+    "attempts": [
+      "A ripple of arcane energy hums through the air\u2014ready to guide.",
+      "It whispers in a tongue older than time, seeking the right path."
+    ],
+    "successes": [
+      "The spell blooms like dawn, its light guiding with absolute certainty.",
+      "Energy arcs through the air, pinpointing destiny's exact coordinates."
+    ],
+    "failures": [
+      "A moment of silence\u2014then the spell dissipates into the void.",
+      "Magic crackles and fades, leaving an echo of unfulfilled potential."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Guidance",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "cantrip"
+    }
+  },
+  "Goodberry": {
+    "attempts": [
+      "It hums a melody of life, weaving threads from the loom of nature.",
+      "Arcane whispers twist through the air, seeking to bind with the berries."
+    ],
+    "successes": [
+      "The spell blossoms into emerald tendrils, wrapping around each berry gently.",
+      "A soft crackle resonates as the magic settles, infusing every fruit perfectly."
+    ],
+    "failures": [
+      "The incantation stumbles like a leaf in a sudden storm, fading to silence.",
+      "A faint, disappointed glow \u2014 the magic flickers and then vanishes."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Goodberry",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Detect Magic": {
+    "attempts": [
+      "Energy hums through the air\u2014threads of arcane light weave and tangle.",
+      "A wave of warmth spreads, seeking out the hidden currents of magic."
+    ],
+    "successes": [
+      "The world flickers with color\u2014patterns dance where unseen forces reside.",
+      "Magic flares into view\u2014a spectral glow outlines the unseen currents."
+    ],
+    "failures": [
+      "Silence falls heavy\u2014magic slips away like grains through fingers.",
+      "A crackle of power\u2014then nothing, as if reality itself sighs in disappointment."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Detect Magic",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Cure Wounds": {
+    "attempts": [
+      "A ripple of arcane energy hums through the air, seeking its path.",
+      "It channels a wave of ethereal light, weaving between shadows."
+    ],
+    "successes": [
+      "The spell's echo lingers like a soft sigh in the wind.",
+      "A warm glow envelops \u2014 nature itself responds with a gentle breath."
+    ],
+    "failures": [
+      "The incantation sputters, leaving only silence and unfulfilled air.",
+      "Magic crackles feebly before fading into an uncomfortable stillness."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Cure Wounds",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Healing Word": {
+    "attempts": [
+      "Kinesthetic: \"It feels the magic stir in its core, a quiet hum beneath the skin.",
+      "Auditory: \"A faint whisper of wind precedes the attempt to heal."
+    ],
+    "successes": [
+      "Kinesthetic: \"The spell flows like a soft breeze, cradling the recipient with care.",
+      "Auditory: \"A serene chime resonates, harmonizing with nature's gentle call."
+    ],
+    "failures": [
+      "Kinesthetic: \"It strains internally, the magic just out of reach within its chest.",
+      "Auditory: \"The intended sound fades into silence, swallowed by an unexpected stillness."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Healing Word",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "bonus_action"
+    }
+  },
+  "Faerie Fire": {
+    "attempts": [
+      "Vibrations ripple through the air\u2014a whispered incantation stirs the elements.",
+      "A hum of energy builds, seeking a path to weave light into reality."
+    ],
+    "successes": [
+      "The air crackles with color\u2014light unfurls like petals around its target.",
+      "Dim radiance blooms, outlining shadows in vibrant hues that dance and shimmer."
+    ],
+    "failures": [
+      "A silence hangs heavy\u2014magic flares then fades to nothingness.",
+      "Energy sputters\u2014a brief flash, then the weave slips through trembling fingers."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Faerie Fire",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Absorb Elements": {
+    "attempts": [
+      "Kinesthetic: \"It shifts seamlessly, muscles coiling like a spring waiting to uncoil.",
+      "Auditory: \"A quiet hum resonates within \u2014 the world holds its breath."
+    ],
+    "successes": [
+      "Kinesthetic: \"Graceful as a leaf caught in the breeze, it soaks up the energy effortlessly.",
+      "Auditory: \"A soft chime echoes, harmonizing with the pulse of nature itself."
+    ],
+    "failures": [
+      "Kinesthetic: \"The body tenses but hesitates \u2014 the flow stutters mid-act.",
+      "Auditory: \"An unexpected silence falls \u2014 the intended harmony fails to materialize."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Absorb Elements",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "reaction"
+    }
+  },
+  "Beast Bond": {
+    "attempts": [
+      "Energy hums through the air, weaving in delicate patterns.",
+      "The incantation stirs, a low murmur resonating with nature's pulse."
+    ],
+    "successes": [
+      "A surge of power flows outward, leaves rustling in silent approval.",
+      "The bond forms \u2014 a whisper of life, merging two essences."
+    ],
+    "failures": [
+      "A crackle of frustration as the spell dissipates into thin air.",
+      "Silence hangs heavy, mocking the empty space where magic should be."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Beast Bond",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Earth Tremor": {
+    "attempts": [
+      "It hums a low, resonant tune, the earth itself listening.",
+      "Energy pulses from fingertips, seeking to disturb the deep."
+    ],
+    "successes": [
+      "The ground shudders, as if awakened by an ancient slumber.",
+      "A seismic whisper ripples outward, cracking the very soil."
+    ],
+    "failures": [
+      "Silence clings \u2014 the earth refuses to heed it.",
+      "An imperceptible ripple forms, but never gains strength."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Earth Tremor",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Ice Knife": {
+    "attempts": [
+      "A whisper of frost curls through the air, seeking its path.",
+      "Ice hums faintly in anticipation, eager to strike."
+    ],
+    "successes": [
+      "The world slows for an instant \u2014 then ice bites with precision.",
+      "Energy shivers outward, a cold pulse that echoes through the room."
+    ],
+    "failures": [
+      "The spell flickers like candlelight, fading into silence.",
+      "A moment of stillness \u2014 then nothing but the faintest chill."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Ice Knife",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Snare": {
+    "attempts": [
+      "The ring hums with latent energy, veins of shadow weaving through the metal.",
+      "A murmur of arcane whispers rises \u2014 chains of force shimmering to life."
+    ],
+    "successes": [
+      "Chains materialize from thin air, binding it tightly in a mesh of silver light.",
+      "The touch ignites \u2014 metallic tendrils burst forth with precise intent."
+    ],
+    "failures": [
+      "A brief flash of sparks \u2014 the magic flickers before vanishing into silence.",
+      "The ring glows feebly for a moment, then returns to inert metal, unresponsive."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Snare",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Elevated Sight": {
+    "attempts": [
+      "It hums a tune of ethereal resonance, threads of light weaving through the air.",
+      "Energy pulses through the fingertips, seeking to ascend beyond earthly bounds."
+    ],
+    "successes": [
+      "The world tilts subtly \u2014 elevated sight grants an otherworldly vantage point.",
+      "Silence envelops as vision ascends, revealing secrets hidden in the vastness above."
+    ],
+    "failures": [
+      "A momentary flicker of light fails to anchor itself in the spellcaster's focus.",
+      "The incantation stumbles mid-air, dispersing into a mere whisper of potential."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Elevated Sight",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Spiny Shield": {
+    "attempts": [
+      "Kinesthetic: \"It braces, muscles coiling like a spring ready to unleash.",
+      "Auditory: \"A sharp hiss precedes the reaction, anticipation sharpened to a point."
+    ],
+    "successes": [
+      "Kinesthetic: \"The body locks down, as if carved from stone in an instant.",
+      "Auditory: \"A crackling hum vibrates through the air, as if nature itself approves."
+    ],
+    "failures": [
+      "Kinesthetic: \"It twitches but falters, muscles failing to commit fully.",
+      "Auditory: \"The expected sound fails to materialize, a whisper in the wind."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Spiny Shield",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "reaction"
+    }
+  },
+  "Veil of Dusk": {
+    "attempts": [
+      "It channels the dusk with a subtle, almost imperceptible bow of the body.",
+      "With a flick of wrists and a tilt of head, it begins weaving shadows."
+    ],
+    "successes": [
+      "The night wraps around, as seamless as silk slipping over skin.",
+      "A soft rustle like leaves in autumn, as darkness enfolds completely."
+    ],
+    "failures": [
+      "The dusk stutters, a momentary hesitation in the weave of twilight.",
+      "It feels the spell resist, like trying to catch smoke with bare hands."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Veil of Dusk",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "bonus_action"
+    }
+  },
+  "Animal Friendship": {
+    "attempts": [
+      "Arcane threads weave through the air, seeking a resonance in the beast's mind.",
+      "A hush falls over the scene as it listens to the silent symphony of magic."
+    ],
+    "successes": [
+      "Energy hums within, harmonizing with the creature\u2019s spirit, forging an unspoken bond.",
+      "The beast's eyes soften, reflecting the calm that now pulses between you."
+    ],
+    "failures": [
+      "A faint crackle of power dissipates into the wind, leaving no trace behind.",
+      "The spell fizzles like a dying ember, failing to ignite the creature\u2019s trust."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Animal Friendship",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Fog Cloud": {
+    "attempts": [
+      "It whispers to the mist, coaxing it into existence\u2014air shivers in response.",
+      "Energy coalesces at fingertips, seeking the perfect moment to unleash."
+    ],
+    "successes": [
+      "The air thickens, a swirling cloak of fog that shields all within its grasp.",
+      "Silence falls heavy as the spell takes hold, muffling even the softest breaths."
+    ],
+    "failures": [
+      "A brief shimmer, then nothing\u2014like trying to catch smoke in one's hands.",
+      "The attempt stutters, a quiet pop where magic should have bloomed."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Fog Cloud",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Protection from Evil and Good": {
+    "attempts": [
+      "A surge of arcane energy hums through the air, seeking its anchor.",
+      "It channels a melody that ripples across unseen threads, weaving protections."
+    ],
+    "successes": [
+      "Silence wraps around like a shield as the weave solidifies in perfect harmony.",
+      "An invisible barrier blossoms with each word, turning away malevolent forces."
+    ],
+    "failures": [
+      "The incantation sputters mid-air, leaving only an echo of what could have been.",
+      "A faint crackle flickers and dies \u2014 the spell never fully takes hold."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Protection from Evil and Good",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Purify Food and Drink": {
+    "attempts": [
+      "Vapors swirl in intricate loops, tracing the contours of unseen forces.",
+      "It hums a quiet tune that the very elements seem to answer."
+    ],
+    "successes": [
+      "Aetheric tendrils curl around the air, cleansing it with a serene grace.",
+      "The silence deepens \u2014 pure magic fills the space, flawless and complete."
+    ],
+    "failures": [
+      "Energy crackles but fizzles out, like sparks in a dry field.",
+      "The incantation stumbles mid-cast, leaving an echo of unfulfilled power."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Purify Food and Drink",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Charm Person": {
+    "attempts": [
+      "A ripple of arcane light unfurls from the fingertips\u2014energy hums in anticipation.",
+      "The air thickens as whispered words weave a delicate, invisible thread."
+    ],
+    "successes": [
+      "Energy coalesces with intent\u2014a soft glow envelops it, drawing trust.",
+      "The incantation knots tightly around its mind, weaving an unbreakable charm."
+    ],
+    "failures": [
+      "A moment of silence\u2014then the spell crackles and fades into nothingness.",
+      "The magic sputters like a dying flame, leaving only echoes in the air."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Charm Person",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Jump": {
+    "attempts": [
+      "Kinesthetic: \"It braces\u2014muscles tensing in anticipation of the leap.",
+      "Auditory: \"A quiet hum, like a thread being pulled through space."
+    ],
+    "successes": [
+      "Kinesthetic: \"Leaps clear distances that seem impossible\u2014gravity bends to its will.",
+      "Auditory: \"The air splits with an echoing silence as it bounds forward."
+    ],
+    "failures": [
+      "Kinesthetic: \"A sudden slack in the muscles, as if the body forgets how to spring.",
+      "Auditory: \"A faint crackling noise\u2014like a connection just out of reach."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Jump",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "bonus_action"
+    }
+  },
+  "Longstrider": {
+    "attempts": [
+      "A ripple of arcane light hums through the air\u2014almost there.",
+      "It feels for a thread in the weave, pulling at the fabric of speed."
+    ],
+    "successes": [
+      "The spell blooms like petals unfurling from a hidden seed.",
+      "A subtle rush fills the space\u2014a quiet boost to bound forward."
+    ],
+    "failures": [
+      "The magic flickers and dies before it can fully take root.",
+      "Silence falls, heavy and unyielding\u2014no trace of the spell remains."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Longstrider",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Speak with Animals": {
+    "attempts": [
+      "Arcane threads weave through the air, seeking a voice in the wild.",
+      "It hums an ancient melody, coaxing secrets from the untamed."
+    ],
+    "successes": [
+      "The spell unfurls like whispered wind, animating the beast's silent tongue.",
+      "A sudden clarity \u2014 understanding blooms between predator and caster."
+    ],
+    "failures": [
+      "The incantation hangs in midair, swallowed by the indifferent wilderness.",
+      "A crackle of lost power \u2014 the wild turns deaf to it."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Speak with Animals",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Create or Destroy Water": {
+    "attempts": [
+      "A ripple in the fabric of water\u2014energy coalesces, seeking form.",
+      "Vowels stretch into infinity, bending the air with liquid intent."
+    ],
+    "successes": [
+      "Water answers the call, shimmering into existence like a secret revealed.",
+      "The cube fills with silence\u2014the fog dissolves, swallowed by pure will."
+    ],
+    "failures": [
+      "A moment of clarity\u2014then the spell fractures and fades into mist.",
+      "The water resists\u2014only a whisper remains in its wake."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Create or Destroy Water",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Detect Poison and Disease": {
+    "attempts": [
+      "Arcane threads weave through the air, seeking hidden toxins.",
+      "A soft hum rises, like distant whispers carried on the wind."
+    ],
+    "successes": [
+      "Poisons and diseases ripple into view, their essences laid bare.",
+      "The spell unfurls, revealing secrets buried beneath the earth's surface."
+    ],
+    "failures": [
+      "The incantation stutters, as if swallowed by a silent void.",
+      "A momentary flicker \u2014 then nothing, the magic gone cold."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Detect Poison and Disease",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Thunderwave": {
+    "attempts": [
+      "Arcane/Elemental: \"It summons a pulse of raw thunder, coiling in the air like living energy.",
+      "Auditory: \"The incantation stirs the atmosphere, a low hum before the storm."
+    ],
+    "successes": [
+      "Arcane/Elemental: \"A shockwave of pure resonance shatters the silence, rending reality with thunder's breath.",
+      "Auditory: \"The world is\u4e00\u77ac\u95f4"
+    ],
+    "failures": [
+      "Arcane power sputters, swallowed by silence before release.",
+      "The incantation stumbles mid-word, leaving only a hollow echo."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Thunderwave",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Entangle": {
+    "attempts": [
+      "It whispers to the earth, coaxing secrets from the soil's depths.",
+      "Vines stir in response \u2014 tension hums through the ground."
+    ],
+    "successes": [
+      "The air crackles with life as vines snap into place like living chains.",
+      "The ground shivers and yields, birthing tendrils that bind tightly."
+    ],
+    "failures": [
+      "A moment of silence, then nothing but a faint echo in the soil.",
+      "It feels the earth's reluctance \u2014 the spell dissolves into quiet disappointment."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Entangle",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Water Bullet": {
+    "attempts": [
+      "It whispers to the water \u2014 ripples spread like a secret.",
+      "A hum fills the air, seeking its path through liquid grace."
+    ],
+    "successes": [
+      "The spell arcs, water shimmering with moonlit intent.",
+      "The bullet forms \u2014 pure water, striking with crystalline clarity."
+    ],
+    "failures": [
+      "Silence greets the attempt, as if the water refuses to comply.",
+      "A soft pop echoes, the magic dissolving into harmless mist."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Water Bullet",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Whelm Weapon": {
+    "attempts": [
+      "Energy unfurls like a whispered starlight across the battlefield.",
+      "Fingers weave through invisible threads, tightening around an unseen target."
+    ],
+    "successes": [
+      "The air thickens with the weight of forgotten dreams, enfolding it.",
+      "A spectral lull descends \u2014 time itself seems to pause for a moment."
+    ],
+    "failures": [
+      "The incantation sputters like a candle snuffed in an unyielding wind.",
+      "A quiet hum fades into silence, leaving the spell incomplete and untethered."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Whelm Weapon",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Pacify Person": {
+    "attempts": [
+      "Energy pulses through the air like a living thread, weaving toward its goal.",
+      "A soft hum rises, vibrating through the bones of those nearby\u2014intent and focused."
+    ],
+    "successes": [
+      "The spell unfurls with a whisper, like silk stretching across an invisible frame.",
+      "Silence falls as the magic settles, gently smoothing away tension in its wake."
+    ],
+    "failures": [
+      "A momentary flash of light flickers out\u2014like a candle snuffed by the wind.",
+      "The air crackles with unspent power\u2014then fades into silence, incomplete and empty."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Pacify Person",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Sand Structure": {
+    "attempts": [
+      "Dust motes dance in the spell's wake, tracing the shape of shifting earth.",
+      "The words weave through grains of sand, summoning ancient patterns to life."
+    ],
+    "successes": [
+      "A hum rises from the soil as the ground rearranges itself with divine precision.",
+      "With a whispered command, the terrain obeys \u2014 mountains and valleys taking form."
+    ],
+    "failures": [
+      "The spell stutters, leaving only ripples on the surface of reality.",
+      "An echo of power fades into silence, the earth unresponsive to the plea."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Sand Structure",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Sprout Foliage": {
+    "attempts": [
+      "Arcane tendrils weave through the air, leaves shimmering with latent magic.",
+      "It whispers to the earth, a quiet hum that stirs the soil."
+    ],
+    "successes": [
+      "Leaves unfurl in a burst of verdant energy, nature's breath filling the space.",
+      "A silent command from the loam, and green tendrils burst forth with life."
+    ],
+    "failures": [
+      "The earth remains stubbornly still, rejecting it as if listening to silence.",
+      "Magic flickers faintly but fades into empty air, leaving only an echo."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Sprout Foliage",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Bubble Lift": {
+    "attempts": [
+      "Arcane currents stir in the air \u2014 it hums with potential.",
+      "A soft, melodic chant rises \u2014 gravity itself seems to listen."
+    ],
+    "successes": [
+      "Bubbles surge from the ground like a hidden spring of light.",
+      "The fabric of reality warps gently, lifting with precise grace."
+    ],
+    "failures": [
+      "An eerie silence clings to the air as the spell refuses to form.",
+      "A faint fizzling cuts through \u2014 the magic sputters and fades."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Bubble Lift",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Forest Guard": {
+    "attempts": [
+      "It whispers to the winds, weaving a tapestry of verdant threads.",
+      "Energy hums through the fingertips \u2014 nature listens, but hesitates."
+    ],
+    "successes": [
+      "The forest sighs in response, its ancient power enfolds the spell.",
+      "A soft crackle like leaves stirring, the earth absorbs the magic fully."
+    ],
+    "failures": [
+      "Silence clings to the incantation \u2014 it hangs heavy and unfulfilled.",
+      "Magic flickers feebly \u2014 nature turns a deaf ear to the plea."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Forest Guard",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Guiding Bolt": {
+    "attempts": [
+      "Arcane threads weave through the air, shimmering with radiant intent.",
+      "A hum of celestial light pulses, seeking its destined target."
+    ],
+    "successes": [
+      "Radiant tendrils dance in the dim light \u2014 precision and power entwined.",
+      "The bolt cleaves the air with a soft glow, leaving trails of mystic light."
+    ],
+    "failures": [
+      "A faint crackle fades into silence as the spell's intent wavers.",
+      "Silence hangs heavy for an instant, betraying the magic's fragile grasp."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Guiding Bolt",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Find Familiar": {
+    "attempts": [
+      "Arcane/Elemental: \"Energy pulses through the air \u2014 it seeks a form to embody.",
+      "Auditory: \"The spell hums, a low vibration that trembles in the silence."
+    ],
+    "successes": [
+      "Arcane/Elemental: \"A spark of otherworldly light dances into shape \u2014 the familiar is summoned.",
+      "Auditory: \"An ethereal echo fills the space as it takes form with perfect clarity."
+    ],
+    "failures": [
+      "Arcane/Elemental: \"The magic flickers, a brief glow that fades to nothingness.",
+      "Auditory: \"A strained whisper dies before reaching its destination \u2014 silence prevails."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Find Familiar",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Spike Growth": {
+    "attempts": [
+      "Arcane tendrils pulse through the soil, seeking to weave thorny life.",
+      "It mutters, and the ground hums with a nascent, untamed energy."
+    ],
+    "successes": [
+      "Spikes pierce the earth's surface \u2014 nature's wrath manifests silently.",
+      "The land convulses, birthing jagged spires that blend seamlessly into the wild."
+    ],
+    "failures": [
+      "A ripple in the soil stirs, then fades to silence and stillness.",
+      "Magic sputters, leaving only a faint whisper of thorns unfulfilled."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Spike Growth",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Augury": {
+    "attempts": [
+      "Energy hums through the bones, seeking a glimpse of destiny's thread.",
+      "Silence fills the air as the cards shift in an unseen wind."
+    ],
+    "successes": [
+      "The omen whispers from the stones, clear as dawn breaking.",
+      "A surge of arcane insight courses through \u2014 clarity arrives like a comet."
+    ],
+    "failures": [
+      "Bones clatter aimlessly, denying the seeker's call to fate.",
+      "A sudden hush falls, and the tools lie inert, unresponsive to magic's touch."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Augury",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Dust Devil": {
+    "attempts": [
+      "It weaves through the air like a mote caught in the wind's eye.",
+      "Dust particles dance at the edges of perception, seeking their cue."
+    ],
+    "successes": [
+      "A vortex hums to life \u2014 elemental whispers converge into form.",
+      "The room shudders as the dust devil takes shape with a silent roar."
+    ],
+    "failures": [
+      "Energy flickers weakly, like firelight through a crackling screen door.",
+      "It stumbles at the threshold of reality, leaving only a whisper in its wake."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Dust Devil",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Earthbind": {
+    "attempts": [
+      "Vibrations hum through the earth, seeking a hidden resonance.",
+      "It whispers to ancient stones, listening for their reply."
+    ],
+    "successes": [
+      "The ground trembles \u2014 as if the very soil takes a breath.",
+      "Rock and dirt respond in unison, binding together with invisible threads."
+    ],
+    "failures": [
+      "A silent pause \u2014 then nothing, as though the earth refuses to listen.",
+      "The incantation fades into static, leaving the air unchanged."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Earthbind",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Skywrite": {
+    "attempts": [
+      "Arcane/Elemental: \"It coaxes the sky's ink to dance on air, a fleeting script of stardust.",
+      "Auditory: \"The incantation hums through the silence, each word a note in an unseen symphony."
+    ],
+    "successes": [
+      "Arcane/Elemental: \"Energy threads the clouds, weaving patterns that glow with celestial fire.",
+      "Auditory: \"A soft crackle splits the air \u2014 the message forms perfectly, shimmering and true."
+    ],
+    "failures": [
+      "Arcane/Elemental: \"The stars refuse to cooperate, leaving behind a trail of fading, untethered light.",
+      "Auditory: \"It speaks into the void, but only an echoless silence answers back."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Skywrite",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Warding Wind": {
+    "attempts": [
+      "A whispered incantation stirs the air, summoning elemental currents to swirl.",
+      "Energy hums through it \u2014 a dance of particles seeking their place."
+    ],
+    "successes": [
+      "Arcane winds twist and weave, casting a protective sphere around.",
+      "The spell blooms with precision, a silent shield materializing in the air."
+    ],
+    "failures": [
+      "A momentary flash, then silence \u2014 the incantation fades into nothingness.",
+      "Energy flickers but never coalesces, leaving it empty-handed."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Warding Wind",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Healing Spirit": {
+    "attempts": [
+      "Kinesthetic: It bends low, drawing the power from unseen currents.",
+      "Auditory: A soft chant rises, threading through the air like silk."
+    ],
+    "successes": [
+      "Kinesthetic: The body hums with life, moving in harmony with nature's pulse.",
+      "Auditory: A melodic whisper fills the space, healing as it flows."
+    ],
+    "failures": [
+      "Kinesthetic: It stumbles slightly, the connection to the spirit just out of reach.",
+      "Auditory: A faint echo of power, like a whispered secret lost in wind."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Healing Spirit",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "bonus_action"
+    }
+  },
+  "Summon Beast": {
+    "attempts": [
+      "It whispers into the wind, summoning echoes from forgotten fey realms.",
+      "Arcane threads weave through the air, seeking to bind the spirits' essence."
+    ],
+    "successes": [
+      "The air crackles with fey magic \u2014 creatures manifest in shimmering light.",
+      "Silence fills the space as four small forms coalesce from twilight's edge."
+    ],
+    "failures": [
+      "A moment of silence, then nothing \u2014 the spell fades into empty wind.",
+      "It reaches out, but only the hum of unfulfilled magic remains in the air."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Summon Beast",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Wither and Bloom": {
+    "attempts": [
+      "It murmurs an incantation, the air thickening with unseen pollen.",
+      "Energy pulses in delicate spirals \u2014 nature listens but does not yet answer."
+    ],
+    "successes": [
+      "A symphony of growth swells, roots and vines dancing to life's tune.",
+      "The sphere hums with verdant energy, plants flourishing at its command."
+    ],
+    "failures": [
+      "A brief shimmer flickers, like a candle snuffed by the wind.",
+      "Silence falls heavy \u2014 the weave resists, refusing to yield."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Wither and Bloom",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Aid": {
+    "attempts": [
+      "A surge of verdant energy pulses through the air, seeking its anchor.",
+      "The incantation hums like a melody played on unseen strings."
+    ],
+    "successes": [
+      "Arcane threads weave together, knitting resilience into the fabric of being.",
+      "A hush falls\u2014then whispers rise, promising strength and unyielding resolve."
+    ],
+    "failures": [
+      "The spell flickers like candlelight in a sudden breeze, then fades.",
+      "Magic crackles once, twice\u2014then dissipates into silence and stillness."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Aid",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Pass without Trace": {
+    "attempts": [
+      "It weaves a tapestry of shadows, each thread whispering ancient secrets.",
+      "A hum of arcane energy ripples outward, seeking the weave\u2019s consent."
+    ],
+    "successes": [
+      "The world holds its breath \u2014 not a sound escapes, not a trace remains.",
+      "Silence cloaks the group, as if reality itself has paused to listen."
+    ],
+    "failures": [
+      "A flicker of darkness fails to take root, vanishing into thin air.",
+      "The incantation sputters, leaving only echoes and unanswered promises."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Pass without Trace",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Animal Messenger": {
+    "attempts": [
+      "Vibrations hum through the air \u2014 a message woven into the fabric of nature.",
+      "It whispers to the wind, coaxing an animal from its natural path."
+    ],
+    "successes": [
+      "A ripple in reality carries the message \u2014 the beast understands with instinctive clarity.",
+      "The spell's energy threads through the creature\u2019s essence, guiding it toward its destination."
+    ],
+    "failures": [
+      "Silence envelops the attempt, as if the universe itself refuses to bear witness.",
+      "The magic sputters like a dying flame \u2014 no message finds purchase in the ether."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Animal Messenger",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Find Traps": {
+    "attempts": [
+      "Arcane threads weave through the air, seeking hidden dangers with a delicate touch.",
+      "A hum of energy resonates from within \u2014 it listens for traps unseen."
+    ],
+    "successes": [
+      "The air shivers as shadows reveal their secrets, whispering of lurking perils.",
+      "Silence falls heavy \u2014 every trap within range is now known to it."
+    ],
+    "failures": [
+      "A flicker of magic dances but finds no anchor in the weave, vanishing into thin air.",
+      "The spell hangs in the silence for a moment too long before collapsing on itself."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Find Traps",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Flame Blade": {
+    "attempts": [
+      "A subtle flex of muscle\u2014body and magic synchronize in the split second.",
+      "It reaches inward, a quiet summoning amidst the chaos."
+    ],
+    "successes": [
+      "The air cracks like dawn breaking over an eternal night.",
+      "Energy flares to life, a living flame born from the ether."
+    ],
+    "failures": [
+      "A spark flickers\u2014then fades into the shadow of what might have been.",
+      "Magic hums but refuses to fully answer the call."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Flame Blade",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "bonus_action"
+    }
+  },
+  "Barkskin": {
+    "attempts": [
+      "Kinesthetic: It presses the spell into existence, muscles tensing with intent.",
+      "Auditory: A soft whisper of leaves accompanies the incantation's rise."
+    ],
+    "successes": [
+      "Kinesthetic: The target feels its skin ripple like bark under a gentle breeze.",
+      "Auditory: Cracks and snaps echo as though nature itself dons armor."
+    ],
+    "failures": [
+      "Kinesthetic: It stumbles, muscles twitching as the spell resists activation.",
+      "Auditory: A faint crackle of unfulfilled magic fizzles into silence."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Barkskin",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "bonus_action"
+    }
+  },
+  "Beast Sense": {
+    "attempts": [
+      "Arcane currents ripple through the gemstone, seeking a hidden resonance.",
+      "A low hum swells within \u2014 as if the fabric of magic listens."
+    ],
+    "successes": [
+      "The spell blooms like a flower opening to light, precise and true.",
+      "Soundless echoes fill the air \u2014 intelligence flickers into being."
+    ],
+    "failures": [
+      "The incantation shivers, losing coherence before it can take root.",
+      "Magic sputters \u2014 like a candle snuffed by an unseen breeze."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Beast Sense",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Protection from Poison": {
+    "attempts": [
+      "A whisper of green light traces the air, seeking poisons to devour.",
+      "Arcane threads weave through the ether, searching for toxic whispers."
+    ],
+    "successes": [
+      "Poisonous echoes shudder and retreat at the spell's command.",
+      "The hum of toxic energy falters and fades in a serene silence."
+    ],
+    "failures": [
+      "A brief flash, then nothing \u2014 the poison remains unswayed.",
+      "Silence hangs heavy as the magic crumbles before it can act."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Protection from Poison",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Flaming Sphere": {
+    "attempts": [
+      "Arcane fire flares in the palm, seeking its perfect shape.",
+      "It summons a blazing heart from shadows, ready to pulse."
+    ],
+    "successes": [
+      "A wave of heat washes out \u2014 precision incarnate in fire.",
+      "The sphere hums with contained fury, as if tasting victory."
+    ],
+    "failures": [
+      "Silence greets the spell's attempt, leaving only an empty echo.",
+      "Magic flickers weakly, like a flame snuffed by a sudden wind."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Flaming Sphere",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Locate Animals or Plants": {
+    "attempts": [
+      "Arcane currents ripple in the air as it reaches for nature's hidden voice.",
+      "The hum of ancient power resonates, weaving through the fibers of reality."
+    ],
+    "successes": [
+      "A whisper carried on the wind, guiding it straight to its target.",
+      "Nature listens \u2014 a soft crackle heralds the spell\u2019s perfect alignment."
+    ],
+    "failures": [
+      "Silence envelops the attempt, leaving only the echo of disappointment.",
+      "The incantation sputters like a dying flame, swallowed by the void."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Locate Animals or Plants",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Locate Object": {
+    "attempts": [
+      "Arcane threads weave through the air, seeking resonance with it.",
+      "It hums softly, a song of ancient magic in search of its object."
+    ],
+    "successes": [
+      "A whisper carries across time and space, pinpointing it perfectly.",
+      "The silence deepens as all sound bends toward it, guiding the way."
+    ],
+    "failures": [
+      "Energy dissipates into static\u2014a fleeting echo of what might have been.",
+      "The incantation sputters, leaving behind a hollow echo in the void."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Locate Object",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Lesser Restoration": {
+    "attempts": [
+      "Kinesthetic: A subtle shift in stance, the body poised to release an unseen burden.",
+      "Auditory: The air hums with potential \u2014 a moment of charged silence."
+    ],
+    "successes": [
+      "Kinesthetic: It moves with purpose, the touch as gentle as dawn's first light.",
+      "Auditory: A soft sigh of relief escapes into the quiet, nature itself acknowledging success."
+    ],
+    "failures": [
+      "Kinesthetic: The body twitches but hesitates, the motion unfulfilled like a half-formed thought.",
+      "Auditory: An eerie stillness fills the air \u2014 the spell's silence speaks volumes."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Lesser Restoration",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "bonus_action"
+    }
+  },
+  "Continual Flame": {
+    "attempts": [
+      "Energy pulses through the fingertips, seeking a conduit of flame.",
+      "It hums a soft, ancient tune as power coalesces in silence."
+    ],
+    "successes": [
+      "A spark ignites from thin air, unshackled by oxygen's embrace.",
+      "The object warms with ethereal fire, untouched by the world's chill."
+    ],
+    "failures": [
+      "Magic flares briefly \u2014 then fades into the ambient murmur of life.",
+      "It crackles once, a failed whisper in the cosmic conversation."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Continual Flame",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Darkvision": {
+    "attempts": [
+      "A spark of shadowkind energy hums through the air, seeking its target.",
+      "It whispers incantations, weaving light and darkness into a singular thread."
+    ],
+    "successes": [
+      "Darkness parts like water before the spell, granting sight to the unseen.",
+      "A quiet murmur fades into silence as night's secrets are laid bare."
+    ],
+    "failures": [
+      "The shadowkind energy flickers uncertainly, vanishing into thin air.",
+      "A moment of eerie quiet, then nothing \u2014 the world remains shrouded in darkness."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Darkvision",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Moonbeam": {
+    "attempts": [
+      "A silver thread weaves through the air, seeking its mark.",
+      "The stars whisper secrets to the spell as it takes shape."
+    ],
+    "successes": [
+      "Moonlight coalesces into a pillar of ethereal fire, consuming shadows.",
+      "Dim light spills like liquid silver, tracing the outline of fate itself."
+    ],
+    "failures": [
+      "The beam flickers\u2014no more than a wisp in the night wind.",
+      "A ghostly echo of power flares briefly before vanishing into silence."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Moonbeam",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Gust of Wind": {
+    "attempts": [
+      "A ribbon of wind unfurls in the air, searching for its path.",
+      "It channels the breeze, weaving an invisible line through space."
+    ],
+    "successes": [
+      "The gust snatches at reality, shaping a tempest from stillness.",
+      "Wind roars to life, obedient and precise under it."
+    ],
+    "failures": [
+      "A whisper of air stirs but fades into silence.",
+      "Magic flickers weakly, as if the wind itself refuses to obey."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Gust of Wind",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Heat Metal": {
+    "attempts": [
+      "It mutters arcane syllables, shaping the heat into a living thing.",
+      "A hum of energy courses through the air \u2014 it waits to ignite."
+    ],
+    "successes": [
+      "The metal glows with an inner fire, as if kissed by the sun's wrath.",
+      "Energy crackles and snaps like dry wood, consuming cold with fervor."
+    ],
+    "failures": [
+      "A moment of silence \u2014 then nothing but a faint warmth that fades.",
+      "The spell fizzles, leaving only a brief whisper of unfulfilled heat."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Heat Metal",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Hold Person": {
+    "attempts": [
+      "Arcane threads weave through the air, seeking purchase.",
+      "A hum of magic resonates, searching for a tether."
+    ],
+    "successes": [
+      "The world stills for a moment \u2014 focus sharpens.",
+      "Paralysis grips tight as the spell finds its mark."
+    ],
+    "failures": [
+      "Silence echoes where power should have struck.",
+      "Magic flickers and fades like a candle in the wind."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Hold Person",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Enhance Ability": {
+    "attempts": [
+      "Arcane/Elemental: \"Energy hums like a deep river, seeking the right channel.",
+      "Auditory: \"It whispers the incantation, voice threading through the silence."
+    ],
+    "successes": [
+      "Arcane/Elemental: \"A surge of vitality crackles through the air, imbuing it with raw power.",
+      "Auditory: \"The spell manifests in a soft roar, like distant thunder embracing its target."
+    ],
+    "failures": [
+      "Arcane/Elemental: \"Magic sparks and dies before it can fully take hold.",
+      "Auditory: \"A hollow echo reverberates \u2014 the spell fades into nothingness."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Enhance Ability",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Enlarge/Reduce": {
+    "attempts": [
+      "It whispers to the weave, threads of magic quivering in response.",
+      "A quiet hum fills the air \u2014 the universe waits for it to choose."
+    ],
+    "successes": [
+      "Arcane currents ripple, reality warps with a shimmering sigh.",
+      "The spell resonates like distant thunder, distorting the very air around."
+    ],
+    "failures": [
+      "Silence falls heavy as the magic sputters, unable to manifest fully.",
+      "Energy flickers once, then fades into nothingness, leaving it unchanged."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Enlarge/Reduce",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Monkey's Grasp": {
+    "attempts": [
+      "It weaves through the ether, seeking a thread to pull.",
+      "The air hums with potential \u2014 it reaches for something tangible."
+    ],
+    "successes": [
+      "Energy arcs like a living vine, latching onto its target perfectly.",
+      "Reality snaps into place \u2014 the spell finds its mark with crystalline clarity."
+    ],
+    "failures": [
+      "A moment of silence \u2014 then nothing, as if reality itself hesitates.",
+      "The magic fizzles, like a spark lost in an endless void."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Monkey's Grasp",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Mushroom Ballista": {
+    "attempts": [
+      "Kinesthetic: It channels the earth\u2019s pulse into a precise, trembling touch.",
+      "Auditory: A low hum beneath the soil, as if the world holds its breath."
+    ],
+    "successes": [
+      "Kinesthetic: The ground responds in kind, a living bowstring tensed and ready.",
+      "Auditory: A distant thrumming crescendo, echoing through unseen channels."
+    ],
+    "failures": [
+      "Kinesthetic: The touch slips like sand through fingers, unresponsive earth.",
+      "Auditory: An unsettling silence, the world refusing to sing for this moment."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Mushroom Ballista",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "bonus_action"
+    }
+  },
+  "Pillar of Force": {
+    "attempts": [
+      "It feels the ley lines hum in response to its whispered command.",
+      "The air shivers as it channels a raw stream of force."
+    ],
+    "successes": [
+      "A pillar of pure energy shoots up, cleaving the very fabric of reality.",
+      "The spell manifests with perfect clarity \u2014 a crackling column of might."
+    ],
+    "failures": [
+      "Silence falls heavy after the incantation, as if the magic never existed.",
+      "Energy flickers feebly before it fizzles out into thin air."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Pillar of Force",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Rageful Nimbus": {
+    "attempts": [
+      "Kinesthetic: It coalesces a whirlwind of motion into the space between breaths.",
+      "Auditory: A low hum begins, like distant thunder gathering its strength."
+    ],
+    "successes": [
+      "Kinesthetic: The nimbus unfurls with the grace of an ancient dance.",
+      "Auditory: The air shudders with a primal chant, echoing through reality."
+    ],
+    "failures": [
+      "Kinesthetic: It stumbles mid-transition, the storm barely a whisper.",
+      "Auditory: A strained silence follows, as if the world holds its breath in disappointment."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Rageful Nimbus",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "bonus_action"
+    }
+  },
+  "Spell Signature": {
+    "attempts": [
+      "It murmurs ancient syllables, a thread of starlight weaving through the air.",
+      "Energy hums in preparation \u2014 it's ready to dance with the cosmos."
+    ],
+    "successes": [
+      "Arcane tendrils stretch out, snaring reality and twisting it to purpose.",
+      "The spell unfurls like a celestial banner, precise and undeniable."
+    ],
+    "failures": [
+      "A faint echo of power trails off, swallowed by the silence.",
+      "The magic sputters, flickering like an unlit lantern in the night."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Spell Signature",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "At Your Side": {
+    "attempts": [
+      "Energy hums like a storm trapped in glass, searching for release.",
+      "Arcane whispers weave through the air, shaping unseen forces."
+    ],
+    "successes": [
+      "The incantation crescendos into silence \u2014 calm settles over the aura.",
+      "Reality bows to the will, casting an unassailable shield of peace."
+    ],
+    "failures": [
+      "A ripple forms but fades, as if reality itself sighs and turns away.",
+      "The spell crackles weakly, sputtering like a dying ember in a breeze."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "At Your Side",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Beast Transmutation": {
+    "attempts": [
+      "Arcane tendrils of starlight weave through the air\u2014 it searches for a form.",
+      "A soft hum vibrates in the silence, as if the world holds its breath."
+    ],
+    "successes": [
+      "Energy pulses like quicksilver, shaping reality to its will.",
+      "The air crackles with celestial intent, transmutation complete."
+    ],
+    "failures": [
+      "A spark flickers\u2014 then dies, leaving only echoes of possibility.",
+      "Silence falls heavy, the magic fading before it can take root."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Beast Transmutation",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Control Animal": {
+    "attempts": [
+      "It whispers to the wind, fingers tracing invisible currents.",
+      "A hush falls \u2014 it listens for the voice of feathers in motion."
+    ],
+    "successes": [
+      "The air parts, soft as a secret shared among clouds.",
+      "Feathers rise in response, carried by unseen hands of breeze."
+    ],
+    "failures": [
+      "The wind resists, indifferent to the plea woven into silence.",
+      "It reaches but misses \u2014 the spell hangs like an unspoken thought."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Control Animal",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Counterspy": {
+    "attempts": [
+      "It hums a melody in the wind, weaving through the fabric of secrets.",
+      "Energy flickers around fingers like whispered confidences between stars."
+    ],
+    "successes": [
+      "Arcane threads snap taut, ensnaring truths with delicate precision.",
+      "A silence falls, sharp and sudden, as if the air itself holds its breath."
+    ],
+    "failures": [
+      "The spell crackles and dies in mid-air, a brief spark of failure.",
+      "Energy dissipates into thin air, leaving only echoes of unspoken words."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Counterspy",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Conjure Animals": {
+    "attempts": [
+      "Arcane: \"Aetheric threads weave through the fabric of reality, shimmering faintly.",
+      "Auditory: \"Silence hangs heavy as it reaches for words unspoken."
+    ],
+    "successes": [
+      "Arcane: \"Vibrant motes of fae energy coalesce, animating ancient forms.",
+      "Auditory: \"A distant hum swells, summoning the spirits from forgotten forests."
+    ],
+    "failures": [
+      "Arcane: \"The spell's weave flickers, like a candle in a gale.",
+      "Auditory: \"An abrupt silence\u2014void of any response from the fey realm."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Conjure Animals",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Aura of Vitality": {
+    "attempts": [
+      "Arcane threads weave through the air, seeking a perfect resonance.",
+      "A low hum fills the space as it searches for the right frequency."
+    ],
+    "successes": [
+      "Vitality surges outward like a wave of warm, elemental light.",
+      "The incantation swells to completion \u2014 life force crackles into existence."
+    ],
+    "failures": [
+      "A momentary flash of static, then silence consumes the attempt.",
+      "Energy flickers but fades, leaving only an echo of intent."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Aura of Vitality",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Erupting Earth": {
+    "attempts": [
+      "Dust motes dance to an unheard rhythm as it weaves the spell.",
+      "The ground hums beneath, waiting for the command to rise."
+    ],
+    "successes": [
+      "A burst of earth shatters the silence \u2014 creation and destruction in one breath.",
+      "Volcanic energy crackles through the soil, seeking its moment to explode."
+    ],
+    "failures": [
+      "The spell flickers like a candle snuffed by a sudden wind.",
+      "Silence wraps tight around the attempt, swallowing all effort whole."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Erupting Earth",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Flame Arrows": {
+    "attempts": [
+      "Arcane/Elemental: \"It whispers to the fire, coaxing it into waiting tendrils.",
+      "Auditory: \"The spell hums softly, seeking its moment in the air."
+    ],
+    "successes": [
+      "Arcane/Elemental: \"Flame dances at a mere glance, eager for release into the world.",
+      "Auditory: \"A crackle of power ignites \u2014 silence bows to the new order."
+    ],
+    "failures": [
+      "Arcane/Elemental: \"The fire flickers uncertainly, refusing to leave its place in the hand.",
+      "Auditory: \"It whispers again \u2014 but this time, the cosmos listens not."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Flame Arrows",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Tidal Wave": {
+    "attempts": [
+      "Arcane/Elemental: \"The ocean's breath stirs within \u2014 water molecules dance to an unseen beat.",
+      "Auditory: \"Silence clutches the air, then a deep rumble begins to weave itself."
+    ],
+    "successes": [
+      "Arcane/Elemental: \"Seawater surges, sculpted by magic into a relentless, churning maelstrom.",
+      "Auditory: \"The world holds its breath \u2014 then an echoing crash as wave meets earth."
+    ],
+    "failures": [
+      "Arcane/Elemental: \"A bubble of water forms but flickers out, leaving only a faint scent behind.",
+      "Auditory: \"The incantation stutters mid-spell, drowned by the silence it sought to control."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Tidal Wave",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Wall of Water": {
+    "attempts": [
+      "Arcane/Elemental \u2014 \"The water stirs restlessly, as if listening to the incantation.",
+      "Auditory \u2014 \"A low hum rises from the surface, a song of liquid and magic."
+    ],
+    "successes": [
+      "Arcane/Elemental \u2014 \"It shapes the waters, folding them upward like cloth.",
+      "Auditory \u2014 \"The surface ripples in perfect unison with the incantation's crescendo."
+    ],
+    "failures": [
+      "Arcane/Elemental \u2014 \"A flicker of power, then silence as the water resists.",
+      "Auditory \u2014 \"The spell's whisper dies before it can fully rise from the depths."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Wall of Water",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Summon Fey": {
+    "attempts": [
+      "It weaves a melody of starlight into the fabric of reality.",
+      "Arcane threads twist and unravel, seeking to summon ethereal forms."
+    ],
+    "successes": [
+      "The air hums with otherworldly presence as fey spirits coalesce.",
+      "Silent symphonies play out in the ether \u2014 fey beasts emerge perfectly."
+    ],
+    "failures": [
+      "A brief shimmer of displaced energy, then silence.",
+      "The spell crackles and fades like a forgotten dream."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Summon Fey",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Freedom of the Waves": {
+    "attempts": [
+      "Arcane currents ripple through the water\u2014 it feels for a path.",
+      "A low hum rises, like distant waves calling to one another."
+    ],
+    "successes": [
+      "The cylinder trembles with an unseen force\u2014 reality warps in harmony.",
+      "Energy crackles softly beneath the surface\u2014 precision guides its flow."
+    ],
+    "failures": [
+      "Silence lingers where power should have surged\u2014 it misses its mark.",
+      "The spell fizzles mid-air, a brief spark of failure."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Freedom of the Waves",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Feathered Reach": {
+    "attempts": [
+      "It hums a tune of wind and feather, weaving through the air.",
+      "Energy threads like whispered breezes, seeking just the right moment."
+    ],
+    "successes": [
+      "Feathers ripple outward, carrying the spell's intent to its peak.",
+      "The incantation culminates in a soft gust, perfectly aligning with purpose."
+    ],
+    "failures": [
+      "A faint breeze stutters, failing to materialize fully from the ether.",
+      "It attempts to summon feathers, but only silence whispers back."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Feathered Reach",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Globe of Twilight": {
+    "attempts": [
+      "Arcane/Elemental: \"It weaves through the ether, summoning shadows to coalesce around it.",
+      "Auditory: \"Silence descends sharply \u2014 a moment of stillness before the spell takes hold."
+    ],
+    "successes": [
+      "Arcane/Elemental: \"Twilight energy swirls into being, painting reality in hues of dusk and dawn.",
+      "Auditory: \"A soft hum resonates \u2014 nature bends to its will with a whisper."
+    ],
+    "failures": [
+      "Arcane/Elemental: \"The twilight sphere flickers feebly \u2014 it struggles to manifest fully.",
+      "Auditory: \"Silence persists too long, the incantation failing to coax reality into compliance."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Globe of Twilight",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Plant Growth": {
+    "attempts": [
+      "Energy hums through it \u2014 the earth listens, but does not yet stir.",
+      "It speaks in whispers, coaxing roots to rise from their slumber."
+    ],
+    "successes": [
+      "The air thickens, a verdant wave that sweeps the land like a breath of life.",
+      "A low, resonant hum fills the space as tendrils weave together with purpose."
+    ],
+    "failures": [
+      "Silence clings to the spell \u2014 the earth remains stubbornly still.",
+      "The incantation hangs in the air, powerless against the indifferent soil."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Plant Growth",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Feign Death": {
+    "attempts": [
+      "Arcane/Elemental (energy type, magical substance): \"A silver thread of life-energy hums as it weaves the deception.",
+      "Auditory (incantation, hum, crackle, silence): \"The world pauses for an instant \u2014 a heartbeat of stillness."
+    ],
+    "successes": [
+      "Arcane/Elemental (energy type, magical substance): \"A verdant pulse overtakes the body, nature's embrace swallows reality.",
+      "Auditory (incantation, hum, crackle, silence): \"The air whispers secrets \u2014 death itself hesitates in its wake."
+    ],
+    "failures": [
+      "Arcane/Elemental (energy type, magical substance): \"The life-thread frays into motes of dust, the weave unraveling.",
+      "Auditory (incantation, hum, crackle, silence): \"A hollow echo reverberates \u2014 death passes by without notice."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Feign Death",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Protection from Energy": {
+    "attempts": [
+      "Aeldric whispers through the air, weaving a lattice of arcane light.",
+      "The hum of raw power coils around it, seeking its rightful form."
+    ],
+    "successes": [
+      "Energy shivers in response, cloaking it in an invisible shield.",
+      "They feel a subtle warmth as reality reshapes to resist harm."
+    ],
+    "failures": [
+      "A flicker of static disrupts the weave, leaving it vulnerable.",
+      "The incantation stumbles, leaving an echo of unfulfilled magic."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Protection from Energy",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Call Lightning": {
+    "attempts": [
+      "It whispers to the tempest, coaxing tendrils of storm from the sky.",
+      "Energy surges through it \u2014 a spark seeking its stormy partner."
+    ],
+    "successes": [
+      "The heavens split apart \u2014 raw lightning dances to the caster's tune.",
+      "A column of cloud descends, obeying the arcane command without question."
+    ],
+    "failures": [
+      "Silence fills the air as the incantation sputters and fades.",
+      "Energy crackles but fizzles mid-flight, swallowed by the mundane sky."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Call Lightning",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Revivify": {
+    "attempts": [
+      "A surge of green energy hums through the air like a living pulse.",
+      "Fingers weave in intricate patterns, each motion charged with latent power."
+    ],
+    "successes": [
+      "The weave tightens \u2014 life stirs anew where death once held sway.",
+      "Arcane currents converge, reknitting the fabric of existence itself."
+    ],
+    "failures": [
+      "Silence falls heavy as the spell's echo fades into nothingness.",
+      "A momentary flash dims before it can reach its intended goal."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Revivify",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Sleet Storm": {
+    "attempts": [
+      "A whisper of frost threads through the air, seeking its mark.",
+      "It hums a tune forgotten by time, conjuring winter's breath."
+    ],
+    "successes": [
+      "The air thickens with ice \u2014 a cold silence descends on the world.",
+      "Frozen mist spirals outward, as if the very heavens are weeping."
+    ],
+    "failures": [
+      "A shiver of power stirs, then fades into the night's embrace.",
+      "The spell flickers like distant stars, vanishing before it forms."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Sleet Storm",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Meld into Stone": {
+    "attempts": [
+      "It hums a note of earth magic, resonating with the stone's core.",
+      "The air thickens around it, particles dancing to an arcane tune."
+    ],
+    "successes": [
+      "Reality folds inward, swallowing it whole into the silent heart of stone.",
+      "A ripple in the very essence of matter \u2014 it vanishes into the solid form."
+    ],
+    "failures": [
+      "A momentary flash, then silence \u2014 the spell flickers and fades away.",
+      "The resonance weakens, leaving behind an echo that quickly dies out."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Meld into Stone",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Speak with Plants": {
+    "attempts": [
+      "Arcane/Elemental: \"It feels the ley lines hum beneath the roots, stirring ancient magic.",
+      "Auditory: \"A whispered lullaby rises from the underbrush, coaxing secrets into speech."
+    ],
+    "successes": [
+      "Arcane/Elemental: \"The ground ripples with green energy as dormant spirits awaken to listen.",
+      "Auditory: \"Silence splits the forest \u2014 plants obey in perfect harmony, their voices a soft symphony."
+    ],
+    "failures": [
+      "Arcane/Elemental: \"A spark of power flares and fades, leaving the earth unresponsive.",
+      "Auditory: \"The wind carries the incantation away, leaving only an empty echo in its wake."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Speak with Plants",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Daylight": {
+    "attempts": [
+      "It hums a melody of pure light, notes shimmering in the air.",
+      "Energy coalesces like morning dew on leaves, seeking its form."
+    ],
+    "successes": [
+      "The spell bursts forth, an elemental dance of radiant warmth and glow.",
+      "Light unfurls with the grace of dawn breaking through veils of night."
+    ],
+    "failures": [
+      "A silence hangs heavy in the air as the attempt fades to naught.",
+      "Arcane threads snap, leaving only a whisper of what could have been."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Daylight",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Dispel Magic": {
+    "attempts": [
+      "Energy pulses through it\u2014threads of magic vibrate in the air.",
+      "A hum starts low, rising to a crescendo as it focuses intent."
+    ],
+    "successes": [
+      "The weave snaps tight\u2014a flicker, and the effect unravels perfectly.",
+      "Sparks dance away\u2014each spell ends with a precise pop of release."
+    ],
+    "failures": [
+      "A faint glow\u2014then silence\u2014the magic fades into empty air.",
+      "It stumbles through incantation\u2014power sputters out like a dying flame."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Dispel Magic",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Elemental Weapon": {
+    "attempts": [
+      "It weaves a thread of azure light, searching for the right knot in reality.",
+      "A low hum rises from the void\u2014power coalesces at it touches."
+    ],
+    "successes": [
+      "The air shivers as the breath unfurls\u2014a torrent of emerald flame.",
+      "An ear-splitting roar precedes a gout of searing magma, splitting the world apart."
+    ],
+    "failures": [
+      "A sputtering spark flickers and dies before it can fully ignite.",
+      "The arcane hum falters mid-cast, leaving behind only an uneasy silence."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Elemental Weapon",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Water Breathing": {
+    "attempts": [
+      "A wave of arcane fluidity ripples through the air, seeking alignment.",
+      "Silent eddies swirl in the caster's voice, searching for coherence."
+    ],
+    "successes": [
+      "The spell unfurls like a sea anemone, embracing its targets with grace.",
+      "Aquatic hums weave into existence \u2014 life and magic intertwine seamlessly."
+    ],
+    "failures": [
+      "A fleeting gurgle escapes, swallowed by the air's unyielding silence.",
+      "The incantation sputters, like waves crashing on a shore of stone."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Water Breathing",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Water Walk": {
+    "attempts": [
+      "Ripples form at the water's edge \u2014 it feels for a path.",
+      "A hum beneath the surface, seeking to bridge liquid and step."
+    ],
+    "successes": [
+      "The spell coalesces like mist on glass, solidifying passage.",
+      "Water parts like silk underfoot, flowing around without resistance."
+    ],
+    "failures": [
+      "Bubbles rise and burst \u2014 it struggles to find purchase.",
+      "A momentary chill \u2014 the magic flickers but refuses to take hold."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Water Walk",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Wind Wall": {
+    "attempts": [
+      "It shapes the air into a living membrane of wind, whispering secrets.",
+      "Energy hums through fingers, weaving an invisible shield from thin air."
+    ],
+    "successes": [
+      "A gale bursts forth, sculpted like a living wall of breath.",
+      "The spell carves the sky with precision, summoning an unyielding barrier."
+    ],
+    "failures": [
+      "Wind flickers briefly before it vanishes into silence.",
+      "The incantation stumbles, leaving only a faint echo in its wake."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Wind Wall",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Plummet": {
+    "attempts": [
+      "It whispers to the stars, summoning their fiery tears.",
+      "Energy surges through fingers, tracing invisible sigils in the sky."
+    ],
+    "successes": [
+      "The heavens shudder \u2014 fire blossoms where it commanded.",
+      "A chorus of flames erupts, as precise as a celestial orchestra."
+    ],
+    "failures": [
+      "The incantation sputters mid-flight, swallowed by silence.",
+      "It feels the spell falter, like stars refusing to fall."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Plummet",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Vegetable Blade": {
+    "attempts": [
+      "It channels through the earth's breath, vines twisting in silent anticipation.",
+      "Arcane currents stir \u2014 a verdant pulse seeking to manifest."
+    ],
+    "successes": [
+      "A living blade unfurls, whispering secrets of nature\u2019s resilience.",
+      "The air hums with growth \u2014 a verdant wave slicing through reality."
+    ],
+    "failures": [
+      "The spell stutters like a wilting vine, unable to take root.",
+      "An eerie silence clings to the air as the magic fails to coalesce."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Vegetable Blade",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Butterfly Storm": {
+    "attempts": [
+      "It whispers to the wind, calling forth a tempest of delicate wings.",
+      "Energy hums low in preparation, like a storm before its first strike."
+    ],
+    "successes": [
+      "Butterfly wings flutter in perfect harmony, weaving an invisible web.",
+      "The air shimmers as if alive with countless butterfly eyes observing."
+    ],
+    "failures": [
+      "A single whisper escapes \u2014 the wind refuses to carry it further.",
+      "Silence falls heavy, and the butterflies never take flight."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Butterfly Storm",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "Conjure Ocean": {
+    "attempts": [
+      "Ripples of cerulean energy pulse outward, seeking the ocean's song.",
+      "A low hum rises from the soil, coaxing the depths to respond."
+    ],
+    "successes": [
+      "The air thickens with salt and mist as an aquatic realm unfurls.",
+      "With a whispered command, the earth quakes under an incoming tide."
+    ],
+    "failures": [
+      "An eerie silence follows \u2014 the ocean's echo goes unanswered.",
+      "The spell fizzles mid-cast, leaving behind a faint, lingering scent of brine."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Conjure Ocean",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "spell"
+    }
+  },
+  "STR Save": {
+    "attempts": [
+      "Gut clenches tight, muscles coiling like a spring under pressure.",
+      "It plants feet firmly \u2014 roots growing where the ground meets skin."
+    ],
+    "successes": [
+      "A quiet hum fills the chest as strength holds fast against the tide.",
+      "The world slows slightly \u2014 every fiber fights off what would break it."
+    ],
+    "failures": [
+      "An internal shiver runs deep, resistance crumbling like fragile glass.",
+      "It sways slightly \u2014 unable to withstand whatever force grips it."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "STR Save",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "save"
+    }
+  },
+  "DEX Save": {
+    "attempts": [
+      "Internal muscles tense like coiled springs, ready to spring into motion.",
+      "It plants feet firmly, jaw clenched tight against the oncoming force."
+    ],
+    "successes": [
+      "A split-second twist \u2014 the danger skids past, narrowly avoided.",
+      "The reflexive leap, seamless and fluid, evades what was certain to strike."
+    ],
+    "failures": [
+      "An involuntary shudder ripples through it as the impact slams home.",
+      "It stumbles, gravity catching up in a sudden, unyielding grasp."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "DEX Save",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "save"
+    }
+  },
+  "CON Save": {
+    "attempts": [
+      "Muscles tighten in a silent war, gut clenched against the incoming storm.",
+      "Adrenaline surges through veins, each cell bracing for what's to come."
+    ],
+    "successes": [
+      "Something ancient within hums\u2014resilience as deep as the earth itself.",
+      "A shiver runs through, but it holds fast\u2014endurance like roots in stone."
+    ],
+    "failures": [
+      "The body wavers\u2014a brief surrender before the inevitable takes hold.",
+      "It stumbles, muscles betraying resolve\u2014an echo of weakness echoed."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "CON Save",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "save"
+    }
+  },
+  "INT Save": {
+    "attempts": [
+      "Internal tension coils like a spring wound too tight, ready to snap.",
+      "Somatic - It plants feet firmly, jaw clenching against the incoming tide."
+    ],
+    "successes": [
+      "Internal - A quiet hum of resolve, filtering the chaos into clarity.",
+      "Somatic - The world blurs but steadies as it anchors itself in truth."
+    ],
+    "failures": [
+      "Internal - Muscles betray, tightening too late as the illusion takes hold.",
+      "Somatic - A visible shiver as the mind is pulled apart by unseen hands."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "INT Save",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "save"
+    }
+  },
+  "WIS Save": {
+    "attempts": [
+      "Muscles tighten like coiled springs, ready to snap under the strain.",
+      "A guttural growl rumbles from deep within \u2014 resolve hardens."
+    ],
+    "successes": [
+      "The pressure eases, a calm pulse returning amidst turmoil.",
+      "It stands firm, an unyielding pillar in the tempest's eye."
+    ],
+    "failures": [
+      "An involuntary tremor betrays its struggle as it succumbs.",
+      "A sudden slackening of posture \u2014 the body concedes to the force."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "WIS Save",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "save"
+    }
+  },
+  "CHA Save": {
+    "attempts": [
+      "Internal: \"Gut clenches tight, a visceral refusal to be displaced.",
+      "Somatic: \"Feet dig into earth, jaw set in defiance of the unseen."
+    ],
+    "successes": [
+      "Internal: \"Adrenaline surges but finds no outlet \u2014 held fast by unyielding resolve.",
+      "Somatic: \"Eyes flash briefly as a wave passes harmlessly around it."
+    ],
+    "failures": [
+      "Internal: \"A sharp pang in the chest, the self unravels at its core.",
+      "Somatic: \"Shoulders sag, the body succumbs to forces beyond control."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "CHA Save",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "save"
+    }
+  },
+  "Acrobatics": {
+    "attempts": [
+      "Cognitive: \"Eyes flicker with calculation, mapping the weave of shifting space.",
+      "Somatic: \"Each step a delicate balance, breath steady as it navigates the tightrope."
+    ],
+    "successes": [
+      "Cognitive: \"The pattern reveals itself \u2014 fluidity is the key to all things.",
+      "Somatic: \"Graceful arcs, seamless transitions \u2014 movement becomes poetry in motion."
+    ],
+    "failures": [
+      "Cognitive: \"Thoughts scatter like leaves in a sudden gale, no plan holds firm.",
+      "Somatic: \"A slip of precision \u2014 the moment falters and gravity takes hold."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Acrobatics",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Animal Handling": {
+    "attempts": [
+      "Cognitive (focus): \"Eyes pierce the wild, seeking the calm within each creature.",
+      "Somatic (controlled breath): \"Breath steady, it reads the subtle cues of restless beasts."
+    ],
+    "successes": [
+      "Cognitive (pattern recognition): \"It understands the rhythm of nature's dance \u2014 harmony achieved.",
+      "Somatic (precise hands): \"Gesture fluid, command given with a touch of gentle authority."
+    ],
+    "failures": [
+      "Cognitive (calculation): \"The mind races, but the pieces don't fit as expected.",
+      "Somatic (careful steps): \"A step too late \u2014 the moment of connection slips away."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Animal Handling",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Arcana": {
+    "attempts": [
+      "Cognitive: \"Focus sharpens like a blade cutting through fog \u2014 the answer is near.",
+      "Somatic: \"Controlled breath, hands steady as they trace invisible symbols in the air."
+    ],
+    "successes": [
+      "Cognitive: \"The puzzle pieces fall into place \u2014 clarity emerges from chaos.",
+      "Somatic: \"It moves with practiced grace, each gesture unlocking forgotten knowledge."
+    ],
+    "failures": [
+      "Cognitive: \"Thoughts scatter like leaves caught in a storm \u2014 no pattern forms.",
+      "Somatic: \"A misstep, a wrong breath \u2014 the magic slips through trembling fingers."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Arcana",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Athletics": {
+    "attempts": [
+      "Eyes scanning the ascent, it plots the safest route with surgical precision.",
+      "It calculates the trajectory \u2014 a moment of pure concentration before leaping."
+    ],
+    "successes": [
+      "With practiced grace, each movement aligns perfectly, defying gravity itself.",
+      "In one fluid motion, it conquers the challenge, breath controlled and sure."
+    ],
+    "failures": [
+      "A sudden slip \u2014 confidence falters as balance teeters on a razor's edge.",
+      "The attempt stumbles mid-jump, an off-kilter step that derails precision."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Athletics",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Deception": {
+    "attempts": [
+      "Eyes scanning the horizon, it calculates the perfect narrative to weave.",
+      "Breath steady, fingers twitch \u2014 every word must align with the lie."
+    ],
+    "successes": [
+      "Intent masked in a cascade of truths that shimmer like moonlight on water.",
+      "Half-truths and clever misdirection twist reality into something entirely believable."
+    ],
+    "failures": [
+      "Cognitive gears grind, unable to find the right pattern amidst shifting variables.",
+      "Steps falter as the carefully constructed facade crumbles under scrutiny."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Deception",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "History": {
+    "attempts": [
+      "Eyes scanning the ancient tapestry \u2014 patterns reveal themselves like whispered secrets.",
+      "It pauses, a finger tracing the contours of an artifact, searching for lost stories."
+    ],
+    "successes": [
+      "Understanding blooms like dawn breaking over forgotten knowledge.",
+      "Recognition clicks into place \u2014 the past speaks through it now."
+    ],
+    "failures": [
+      "The threads unravel \u2014 each detail slips away like sand between fingers.",
+      "It senses something close but just out of reach, a shadow in memory."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "History",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Insight": {
+    "attempts": [
+      "Eyes flicker with focus, piecing together the puzzle of gestures and glances.",
+      "A delicate tilt of the head \u2014 every subtle shift in posture is scrutinized."
+    ],
+    "successes": [
+      "The hidden truth surfaces like ripples on a pond, unmistakable in its clarity.",
+      "Intentions crystalize from the air itself \u2014 it knows exactly what lies beneath the surface."
+    ],
+    "failures": [
+      "Confusion clouds the mind \u2014 the web of body language is too tangled to untangle.",
+      "The attempt falters, as if a veil remains stubbornly drawn over the hidden motives."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Insight",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Intimidation": {
+    "attempts": [
+      "Cognitive: \"Eyes lock onto the target \u2014 a silent dance of wills begins.",
+      "Somatic: \"Breath controlled, posture coiled \u2014 menace held just beneath the surface."
+    ],
+    "successes": [
+      "Cognitive: \"A flash of insight \u2014 it knows exactly how to break the chain.",
+      "Somatic: \"The air shifts with intensity \u2014 a quiet storm moves through the room."
+    ],
+    "failures": [
+      "Cognitive: \"Pattern recognition falters, leaving doubt in its wake.",
+      "Somatic: \"Control slips \u2014 the moment passes without impact."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Intimidation",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Investigation": {
+    "attempts": [
+      "Cognitive (focus): \"Eyes trace the scene \u2014 a web of clues begins to weave.",
+      "Somatic (careful steps): \"Each step measured, the ground holds secrets it whispers in echoes."
+    ],
+    "successes": [
+      "Cognitive (pattern recognition): \"The pattern reveals itself \u2014 truth hidden beneath layers.",
+      "Somatic (controlled breath): \"Breath steady, the pieces fit perfectly into place."
+    ],
+    "failures": [
+      "Cognitive (calculation): \"Logic falters \u2014 connections blur like smoke in a storm.",
+      "Somatic (precise hands): \"Fingers falter on the edge of discovery \u2014 just out of reach."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Investigation",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Medicine": {
+    "attempts": [
+      "Cognitive: \"Eyes lock on the subject \u2014 patterns emerge from chaos.",
+      "Somatic: \"Fingers hover, poised to act \u2014 each motion considered carefully."
+    ],
+    "successes": [
+      "Cognitive: \"The answer crystallizes in a flash of insight \u2014 clarity breaks through fog.",
+      "Somatic: \"With practiced grace, the task is completed without a hitch \u2014 precision personified."
+    ],
+    "failures": [
+      "Cognitive: \"Thoughts swirl, but no clear path reveals itself \u2014 confusion reigns.",
+      "Somatic: \"A moment of hesitation costs dearly \u2014 the hands falter and slip."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Medicine",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Nature": {
+    "attempts": [
+      "Cognitive: \"Eyes scanning the horizon \u2014 every nuance holds a clue.",
+      "Somatic: \"It moves with quiet intent, each step in sync with nature's pulse."
+    ],
+    "successes": [
+      "Cognitive: \"Patterns align, revealing secrets whispered by ancient forests.",
+      "Somatic: \"With effortless grace, it merges seamlessly into the wild."
+    ],
+    "failures": [
+      "Cognitive: \"Thoughts scatter like leaves caught in a sudden storm.",
+      "Somatic: \"A misstep \u2014 nature's rhythms slip just out of reach."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Nature",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Perception": {
+    "attempts": [
+      "Cognitive gears meshing, the mind seeks hidden patterns in the chaos.",
+      "It treads lightly, each step calculated to disturb nothing in the stillness."
+    ],
+    "successes": [
+      "The faintest whisper resolves into clarity \u2014 danger revealed by intent listening.",
+      "A fleeting connection made \u2014 the universe aligns briefly, secrets unveiled."
+    ],
+    "failures": [
+      "Minds race but find no purchase on the elusive, slipping through mental fingers.",
+      "Despite meticulous care, one false step disrupts the delicate balance of awareness."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Perception",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Performance": {
+    "attempts": [
+      "Eyes locked on the audience \u2014 cognitive gears turning with each word.",
+      "Breath steady, hands poised \u2014 it channels emotion into every note."
+    ],
+    "successes": [
+      "The crowd hangs on its words, entranced by the seamless flow of artistry.",
+      "Notes intertwine like a well-crafted tapestry, captivating all who listen."
+    ],
+    "failures": [
+      "Thoughts jumble, focus slipping \u2014 the performance falters mid-rendition.",
+      "Hands falter, breath stutters \u2014 the moment's magic dissipates too soon."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Performance",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Persuasion": {
+    "attempts": [
+      "Cognitive: \"Eyes scanning the room \u2014 it calculates every angle of approach.",
+      "Somatic: \"Breath steady, each word measured \u2014 precision in tone carries the message."
+    ],
+    "successes": [
+      "Cognitive: \"Patterns align effortlessly \u2014 the truth speaks for itself.",
+      "Somatic: \"Controlled gestures \u2014 trust flows like water between them."
+    ],
+    "failures": [
+      "Cognitive: \"Thoughts scatter \u2014 it can't quite grasp the right sequence of words.",
+      "Somatic: \"The wrong inflection slips through, breaking the connection."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Persuasion",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Religion": {
+    "attempts": [
+      "Cognitive: \"Thoughts coalesce like stars in the night sky \u2014 patterns emerge.",
+      "Somatic: \"Fingers trace ancient symbols, each movement a question whispered to the universe."
+    ],
+    "successes": [
+      "Cognitive: \"The cosmos aligns with it \u2014 secrets of the planes unfold gracefully.",
+      "Somatic: \"Precision in gesture brings clarity, as if the heavens themselves are responding."
+    ],
+    "failures": [
+      "Cognitive: \"Thoughts scatter like leaves caught in a sudden storm.",
+      "Somatic: \"A misstep, and the delicate balance collapses into chaos."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Religion",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Sleight of Hand": {
+    "attempts": [
+      "Eyes track the target's every move, calculating the perfect moment.",
+      "Fingers dance with intent\u2014each gesture a piece of an intricate puzzle."
+    ],
+    "successes": [
+      "A flash of understanding\u2014a silent symphony in motion.",
+      "The object slips effortlessly into place, unnoticed by all eyes."
+    ],
+    "failures": [
+      "Thoughts scatter like leaves in the wind\u2014no pattern emerges.",
+      "Breath stutters, disrupting the careful rhythm needed for precision."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Sleight of Hand",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Stealth": {
+    "attempts": [
+      "Cognitive gears meshing, it calculates the perfect moment of silence.",
+      "Somatic precision guides each step \u2014 a dance with shadows."
+    ],
+    "successes": [
+      "The world fades into soft murmurs as presence merges with the void.",
+      "Controlled breath whispers secrets to the darkness, unseen and unheard."
+    ],
+    "failures": [
+      "Pattern recognition falters \u2014 the weave of sound betrays it.",
+      "Careful hands falter mid-motion, breaking the spell of stillness."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Stealth",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Survival": {
+    "attempts": [
+      "Cognitive: \"Eyes flicker with recognition as the terrain's secrets whisper.",
+      "Somatic: \"It moves with practiced grace, each step a question to the earth."
+    ],
+    "successes": [
+      "Cognitive: \"Understanding blooms like dawn breaking over forgotten paths.",
+      "Somatic: \"Controlled breath, precise steps \u2014 the wild yields its mysteries."
+    ],
+    "failures": [
+      "Cognitive: \"The mind stumbles, patterns refuse to align in this confusing maze.",
+      "Somatic: \"Careful hands falter, a wrong step disrupts the delicate balance."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Survival",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "skill"
+    }
+  },
+  "Death Save": {
+    "attempts": [
+      "Internal muscles tense, a silent scream of defiance coursing through veins.",
+      "It braces with unyielding resolve, planting feet like roots in the earth."
+    ],
+    "successes": [
+      "A surge of life pushes back \u2014 the body flickers with survival's light.",
+      "The moment passes, leaving only a lingering echo of what could've been."
+    ],
+    "failures": [
+      "An involuntary shiver runs through it, as though the world closes in.",
+      "It falters, senses dimming like a candle guttering out in the wind."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Death Save",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "death_save"
+    }
+  },
+  "Initiative": {
+    "attempts": [
+      "Kinesthetic: It twists in the void, aligning with an unseen cosmic rhythm.",
+      "Auditory: A distant echo whispers through the ether, guiding it into place."
+    ],
+    "successes": [
+      "Kinesthetic: It settles into a flow like water finding its lowest point.",
+      "Auditory: The air hums with precision as it claims the perfect moment."
+    ],
+    "failures": [
+      "Kinesthetic: It falters mid-stride, missing the fleeting balance of time.",
+      "Auditory: A discordant note cuts through, disrupting the seamless timing."
+    ],
+    "metadata": {
+      "character_name": "Gimbal Starwhisper",
+      "character_class": "Monster",
+      "ability_name": "Initiative",
+      "style": "dramatic",
+      "variations": 2,
+      "model": "local-model",
+      "provider": "lmstudio",
+      "prompt_version": "2.0",
+      "ability_type": "initiative"
+    }
+  }
+}

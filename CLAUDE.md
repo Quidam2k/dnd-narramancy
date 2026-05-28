@@ -4,7 +4,7 @@ This file provides guidance to Claude Code when working with this repository.
 
 ## Project Overview
 
-**D&D Flavor Forge** generates vivid narration text for D&D abilities. It creates multiple variations (attempt/success/failure) suitable for VTT rollable tables.
+**D&D Narramancy** generates vivid narration text for D&D abilities. It creates multiple variations (attempt/success/failure) suitable for VTT rollable tables.
 
 ## Development Commands
 
@@ -13,10 +13,10 @@ This file provides guidance to Claude Code when working with this repository.
 python tests/test_flavor_generation.py
 
 # Quick import check
-python -c "from flavor_forge import FlavorTextGenerator; print('OK')"
+python -c "from narramancy import FlavorTextGenerator; print('OK')"
 
 # Generate flavor text (once CLI is built in Phase 2+)
-# python -m flavor_forge generate ...
+# python -m narramancy generate ...
 ```
 
 Note: Run from project root. Tests add `src/` to sys.path automatically.
@@ -24,8 +24,8 @@ Note: Run from project root. Tests add `src/` to sys.path automatically.
 ## Project Structure
 
 ```
-dnd-flavor-forge/
-├── src/flavor_forge/          # Main package
+dnd-narramancy/
+├── src/narramancy/          # Main package
 │   ├── __init__.py            # Public exports
 │   ├── generator.py           # FlavorTextGenerator (core AI generation)
 │   ├── models.py              # FlavorTextRequest, FlavorTextResult, AbilityData

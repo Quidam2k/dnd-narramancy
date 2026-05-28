@@ -1,0 +1,24 @@
+<form autocomplete="off">
+  {{#if isEmpty}}
+    <p>{{localize "NARRAMANCY.manage.empty"}}</p>
+  {{else}}
+    <ul class="narramancy-creature-list">
+      {{#each creatures}}
+        <li>
+          <div class="ff-creature-info">
+            <span class="ff-creature-name">{{this.name}}</span>
+            <span class="ff-creature-meta">
+              &mdash; {{this.tableCount}} tables, {{this.triggerCount}} triggers
+              (imported {{this.importedAt}})
+            </span>
+          </div>
+          <div class="ff-creature-actions">
+            <button type="button" class="ff-delete-creature" data-slug="{{this.slug}}">
+              <i class="fas fa-trash"></i> {{localize "NARRAMANCY.manage.deleteBtn"}}
+            </button>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</form>

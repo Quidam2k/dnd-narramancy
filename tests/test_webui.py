@@ -1,12 +1,12 @@
-"""Tests for the Flavor Forge Web UI."""
+"""Tests for the Narramancy Web UI."""
 
 import json
 import pytest
 
-from flavor_forge.models import (
+from narramancy.models import (
     FlavorTextResult, ParsedAbility, ParsedCreature, GENERIC_ACTIONS,
 )
-from flavor_forge.webui import (
+from narramancy.webui import (
     _format_creature_summary,
     _format_results,
     _parse_input,

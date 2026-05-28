@@ -1,0 +1,54 @@
+{
+  "id": "narramancy",
+  "title": "Narramancy",
+  "description": "Automatic flavor text for creature actions. Import pre-generated rollable tables and trigger whispered narration when tokens act.",
+  "version": "0.9.0",
+  "url": "https://github.com/Quidam2k/dnd-narramancy",
+  "manifest": "https://github.com/Quidam2k/dnd-narramancy/releases/latest/download/module.json",
+  "download": "https://github.com/Quidam2k/dnd-narramancy/releases/latest/download/narramancy-module.zip",
+  "license": "MIT",
+  "readme": "https://github.com/Quidam2k/dnd-narramancy/blob/master/README.md",
+  "bugs": "https://github.com/Quidam2k/dnd-narramancy/issues",
+  "changelog": "https://github.com/Quidam2k/dnd-narramancy/blob/master/CHANGELOG.md",
+  "authors": [
+    {
+      "name": "Todd",
+      "url": "https://github.com/Quidam2k",
+      "flags": {}
+    }
+  ],
+  "media": [
+    {
+      "type": "icon",
+      "url": "modules/narramancy/assets/icon.png"
+    }
+  ],
+  "compatibility": {
+    "minimum": "11",
+    "verified": "12"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "3.0.0"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/narramancy.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ]
+}

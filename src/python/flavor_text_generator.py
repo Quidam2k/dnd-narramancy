@@ -1,7 +1,7 @@
 """
-FlavorForge Integration - Flavor Text Generation System
+Narramancy Integration - Flavor Text Generation System
 
-Migrated from FlavorForge's proven flavor text generation system.
+Migrated from Narramancy's proven flavor text generation system.
 Creates vivid, immersive descriptions for D&D abilities, spells, and actions.
 """
 
@@ -60,7 +60,7 @@ class AbilityData:
 
 class FlavorTextGenerator:
     """
-    Core flavor text generation system migrated from FlavorForge.
+    Core flavor text generation system migrated from Narramancy.
     
     Generates vivid, immersive descriptions for D&D abilities using AI,
     with support for multiple styles and character personalization.
@@ -120,7 +120,7 @@ Generate exactly {request.variations} variations for each category (attempts, su
 
     async def generate_flavor_text(self, request: FlavorTextRequest) -> FlavorTextResult:
         """
-        Generate flavor text using AI with the FlavorForge prompt system.
+        Generate flavor text using AI with the Narramancy prompt system.
         
         Args:
             request: FlavorTextRequest with character and ability details
@@ -472,7 +472,7 @@ Generate exactly {request.variations} variations for each category (attempts, su
 
 class CharacterAbilityParser:
     """
-    Character sheet ability parsing system migrated from FlavorForge.
+    Character sheet ability parsing system migrated from Narramancy.
     
     Extracts abilities, spells, and features from character data for 
     flavor text generation.
@@ -483,7 +483,7 @@ class CharacterAbilityParser:
         """
         Parse character sheet data to extract abilities suitable for flavor text generation.
         
-        Based on FlavorForge's characterAnalysis.ts ability extraction logic.
+        Based on Narramancy's characterAnalysis.ts ability extraction logic.
         """
         abilities = []
         
@@ -536,7 +536,7 @@ class CharacterAbilityParser:
         """
         Classify ability type for flavor text generation.
         
-        Maps various ability types to FlavorForge's standard categories.
+        Maps various ability types to Narramancy's standard categories.
         """
         ability_type = ability.get('type', 'feature').lower()
         

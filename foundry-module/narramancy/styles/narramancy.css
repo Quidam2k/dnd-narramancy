@@ -1,0 +1,126 @@
+/* Narramancy module styles */
+
+.narramancy-msg {
+  border-left: 3px solid #7b2d8e;
+  padding: 4px 8px;
+  margin: 2px 0;
+  color: #1a1a1a;
+}
+
+.narramancy-header {
+  font-size: 0.8em;
+  color: #666;
+  margin-bottom: 2px;
+  font-style: normal;
+}
+
+/* Creature manager list */
+.narramancy-creature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.narramancy-creature-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 4px;
+  border-bottom: 1px solid #ddd;
+}
+
+.narramancy-creature-list li:last-child {
+  border-bottom: none;
+}
+
+.ff-creature-info {
+  flex: 1;
+}
+
+.ff-creature-name {
+  font-weight: bold;
+}
+
+.ff-creature-meta {
+  font-size: 0.85em;
+  color: #666;
+}
+
+.ff-creature-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.ff-creature-actions button {
+  padding: 2px 8px;
+  font-size: 0.85em;
+}
+
+/* Import dialog */
+.narramancy-import-form .notes {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* Whisper settings */
+.ff-whisper-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ff-whisper-actor {
+  padding: 8px 4px;
+  border-bottom: 1px solid #ddd;
+}
+
+.ff-whisper-actor:last-child {
+  border-bottom: none;
+}
+
+.ff-whisper-actor-name {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.ff-whisper-players {
+  list-style: none;
+  padding: 0 0 0 16px;
+  margin: 4px 0 0;
+}
+
+.ff-whisper-players li {
+  padding: 2px 0;
+}
+
+.ff-toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.ff-gm-disable-label {
+  color: #c44;
+  font-size: 0.9em;
+}
+
+.ff-gm-disabled {
+  opacity: 0.6;
+}
+
+.ff-gm-disabled .ff-whisper-toggle {
+  pointer-events: none;
+}
+
+.ff-disabled-notice {
+  color: #c44;
+  font-size: 0.85em;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.ff-whisper-gm-toggle {
+  margin-bottom: 4px;
+}

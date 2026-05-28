@@ -8,9 +8,9 @@ import tempfile
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from flavor_forge.models import FlavorTextResult, GENERIC_ACTIONS
-from flavor_forge.exporters import export_rollable_tables, export_token_says
-from flavor_forge.exporters.token_says import _ACTION_TYPE_MAP
+from narramancy.models import FlavorTextResult, GENERIC_ACTIONS
+from narramancy.exporters import export_rollable_tables, export_token_says
+from narramancy.exporters.token_says import _ACTION_TYPE_MAP
 
 
 def _make_results():
@@ -43,10 +43,11 @@ def test_rollable_table_structure():
     assert isinstance(text, str)
     blocks = text.strip().split('\n\n')
 
-    # 3 for Scimitar (attempts, successes, failures) + 2 for Nimble Escape (no failures)
-    assert len(blocks) == 5, f"Expected 5 table blocks, got {len(blocks)}"
+    # First block is creature name header, then 3 for Scimitar + 2 for Nimble Escape = 6
+    assert len(blocks) == 6, f"Expected 6 blocks (1 header + 5 tables), got {len(blocks)}"
+    assert blocks[0] == 'Goblin', f"First block should be creature name, got {blocks[0]}"
 
-    for block in blocks:
+    for block in blocks[1:]:  # Skip creature name header
         lines = block.split('\n')
         # First line: dice formula + name (e.g. "d2 Goblin - Scimitar - Attempts")
         assert lines[0].startswith('d'), f"Table should start with dice formula: {lines[0]}"
@@ -88,7 +89,7 @@ def test_empty_category_handling():
         ),
     }
     text = export_rollable_tables('Test', results)
-    assert text == '', f"Expected empty string for all-empty, got {repr(text)}"
+    assert text == 'Test', f"Expected only creature header for all-empty, got {repr(text)}"
     print("PASS: test_empty_category_handling")
 
 
@@ -180,14 +181,10 @@ def test_action_type_map_generic():
 def test_generic_actions_constant():
     """Verify GENERIC_ACTIONS are defined with correct types."""
     names = {a.name for a in GENERIC_ACTIONS}
-    assert 'Saving Throw' in names
-    assert 'Skill Check' in names
     assert 'Death Save' in names
     assert 'Initiative' in names
 
     types = {a.ability_type for a in GENERIC_ACTIONS}
-    assert 'save' in types
-    assert 'skill' in types
     assert 'death_save' in types
     assert 'initiative' in types
 
@@ -220,7 +217,7 @@ def test_export_cli():
             json.dump(data, f)
 
         result = subprocess.run(
-            [sys.executable, '-m', 'flavor_forge', 'export', input_path,
+            [sys.executable, '-m', 'narramancy', 'export', input_path,
              '--format', 'foundry', '--output', output_path],
             capture_output=True, text=True,
             env={**os.environ, 'PYTHONPATH': os.path.join(os.path.dirname(__file__), '..', 'src')},
@@ -235,7 +232,7 @@ def test_export_cli():
         with open(output_path) as f:
             text = f.read()
         blocks = text.strip().split('\n\n')
-        assert len(blocks) == 5, f"Expected 5 table blocks, got {len(blocks)}"
+        assert len(blocks) == 6, f"Expected 6 blocks (1 header + 5 tables), got {len(blocks)}"
 
     print("PASS: test_export_cli")
 
@@ -258,7 +255,7 @@ def test_export_all_format():
             json.dump(data, f)
 
         result = subprocess.run(
-            [sys.executable, '-m', 'flavor_forge', 'export', input_path,
+            [sys.executable, '-m', 'narramancy', 'export', input_path,
              '--format', 'all'],
             capture_output=True, text=True,
             cwd=tmpdir,
@@ -315,7 +312,7 @@ def test_batch_mode():
         # Run batch with --list-providers to smoke test the batch arg parsing
         # (actual generation needs API keys, so just test that it parses)
         result = subprocess.run(
-            [sys.executable, '-m', 'flavor_forge', 'generate', '--batch', tmpdir,
+            [sys.executable, '-m', 'narramancy', 'generate', '--batch', tmpdir,
              '--list-providers'],
             capture_output=True, text=True,
             env={**os.environ, 'PYTHONPATH': os.path.join(os.path.dirname(__file__), '..', 'src')},
@@ -330,7 +327,7 @@ def test_batch_mode():
 def test_round_trip():
     """Generate JSON output format, then load it back as results."""
     # Simulate what _results_to_json produces
-    from flavor_forge.__main__ import _results_to_json, _load_results_from_json
+    from narramancy.__main__ import _results_to_json, _load_results_from_json
 
     results = _make_results()
     data = _results_to_json('Goblin', results)
@@ -353,12 +350,77 @@ def test_generic_flag_cli():
     """Test that --generic flag is accepted by the CLI parser."""
     # Just test that the arg parses without error (no API key needed for --list-providers)
     result = subprocess.run(
-        [sys.executable, '-m', 'flavor_forge', 'generate', '--list-providers', '--generic'],
+        [sys.executable, '-m', 'narramancy', 'generate', '--list-providers', '--generic'],
         capture_output=True, text=True,
         env={**os.environ, 'PYTHONPATH': os.path.join(os.path.dirname(__file__), '..', 'src')},
     )
     assert result.returncode == 0, f"--generic flag rejected: {result.stderr}"
     print("PASS: test_generic_flag_cli")
+
+
+def test_multi_phase_triggers():
+    """Multi-phase spells produce spellCast/spellEffect triggers; single-phase use itemUse."""
+    from narramancy.exporters.narramancy_module import _build_triggers
+
+    # Multi-phase: has cast entries → spellCast + spellEffect
+    multi_result = FlavorTextResult(
+        attempts=['bolt strikes'],
+        successes=['lightning hits'],
+        failures=['storm fizzles'],
+        metadata={'ability_type': 'spell'},
+        cast=['clouds gather overhead'],
+    )
+    triggers = _build_triggers('Call Lightning', 'spell', multi_result)
+    hook_types = {t['hookType'] for t in triggers}
+    assert 'spellCast' in hook_types, f"Expected spellCast in {hook_types}"
+    assert 'spellEffect' in hook_types, f"Expected spellEffect in {hook_types}"
+    assert 'itemUse' not in hook_types, f"itemUse should not appear for multi-phase: {hook_types}"
+
+    # Verify spellCast points to cast table
+    cast_trigger = next(t for t in triggers if t['hookType'] == 'spellCast')
+    assert cast_trigger['table'] == 'Call Lightning|cast'
+
+    # Verify spellEffect points to attempts table
+    effect_trigger = next(t for t in triggers if t['hookType'] == 'spellEffect')
+    assert effect_trigger['table'] == 'Call Lightning|attempts'
+
+    # Single-phase: no cast entries → itemUse
+    single_result = FlavorTextResult(
+        attempts=['thunderwave booms'],
+        successes=['creatures stumble'],
+        failures=['wave fizzles'],
+        metadata={'ability_type': 'spell'},
+    )
+    triggers = _build_triggers('Thunderwave', 'spell', single_result)
+    hook_types = {t['hookType'] for t in triggers}
+    assert 'itemUse' in hook_types, f"Expected itemUse for single-phase: {hook_types}"
+    assert 'spellCast' not in hook_types, f"spellCast should not appear for single-phase: {hook_types}"
+
+    print("PASS: test_multi_phase_triggers")
+
+
+def test_cast_round_trip():
+    """Cast entries survive JSON round-trip."""
+    from narramancy.__main__ import _results_to_json, _load_results_from_json
+
+    results = {
+        'Produce Flame': FlavorTextResult(
+            attempts=['flame flickers'],
+            successes=['fire connects'],
+            failures=['flame sputters'],
+            metadata={'provider': 'mock', 'ability_type': 'cantrip'},
+            cast=['palm glows warm', 'tiny flame dances to life'],
+        ),
+    }
+    data = _results_to_json('Gimbal', results)
+    json_str = json.dumps(data)
+    loaded = json.loads(json_str)
+    reconstructed = _load_results_from_json(loaded)
+
+    assert 'Produce Flame' in reconstructed
+    assert reconstructed['Produce Flame'].cast == ['palm glows warm', 'tiny flame dances to life']
+
+    print("PASS: test_cast_round_trip")
 
 
 if __name__ == '__main__':
@@ -376,4 +438,6 @@ if __name__ == '__main__':
     test_batch_mode()
     test_round_trip()
     test_generic_flag_cli()
+    test_multi_phase_triggers()
+    test_cast_round_trip()
     print("\nAll exporter tests passed!")

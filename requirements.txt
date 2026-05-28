@@ -4,5 +4,10 @@ anthropic>=0.40.0            # For Claude provider
 
 # Optional
 pyyaml>=6.0  # For config.yaml support
+pdfplumber>=0.11.0  # For D&D Beyond PDF import
+
+# Web server
+fastapi>=0.115.0
+uvicorn>=0.34.0
 
 # Ollama and LM Studio use HTTP directly — no extra packages needed.

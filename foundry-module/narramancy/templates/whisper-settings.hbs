@@ -1,0 +1,50 @@
+<form autocomplete="off">
+  {{#if isEmpty}}
+    <p>{{localize "NARRAMANCY.whisper.noCharacters"}}</p>
+  {{else}}
+    <ul class="ff-whisper-list">
+      {{#each actors}}
+        <li class="ff-whisper-actor {{#if this.gmDisabled}}ff-gm-disabled{{/if}}">
+          <div class="ff-whisper-actor-name">{{this.name}}</div>
+
+          {{#if ../isGM}}
+            <div class="ff-whisper-gm-toggle">
+              <label class="ff-toggle-label ff-gm-disable-label">
+                <input type="checkbox" class="ff-gm-disable"
+                  data-actor-id="{{this.id}}"
+                  {{#if this.gmDisabled}}checked{{/if}} />
+                {{localize "NARRAMANCY.whisper.gmDisable"}}
+              </label>
+            </div>
+            <ul class="ff-whisper-players">
+              {{#each this.players}}
+                <li>
+                  <label class="ff-toggle-label">
+                    <input type="checkbox" class="ff-whisper-toggle"
+                      data-actor-id="{{../id}}"
+                      data-user-id="{{this.userId}}"
+                      {{#if this.enabled}}checked{{/if}}
+                      {{#if ../gmDisabledForAll}}disabled{{/if}} />
+                    {{this.userName}}
+                  </label>
+                </li>
+              {{/each}}
+            </ul>
+          {{else}}
+            {{#if this.gmDisabled}}
+              <div class="ff-disabled-notice">{{localize "NARRAMANCY.whisper.disabledByGM"}}</div>
+            {{else}}
+              <label class="ff-toggle-label">
+                <input type="checkbox" class="ff-whisper-toggle"
+                  data-actor-id="{{this.id}}"
+                  data-user-id="{{../currentUserId}}"
+                  {{#if this.myWhisper}}checked{{/if}} />
+                {{localize "NARRAMANCY.whisper.receiveWhispers"}}
+              </label>
+            {{/if}}
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</form>

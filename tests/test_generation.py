@@ -8,10 +8,10 @@ import sys
 import os
 from pathlib import Path
 
-# Add src/ to path so flavor_forge package is importable
+# Add src/ to path so narramancy package is importable
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from flavor_forge import (
+from narramancy import (
     FlavorTextGenerator,
     FlavorTextRequest,
     ConfigManager,
@@ -21,7 +21,7 @@ from flavor_forge import (
     ClaudeProvider,
     OllamaProvider,
 )
-from flavor_forge.providers import get_provider, get_available_providers
+from narramancy.providers import get_provider, get_available_providers
 
 
 # ---------------------------------------------------------------------------
@@ -360,7 +360,7 @@ def test_cli_list_providers():
 
     try:
         result = subprocess.run(
-            [sys.executable, "-m", "flavor_forge", "generate", "--list-providers"],
+            [sys.executable, "-m", "narramancy", "generate", "--list-providers"],
             capture_output=True, text=True,
             cwd=str(Path(__file__).parent.parent / "src"),
         )
@@ -426,7 +426,7 @@ async def test_live_generation():
 
 async def main():
     """Run all tests."""
-    print("Flavor Forge — Generation & Provider Tests")
+    print("Narramancy — Generation & Provider Tests")
     print("=" * 60)
 
     results = {}

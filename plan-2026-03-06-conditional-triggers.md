@@ -19,11 +19,11 @@
 ## Files Modified
 
 ### Phase 1 + 2 (Python)
-- src/flavor_forge/models.py — new FlavorTextResult fields
-- src/flavor_forge/generator.py — new prompts for crit/fumble/barely/bloodied
-- src/flavor_forge/exporters/flavor_forge_module.py — emit new tables + triggers
-- src/flavor_forge/__main__.py — --with-crits flag, bloodied generation
+- src/narramancy/models.py — new FlavorTextResult fields
+- src/narramancy/generator.py — new prompts for crit/fumble/barely/bloodied
+- src/narramancy/exporters/narramancy_module.py — emit new tables + triggers
+- src/narramancy/__main__.py — --with-crits flag, bloodied generation
 
 ### Phase 3 (JS)
-- foundry-module/flavor-forge/scripts/trigger-engine.js — roll inspection, bloodied, no-repeat
-- foundry-module/flavor-forge/scripts/importer.js — handle new table types
+- foundry-module/narramancy/scripts/trigger-engine.js — roll inspection, bloodied, no-repeat
+- foundry-module/narramancy/scripts/importer.js — handle new table types

@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""Test suite for the Flavor Forge flavor text generation system."""
+"""Test suite for the Narramancy flavor text generation system."""
 
 import asyncio
 import sys
 import os
 from pathlib import Path
 
-# Add src/ to path so flavor_forge package is importable
+# Add src/ to path so narramancy package is importable
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from flavor_forge import (
+from narramancy import (
     FlavorTextGenerator,
     FlavorTextRequest,
     CharacterAbilityParser,
@@ -18,7 +18,7 @@ from flavor_forge import (
     LMStudioProvider,
     OpenAICompatibleProvider,
 )
-from flavor_forge.providers import (
+from narramancy.providers import (
     get_provider,
     get_available_providers,
     GroqProvider,
@@ -107,10 +107,10 @@ def test_config_manager():
         assert val == 'gemini-2.0-flash-exp', f"Expected fallback, got {val}"
 
         # Test env var override
-        os.environ['FLAVOR_FORGE_AI_GENERATION_MODEL'] = 'test-model'
+        os.environ['NARRAMANCY_AI_GENERATION_MODEL'] = 'test-model'
         val = config.get('ai_generation', 'model', fallback='default')
         assert val == 'test-model', f"Expected 'test-model', got {val}"
-        del os.environ['FLAVOR_FORGE_AI_GENERATION_MODEL']
+        del os.environ['NARRAMANCY_AI_GENERATION_MODEL']
 
         # Test API key lookup
         os.environ['GEMINI_API_KEY'] = 'fake-key'
@@ -357,7 +357,7 @@ async def test_ai_generation():
 
 async def main():
     """Run all tests."""
-    print("Flavor Forge Test Suite")
+    print("Narramancy Test Suite")
     print("=" * 60)
 
     results = {}
