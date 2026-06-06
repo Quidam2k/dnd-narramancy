@@ -36,3 +36,8 @@ output/
 *.zip
 plan-*.md
 test-*-stderr.txt
+
+# Player character data — never push (Gimbal demo export at repo root is the
+# one deliberate exception, shipped with consent)
+input-pcs/
+cascades/

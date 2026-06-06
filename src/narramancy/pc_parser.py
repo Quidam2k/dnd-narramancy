@@ -26,8 +26,7 @@ def parse_foundry_pc(data: dict) -> ParsedCreature:
     # --- Character metadata ---
     name = data.get('name', 'Unknown')
     race = ''
-    class_name = ''
-    class_level = 0
+    classes = []  # (name, levels) — multiclass characters have several class items
     subclass_name = ''
 
     items = data.get('items', [])
@@ -36,10 +35,14 @@ def parse_foundry_pc(data: dict) -> ParsedCreature:
         if itype == 'race':
             race = item.get('name', '')
         elif itype == 'class':
-            class_name = item.get('name', '')
-            class_level = item.get('system', {}).get('levels', 0)
+            classes.append((item.get('name', ''), item.get('system', {}).get('levels', 0)))
         elif itype == 'subclass':
             subclass_name = item.get('name', '')
+
+    # Primary class first; total level across all classes
+    classes.sort(key=lambda c: c[1], reverse=True)
+    class_name = ' / '.join(c[0] for c in classes)
+    class_level = sum(c[1] for c in classes)
 
     creature_type = class_name or 'Adventurer'
     if race:
@@ -53,11 +56,21 @@ def parse_foundry_pc(data: dict) -> ParsedCreature:
     if subclass_name:
         context_blob += f" ({subclass_name})"
 
+    # PCs are people, never "it" — use the sheet's gender field, fall back to they/them
+    gender = (system.get('details', {}).get('gender') or '').strip().lower()
+    if gender.startswith('m'):
+        pronouns = 'he/him'
+    elif gender.startswith('f'):
+        pronouns = 'she/her'
+    else:
+        pronouns = 'they/them'
+
     creature = ParsedCreature(
         name=name,
         creature_type=creature_type,
         challenge_rating=str(class_level),
         context_blob=context_blob,
+        pronouns=pronouns,
     )
     creature._pc_class = class_name or 'Adventurer'
     creature._pc_level = class_level

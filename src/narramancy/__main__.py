@@ -176,6 +176,9 @@ def cmd_generate(args):
     if args.context:
         creature.context_blob = args.context
 
+    if getattr(args, 'pronouns', None):
+        creature.pronouns = args.pronouns
+
     if getattr(args, 'generic', False):
         existing_names = {a.name for a in creature.abilities}
         # Add per-save abilities (all 6 — any creature can be forced to save)
@@ -660,6 +663,7 @@ def main():
     gen_cmd.add_argument('--open5e', metavar='SLUG', help='Fetch creature from Open5e API by slug')
     gen_cmd.add_argument('--page', type=int, metavar='N', help='PDF page number to extract (1-based)')
     gen_cmd.add_argument('--context', help='Additional context for flavor generation')
+    gen_cmd.add_argument('--pronouns', help='Pronouns for a named character (e.g. "he/him") — overrides sheet data')
     gen_cmd.add_argument('--style', choices=['dramatic', 'comedic', 'gritty', 'heroic'],
                          default='dramatic', help='Flavor text style (default: dramatic)')
     gen_cmd.add_argument('--variations', type=int, default=5,

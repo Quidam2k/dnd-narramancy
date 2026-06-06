@@ -28,12 +28,11 @@ def export_narramancy(
     Returns:
         Dict ready for json.dump — the full Narramancy import format.
     """
-    # Determine pronouns from creature type
-    creature_type = (creature.creature_type or '').lower()
-    if 'humanoid' in creature_type:
-        pronouns = 'they'
-    else:
-        pronouns = 'it'
+    # PCs carry explicit pronouns from their sheet; monsters fall back by type
+    pronouns = getattr(creature, 'pronouns', None)
+    if not pronouns:
+        creature_type = (creature.creature_type or '').lower()
+        pronouns = 'they' if 'humanoid' in creature_type else 'it'
 
     tables = []
     triggers = []

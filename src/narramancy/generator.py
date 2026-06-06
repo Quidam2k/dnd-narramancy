@@ -20,17 +20,29 @@ from .providers import AIProvider, ProviderResult, get_provider, get_available_p
 logger = logging.getLogger(__name__)
 
 
-# Shared writing rules appended to all prompts
-_WRITING_RULES = """\
+# Shared writing rules appended to all prompts (pronoun line varies by subject)
+_WRITING_RULES_TEMPLATE = """\
 Rules:
 - Each entry is a single evocative sentence, 8-12 words
 - Write with natural internal phrase boundaries so a DM can use the whole sentence or grab a fragment
-- Stay character-agnostic: use "it" (or "they" for humanoids). No creature names, no class references
+- {pronoun_rule}
 - Stay target-agnostic: don't reference what's being hit or who's affected
 - No game mechanics (HP, AC, damage dice). Pure fiction
 - Avoid fantasy cliches ("mighty blow", "flashing steel") — find fresh imagery
 - Vary sentence structure: mix fragments, dashes, commas, and full clauses
 - Evoke, don't narrate. Sensory fragments over play-by-play"""
+
+
+def _writing_rules(request: 'FlavorTextRequest') -> str:
+    """Writing rules with the pronoun rule matched to the subject."""
+    if request.pronouns:
+        pronoun_rule = (f'This is a named character: refer to them as "{request.character_name}" '
+                        f'or with {request.pronouns} pronouns — never "it". No class references')
+    elif 'humanoid' in (request.character_race or '').lower():
+        pronoun_rule = 'Stay character-agnostic: use "they". No creature names, no class references'
+    else:
+        pronoun_rule = 'Stay character-agnostic: use "it". No creature names, no class references'
+    return _WRITING_RULES_TEMPLATE.format(pronoun_rule=pronoun_rule)
 
 # Sensory category sets per ability type family
 _SENSORY_CATS = {
@@ -118,9 +130,12 @@ def _sensory_distribution(count: int, ability_type: str = 'attack') -> str:
     return "\n".join(lines)
 
 
-def _pronoun_guidance(creature_type: str) -> str:
-    """Return pronoun instruction based on creature type."""
-    if 'humanoid' in (creature_type or '').lower():
+def _pronoun_guidance(request: 'FlavorTextRequest') -> str:
+    """Return pronoun instruction: named characters get their name/pronouns, monsters get "it"."""
+    if request.pronouns:
+        return (f'This is a named character. Refer to them as "{request.character_name}" '
+                f'or with {request.pronouns} pronouns — never "it".')
+    if 'humanoid' in (request.character_race or '').lower():
         return 'Use they/them pronouns.'
     return 'Use "it" as the pronoun.'
 
@@ -343,7 +358,7 @@ class FlavorTextGenerator:
         description_part = f"\nAbility description: {request.ability_description}" if request.ability_description else ""
         n = request.variations
         distribution = _sensory_distribution(n, request.ability_type)
-        pronouns = _pronoun_guidance(request.character_race)
+        pronouns = _pronoun_guidance(request)
 
         # Pick examples based on ability type
         attempt_key, success_key, failure_key = _TYPE_EXAMPLE_MAP.get(
@@ -361,12 +376,16 @@ Style: {style_desc}
 {pronouns}
 """
         if request.context_blob:
-            prompt += f"Flavor guidance: {request.context_blob}\n"
+            prompt += (
+                "Character voice (use ONLY for tone and personality — every entry must still "
+                "describe the specific ability above, not events or conditions mentioned here): "
+                f"{request.context_blob}\n"
+            )
 
         prompt += f"""
 {distribution}
 
-{_WRITING_RULES}
+{_writing_rules(request)}
 
 Examples of ATTEMPT entries:
 {ex_attempt}
@@ -400,7 +419,7 @@ FAILURES:
         description_part = f"\nAbility description: {request.ability_description}" if request.ability_description else ""
         n = request.variations
         distribution = _sensory_distribution(n, request.ability_type)
-        pronouns = _pronoun_guidance(request.character_race)
+        pronouns = _pronoun_guidance(request)
 
         attempt_key, _, _ = _TYPE_EXAMPLE_MAP.get(
             request.ability_type, ('attack_attempt', 'attack_success', 'attack_failure')
@@ -415,12 +434,16 @@ Style: {style_desc}
 {pronouns}
 """
         if request.context_blob:
-            prompt += f"Flavor guidance: {request.context_blob}\n"
+            prompt += (
+                "Character voice (use ONLY for tone and personality — every entry must still "
+                "describe the specific ability above, not events or conditions mentioned here): "
+                f"{request.context_blob}\n"
+            )
 
         prompt += f"""
 {distribution}
 
-{_WRITING_RULES}
+{_writing_rules(request)}
 
 Examples:
 {examples}
@@ -436,7 +459,7 @@ ENTRIES:
         """Create a prompt for conditional flavor categories (crit/fumble/barely/killing_blow)."""
         style_desc = self.STYLE_DESCRIPTIONS.get(request.style, self.STYLE_DESCRIPTIONS['dramatic'])
         description_part = f"\nAbility description: {request.ability_description}" if request.ability_description else ""
-        pronouns = _pronoun_guidance(request.character_race)
+        pronouns = _pronoun_guidance(request)
         distribution = _sensory_distribution(count, request.ability_type)
 
         category_guidance = {
@@ -487,12 +510,16 @@ Style: {style_desc}
 {pronouns}
 """
         if request.context_blob:
-            prompt += f"Flavor guidance: {request.context_blob}\n"
+            prompt += (
+                "Character voice (use ONLY for tone and personality — every entry must still "
+                "describe the specific ability above, not events or conditions mentioned here): "
+                f"{request.context_blob}\n"
+            )
 
         prompt += f"""
 {distribution}
 
-{_WRITING_RULES}
+{_writing_rules(request)}
 
 Examples:
 {examples}
@@ -507,7 +534,7 @@ ENTRIES:
     def generate_bloodied_prompt(self, request: FlavorTextRequest, count: int = 5) -> str:
         """Create a prompt for bloodied-threshold flavor text."""
         style_desc = self.STYLE_DESCRIPTIONS.get(request.style, self.STYLE_DESCRIPTIONS['dramatic'])
-        pronouns = _pronoun_guidance(request.character_race)
+        pronouns = _pronoun_guidance(request)
         distribution = _sensory_distribution(count, 'save')
         examples = _examples_for_event('bloodied')
 
@@ -520,12 +547,16 @@ Style: {style_desc}
 {pronouns}
 """
         if request.context_blob:
-            prompt += f"Flavor guidance: {request.context_blob}\n"
+            prompt += (
+                "Character voice (use ONLY for tone and personality — every entry must still "
+                "describe the specific ability above, not events or conditions mentioned here): "
+                f"{request.context_blob}\n"
+            )
 
         prompt += f"""
 {distribution}
 
-{_WRITING_RULES}
+{_writing_rules(request)}
 - Focus on: visible wounds, changed posture, sounds of pain, blood, desperation, fury, fear
 
 Examples:
@@ -541,7 +572,7 @@ ENTRIES:
     def generate_death_prompt(self, request: FlavorTextRequest, count: int = 5) -> str:
         """Create a prompt for death flavor text — creature reaches 0 HP."""
         style_desc = self.STYLE_DESCRIPTIONS.get(request.style, self.STYLE_DESCRIPTIONS['dramatic'])
-        pronouns = _pronoun_guidance(request.character_race)
+        pronouns = _pronoun_guidance(request)
         distribution = _sensory_distribution(count, 'save')
         examples = _examples_for_event('death')
 
@@ -554,12 +585,16 @@ Style: {style_desc}
 {pronouns}
 """
         if request.context_blob:
-            prompt += f"Flavor guidance: {request.context_blob}\n"
+            prompt += (
+                "Character voice (use ONLY for tone and personality — every entry must still "
+                "describe the specific ability above, not events or conditions mentioned here): "
+                f"{request.context_blob}\n"
+            )
 
         prompt += f"""
 {distribution}
 
-{_WRITING_RULES}
+{_writing_rules(request)}
 - Focus on: collapse, final sounds, stillness, light fading, the specific way THIS creature falls
 
 Examples:
@@ -580,7 +615,7 @@ ENTRIES:
         """
         style_desc = self.STYLE_DESCRIPTIONS.get(request.style, self.STYLE_DESCRIPTIONS['dramatic'])
         description_part = f"\nAbility description: {request.ability_description}" if request.ability_description else ""
-        pronouns = _pronoun_guidance(request.character_race)
+        pronouns = _pronoun_guidance(request)
         distribution = _sensory_distribution(count, request.ability_type)
         examples = _examples_for_event('cast')
 
@@ -592,12 +627,16 @@ Style: {style_desc}
 {pronouns}
 """
         if request.context_blob:
-            prompt += f"Flavor guidance: {request.context_blob}\n"
+            prompt += (
+                "Character voice (use ONLY for tone and personality — every entry must still "
+                "describe the specific ability above, not events or conditions mentioned here): "
+                f"{request.context_blob}\n"
+            )
 
         prompt += f"""
 {distribution}
 
-{_WRITING_RULES}
+{_writing_rules(request)}
 
 Examples:
 {examples}

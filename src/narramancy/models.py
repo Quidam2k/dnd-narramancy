@@ -19,6 +19,7 @@ class FlavorTextRequest:
     variations: int = 5
     context_blob: Optional[str] = None  # Per-creature seasoning or character context
     has_outcomes: bool = True  # False = no resolution roll, skip success/failure generation
+    pronouns: Optional[str] = None  # e.g. 'he/him' — set for named characters, None = monster ("it")
 
 
 @dataclass
@@ -100,6 +101,7 @@ class ParsedCreature:
     challenge_rating: str = ""
     abilities: List['ParsedAbility'] = field(default_factory=list)
     context_blob: Optional[str] = None
+    pronouns: Optional[str] = None  # e.g. 'he/him' — set for PCs, None = monster ("it")
     skill_proficiencies: Dict[str, int] = field(default_factory=dict)  # e.g. {"perception": 4, "stealth": 10}
     save_proficiencies: Dict[str, int] = field(default_factory=dict)  # e.g. {"dex": 7, "con": 5}
 
@@ -132,6 +134,7 @@ class ParsedCreature:
             challenge_rating=data.get('cr', ''),
             abilities=abilities,
             context_blob=data.get('context'),
+            pronouns=data.get('pronouns'),
             skill_proficiencies=data.get('skill_proficiencies', {}),
             save_proficiencies=data.get('save_proficiencies', {}),
         )
@@ -153,6 +156,7 @@ class ParsedCreature:
             variations=variations,
             context_blob=self.context_blob,
             has_outcomes=has_roll_outcomes(ability),
+            pronouns=self.pronouns,
         )
 
 

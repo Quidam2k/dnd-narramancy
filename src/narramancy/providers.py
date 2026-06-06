@@ -157,23 +157,30 @@ class OpenAICompatibleProvider(AIProvider):
     LM Studio, Groq, OpenRouter, Together AI, etc.
     """
 
-    def __init__(self, base_url: str, model: str, api_key: Optional[str] = None, name: str = "openai-compatible"):
+    def __init__(self, base_url: str, model: str, api_key: Optional[str] = None, name: str = "openai-compatible",
+                 reasoning_effort: Optional[str] = None):
         self.base_url = base_url.rstrip("/")
         self.model = model
         self.api_key = api_key
         self.name = name
+        self.reasoning_effort = reasoning_effort
 
     async def generate(self, prompt: str) -> ProviderResult:
         import urllib.request
 
         url = f"{self.base_url}/v1/chat/completions"
-        payload = json.dumps({
+        body = {
             "model": self.model,
             "messages": [{"role": "user", "content": prompt}],
             "temperature": 0.8,
             "max_tokens": 2048,
             "stream": False,
-        }).encode("utf-8")
+        }
+        if self.reasoning_effort:
+            # Reasoning models (e.g. Gemma 4) otherwise burn the whole
+            # max_tokens budget on reasoning_content and return empty content
+            body["reasoning_effort"] = self.reasoning_effort
+        payload = json.dumps(body).encode("utf-8")
 
         headers = {"Content-Type": "application/json"}
         if self.api_key:
@@ -207,8 +214,9 @@ class OpenAICompatibleProvider(AIProvider):
 class LMStudioProvider(OpenAICompatibleProvider):
     """LM Studio local provider (no API key needed)."""
 
-    def __init__(self, base_url: str = "http://localhost:1234", model: str = "local-model"):
-        super().__init__(base_url=base_url, model=model, name="lmstudio")
+    def __init__(self, base_url: str = "http://localhost:1234", model: str = "local-model",
+                 reasoning_effort: Optional[str] = "none"):
+        super().__init__(base_url=base_url, model=model, name="lmstudio", reasoning_effort=reasoning_effort)
 
 
 class GroqProvider(OpenAICompatibleProvider):
@@ -261,7 +269,10 @@ def get_provider(name: str, config: ConfigManager) -> AIProvider:
     elif name == "lmstudio":
         base_url = config.get_api_key("lmstudio") or "http://localhost:1234"
         model = config.get("ai_generation", "lmstudio_model", fallback="local-model")
-        return LMStudioProvider(base_url=base_url, model=model)
+        # 'none' suppresses reasoning on thinking models (Gemma 4 et al.);
+        # set NARRAMANCY_AI_GENERATION_LMSTUDIO_REASONING_EFFORT to override
+        effort = config.get("ai_generation", "lmstudio_reasoning_effort", fallback="none")
+        return LMStudioProvider(base_url=base_url, model=model, reasoning_effort=effort)
 
     elif name == "groq":
         api_key = config.get_api_key("groq")
