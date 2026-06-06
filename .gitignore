@@ -29,6 +29,7 @@ Thumbs.db
 
 # Project specific
 screengrab/
+.playwright-mcp/
 *.log
 .claude/
 output/
