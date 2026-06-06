@@ -10,6 +10,8 @@ Generate vivid narration text for D&D creatures and use it at the table — whet
 > *"It drops low, jaws snapping shut like a sprung trap."*
 > *"The blade finds only air — a half-step too slow."*
 
+**[▶ Try the live demo](https://quidam2k.github.io/dnd-narramancy/web/roller.html?load=demo/gimbal-starwhisper.json)** — the Flavor Roller loaded with Gimbal Starwhisper, a level-5 Lotusden Halfling druid (107 abilities, 416 rollable tables).
+
 ## Quick Start
 
 ```bash
@@ -140,10 +142,13 @@ Narramancy includes a Foundry VTT module that automatically whispers narration t
 
 If you don't use Foundry VTT, you can use the **Flavor Roller** — a standalone HTML page that loads a narramancy JSON file and gives you clickable buttons for every ability.
 
+**[Live demo with Gimbal Starwhisper](https://quidam2k.github.io/dnd-narramancy/web/roller.html?load=demo/gimbal-starwhisper.json)** — a level-5 Lotusden Halfling druid.
+
 - Open `web/roller.html` in any browser (or use the [hosted version](https://quidam2k.github.io/dnd-narramancy/web/roller.html))
-- Load a generated JSON file
+- Load a generated JSON file — or auto-load one via `?load=<url>`
 - Click ability buttons to get random narration lines
 - Works great on mobile — tap a button during a game session
+- **Detail levels**: the Minimal / Standard / Full selector controls how many post-roll buttons appear. Minimal (the default) shows attempt rolls plus crits, fumbles, and killing blows; Standard adds Hit/Miss narration; Full adds fine-grained outcomes (barely hit, barely miss, dodge, armor deflection)
 
 ## Features
 

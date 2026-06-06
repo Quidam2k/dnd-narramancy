@@ -65,6 +65,32 @@
 
   #file-input { display: none; }
 
+  /* ── Detail Level Selector ── */
+  .detail-select {
+    display: flex;
+    border: 1px solid var(--surface-2);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .detail-select button {
+    background: var(--surface-2);
+    color: var(--text-dim);
+    border: none;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.1s, color 0.1s;
+  }
+  .detail-select button + button {
+    border-left: 1px solid var(--surface);
+  }
+  .detail-select button:hover { color: var(--text); }
+  .detail-select button.active {
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+  }
+
   .creature-info {
     margin-left: auto;
     text-align: right;
@@ -247,6 +273,11 @@
   <h1>Flavor Roller</h1>
   <button class="load-btn" onclick="document.getElementById('file-input').click()">Load JSON</button>
   <input type="file" id="file-input" accept=".json">
+  <div class="detail-select" id="detail-select" title="Detail level: how many post-roll outcome buttons to show">
+    <button data-level="minimal">Minimal</button>
+    <button data-level="standard">Standard</button>
+    <button data-level="full">Full</button>
+  </div>
   <div class="creature-info" id="creature-info"></div>
 </header>
 
@@ -277,9 +308,22 @@
   // noRepeat: "AbilityName|category" -> Set of used indices
   const usedIndices = {};
 
+  // ── Detail Levels ──
+  // Which sub-button categories each level shows. Primary "attempt" buttons always render.
+  const DETAIL_CATS = {
+    minimal:  ['crits', 'fumbles', 'killing_blow'],
+    standard: ['crits', 'fumbles', 'killing_blow', 'successes', 'failures'],
+    full:     ['crits', 'fumbles', 'killing_blow', 'successes', 'failures',
+               'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor'],
+  };
+  const DETAIL_KEY = 'narramancy-roller-detail';
+  let detailLevel = localStorage.getItem(DETAIL_KEY);
+  if (!DETAIL_CATS[detailLevel]) detailLevel = 'minimal';
+
   // ── DOM refs ──
-  const fileInput   = document.getElementById('file-input');
-  const creatureEl  = document.getElementById('creature-info');
+  const fileInput    = document.getElementById('file-input');
+  const detailSelect = document.getElementById('detail-select');
+  const creatureEl   = document.getElementById('creature-info');
   const resultLabel = document.getElementById('result-label');
   const resultText  = document.getElementById('result-text');
   const resultMeta  = document.getElementById('result-meta');
@@ -307,8 +351,48 @@
     fileInput.value = '';
   });
 
+  // ── Detail Level Selector ──
+  function syncDetailButtons() {
+    detailSelect.querySelectorAll('button').forEach(b => {
+      b.classList.toggle('active', b.dataset.level === detailLevel);
+    });
+  }
+  detailSelect.addEventListener('click', (e) => {
+    const level = e.target.dataset && e.target.dataset.level;
+    if (!level || level === detailLevel) return;
+    detailLevel = level;
+    localStorage.setItem(DETAIL_KEY, level);
+    syncDetailButtons();
+    if (data) buildGrid(data); // usedIndices survives — keyed independently
+  });
+  syncDetailButtons();
+
+  // ── URL Auto-Load (?load=<url>) ──
+  const loadParam = new URLSearchParams(location.search).get('load');
+  if (loadParam) {
+    fetch(loadParam)
+      .then(r => {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(d => {
+        data = d;
+        loadCreature(d);
+      })
+      .catch(err => {
+        resultLabel.textContent = '';
+        resultText.textContent = 'Could not auto-load ' + loadParam;
+        resultMeta.textContent = err.message + (location.protocol === 'file:' ? ' — auto-load needs a web server (file:// blocks fetch)' : '');
+      });
+  }
+
   // ── Load Creature ──
   function loadCreature(d) {
+    // formatVersion 2 wraps creatures in an array — use the first
+    if (d.creatures && d.creatures.length) {
+      d = d.creatures[0];
+      data = d;
+    }
     // Clear state
     Object.keys(tableLookup).forEach(k => delete tableLookup[k]);
     Object.keys(usedIndices).forEach(k => delete usedIndices[k]);
@@ -430,11 +514,13 @@
         const btn = makeButton(ability, ability, primaryCat);
         row.appendChild(btn);
 
-        // Sub-buttons for conditional/additional categories
+        // Sub-buttons for conditional/additional categories, filtered by detail level
         const subOrder = ['successes', 'failures', 'crits', 'fumbles', 'barely_hits', 'barely_misses', 'miss_dodge', 'miss_armor', 'killing_blow'];
+        const allowedCats = DETAIL_CATS[detailLevel];
         for (const cat of subOrder) {
           if (cat === primaryCat) continue;
           if (!cats.has(cat)) continue;
+          if (!allowedCats.includes(cat)) continue;
           const subLabel = catLabel(cat);
           const sub = makeButton(subLabel, ability, cat, true);
           row.appendChild(sub);
