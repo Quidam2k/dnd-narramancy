@@ -1,5 +1,6 @@
 """Data models for Narramancy."""
 
+import re
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Any
 
@@ -17,6 +18,7 @@ class FlavorTextRequest:
     style: str = 'dramatic'  # dramatic|comedic|gritty|heroic
     variations: int = 5
     context_blob: Optional[str] = None  # Per-creature seasoning or character context
+    has_outcomes: bool = True  # False = no resolution roll, skip success/failure generation
 
 
 @dataclass
@@ -53,6 +55,42 @@ class ParsedAbility:
     activity_types: List[str] = field(default_factory=list)
 
 
+# Ability types whose use is itself a roll that can succeed or fail
+_ROLL_OUTCOME_TYPES = {'attack', 'save', 'skill', 'death_save'}
+
+# Foundry activity types that involve a resolution roll
+_ROLL_ACTIVITY_TYPES = {'attack', 'save', 'check'}
+
+# Fallback for text-block-parsed creatures: descriptions that mention a
+# resolution roll mean success/failure flavor is meaningful. Also matches
+# D&D Beyond importer enricher syntax like [[/save wis format=long]].
+_ROLL_DESCRIPTION_RE = re.compile(
+    r'attack roll|spell attack|saving throw|ability check|contested'
+    r'|\[\[/(?:save|attack|check)\b',
+    re.IGNORECASE,
+)
+
+
+def has_roll_outcomes(ability: 'ParsedAbility') -> bool:
+    """Whether an ability involves a resolution roll (success/failure are meaningful).
+
+    No-roll abilities (Wild Shape, Longstrider, initiative) can't hit or miss —
+    generating success/failure tables for them wastes tokens on entries
+    nothing ever triggers.
+    """
+    if ability.attack_bonus is not None or ability.save_dc is not None:
+        return True
+    if ability.ability_type in _ROLL_OUTCOME_TYPES:
+        return True
+    if ability.activity_types:
+        # Foundry activities are authoritative — long feature descriptions
+        # mention rolls incidentally (Wild Shape retains save proficiencies)
+        return bool(_ROLL_ACTIVITY_TYPES & set(ability.activity_types))
+    if ability.description and _ROLL_DESCRIPTION_RE.search(ability.description):
+        return True
+    return False
+
+
 @dataclass
 class ParsedCreature:
     """A monster/creature parsed from a stat block."""
@@ -84,6 +122,7 @@ class ParsedCreature:
                 range=a.get('range'),
                 uses=a.get('uses'),
                 recharge=a.get('recharge'),
+                activity_types=a.get('activity_types', []),
             ))
 
         return cls(
@@ -113,6 +152,7 @@ class ParsedCreature:
             style=style,
             variations=variations,
             context_blob=self.context_blob,
+            has_outcomes=has_roll_outcomes(ability),
         )
 
 

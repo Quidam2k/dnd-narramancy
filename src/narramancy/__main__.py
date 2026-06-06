@@ -567,6 +567,7 @@ def _creature_to_dict(creature: ParsedCreature) -> dict:
                 'range': a.range,
                 'uses': a.uses,
                 'recharge': a.recharge,
+                'activity_types': a.activity_types,
             }
             for a in creature.abilities
         ],

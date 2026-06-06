@@ -14,11 +14,11 @@
       "category": "attempts",
       "description": "Flavor text for attempts a attack",
       "entries": [
-        "Weight shifts forward \u2014 a sudden lean into the blow.",
-        "It sprints in, quarterstaff at the ready \u2014 anticipation hanging.",
+        "Weight shifts forward — a sudden lean into the blow.",
+        "It sprints in, quarterstaff at the ready — anticipation hanging.",
         "A fluid motion begins to unfold, then hesitates mid-stride.",
         "The staff twirls out wide, seeking an opening that doesn't exist.",
-        "Grip tightens on the wooden rifle \u2014 a deep breath before launching."
+        "Grip tightens on the wooden rifle — a deep breath before launching."
       ]
     },
     {
@@ -28,9 +28,9 @@
       "entries": [
         "Flame erupts in a tiny maelstrom, dancing with reckless abandon.",
         "Steel whispers through leather, and something warm follows closely behind.",
-        "The point finds the gap it was looking for \u2014 a wet crunch resounds.",
+        "The point finds the gap it was looking for — a wet crunch resounds.",
         "A burst of flame illuminates the darkened alleyway suddenly bright.",
-        "Impact shudders up through the shaft and into its wrists \u2014 feedback."
+        "Impact shudders up through the shaft and into its wrists — feedback."
       ]
     },
     {
@@ -42,7 +42,7 @@
         "A scrape of steel on stone where flesh should have been, a hollow sound.",
         "It overcommits, and the opening closes before the blade arrives too late.",
         "Flame fizzles at the tip, dying without making contact, or doing much.",
-        "The quarterstaff bites hard into the earth \u2014 a jarring, useless strike."
+        "The quarterstaff bites hard into the earth — a jarring, useless strike."
       ]
     },
     {
@@ -169,7 +169,7 @@
       "entries": [
         {
           "category": "Kinesthetic",
-          "entry": "A gentle arc of movement \u2014 then a swift, crushing conclusion."
+          "entry": "A gentle arc of movement — then a swift, crushing conclusion."
         },
         {
           "category": "Auditory",
@@ -206,7 +206,7 @@
       "category": "successes",
       "description": "Flavor text for successes a attack",
       "entries": [
-        "Steel whispers through leather, and something warm follows \u2014 satisfaction.",
+        "Steel whispers through leather, and something warm follows — satisfaction.",
         "Impact shudders up through the shaft and into its wrists like an electric spark.",
         "The point finds the gap it was looking for, a wet crunch that echoes through stillness.",
         "A liquid motion, the staff seeming to flow from its hands like water.",
@@ -220,7 +220,7 @@
       "entries": [
         "The swing carves empty air, momentum pulling it off-balance like a wild mustang.",
         "A scrape of steel on stone where flesh should have been, an unsettling echo.",
-        "It overcommits, and the opening closes before the blade arrives \u2014 a fleeting glimpse of something missed.",
+        "It overcommits, and the opening closes before the blade arrives — a fleeting glimpse of something missed.",
         "Weight shifts too far forward, sending its center tumbling into space.",
         "The staff bites deep into leather-wrapped wood, a jarring dissonance that shakes its hand."
       ]
@@ -295,7 +295,7 @@
         },
         {
           "category": "Emotional/Expression",
-          "entry": "Grim determination etched on his face \u2013 it fails by inches."
+          "entry": "Grim determination etched on his face – it fails by inches."
         },
         {
           "category": "Environmental",
@@ -309,10 +309,10 @@
       "description": "Flavor text for miss_dodge with Shillelagh",
       "entries": [
         "It dances on the balls of its feet, a whirlwind's gentle touch.",
-        "The ground beneath it shudders from the force of the missed blow \u2014 an echo of impact without consequence.",
+        "The ground beneath it shudders from the force of the missed blow — an echo of impact without consequence.",
         "In a blur of movement, it becomes one with the air around them, untouchable as a summer breeze.",
         "Like a leaf on a gusty day, it twirls and spins, its form a fleeting glimpse.",
-        "A practiced pivot allows it to sidle clear of harm \u2014 smooth as a snake shedding skin."
+        "A practiced pivot allows it to sidle clear of harm — smooth as a snake shedding skin."
       ]
     },
     {
@@ -375,7 +375,7 @@
       "description": "Flavor text for attempts a attack",
       "entries": [
         "The quarterstaff swings wide in a slow-motion blur.",
-        "It lunges forward, weight shifting on the balls of its feet \u2014",
+        "It lunges forward, weight shifting on the balls of its feet —",
         "A flicker of motion precedes the impact, timing uncertain.",
         "Steel whirs through air, seeking purchase it may not find.",
         "Coiled energy unwinds in a sudden, frenzied arc upward."
@@ -386,7 +386,7 @@
       "category": "successes",
       "description": "Flavor text for successes a attack",
       "entries": [
-        "The point finds the gap it was looking for \u2014 a wet crunch.",
+        "The point finds the gap it was looking for — a wet crunch.",
         "Impact shudders up through the shaft and into its wrists.",
         "A burst of flame erupts where steel meets target with precision.",
         "It bites deep, the wood singing with the force of entry.",
@@ -401,7 +401,7 @@
         "The swing carves empty air, momentum pulling it off-balance.",
         "A scrape of steel on stone where flesh should have been.",
         "It overcommits, and the opening closes before the blade arrives.",
-        "Weight transfers onto the wrong foot \u2014 a stumble unfolding.",
+        "Weight transfers onto the wrong foot — a stumble unfolding.",
         "Leather creaks as the shaft checks against unyielding resistance."
       ]
     },
@@ -465,7 +465,7 @@
         "The air is suddenly empty where it was a moment before, a fleeting shadow.",
         "It dodges and weaves like a willow branch in the wind, always just out of reach.",
         "-a whispered apology to thin air as the attack whizzes past its ear-",
-        "A shimmering mirage of evasion \u2013 that's all the attacker gets to see."
+        "A shimmering mirage of evasion – that's all the attacker gets to see."
       ]
     },
     {
@@ -474,10 +474,10 @@
       "description": "Flavor text for miss_armor with Magic Stone",
       "entries": [
         "Kinesthetic: Gimbal's quarterstaff flashes in the dim light, a rhythmic swing and pause.",
-        "Auditory: Steel on steel screams in protest as it shatters, sparks flying wildly \u2014",
+        "Auditory: Steel on steel screams in protest as it shatters, sparks flying wildly —",
         "Visual/Cinematic: A scintillating web of cracks spreads across the armor's surface like frost on glass, a glacial slowness.",
         "Emotional/Expression: Gimbal's eyes narrow behind his spectacles, a grim set to his jaw as it stands firm against impact.",
-        "Tactile/Impact: The blow resonates through the air like a bass note, vibrations humming deep within solid metal \u2014"
+        "Tactile/Impact: The blow resonates through the air like a bass note, vibrations humming deep within solid metal —"
       ]
     },
     {
@@ -512,10 +512,10 @@
       "category": "attempts",
       "description": "Flavor text for attempts a attack",
       "entries": [
-        "A swift draw, it hangs poised for a moment \u2014 then hesitates.",
+        "A swift draw, it hangs poised for a moment — then hesitates.",
         "It lunges forward, but the balance is off from the start.",
         "The staff's end whips through space like a lasso, missing its mark.",
-        "Weight shifts to the back foot as it prepares to unleash \u2014 nothing follows.",
+        "Weight shifts to the back foot as it prepares to unleash — nothing follows.",
         "A fluid motion begins, only to be interrupted by second thoughts."
       ]
     },
@@ -537,7 +537,7 @@
       "description": "Flavor text for failures a attack",
       "entries": [
         "The swing carves empty air, momentum pulling it off-balance once more.",
-        "A scrape of steel on stone where flesh should have been \u2014 a narrow miss.",
+        "A scrape of steel on stone where flesh should have been — a narrow miss.",
         "It overcommits, and the opening closes before the blade arrives, too late.",
         "A blur of motion resolves into nothing but a lingering echo.",
         "The attack stalls in mid-air, arrested by an unseen hand."
@@ -588,7 +588,7 @@
       "description": "Flavor text for barely_hits with Thorn Whip",
       "entries": [
         "Whipping motion falters just shy of a solid strike's crisp snap.",
-        "A hair's breadth separates triumph from the sound of nothing \u2013",
+        "A hair's breadth separates triumph from the sound of nothing –",
         "It slips through with a faint screech, a threadbare edge",
         "For a fleeting instant, the lash might've been an arc of starlight",
         "The whip's tip hesitates, inches from missing by a mile"
@@ -641,7 +641,7 @@
         },
         {
           "category": "Tactile/Impact",
-          "text": "The blow thuds into the plate like a rock against steel \u2014 no give."
+          "text": "The blow thuds into the plate like a rock against steel — no give."
         }
       ]
     },
@@ -663,34 +663,10 @@
       "description": "Flavor text for attempts a bonus_action",
       "entries": [
         "It shifts weight into the cast, feet aching to pivot.",
-        "A furtive glance around before lunging forward \u2014 hesitation evident.",
+        "A furtive glance around before lunging forward — hesitation evident.",
         "The limbs tremble with anticipation as they prepare to unleash.",
-        "-then-it-uncorks-like-a-bottle-being-twisted-too-hard\u2014",
+        "-then-it-uncorks-like-a-bottle-being-twisted-too-hard—",
         "Muscles tense, coiled springs waiting for release but uncertain when."
-      ]
-    },
-    {
-      "ability": "Wild Shape",
-      "category": "successes",
-      "description": "Flavor text for successes a bonus_action",
-      "entries": [
-        "A fluid motion, the form unfolding like a blooming flower.",
-        "The world slows as it unfurls into its intended shape.",
-        "A ripple of fur and feathers as it takes to the skies.",
-        "The ground yields beneath the new form's deliberate weight.",
-        "-and-for-an-instant\u2014the-world-is-at-peace-with-the-new-form\u2014"
-      ]
-    },
-    {
-      "ability": "Wild Shape",
-      "category": "failures",
-      "description": "Flavor text for failures a bonus_action",
-      "entries": [
-        "It bursts into an ungainly, awkward sprawl on impact.",
-        "The limbs thrash wildly like a fish out of water flailing.",
-        "-then-it-stutters-and-spins-like-a-top\u2014",
-        "A jerky, unnatural motion as it attempts to find its footing.",
-        "The world seems to lurch away from the failed transformation."
       ]
     },
     {
@@ -706,39 +682,15 @@
       ]
     },
     {
-      "ability": "Wild Companion",
-      "category": "successes",
-      "description": "Flavor text for successes a feature",
-      "entries": [
-        "A fluid extension of the arm, a perfect line.",
-        "Steel whispers through leather, and something warm follows.",
-        "Impact shudders up through the shaft and into its wrists.",
-        "The point finds the gap it was looking for \u2014 a wet crunch.",
-        "As one piece flows into another, it's almost effortless."
-      ]
-    },
-    {
-      "ability": "Wild Companion",
-      "category": "failures",
-      "description": "Flavor text for failures a feature",
-      "entries": [
-        "A scrape of steel on stone where flesh should have been.",
-        "It overcommits, and the opening closes before the blade arrives.",
-        "The swing carves empty air, momentum pulling it off-balance.",
-        "Tension builds, then snaps - an abrupt, hollow sound.",
-        "For a moment, it's as if nothing had happened at all."
-      ]
-    },
-    {
       "ability": "Starry Form",
       "category": "attempts",
       "description": "Flavor text for attempts a bonus_action",
       "entries": [
-        "-Weight shifts to the balls of its feet\u2014unsteady balance.",
-        "The staff's tip hesitates in mid-air\u2014momentum delayed.",
-        "It pauses, poised on the verge of transformation\u2014stasis lingering.",
-        "A brief flicker of tension runs through its frame\u2014potential coiled.",
-        "The stars above seem to hold it back\u2014their gentle tug."
+        "-Weight shifts to the balls of its feet—unsteady balance.",
+        "The staff's tip hesitates in mid-air—momentum delayed.",
+        "It pauses, poised on the verge of transformation—stasis lingering.",
+        "A brief flicker of tension runs through its frame—potential coiled.",
+        "The stars above seem to hold it back—their gentle tug."
       ]
     },
     {
@@ -746,11 +698,11 @@
       "category": "successes",
       "description": "Flavor text for successes a bonus_action",
       "entries": [
-        "Light bursts forth like a burst dam\u2014chaotic radiance unfurling.",
+        "Light bursts forth like a burst dam—chaotic radiance unfurling.",
         "Its form blurs and brightens as the starry essence takes hold.",
-        "A thousand tiny sparks dance across its skin\u2014a celestial display.",
-        "The air is filled with an otherworldly glow\u2014ethereal warmth spreading.",
-        "It shines like a lantern in the darkness\u2014the stars shining through."
+        "A thousand tiny sparks dance across its skin—a celestial display.",
+        "The air is filled with an otherworldly glow—ethereal warmth spreading.",
+        "It shines like a lantern in the darkness—the stars shining through."
       ]
     },
     {
@@ -759,10 +711,10 @@
       "description": "Flavor text for failures a bonus_action",
       "entries": [
         "The attempt falters, and it's left stumbling back into form.",
-        "A faint hum of energy dies on its lips\u2014a promise unfulfilled.",
-        "Stardust flickers out, leaving only darkness behind\u2014emptiness lingering.",
+        "A faint hum of energy dies on its lips—a promise unfulfilled.",
+        "Stardust flickers out, leaving only darkness behind—emptiness lingering.",
         "The starry essence recedes, leaving a dull ache in its wake.",
-        "It's left feeling drained and heavy\u2014as if the stars themselves weighed it down."
+        "It's left feeling drained and heavy—as if the stars themselves weighed it down."
       ]
     },
     {
@@ -778,30 +730,6 @@
       ]
     },
     {
-      "ability": "Wild Resurgence",
-      "category": "successes",
-      "description": "Flavor text for successes a feature",
-      "entries": [
-        "The Wild Shape resolves in a warm, golden light that enfolds them.",
-        "A new use of Wild Shape springs to life like a green shoot bursting forth.",
-        "Steel whispers through leather, and something vital stirs within it.",
-        "Regained vitality courses back into their limbs like a freshets flow.",
-        "Their stance shifts, and they become one with the landscape \u2013 fluid."
-      ]
-    },
-    {
-      "ability": "Wild Resurgence",
-      "category": "failures",
-      "description": "Flavor text for failures a feature",
-      "entries": [
-        "The staff shudders to a halt, its momentum spent in vain.",
-        "A moment's hesitation allows the window of opportunity to close.",
-        "Their form blurs and falters like sand in an arid windstorm.",
-        "Regeneration stalls, leaving them feeling drained and brittle.",
-        "Gimbal stumbles, their footing uncertain on shifting terrain."
-      ]
-    },
-    {
       "ability": "Child of the Wood",
       "category": "attempts",
       "description": "Flavor text for attempts a feature",
@@ -809,32 +737,8 @@
         "Weight shifts, knees bending forward in anticipation of the spring.",
         "It gathers itself like a coiled whip, tension building in its limbs.",
         "The quarterstaff trembles in its grasp, a live wire to its will.",
-        "-A pause, and then it lunges\u2014forward motion stuttering into being.",
+        "-A pause, and then it lunges—forward motion stuttering into being.",
         "Eyes narrowing, it takes a single, decisive step closer."
-      ]
-    },
-    {
-      "ability": "Child of the Wood",
-      "category": "successes",
-      "description": "Flavor text for successes a feature",
-      "entries": [
-        "Leather creaks as it wraps around the staff's worn surface, fitting like a glove.",
-        "The point bites deep, and a rush of warm sap greets its arrival.",
-        "It unfurls like a wildflower, tendrils snaking into place with ease.",
-        "-A whisper of displaced air precedes the solid thump of impact.",
-        "Grit crunching beneath its feet, it feels the ground yield to pressure."
-      ]
-    },
-    {
-      "ability": "Child of the Wood",
-      "category": "failures",
-      "description": "Flavor text for failures a feature",
-      "entries": [
-        "The swing bites nothing but empty space, momentum carrying it off-balance.",
-        "A hollow clang echoes through stillness where steel should have kissed wood.",
-        "-A faint whisper of displaced air precedes a jarring impact that's all wrong.",
-        "It overextends, and the staff wobbles in its grip like a dropped thread.",
-        "The earth resists its pressure, unyielding and cold as stone."
       ]
     },
     {
@@ -842,35 +746,11 @@
       "category": "attempts",
       "description": "Flavor text for attempts a feature",
       "entries": [
-        "- A quick lunge forward, weight shifting to no purpose \u2014 empty space.",
+        "- A quick lunge forward, weight shifting to no purpose — empty space.",
         "It charges, a whirlwind of momentum that dissipates on contact.",
         "Gripping the staff tightly, it swings with reckless abandon.",
         "- It winds up, then unwinds in a clumsy, overrotated arc.",
         "A sudden burst of speed, only to be checked by resistance."
-      ]
-    },
-    {
-      "ability": "Inspiring Leader",
-      "category": "successes",
-      "description": "Flavor text for successes a feature",
-      "entries": [
-        "Steel whispers through leather, and a warm glow follows.",
-        "The point finds the gap it was searching for \u2014 smooth entry.",
-        "Impact shudders up through the shaft and into its hands.",
-        "- A burst of flame erupts from the staff's tip \u2014 a beacon in darkness.",
-        "It plants itself firmly, roots digging deep as the earth responds."
-      ]
-    },
-    {
-      "ability": "Inspiring Leader",
-      "category": "failures",
-      "description": "Flavor text for failures a feature",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance.",
-        "A scrape of steel on stone where flesh should have been.",
-        "It overcommits, and the opening closes before the blade arrives.",
-        "- A wild, spinning attack that blurs into a confused blur.",
-        "The flame flickers and dies, extinguished by unseen forces."
       ]
     },
     {
@@ -883,30 +763,6 @@
         "The staff cracks with force, a promise left unfulfilled.",
         "It spins, a blur of motion that promises much and delivers little.",
         "For an instant, the stars align in its favor, but only for now."
-      ]
-    },
-    {
-      "ability": "Fleeting Luck",
-      "category": "successes",
-      "description": "Flavor text for successes a feature",
-      "entries": [
-        "Steel whispers through leather, and something warm follows.",
-        "-Impact shudders up through the shaft and into its wrists.",
-        "A soft whoosh of displaced air signals a strike true.",
-        "The point finds the gap it was looking for - a wet crunch.",
-        "Fleeting luck smiles upon it, her smile a whispered promise."
-      ]
-    },
-    {
-      "ability": "Fleeting Luck",
-      "category": "failures",
-      "description": "Flavor text for failures a feature",
-      "entries": [
-        "A scrape of steel on stone where flesh should have been.",
-        "-It overcommits, and the opening closes before the blade arrives.",
-        "Weight settles heavy in its shoulders, regret a slow burn.",
-        "The staff's leading edge bites only empty air, a hollow echo.",
-        "Momentum carries it forward, but finds no purchase to claim."
       ]
     },
     {
@@ -994,30 +850,6 @@
       ]
     },
     {
-      "ability": "Resistance",
-      "category": "successes",
-      "description": "Flavor text for successes a cantrip",
-      "entries": [
-        "-Resistance shimmers around it, an unseen shield that's almost palpable.",
-        "The touch ignites a spark that sets its fingers aglow.",
-        "A ripple runs through its frame, as if infused with new life.",
-        "It becomes one with the air, and the air bends to accommodate.",
-        "A warmth spreads through its limbs, like embers fanned into flame."
-      ]
-    },
-    {
-      "ability": "Resistance",
-      "category": "failures",
-      "description": "Flavor text for failures a cantrip",
-      "entries": [
-        "-The effort feels like grasping at smoke that vanishes instantly.",
-        "Resistance is like a mirage on a desert highway - fleeting, unreal.",
-        "It pushes against a wall of air that's as solid as stone.",
-        "A shiver runs down its spine, and the shield falters for an instant.",
-        "-The energy dissipates like water spilled on dry sand, lost forever."
-      ]
-    },
-    {
       "ability": "Druidcraft",
       "category": "attempts",
       "description": "Flavor text for attempts a cantrip",
@@ -1027,30 +859,6 @@
         "The eyes narrow, focusing on some invisible thread.",
         "Breath catches, and for a moment, nothing stirs.",
         "Words hang suspended, refusing to commit to sound."
-      ]
-    },
-    {
-      "ability": "Druidcraft",
-      "category": "successes",
-      "description": "Flavor text for successes a cantrip",
-      "entries": [
-        "A tiny spark erupts where the words touched reality.",
-        "Steel whispers through leather, leaving a whisper of heat behind.",
-        "The staff shudders in Gimbal's hands as the magic takes hold.",
-        "-A burst of green light illuminates the darkened space -",
-        "The air seems to ripple with the force of their intent."
-      ]
-    },
-    {
-      "ability": "Druidcraft",
-      "category": "failures",
-      "description": "Flavor text for failures a cantrip",
-      "entries": [
-        "The whispered words fizzle into nothingness, lost to the wind.",
-        "Fingers slip from the staff, leaving it to wobble precariously.",
-        "-A faint echo of power lingers, but it's too late -",
-        "Gimbal's eyes flicker with uncertainty as they falter.",
-        "It misjudges the distance, and the spark fizzles in mid-air."
       ]
     },
     {
@@ -1066,30 +874,6 @@
       ]
     },
     {
-      "ability": "Goodberry",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Golden light spills across the land as it calls forth the berries.",
-        "The air shimmers with anticipation before releasing a burst of growth.",
-        "A low thrumming vibration runs up the staff, harmonizing with its heartbeat.",
-        "Seeds take root in the earth as they sprout into lush greenery.",
-        "They breathe life into the barren land, and it responds with vigor."
-      ]
-    },
-    {
-      "ability": "Goodberry",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The words falter on their tongue, lost in a wilderness of uncertainty.",
-        "A faint hum builds but fizzles out like a dying spark.",
-        "It stumbles over its own feet as the staff slips from its grasp.",
-        "Their call is answered by an unsettling stillness \u2013 nothing moves.",
-        "The earth resists their touch, and growth refuses to take hold."
-      ]
-    },
-    {
       "ability": "Cure Wounds",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
@@ -1102,30 +886,6 @@
       ]
     },
     {
-      "ability": "Cure Wounds",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "The staff's head thuds softly against a yielding surface.",
-        "Golden light pools around its fingers like spilled honey.",
-        "It feels the flow of life reattaching severed threads.",
-        "A low thrumming builds in its chest, resonating outward.",
-        "Warmth seeps into chilled skin, a gentle thaw."
-      ]
-    },
-    {
-      "ability": "Cure Wounds",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The swing cuts through darkness with a hollow echo.",
-        "A faint tremble runs up the staff's length, foiled.",
-        "Its words falter on dry lips, cracking like twigs.",
-        "A faint buzzing fills its ears as power slips away.",
-        "Energy fizzles out in a feeble spark and nothing."
-      ]
-    },
-    {
       "ability": "Healing Word",
       "category": "attempts",
       "description": "Flavor text for attempts a bonus_action",
@@ -1135,30 +895,6 @@
         "A slow, deliberate build-up of energy before the strike.",
         "The familiar deer watches, unmoving, as Gimbal readies it.",
         "Weight transfers forward, preparing for the impact that never comes."
-      ]
-    },
-    {
-      "ability": "Healing Word",
-      "category": "successes",
-      "description": "Flavor text for successes a bonus_action",
-      "entries": [
-        "Steel whispers through leather, and something warm follows, healing all.",
-        "A whispered promise of solace echoes through the air and finds its mark.",
-        "Golden light bursts forth from Gimbal's staff, a radiance that soothes.",
-        "The point finds the gap it was looking for \u2014 a wet crunch of release.",
-        "Gimbal's staff shines bright as a beacon in the darkness, healing all wounds."
-      ]
-    },
-    {
-      "ability": "Healing Word",
-      "category": "failures",
-      "description": "Flavor text for failures a bonus_action",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance and stumbling back.",
-        "A faint scratch on rock is the only evidence of Gimbal's attempt.",
-        "It overcommits, and the opening closes before the blade arrives to heal.",
-        "Gimbal's staff wavers, the energy faltering like a dying flame.",
-        "The familiar deer takes a step forward, as if sensing its master's frustration."
       ]
     },
     {
@@ -1202,35 +938,11 @@
       "category": "attempts",
       "description": "Flavor text for attempts a reaction",
       "entries": [
-        "A deep breath in, then out \u2013 focus settling on the task.",
+        "A deep breath in, then out – focus settling on the task.",
         "It assumes the stance, quarterstaff raised like a rifle's sight.",
         "The earthy scent of damp soil rises as it prepares to act.",
         "Muscles tense, weight shifting forward in anticipation.",
         "A fleeting moment of stillness before motion."
-      ]
-    },
-    {
-      "ability": "Absorb Elements",
-      "category": "successes",
-      "description": "Flavor text for successes a reaction",
-      "entries": [
-        "Steel whispers through leather, and something warm follows the touch.",
-        "A soft hiss escapes, followed by a gentle hum of energy.",
-        "The air shimmers, a pinpoint of light coalescing into a flame.",
-        "A low vibration builds in its wrist, then surges outward.",
-        "In the space between heartbeats, balance is restored and calm found."
-      ]
-    },
-    {
-      "ability": "Absorb Elements",
-      "category": "failures",
-      "description": "Flavor text for failures a reaction",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance suddenly.",
-        "A scrape of earth on stone echoes where impact was meant to land.",
-        "It overcommits, and the opening closes before the force arrives.",
-        "A faint whisper of doubt echoes through its mind as failure unfolds.",
-        "Weight lingers in one spot, then awkwardly readjusts its stance."
       ]
     },
     {
@@ -1240,33 +952,9 @@
       "entries": [
         "Gimbal's hands weave a wild dance across the air.",
         "Concentration falters, and focus begins to unravel.",
-        "It tries to find the thread of connection \u2013 but it's frayed.",
+        "It tries to find the thread of connection – but it's frayed.",
         "A burst of energy flails wildly, lacking direction.",
         "Words struggle to form in a mind clouded by doubt."
-      ]
-    },
-    {
-      "ability": "Beast Bond",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "The point finds the gap it was looking for \u2013 a wet crunch.",
-        "Steel whispers through leather, and something warm follows.",
-        "Impact shudders up through the shaft and into its wrists.",
-        "A gentle nudge sets the world in motion \u2013 slowly.",
-        "It wraps itself around the heartbeat of the forest."
-      ]
-    },
-    {
-      "ability": "Beast Bond",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance.",
-        "A scrape of steel on stone where flesh should have been.",
-        "It overcommits, and the opening closes before the blade arrives.",
-        "Energy sputters out like a candle in the rain.",
-        "Concentration buckles \u2013 and everything goes white for a moment."
       ]
     },
     {
@@ -1275,7 +963,7 @@
       "description": "Flavor text for attempts a spell",
       "entries": [
         "Fists flex in anticipation of the coming shockwave.",
-        "Eyes narrow to a single point \u2014 and then snap wide open.",
+        "Eyes narrow to a single point — and then snap wide open.",
         "The staff rises like a serpent coiling for the strike.",
         "Grip tightens, channeling energy through the wooden length.",
         "A slow breath gathers, anticipation building with each heartbeat."
@@ -1313,7 +1001,7 @@
         "A flicker of concentration before it lets fly.",
         "Leather creaks as fingers wrap around the shaft.",
         "The air vibrates with anticipation - something's about to happen.",
-        "Words tumble out, sharp and precise \u2014 the air bends.",
+        "Words tumble out, sharp and precise — the air bends.",
         "It pauses, searching for that exact right angle."
       ]
     },
@@ -1324,7 +1012,7 @@
       "entries": [
         "Ice shards dance in the sphere of its creation.",
         "A tiny tremor runs up through the staff as it takes hold.",
-        "The point finds the gap it was looking for \u2014 a wet crunch.",
+        "The point finds the gap it was looking for — a wet crunch.",
         "Impact shudders up through the shaft and into its wrists.",
         "Frozen crystals flash like diamonds, brief but brilliant."
       ]
@@ -1390,63 +1078,15 @@
       ]
     },
     {
-      "ability": "Elevated Sight",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Steel whispers through leather, and something warm follows \u2014 clarity dawns.",
-        "The point finds the gap it was looking for, piercing the veil.",
-        "Impact shudders up through the shaft and into its wrists, resonating deep.",
-        "A burst of light illuminates the path ahead, dispelling shadows.",
-        "It feels a connection click into place like two gears meshing smoothly."
-      ]
-    },
-    {
-      "ability": "Elevated Sight",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance \u2014 frustration sets in.",
-        "A scrape of steel on stone where flesh should have been \u2014 an echoing void.",
-        "It overcommits, and the opening closes before the blade arrives too late.",
-        "Concentration falters like a dropped thread, unraveling into chaos.",
-        "Glimmers of insight flicker and die, leaving only darkness behind."
-      ]
-    },
-    {
       "ability": "Spiny Shield",
       "category": "attempts",
       "description": "Flavor text for attempts a reaction",
       "entries": [
         "Weight shifts forward, a low lunge unfurls from the hip.",
-        "It pauses, poised like a whip waiting to crack \u2014 no release.",
+        "It pauses, poised like a whip waiting to crack — no release.",
         "The staff swoops in a wide arc, tracing an incomplete circle.",
         "A slow windup precedes the strike, gathering force for impact.",
         "It leans back, steel leading, and then... nothing."
-      ]
-    },
-    {
-      "ability": "Spiny Shield",
-      "category": "successes",
-      "description": "Flavor text for successes a reaction",
-      "entries": [
-        "Impact shudders up through the shaft and into its wrists like electricity.",
-        "Steel whispers through leather, and something warm follows in its wake.",
-        "A precise strike finds its target with a soft thud of release.",
-        "It snaps forward, staff flashing toward the center of its aim.",
-        "The point finds the gap it was looking for \u2014 a wet crunch and stillness."
-      ]
-    },
-    {
-      "ability": "Spiny Shield",
-      "category": "failures",
-      "description": "Flavor text for failures a reaction",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance like an uncoiled snake.",
-        "A scrape of steel on stone where flesh should have been echoes through its mind.",
-        "It overcommits, and the opening closes before the blade arrives to claim it.",
-        "Steel grinds against leather, a harsh rasp that sets teeth on edge.",
-        "The staff bites deep into wood, stuck fast as if frozen in mid-air."
       ]
     },
     {
@@ -1459,30 +1099,6 @@
         "Fingers brush the hilt, and it hesitates in hand.",
         "Gathering speed, but not quite letting go yet.",
         "Slowly unwinding like a coiled spring about to snap."
-      ]
-    },
-    {
-      "ability": "Veil of Dusk",
-      "category": "successes",
-      "description": "Flavor text for successes a bonus_action",
-      "entries": [
-        "A whispered promise of flame flickers at its tip.",
-        "-Their wrists rock back with the force of the hit.",
-        "It sinks deep, and something gives way beneath.",
-        "In one fluid motion, they plant the staff and unleash.",
-        "Rifling through shadows like a key turning a lock."
-      ]
-    },
-    {
-      "ability": "Veil of Dusk",
-      "category": "failures",
-      "description": "Flavor text for failures a bonus_action",
-      "entries": [
-        "A screech of metal on stone where it should've bit.",
-        "-They stumble forward, momentum carrying them off-target.",
-        "It crashes into nothingness with a defeated clang.",
-        "Their footwork falters as the attack sputters to life.",
-        "Flickering light dances across empty space beside."
       ]
     },
     {
@@ -1534,30 +1150,6 @@
       ]
     },
     {
-      "ability": "Fog Cloud",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "A swirling vortex erupts from its outstretched hand, a living mist.",
-        "The fog pours forth like a dark, churning river, shrouding everything.",
-        "Its staff crackles with energy as the spell takes hold and grows.",
-        "A thick veil of white descends, casting the world in eerie gloom.",
-        "As it concentrates, tendrils of mist begin to writhe like living serpents."
-      ]
-    },
-    {
-      "ability": "Fog Cloud",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The words trail off into silence, a hollow echo with no effect.",
-        "Its hands flutter wildly, releasing nothing but a faint breeze.",
-        "The spell falters and dies on its lips, the air remaining still.",
-        "It stumbles, losing its concentration as the mist dissipates instantly.",
-        "A feeble attempt at a cloud results in nothing more than a faint haze."
-      ]
-    },
-    {
       "ability": "Protection from Evil and Good",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
@@ -1570,30 +1162,6 @@
       ]
     },
     {
-      "ability": "Protection from Evil and Good",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Leather creaks softly as the staff is drawn to its mark.",
-        "-and then there's just the sound of silence-",
-        "Protection wraps around like a shroud of calm darkness.",
-        "A faint hum fills the air as concentration locks into place.",
-        "Something clicks, and it feels more solid than before."
-      ]
-    },
-    {
-      "ability": "Protection from Evil and Good",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The staff lingers in mid-air, hesitating over empty space.",
-        "-and all that's left is an echo of what almost was-",
-        "Concentration falters like a thread pulled loose from fabric.",
-        "It hangs on by fingertips, the rest slipping away into dust.",
-        "A faint buzzing noise fills the air as energy goes awry."
-      ]
-    },
-    {
       "ability": "Purify Food and Drink",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
@@ -1603,30 +1171,6 @@
         "The staff's gentle weight in its hand belies the turmoil within.",
         "It pauses, poised on the cusp of release, sensing discord.",
         "Breath catches in the throat as it gathers energy for the cast."
-      ]
-    },
-    {
-      "ability": "Purify Food and Drink",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Purified water flows like silver from its outstretched hand.",
-        "Warm light bursts forth, banishing shadows with a gentle touch.",
-        "The air seems to vibrate in harmony as it completes the spell.",
-        "A subtle hum of power resonates through every cell in its being.",
-        "The sphere of purification expands, a soothing balm for all."
-      ]
-    },
-    {
-      "ability": "Purify Food and Drink",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The words get stuck in its throat like a fish on a hook.",
-        "Its fingers falter, releasing a spark that fizzles to nothing.",
-        "A faint tremble runs through the staff as it misjudges the cast.",
-        "Time seems to slow as it overreaches, momentum lost in space.",
-        "The incantation hangs in the air like an unfulfilled promise."
       ]
     },
     {
@@ -1646,9 +1190,9 @@
       "category": "successes",
       "description": "Flavor text for successes a spell",
       "entries": [
-        "Warmth spills out like honey from an unsealed hive \u2013 sweet success.",
+        "Warmth spills out like honey from an unsealed hive – sweet success.",
         "Steel whispers through leather, and something warm follows in its wake.",
-        "The point finds the gap it was looking for \u2013 a wet crunch echoes.",
+        "The point finds the gap it was looking for – a wet crunch echoes.",
         "A thread of calm weaves through the chaos as it takes hold.",
         "Its voice drops to a soothing hum, drawing them closer still."
       ]
@@ -1660,7 +1204,7 @@
       "entries": [
         "Words fizzle and die in its mouth, leaving only empty air behind.",
         "It overextends, and the staff's tip catches on an unseen snag.",
-        "A scrape of steel on stone where flesh should have been \u2013 a hollow sound.",
+        "A scrape of steel on stone where flesh should have been – a hollow sound.",
         "The words stumble out in a jumbled mess, losing all coherence.",
         "Power surges through its frame, but finds no outlet, no release."
       ]
@@ -1673,32 +1217,8 @@
         "A burst of speed, the legs eating up distance in strides.",
         "Weight shifts onto the balls of its feet, a crouch forming.",
         "It springs upward with both legs, coiling for the leap.",
-        "A slow, measured lunge \u2014 waiting for the perfect moment.",
+        "A slow, measured lunge — waiting for the perfect moment.",
         "The deer familiar's eyes lock onto something, and it takes off."
-      ]
-    },
-    {
-      "ability": "Jump",
-      "category": "successes",
-      "description": "Flavor text for successes a bonus_action",
-      "entries": [
-        "Steel whispers through leather, and something warm follows in its wake.",
-        "A perfect arc of motion, a silent landing on solid earth.",
-        "Impact shudders up through the shaft and into its wrists like electricity.",
-        "The legs straighten, extending with all the force it's built up.",
-        "It clears the chasm by a hair, landing softly in the next clearing."
-      ]
-    },
-    {
-      "ability": "Jump",
-      "category": "failures",
-      "description": "Flavor text for failures a bonus_action",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance and stumbling.",
-        "A scrape of steel on stone where flesh should have been \u2014 a cruel echo.",
-        "It overcommits, and the opening closes before the blade arrives to strike.",
-        "Weight drops too far forward, threatening to send it crashing down.",
-        "The leap falls short by inches, sending its knees buckling in shock."
       ]
     },
     {
@@ -1710,31 +1230,7 @@
         "A whispered incantation echoes through the air, searching for resonance.",
         "Eyes narrowing, fingers dance across the staff's length, savoring tension.",
         "Power surges up from the earth, and they grasp for it like a wild mustang.",
-        "The deer familiar pauses, ears perked \u2013 what will they do next?"
-      ]
-    },
-    {
-      "ability": "Longstrider",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "A warm hum spreads through their fingers as energy takes hold.",
-        "Their footsteps become one with the land's own rhythmic pulse.",
-        "Leather creaks in harmony with the staff's swing, a symphony of motion.",
-        "The air shimmers, reflecting the power building behind their eyes.",
-        "A gentle breeze stirs, carrying the scent of blooming wildflowers."
-      ]
-    },
-    {
-      "ability": "Longstrider",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "Their footwork falters, and for an instant, they're off-balance \u2013 again.",
-        "The staff's swing bites empty air, a hollow echo that fades quickly.",
-        "Fingers slip from the familiar's coat as their grip on reality falters.",
-        "A moment of hesitation costs them distance, and momentum slips away.",
-        "Their focus wavers like a candle flame in a gusty wind."
+        "The deer familiar pauses, ears perked – what will they do next?"
       ]
     },
     {
@@ -1750,30 +1246,6 @@
       ]
     },
     {
-      "ability": "Speak with Animals",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "The hum of understanding vibrates up its arms and into the chest.",
-        "Steel whispers through leather, and something warm follows its path.",
-        "Words coalesce like water condensing on a cold stone surface.",
-        "A gentle breeze stirs the leaves of comprehension, revealing hidden patterns.",
-        "Impact shudders up through the shaft and into its wrists as harmony is achieved."
-      ]
-    },
-    {
-      "ability": "Speak with Animals",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The words get stuck in the mud, refusing to budge or take shape.",
-        "It falters, stumbling over phrases like a drunken cowboy on unfamiliar terrain.",
-        "A discordant note shatters the stillness, leaving only echoes and regret.",
-        "Fingers slide off the strings of meaning, leaving behind only static and confusion.",
-        "The air resists, a stubborn wall that refuses to yield to its words."
-      ]
-    },
-    {
       "ability": "Create or Destroy Water",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
@@ -1786,30 +1258,6 @@
       ]
     },
     {
-      "ability": "Create or Destroy Water",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Water bursts forth from the air, a shining veil that parts.",
-        "A gout of liquid steel erupts where it was needed most.",
-        "The force flows through its staff like a live wire, channeling.",
-        "It feels the rush of creation as the water takes shape.",
-        "The sound of rushing water fills the air, and all is right."
-      ]
-    },
-    {
-      "ability": "Create or Destroy Water",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "Its gesture hangs in mid-air, a faltering, unfinished thought.",
-        "A faint echo of its intent lingers, but nothing materializes.",
-        "It feels the weight of failure as the magic dissipates harmlessly.",
-        "The air shimmers with potential, but it can't quite grasp it.",
-        "A tiny splash in an empty pool is all that remains."
-      ]
-    },
-    {
       "ability": "Detect Poison and Disease",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
@@ -1818,31 +1266,7 @@
         "A slow build-up of energy as it waits to unleash.",
         "It draws in a deep breath, steadying its aim like an archer.",
         "The muscles ripple beneath its skin, coiled and ready.",
-        "Sight, sound, smell \u2013 all are tuned to a single note."
-      ]
-    },
-    {
-      "ability": "Detect Poison and Disease",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "A warm glow spreads from the center of its chest.",
-        "It feels the hum of power, like electricity through live wire.",
-        "The air seems to vibrate with an otherworldly resonance.",
-        "Their senses unfold like petals on a flower \u2013 full and wide.",
-        "In this moment, everything is clear: it sees the thread."
-      ]
-    },
-    {
-      "ability": "Detect Poison and Disease",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "Its body jars against an unseen obstacle, shockwaves radiating.",
-        "The force dies in its fingers like a flame that's been snuffed.",
-        "It strains against the resistance, sweat beading on its brow.",
-        "A jolt of doubt runs through it like a cold draft.",
-        "In this instant, all sense is lost \u2013 a confused blur."
+        "Sight, sound, smell – all are tuned to a single note."
       ]
     },
     {
@@ -1864,7 +1288,7 @@
       "entries": [
         "The wave erupts like a living thing, shuddering with force.",
         "Steel whispers through leather, and warmth blooms in its hands.",
-        "A precise strike finds the sweet spot \u2013 a decisive click.",
+        "A precise strike finds the sweet spot – a decisive click.",
         "Energy bursts forth, filling the air with charged potential.",
         "It feels it connect, the rush of power through every fiber."
       ]
@@ -1876,7 +1300,7 @@
       "entries": [
         "The staff bites deep into its palms as momentum fails.",
         "The gesture falters, lost in mid-air without direction.",
-        "A low vibration hums through its body \u2013 nothing happening.",
+        "A low vibration hums through its body – nothing happening.",
         "It overextends, its arms trembling with unspent force.",
         "The wave collapses back into stillness, leaving only regret."
       ]
@@ -1887,7 +1311,7 @@
       "description": "Flavor text for attempts a spell",
       "entries": [
         "Fingers dance upon the staff, seeking hidden harmonies.",
-        "A soft growl starts to build in its chest \u2014 then stalls.",
+        "A soft growl starts to build in its chest — then stalls.",
         "The words tangle on its tongue like a snare of thorns.",
         "Power surges through its veins but refuses to coalesce.",
         "It bends into the wind, seeking a hidden axis."
@@ -1923,7 +1347,7 @@
       "description": "Flavor text for attempts a spell",
       "entries": [
         "Fingers dance across the staff's worn grip in a familiar cadence.",
-        "The air shimmers with anticipation as they take aim \u2013 and hold.",
+        "The air shimmers with anticipation as they take aim – and hold.",
         "A low, rumbling growl builds behind the eyes, a warning sign.",
         "Leather creaks softly as hands adjust their stance, searching for balance.",
         "It pauses, sensing the rhythm of the water beneath its feet."
@@ -1936,8 +1360,8 @@
       "entries": [
         "Water explodes from the staff in a sparkling, crystalline burst.",
         "A tiny, perfect sphere of liquid hurtles through the air with deadly precision.",
-        "Steel whispers through leather, and something warm follows \u2013 a satisfied hum.",
-        "The point finds the gap it was looking for \u2013 a wet crunch that echoes.",
+        "Steel whispers through leather, and something warm follows – a satisfied hum.",
+        "The point finds the gap it was looking for – a wet crunch that echoes.",
         "It releases, and a shimmering arc of water slices through the air."
       ]
     },
@@ -1947,10 +1371,10 @@
       "description": "Flavor text for failures a spell",
       "entries": [
         "The swing carves empty air, momentum pulling it off-balance in mid-air.",
-        "A scrape of steel on stone where flesh should have been \u2013 a hollow sound.",
-        "Water spills from its fingers like sand between numb hands \u2013 lost effort.",
+        "A scrape of steel on stone where flesh should have been – a hollow sound.",
+        "Water spills from its fingers like sand between numb hands – lost effort.",
         "It overcommits, and the opening closes before the blade arrives to find nothing.",
-        "A feeble splash hits the ground with an embarrassed plop \u2013 not even close."
+        "A feeble splash hits the ground with an embarrassed plop – not even close."
       ]
     },
     {
@@ -1963,30 +1387,6 @@
         "Fingers tremble, hesitant to make the final connection.",
         "Air seems to thicken as the intention takes shape.",
         "It wavers on the cusp of unleashing its full might."
-      ]
-    },
-    {
-      "ability": "Whelm Weapon",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Steel whispers through leather, a soothing hum in sync.",
-        "The staff sings out with a rich, woody timbre now.",
-        "A precise snap echoes, a satisfying crunch resounds.",
-        "Impact shudders up through the shaft and into its wrists.",
-        "A warm glow spreads as the power takes its hold."
-      ]
-    },
-    {
-      "ability": "Whelm Weapon",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance.",
-        "A scrape of steel on stone where flesh should have been.",
-        "It overcommits, and the opening closes before the blade arrives.",
-        "Fingers fumble, and the timing gets lost in space.",
-        "Force dissipates, leaving only a faint aftertaste."
       ]
     },
     {
@@ -2038,30 +1438,6 @@
       ]
     },
     {
-      "ability": "Sand Structure",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Sand swirls into being beneath their hands, a shifting landscape revealed.",
-        "-The quarterstaff shudders with impact, its weight transferred perfectly.",
-        "The air around it distorts with heat and light, a ripple effect spreading.",
-        "A warmth seeps up through the staff's length, its magic awakening.",
-        "Grains of sand hold in place for an instant, frozen by will."
-      ]
-    },
-    {
-      "ability": "Sand Structure",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "-It overextends, the staff threatening to break free from control.",
-        "The air shudders with release, but nothing materializes around it.",
-        "Sand flows back into its natural shape, ignoring their summons.",
-        "A faint whisper of heat flickers and dies, lost in the breeze.",
-        "Their gesture stutters, sand grains slipping through fingers like water."
-      ]
-    },
-    {
       "ability": "Sprout Foliage",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
@@ -2107,30 +1483,6 @@
         "A breath gathers, suspended between exhalation and release.",
         "The staff hums with potential energy, feeling the tension rise.",
         "It coaxes the magic from the cosmos, like a river's gentle flow."
-      ]
-    },
-    {
-      "ability": "Bubble Lift",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Steel whispers through leather, and something warm follows.",
-        "Bubbles burst into being, shimmering orbs of clear delight.",
-        "The air shudders with release, as if a great weight has lifted.",
-        "A soft whoosh echoes through the space, like a sigh of contentment.",
-        "It feels the magic surge up its arms, a living, pulsing force."
-      ]
-    },
-    {
-      "ability": "Bubble Lift",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The staff falls short, its tip just grazing empty air.",
-        "Magic dissolves into nothingness, leaving only disappointment's bitter taste.",
-        "A faint whisper of power flickers and dies, like a candle in the wind.",
-        "It strains to lift the weight, but finds no purchase, no traction.",
-        "It stumbles on its own momentum, lost and unsteady."
       ]
     },
     {
@@ -2188,7 +1540,7 @@
       "entries": [
         "Guiding bolts streak down from the heavens, blazing with soft blue fire.",
         "It feels the staff come alive in its hands, channeling force through wood and metal.",
-        "The world narrows to a single point where aim meets target \u2014 impact inevitable.",
+        "The world narrows to a single point where aim meets target — impact inevitable.",
         "Light spills forth from its fingers like water bursting from a dam.",
         "A gentle click echoes through still air as energy snaps into place."
       ]
@@ -2211,34 +1563,10 @@
       "description": "Flavor text for attempts a spell",
       "entries": [
         "Fingers weave the air with wild precision, but nothing gives.",
-        "A whispered incantation trembles on the wind's edge \u2013 waiting.",
+        "A whispered incantation trembles on the wind's edge – waiting.",
         "The staff trembles in its grasp, a live thing ready to bolt.",
-        "It crouches low, preparing to spring \u2014 and then hesitates.",
+        "It crouches low, preparing to spring — and then hesitates.",
         "The words hang there, suspended like autumn leaves on wire."
-      ]
-    },
-    {
-      "ability": "Find Familiar",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "A warm hum fills the air as it reaches deep within itself.",
-        "Steel whispers through leather, and something warm follows its path.",
-        "The point finds the gap it was looking for \u2013 a wet crunch echoes.",
-        "Impact shudders up through the shaft and into its wrists, a spark flying.",
-        "It extends a hand, palm open, and a small creature settles in."
-      ]
-    },
-    {
-      "ability": "Find Familiar",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "A scrape of steel on stone where flesh should have been \u2013 painless.",
-        "The swing carves empty air, momentum pulling it off-balance now.",
-        "It overcommits, and the opening closes before the blade arrives with a clang.",
-        "The words falter, tangled in the web of its own doubts.",
-        "A faint tremble runs through the staff as if trying to shake off something."
       ]
     },
     {
@@ -2254,30 +1582,6 @@
       ]
     },
     {
-      "ability": "Spike Growth",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "-Steel whispers through leather, and something warm follows.",
-        "The point finds the gap it was looking for \u2014 a wet crunch.",
-        "Impact shudders up through the shaft and into its wrists.",
-        "A burst of verdant light erupts from its outstretched hand.",
-        "It lands with a precision that echoes through the stillness."
-      ]
-    },
-    {
-      "ability": "Spike Growth",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "-The swing carves empty air, momentum pulling it off-balance.",
-        "A scrape of steel on stone where flesh should have been.",
-        "It overcommits, and the opening closes before the blade arrives.",
-        "The force dissipates like mist in the wind, lost again.",
-        "The tip falters, striking a dull thud against nothing."
-      ]
-    },
-    {
       "ability": "Augury",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
@@ -2287,30 +1591,6 @@
         "The staff's tip trembles with anticipation, poised on the cusp.",
         "Gentle pressure builds behind the eyes, waiting for release.",
         "Silence gathers around it, listening for the slightest cue."
-      ]
-    },
-    {
-      "ability": "Augury",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "The words shatter in a burst of silver light, illuminating paths.",
-        "A soft click echoes through the stillness as something falls into place.",
-        "It finds its rhythm, the pulse of power surging up the staff's length.",
-        "A pinpoint strike releases a tiny explosion of sound and fury.",
-        "The air shimmers with anticipation before the words release their hold."
-      ]
-    },
-    {
-      "ability": "Augury",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "Words fizzle out like spent fireworks, leaving only faint smolder.",
-        "An awkward stumble sends the staff skittering across the ground.",
-        "The whispered incantation dwindles to a mere breath on the wind.",
-        "It overcompensates, and the power surges wildly out of control.",
-        "A hushed silence follows as something collapses, its purpose unfulfilled."
       ]
     },
     {
@@ -2355,34 +1635,10 @@
       "description": "Flavor text for attempts a spell",
       "entries": [
         "Fingers dance across the air, but nothing holds.",
-        "A whispered secret floats on the wind \u2013 lost already.",
+        "A whispered secret floats on the wind – lost already.",
         "Eyes narrow, focusing on a spot that won't settle.",
         "The gesture falters mid-air, like a bird in flight.",
         "Words gather at the tip of its tongue, then fall still."
-      ]
-    },
-    {
-      "ability": "Skywrite",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "A glowing thread weaves itself across the sky \u2013 complete.",
-        "The words sear onto the air like branding irons hot.",
-        "Power bursts forth, painting the clouds with vibrant hues.",
-        "It feels the shape of the sentence taking hold within.",
-        "The script unfurls, a living thing that pulses and glows."
-      ]
-    },
-    {
-      "ability": "Skywrite",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "Words stumble out, tangled in their own unclear meaning.",
-        "A faint line appears, only to be erased by doubt.",
-        "The focus wavers, and the words spill into nothingness.",
-        "A weak thread of connection snaps, leaving emptiness behind.",
-        "It struggles to contain the flow \u2013 too much, too little."
       ]
     },
     {
@@ -2390,35 +1646,11 @@
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
       "entries": [
-        "-Fingers drum a staccato beat on the air \u2014 anticipation thickens.",
+        "-Fingers drum a staccato beat on the air — anticipation thickens.",
         "Power coalesces in the shoulders, looking for an outlet.",
         "The breath catches, and the body leans forward, straining.",
         "Words gather in the mind, waiting to be set free.",
         "Grip tightens, feeling for purchase on nothing solid."
-      ]
-    },
-    {
-      "ability": "Warding Wind",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "-Steel whispers through leather, a warm hum building up.",
-        "A sphere of calm settles around it, like a benediction.",
-        "The wind stirs, carrying the scent of damp earth and greenery.",
-        "It finds its center, and from that core, a gentle force flows.",
-        "The world slows down, as if time itself were being rewound."
-      ]
-    },
-    {
-      "ability": "Warding Wind",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "Air rushes past, an empty howl that leaves nothing behind.",
-        "-A faint tremble runs through the staff, betrayed by its user.",
-        "The gesture falters, and momentum turns to stumbling.",
-        "It overextends, feeling for a hold that's not there.",
-        "Gusts of wind buffet it from all sides, impossible to steady."
       ]
     },
     {
@@ -2437,30 +1669,6 @@
       ]
     },
     {
-      "ability": "Healing Spirit",
-      "category": "successes",
-      "description": "Flavor text for successes a bonus_action",
-      "entries": [
-        "- Kinesthetic - The fluid motion of a well-practiced, instinctive dance.",
-        "- Auditory - Steel whispers through leather, warm breath follows.",
-        "- Visual/Cinematic - Light dances across the blade's curved edge.",
-        "- Emotional/Expression - Eyes burning bright with fierce inner fire.",
-        "- Tactile/Impact - A shuddering impact that radiates up its arm."
-      ]
-    },
-    {
-      "ability": "Healing Spirit",
-      "category": "failures",
-      "description": "Flavor text for failures a bonus_action",
-      "entries": [
-        "- Kinesthetic - The stumble's momentum carries it wide of the mark.",
-        "- Auditory - An eerie echo where a solid hit should have landed.",
-        "- Visual/Cinematic - A flash of reflected sunlight off an empty space.",
-        "- Emotional/Expression - Eyes clouding with doubt, willpower wavering.",
-        "- Tactile/Impact - Air resistance stings the exposed hand's skin."
-      ]
-    },
-    {
       "ability": "Summon Beast",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
@@ -2473,35 +1681,11 @@
       ]
     },
     {
-      "ability": "Summon Beast",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "A deer bursts forth from mist-shrouded woods, eyes blazing.",
-        "The familiar materializes with a soft thud of paws on earth.",
-        "-and the air shimmers as something takes shape around them.",
-        "It coalesces into being like a droplet hitting water's surface.",
-        "Their voice weaves together threads of life and wild magic."
-      ]
-    },
-    {
-      "ability": "Summon Beast",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The words die on its lips, and silence follows their trail.",
-        "-but the call goes unanswered: only echoes remain.",
-        "It strains to coax forth something from empty air.",
-        "A faint hum of effort fades into nothingness without result.",
-        "Their concentration falters like a candle in a gust."
-      ]
-    },
-    {
       "ability": "Wither and Bloom",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
       "entries": [
-        "Fingers dance across the staff's worn grip \u2014 searching.",
+        "Fingers dance across the staff's worn grip — searching.",
         "A sigh builds in the chest as it draws on ancient power.",
         "Words stumble out, unsure of what they want to say.",
         "Eyes narrow, focusing on a point just beyond reach.",
@@ -2515,7 +1699,7 @@
       "entries": [
         "The air shudders, and petals burst into bloom like fireflies.",
         "A tiny spark of life ignites within the withered sphere.",
-        "It feels the surge of power course through its veins \u2014 warm.",
+        "It feels the surge of power course through its veins — warm.",
         "Leaves rustle free from the staff as green shoots begin to sprout.",
         "The ground trembles beneath, and vines burst forth in riotous color."
       ]
@@ -2526,7 +1710,7 @@
       "description": "Flavor text for failures a spell",
       "entries": [
         "The whispered words hang in the air, lost without effect.",
-        "A faint scent of decay clings to its call \u2014 a failed summons.",
+        "A faint scent of decay clings to its call — a failed summons.",
         "Withered twigs snap beneath its fingers, devoid of life.",
         "Petals fall away like autumn leaves from a forgotten flower.",
         "The ground seems to shudder in resistance to its power."
@@ -2545,30 +1729,6 @@
       ]
     },
     {
-      "ability": "Aid",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Light spills from its outstretched hand, banishing the shadows.",
-        "The staff shudders with release, as if it's been set free.",
-        "With every word, the air thickens and the land responds.",
-        "A tendril of energy unfurls like a leaf on a summer breeze.",
-        "It feels the rush of success course through its veins like lifeblood."
-      ]
-    },
-    {
-      "ability": "Aid",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The words falter, dying on the wind without effect.",
-        "Its hands drop to its sides, feeling empty and forlorn.",
-        "A spark fizzles and dies in the palm of its hand.",
-        "It stumbles over the incantation, losing the thread of power.",
-        "The staff wavers, as if it's been struck by a gust of wind."
-      ]
-    },
-    {
       "ability": "Pass without Trace",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
@@ -2578,30 +1738,6 @@
         "The breath holds in anticipation, poised on a cusp.",
         "Muscles tense like reins on a restive horse, waiting for a cue.",
         "In the silence before action, doubts creep like shadows."
-      ]
-    },
-    {
-      "ability": "Pass without Trace",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "A subtle shift in weight, and the ground yields its secret.",
-        "Words spill out in a rush of wind that scours the air clean.",
-        "The aim finds purchase on an unseen fulcrum \u2013 balance is key.",
-        "The movement becomes a dance with shadows, steps unfolding like petals.",
-        "It dissolves into the surroundings, leaving only echoes behind."
-      ]
-    },
-    {
-      "ability": "Pass without Trace",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The gesture falls flat, like a dropped pebble in still water.",
-        "A discordant note jars the concentration, like a wrong chord on a lute.",
-        "The attempt scrapes against an invisible wall \u2013 resistance mounts.",
-        "It overextends and founders, like a ship in uncharted shoals.",
-        "The focus falters, leaving only a faint memory of what might have been."
       ]
     },
     {
@@ -2653,39 +1789,15 @@
       ]
     },
     {
-      "ability": "Find Traps",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "A gentle whisper of magic resolves into a precise location.",
-        "The staff's tip shimmers with an ethereal glow, lighting the path ahead.",
-        "Impact shudders up through the shaft and into its wrists, reassuringly solid.",
-        "Steel whispers through leather, and something warm follows in its wake.",
-        "A delicate thread of power connects them to the hidden danger."
-      ]
-    },
-    {
-      "ability": "Find Traps",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance and stumbling.",
-        "A scrape of steel on stone where flesh should have been \u2014 a hollow sound.",
-        "It overcommits, and the opening closes before the blade arrives with any force.",
-        "A burst of magic fizzles out like a spark on wet ground.",
-        "The staff's point hesitates, as if drawn to two conflicting possibilities."
-      ]
-    },
-    {
       "ability": "Flame Blade",
       "category": "attempts",
       "description": "Flavor text for attempts a bonus_action",
       "entries": [
         "Weight settles into a coiled crouch, muscles tensing for the strike.",
         "It lunges forward on an unseen thread of anticipation.",
-        "A burst of speed \u2014 then hesitation, as the plan unravels.",
+        "A burst of speed — then hesitation, as the plan unravels.",
         "The blade hesitates at the precipice, poised to commit or recoil.",
-        "A half-step forward, weight transferring onto the back leg \u2014 and stillness."
+        "A half-step forward, weight transferring onto the back leg — and stillness."
       ]
     },
     {
@@ -2694,7 +1806,7 @@
       "description": "Flavor text for successes a bonus_action",
       "entries": [
         "Steel whispers through leather, and something warm follows the strike.",
-        "The point finds the gap it was looking for \u2014 a wet crunch resounds.",
+        "The point finds the gap it was looking for — a wet crunch resounds.",
         "Impact shudders up through the shaft and into its wrists like electricity.",
         "A burning ember of flame dances along the blade's edge, lighting the way.",
         "The staff sings with a low thrum as the force builds and releases."
@@ -2706,7 +1818,7 @@
       "description": "Flavor text for failures a bonus_action",
       "entries": [
         "The swing carves empty air, momentum pulling it off-balance, stumbling forward.",
-        "A scrape of steel on stone where flesh should have been \u2014 an unsettling echo.",
+        "A scrape of steel on stone where flesh should have been — an unsettling echo.",
         "It overcommits, and the opening closes before the blade arrives, leaving only regret.",
         "The blow falls short, striking instead the hard earth with a dull thud.",
         "A faint hiss of steam as metal meets air, failing to find its mark."
@@ -2718,34 +1830,10 @@
       "description": "Flavor text for attempts a bonus_action",
       "entries": [
         "- Weight shifts forward, muscles straining against the familiar's gentle tug.",
-        "The quarterstaff hesitates at its shoulder \u2014 a flicker of hesitation.",
+        "The quarterstaff hesitates at its shoulder — a flicker of hesitation.",
         "A swift pivot on one heel, balance precarious as it spins around.",
         "It pauses mid-step, poised on the cusp of motion and stillness.",
         "The druid's eyes narrow, intent focused through squinting lids."
-      ]
-    },
-    {
-      "ability": "Barkskin",
-      "category": "successes",
-      "description": "Flavor text for successes a bonus_action",
-      "entries": [
-        "- Steel whispers through leather, warmth seeping into calloused palms.",
-        "A delicate touch sets the magic flowing \u2014 a gentle hum fills the air.",
-        "Barkskin's power unfurls like a banner, its presence palpable to all.",
-        "The magic wraps around it like a shroud, protecting and embracing in equal measure.",
-        "- The staff resonates with an inner light, its wooden heart aglow."
-      ]
-    },
-    {
-      "ability": "Barkskin",
-      "category": "failures",
-      "description": "Flavor text for failures a bonus_action",
-      "entries": [
-        "A strained cry echoes through the air as it fails to grasp the familiar's rein.",
-        "Barkskin's power falters like a dying flame, its warmth ebbing away.",
-        "- The magic shudders and stalls, refusing to respond to its will.",
-        "The druid's eyes widen in shock, their confident gaze faltering for an instant.",
-        "A faint tremble runs through the staff as it struggles to contain the magic."
       ]
     },
     {
@@ -2758,30 +1846,6 @@
         "Air vibrates with anticipation as Gimbal's hands weave their magic",
         "Fingers flutter like birds taking flight, but find no perch",
         "Concentration wavers, a thread about to snap from tension"
-      ]
-    },
-    {
-      "ability": "Beast Sense",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "The forest floor hums in harmony, its secrets unfolding",
-        "A burst of clarity illuminates the path ahead, untangling",
-        "Steel whispers through leather, and warmth seeps into the air",
-        "The connection deepens, a hidden language speaking directly",
-        "Gimbal's eyes lock onto the heartbeat of the land itself"
-      ]
-    },
-    {
-      "ability": "Beast Sense",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "A spark falters, dying on the wind like autumn leaves",
-        "Concentration shatters like ice dropped into a flame",
-        "The thread snaps, unraveling all that was carefully spun",
-        "Gimbal's focus wavers, lost in the maze of their own doubts",
-        "The silence closes over Gimbal's outstretched hand like a shroud"
       ]
     },
     {
@@ -2828,32 +1892,8 @@
         "The calloused palm feels out the rhythm of the forest.",
         "A whispered word hangs in the stillness like a promise unkept.",
         "Fingers brush against something unseen, the hairs on their necks twitching.",
-        "It tries to listen to the whispers of the land \u2014 and misses them.",
+        "It tries to listen to the whispers of the land — and misses them.",
         "The earthy scent rises up, but its meaning remains elusive."
-      ]
-    },
-    {
-      "ability": "Locate Animals or Plants",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "A shiver runs down its spine as the threads of connection come clear.",
-        "Words spill out in a hushed stream, the forest responding with a sigh.",
-        "It feels the pulse of life beneath the trees, like a hidden river's flow.",
-        "The air vibrates with an unseen music, and it hums along.",
-        "A gentle warmth spreads through its chest as the world comes into focus."
-      ]
-    },
-    {
-      "ability": "Locate Animals or Plants",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "Silence meets silence, two empty echoes cancelling each other out.",
-        "It strains to hear the beat of a distant drum \u2014 but there is none.",
-        "The trees stand unmoved, their leaves unresponsive to its probing question.",
-        "A faint hum of confusion persists in its mind after the attempt fails.",
-        "The forest's pulse beats on, oblivious to it and its questing senses."
       ]
     },
     {
@@ -2861,35 +1901,11 @@
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
       "entries": [
-        "Fingers twitch on the staff's worn grip \u2014 searching.",
+        "Fingers twitch on the staff's worn grip — searching.",
         "The eyes narrow, trying to pierce the haze.",
         "Breath catches as they strain for something elusive.",
         "Concentration wavers like a mirage in dry heat.",
         "It strains against an unseen weight, trembling."
-      ]
-    },
-    {
-      "ability": "Locate Object",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "A shiver runs down its arms \u2014 it's found it.",
-        "Their focus threads the needle of awareness \u2014 pinpoint.",
-        "The world snaps into sharp relief \u2014 clarity unfurls.",
-        "Light dances across the surface of their mind.",
-        "In the silence, they hear the whisper of success."
-      ]
-    },
-    {
-      "ability": "Locate Object",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "It overextends, and balance falters like a spinning top.",
-        "A dull thud echoes through their concentration \u2014 nothing.",
-        "The world blurs around it, colors bleeding into one another.",
-        "Their focus shatters like dropped glass on stone.",
-        "A faint hum of uncertainty vibrates through its being."
       ]
     },
     {
@@ -2899,33 +1915,9 @@
       "entries": [
         "It lunges forward, weight shifting onto the balls of its feet.",
         "Gimbal's staff slices through the air with a gentle whooshing sound.",
-        "-A swift pivot on one heel \u2013 and it's committed to the strike.",
+        "-A swift pivot on one heel – and it's committed to the strike.",
         "A flicker of tension in its arm as it gathers force for impact.",
         "It pauses, eyes narrowing behind a veil of leaves."
-      ]
-    },
-    {
-      "ability": "Lesser Restoration",
-      "category": "successes",
-      "description": "Flavor text for successes a bonus_action",
-      "entries": [
-        "Steel whispers through leather, warmth seeping into the air afterwards.",
-        "-The staff crackles with tiny sparks \u2013 and something vital shifts.",
-        "A low thrum builds in its chest as it channels life force.",
-        "It unwinds like a spring, motion smooth and unresisted.",
-        "Golden light spills forth from its outstretched hand."
-      ]
-    },
-    {
-      "ability": "Lesser Restoration",
-      "category": "failures",
-      "description": "Flavor text for failures a bonus_action",
-      "entries": [
-        "The staff carves through empty air with an eerie echo.",
-        "-A faint jolt of surprise runs up its arm \u2013 and it's off-balance.",
-        "A soft 'thwack' against nothing, a hollow sensation.",
-        "It catches itself just in time, but the motion lingers.",
-        "The leaves rustle ominously as life force fails to take hold."
       ]
     },
     {
@@ -2941,30 +1933,6 @@
       ]
     },
     {
-      "ability": "Continual Flame",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Steel whispers through leather, and something warm follows.",
-        "The point finds the gap it was looking for \u2014 a wet crunch.",
-        "Impact shudders up through the shaft and into its wrists.",
-        "A tiny spark flickers to life on the tip of the staff.",
-        "Flames erupt in a burst of orange and yellow light."
-      ]
-    },
-    {
-      "ability": "Continual Flame",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance.",
-        "A scrape of steel on stone where flesh should have been.",
-        "It overcommits, and the opening closes before the blade arrives.",
-        "Fingers falter on the staff's worn wooden surface.",
-        "The incantation falters on its lips like a dying ember."
-      ]
-    },
-    {
       "ability": "Darkvision",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
@@ -2974,30 +1942,6 @@
         "A faint hum builds within, searching for purchase and resonance.",
         "It strains against an invisible leash, testing its own limits.",
         "The whisper of shadows stirs, seeking a foothold in the light."
-      ]
-    },
-    {
-      "ability": "Darkvision",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Steel whispers through leather, leaving a warm caress in its wake.",
-        "A delicate spark ignites within, casting flickering shadows on walls.",
-        "Impact shudders up through the shaft and into its wrists, precise.",
-        "The point finds the gap it was looking for \u2013 a wet crunch of acceptance.",
-        "Darkness recedes before an unseen force, like morning sun's first light."
-      ]
-    },
-    {
-      "ability": "Darkvision",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance, stumbling.",
-        "A scrape of steel on stone where flesh should have been \u2013 silence.",
-        "It overcommits, and the opening closes before its presence arrives.",
-        "A feeble spark fizzles, leaving only a lingering, hollow echo.",
-        "Darkness reasserts itself, swallowing all in an unseen vortex."
       ]
     },
     {
@@ -3041,7 +1985,7 @@
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
       "entries": [
-        "Words tumble out, sharp and precise \u2014 the air shimmers.",
+        "Words tumble out, sharp and precise — the air shimmers.",
         "Fingers dance with anticipation, tracing an invisible map.",
         "Power gathers behind the eyes, a tremor in its shoulders.",
         "It flexes, coiling like a spring about to unspool.",
@@ -3054,7 +1998,7 @@
       "description": "Flavor text for successes a spell",
       "entries": [
         "Steel whispers through leather, and something warm unfurls.",
-        "The point finds the gap it was seeking \u2014 a satisfying crunch.",
+        "The point finds the gap it was seeking — a satisfying crunch.",
         "Impact shudders up through the shaft and into its wrists.",
         "It channels the force like a river finding its delta.",
         "A burst of energy erupts from its outstretched hand."
@@ -3127,7 +2071,7 @@
       "entries": [
         "Threads of concentration weave together, forming a tight net.",
         "Swaying forward, it finds balance in the unseen fulcrum.",
-        "A burst of heat coalesces at the tip \u2013 a tiny sun.",
+        "A burst of heat coalesces at the tip – a tiny sun.",
         "The staff's length becomes an extension, an arrow finding its mark.",
         "It leans into the force, letting momentum do the work."
       ]
@@ -3149,7 +2093,7 @@
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
       "entries": [
-        "Muscles ripple like a stormy sea \u2014 the magic churns beneath.",
+        "Muscles ripple like a stormy sea — the magic churns beneath.",
         "A whispered incantation summons the power, but it lingers uncertain.",
         "-The air thickens with anticipation as they seek to make it real.",
         "Fists clench tight around the staff, and a burst of force is imminent.",
@@ -3176,7 +2120,7 @@
         "The words trip up on their own tongue, leaving confusion in their wake.",
         "-A faint humming noise fills the air, but nothing changes.",
         "Concentration falters like a dropped thread, unraveling all progress.",
-        "Their magic shimmers like a mirage \u2014 ephemeral and unfulfilling.",
+        "Their magic shimmers like a mirage — ephemeral and unfulfilling.",
         "The familiar's ears perk up as they stumble over their own words."
       ]
     },
@@ -3185,35 +2129,11 @@
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
       "entries": [
-        "A delicate dance begins with arms outstretched \u2013 balance teeters.",
+        "A delicate dance begins with arms outstretched – balance teeters.",
         "It coaxes the threads of a spell into reluctant stillness.",
-        "The fingers flex, then freeze in mid-air \u2013 anticipation crackles.",
+        "The fingers flex, then freeze in mid-air – anticipation crackles.",
         "Power builds behind the eyes, looking for a way out.",
-        "Words tumble out, sharp and precise \u2013 the air bends."
-      ]
-    },
-    {
-      "ability": "Monkey's Grasp",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Steel whispers through leather, and something warm follows.",
-        "A whispered promise wraps around it, holding tight.",
-        "The point finds the gap it was looking for \u2013 a wet crunch.",
-        "Impact shudders up through the shaft and into its wrists.",
-        "Gentle pressure builds to a satisfying snap."
-      ]
-    },
-    {
-      "ability": "Monkey's Grasp",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance.",
-        "A scrape of steel on stone where flesh should have been.",
-        "It overcommits, and the opening closes before the blade arrives.",
-        "Energy spills outward in frustrated bursts \u2013 a failed spark.",
-        "Tension releases like a snapped thread \u2013 an unfulfilled promise."
+        "Words tumble out, sharp and precise – the air bends."
       ]
     },
     {
@@ -3221,7 +2141,7 @@
       "category": "attempts",
       "description": "Flavor text for attempts a bonus_action",
       "entries": [
-        "Gimbal's grip tightens around the mushroom ballista \u2014 a tense spring.",
+        "Gimbal's grip tightens around the mushroom ballista — a tense spring.",
         "A fluid motion, it loads the projectile with a soft click.",
         "Weight shifts forward, and the staff extends in anticipation of impact.",
         "It whips forward with a sudden jolt of energy and muscle.",
@@ -3237,7 +2157,7 @@
         "The projectile shatters against the target with a wet crunch.",
         "Impact shakes up through the staff, a jolt of satisfaction.",
         "The force explodes outward in a burst of light and sound.",
-        "Steel whispers through leather, and something warm follows \u2014 a gentle heat."
+        "Steel whispers through leather, and something warm follows — a gentle heat."
       ]
     },
     {
@@ -3294,34 +2214,10 @@
       "description": "Flavor text for attempts a spell",
       "entries": [
         "Fingers tremble on the hilt as power teeters on a knife's edge.",
-        "Words stumble out in fits and starts \u2014 searching for traction.",
+        "Words stumble out in fits and starts — searching for traction.",
         "The air shimmers where the staff should be, anticipating the motion.",
         "A whispered incantation hangs in the balance, waiting to resolve.",
         "Tension builds behind the eyes, coiling like a spring ready to snap."
-      ]
-    },
-    {
-      "ability": "Spell Signature",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Steel whispers through leather, and something warm follows \u2014 a gentle kiss.",
-        "The point finds the gap it was looking for \u2014 a wet crunch of release.",
-        "Impact shudders up through the shaft and into its wrists, a thrill coursing.",
-        "A burst of light explodes around it, blinding all in its path.",
-        "The staff hums with power as it channels the elements to their peak."
-      ]
-    },
-    {
-      "ability": "Spell Signature",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance and stumbling forward.",
-        "A scrape of steel on stone where flesh should have been \u2014 an unsettling echo.",
-        "It overcommits, and the opening closes before the blade arrives with a dull thud.",
-        "Power surges through the staff but dissipates without target or direction.",
-        "The words falter, dying in its throat as it finds no purchase."
       ]
     },
     {
@@ -3334,30 +2230,6 @@
         "A whispered promise hangs on lips - it dies there.",
         "Muscles tense, poised for impact - something gives way instead.",
         "Gnarled wood vibrates with potential - then goes still."
-      ]
-    },
-    {
-      "ability": "At Your Side",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Steel whispers through leather, and something warm follows.",
-        "The point finds the gap it was looking for \u2014 a wet crunch.",
-        "Impact shudders up through the shaft and into its wrists.",
-        "A burst of green light blazes out - petals unfurl in response.",
-        "It feels the flow of life around it, like a river's current."
-      ]
-    },
-    {
-      "ability": "At Your Side",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance.",
-        "A scrape of steel on stone where flesh should have been.",
-        "It overcommits, and the opening closes before the blade arrives.",
-        "A whispered spell drops into darkness - no echo returns.",
-        "Gnarled wood shudders with release - nothing comes to meet it."
       ]
     },
     {
@@ -3401,7 +2273,7 @@
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
       "entries": [
-        "Fingers dance across the staff's worn surface \u2014 seeking alignment.",
+        "Fingers dance across the staff's worn surface — seeking alignment.",
         "A low thrum begins to build in its chest, humming like a harp string.",
         "The words come hard and slow, as if pulled through thick honey.",
         "It raises its hands, palms up, and the air seems to hold its breath.",
@@ -3413,7 +2285,7 @@
       "category": "successes",
       "description": "Flavor text for successes a spell",
       "entries": [
-        "The staff's vibrations harmonize with the pulse in its wrist \u2014 a sweet resonance.",
+        "The staff's vibrations harmonize with the pulse in its wrist — a sweet resonance.",
         "Their voices blend into a single, rich tone that echoes through the trees.",
         "A warm light blooms at the tip of the quarterstaff, casting no shadows.",
         "Its familiar's ears perk up as it feels the surge of control unfold.",
@@ -3428,7 +2300,7 @@
         "The words get caught in its throat, and they feel a flush rise to its face.",
         "It fumbles with the staff's grip, feeling the wood shift beneath its palms.",
         "The concentration falters, and the familiar's ears fold back in disappointment.",
-        "A faint whisper of doubt tickles at the edge of its mind \u2014 it hesitates.",
+        "A faint whisper of doubt tickles at the edge of its mind — it hesitates.",
         "Its hands feel clumsy and uncoordinated, like a puppeteer without strings."
       ]
     },
@@ -3441,31 +2313,7 @@
         "A delicate pattern begins to form, fingers dancing on thin air.",
         "Eyes narrow as it searches for the hidden thread that unravels everything.",
         "The room seems to hold its breath, waiting for the wrong move to tip the balance.",
-        "It strains to pick up the faint hum of deception \u2013 a siren's song."
-      ]
-    },
-    {
-      "ability": "Counterspy",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Steel whispers through leather, and something warm follows the path it's taken.",
-        "The point finds the gap it was looking for \u2013 a wet crunch echoes through the silence.",
-        "A thread of truth begins to weave itself into the fabric of reality.",
-        "Time slows as the pieces fall into place like autumn leaves on a still pond.",
-        "It feels the vibrations of a hidden heartbeat, steady and true."
-      ]
-    },
-    {
-      "ability": "Counterspy",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The room seems to shift and writhe, making it hard to keep its footing.",
-        "A scrape of steel on stone where flesh should have been \u2013 an ominous reminder.",
-        "The silence closes in like a shroud, suffocating all sound and reason.",
-        "It stumbles upon a tangled web of deceit, threads snapping back into place.",
-        "The whispers grow distant, lost in the cacophony of its own doubts."
+        "It strains to pick up the faint hum of deception – a siren's song."
       ]
     },
     {
@@ -3477,31 +2325,7 @@
         "Fingers weave through the motions but can't quite find purchase.",
         "A faint hum vibrates up the wooden shaft to its hands.",
         "The air shimmers with anticipation, waiting for it to speak.",
-        "Power coalesces at the tips of its fingers \u2013 just out of reach."
-      ]
-    },
-    {
-      "ability": "Conjure Animals",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Steel whispers through leather, and something warm follows, spreading outward.",
-        "A tiny tremor runs up its arm as the spell begins taking hold.",
-        "The conjured forms start to take shape around it like wisps of smoke.",
-        "Its voice rises in a crescendo, the words themselves becoming tangible.",
-        "Threads of life begin to weave together into something new and vibrant."
-      ]
-    },
-    {
-      "ability": "Conjure Animals",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "Concentration falters \u2013 the threads of magic snap back into its hands.",
-        "The spell falls flat, leaving only an unsettling silence behind it.",
-        "It feels like a key turning in the wrong lock, a hollow click echoing through its mind.",
-        "The familiar scents and sounds of nature are replaced by something harsh and unfamiliar.",
-        "A faint buzzing noise grows louder before dying away into nothingness."
+        "Power coalesces at the tips of its fingers – just out of reach."
       ]
     },
     {
@@ -3514,31 +2338,7 @@
         "Eyes locked on a distant horizon, they strain to find their mark.",
         "Vitality flows through them like water over jagged rocks.",
         "A concentrated hum builds at the base of their neck.",
-        "Mental fingers grasp for the threads of connection \u2013 but slip."
-      ]
-    },
-    {
-      "ability": "Aura of Vitality",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "-The hum finds its pitch, a sweet harmony that ripples outward-",
-        "Light spills from them like liquid silver into the darkness.",
-        "A symphony of whispers converges to form a single, clear voice.",
-        "Energy unfurls like a blooming flower, petals of light and warmth.",
-        "In the stillness, a note resonates \u2013 a call that echoes through time."
-      ]
-    },
-    {
-      "ability": "Aura of Vitality",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "-The focus dissolves into nothing more than a fading memory-",
-        "A jarring discord shatters the air, leaving only silence behind.",
-        "Vitality seeps away like sand between fingers, lost in the wind.",
-        "Their concentration snaps like a brittle twig underfoot.",
-        "A whispered promise hangs suspended, then falls still and silent."
+        "Mental fingers grasp for the threads of connection – but slip."
       ]
     },
     {
@@ -3546,7 +2346,7 @@
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
       "entries": [
-        "Fists flex around the staff's worn length \u2014 seeking purchase.",
+        "Fists flex around the staff's worn length — seeking purchase.",
         "The eyes narrow to a single point, calculating trajectories.",
         "Tongue darts between lips, tasting the words of incantation.",
         "Breath catches in anticipation as it prepares to unleash.",
@@ -3587,30 +2387,6 @@
         "A burst of heat flickers at the tip, then dies.",
         "Tongues of flame flicker on lips, eager to be loosed.",
         "The hand hesitates, unsure which thread to tug."
-      ]
-    },
-    {
-      "ability": "Flame Arrows",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Steel whispers through leather, warmth seeps in, and silence follows.",
-        "The point finds its mark, a tiny crack in the surface.",
-        "Flame erupts on contact, casting dancing shadows around them.",
-        "Their wrist flexes, the staff's weight transferring to its tip.",
-        "Energy pools at the edge of their hand, eager to burst forth."
-      ]
-    },
-    {
-      "ability": "Flame Arrows",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The arrow's trajectory falters, lost in mid-air's vastness.",
-        "A tiny spark fizzles out before it can do harm.",
-        "It bites harder than intended, leaving teeth marks on dry air.",
-        "Their concentration wavers, the flame faltering for an instant.",
-        "They overextend, their arm trembling with exertion."
       ]
     },
     {
@@ -3698,30 +2474,6 @@
       ]
     },
     {
-      "ability": "Summon Fey",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "A burst of iridescent light erupts from the outstretched hand.",
-        "Steel whispers through leather, and something warm follows.",
-        "The point finds the gap it was looking for \u2014 a wet crunch.",
-        "Impact shudders up through the shaft and into its wrists.",
-        "Time seems to bend around the spellcasting figure."
-      ]
-    },
-    {
-      "ability": "Summon Fey",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "A scrape of air on stone where energy should have been.",
-        "The swing carves empty space, momentum pulling it off-balance.",
-        "It overcommits, and the opening closes before the blade arrives.",
-        "Concentration falters, leaving the spell to dissipate harmlessly.",
-        "Words fall flat, a hollow echo in an empty world."
-      ]
-    },
-    {
       "ability": "Freedom of the Waves",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
@@ -3770,30 +2522,6 @@
       ]
     },
     {
-      "ability": "Feathered Reach",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "A burst of feathers unfurls, bridging the gap and spanning distance",
-        "The point finds the gap it was looking for \u2014 a wet crunch echoes out",
-        "Light bursts forth in a blaze of color and radiance",
-        "It channels the elements, feeling the rush of power course through",
-        "The staff shudders in its grasp as something vital flows into"
-      ]
-    },
-    {
-      "ability": "Feathered Reach",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance and stumbling",
-        "A scrape of steel on stone where flesh should have been, a hollow echo",
-        "It overcommits, and the opening closes before the blade arrives too late",
-        "Energy surges outward in a wild arc, uncontrolled and unfocused",
-        "The familiar's eyes flicker with alarm as it senses the misstep"
-      ]
-    },
-    {
       "ability": "Plant Growth",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
@@ -3806,63 +2534,15 @@
       ]
     },
     {
-      "ability": "Plant Growth",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "A warm glow seeps into the air, coaxing life from the soil.",
-        "The forest stirs, its pulse beating in time with the incantation.",
-        "Tendrils burst forth, like emerald tentacles grasping for sunlight.",
-        "A sphere of growth unfurls, its edges shimmering with new life.",
-        "Seeds sprout, their green shoots bursting from the earth's dark crust."
-      ]
-    },
-    {
-      "ability": "Plant Growth",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The words die on its lips, leaving only an echoing silence.",
-        "It strains too hard, and the magic shatters like brittle glass.",
-        "A faint whisper of resistance meets the spell's eager advance.",
-        "Growth falters, as if it has been denied its proper nourishment.",
-        "The staff trembles, a warning that the magic will not take hold."
-      ]
-    },
-    {
       "ability": "Feign Death",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
       "entries": [
         "- A whispered promise hangs in the air, searching for purchase.",
         "Fingers flutter around a hidden trigger, hesitating to commit.",
-        "It pauses, poised on the cusp of release \u2014 and nothing happens.",
+        "It pauses, poised on the cusp of release — and nothing happens.",
         "A quiver stirs within it, a pent-up energy seeking an outlet.",
         "Words stumble out, a jumbled mix of urgency and desperation."
-      ]
-    },
-    {
-      "ability": "Feign Death",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "The staff's tip grazes its target, like a lover's gentle caress.",
-        "Light blossoms in its wake \u2014 a fleeting echo of its presence.",
-        "A ripple spreads outward from the point of contact \u2014 smooth, unbroken.",
-        "Something snaps into place, a hidden lock clicking shut with precision.",
-        "The world seems to slow as it unfolds, each movement choreographed."
-      ]
-    },
-    {
-      "ability": "Feign Death",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "- Empty air receives its intended blow, leaving only silence behind.",
-        "A faint scuff of leather on wood echoes through the stillness.",
-        "It bites deeper than anticipated, but not deep enough to find purchase.",
-        "The motion stalls mid-air, arrested by a sudden lack of momentum.",
-        "A dull thud resonates through its arm, as if it's been struck back."
       ]
     },
     {
@@ -3871,34 +2551,10 @@
       "description": "Flavor text for attempts a spell",
       "entries": [
         "Fingers tremble on the hilt as it calls forth ancient power.",
-        "A whispered incantation carries meaning on its breath \u2014 barely audible.",
+        "A whispered incantation carries meaning on its breath — barely audible.",
         "The air seems to hold its breath in anticipation of release.",
         "A moment's hesitation before the words spill out, like water over a dam.",
         "It feels for the connection, seeking that resonant hum within."
-      ]
-    },
-    {
-      "ability": "Protection from Energy",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Warmth seeps into leather as it finds the touchstone, and balance shifts.",
-        "The world seems to bend, aligning with its will \u2014 a fleeting harmony.",
-        "A gentle hiss escapes, a sigh of relief from strained muscles.",
-        "It reaches out with an unseen hand, claiming what's rightfully there.",
-        "The universe yields, ever so slightly, like a gate creaking open."
-      ]
-    },
-    {
-      "ability": "Protection from Energy",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "It falters, fingers slipping off the worn grip as momentum passes by.",
-        "The words die on its lips, leaving only the taste of dust.",
-        "A faint tremble runs through the staff, betraying its uncertainty.",
-        "The air holds steady, unyielding and unforgiving in its silence.",
-        "It overextends, feeling the familiar's resistance like a physical push."
       ]
     },
     {
@@ -3950,36 +2606,12 @@
       ]
     },
     {
-      "ability": "Revivify",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "The staff's gentle hum synchronizes with its heartbeat now.",
-        "Life bursts forth like water from a dammed stone, renewed.",
-        "It finds the pulse within, and the world responds in kind.",
-        "A whispered secret resonates through the air and takes hold.",
-        "Earth and sky harmonize as it speaks the words of life."
-      ]
-    },
-    {
-      "ability": "Revivify",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The swing whips through empty space, leaving only silence behind.",
-        "Fingers falter, releasing a dying spark that falters too.",
-        "Words hang in the air like autumn leaves on withered stems.",
-        "It overextends, feeling the strain of unfulfilled potential.",
-        "The staff's hum drops to a discordant whine as it stumbles."
-      ]
-    },
-    {
       "ability": "Sleet Storm",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
       "entries": [
         "Gripping staff and deer familiar tight, it focuses all sight.",
-        "A slow breath in, a quick exhalation of intent \u2014 fingers weave.",
+        "A slow breath in, a quick exhalation of intent — fingers weave.",
         "It closes eyes, feeling the build-up of pressure behind them.",
         "Knees bend into a stance that balances strength and fluidity.",
         "Calm spreads like water over stone, stillness seeping through tension."
@@ -4016,33 +2648,9 @@
       "entries": [
         "Fingers tremble with anticipation as it prepares to channel the stone.",
         "Air thickens around it like a held breath before the attempt.",
-        "It shifts weight onto its back leg, poised for release \u2013",
+        "It shifts weight onto its back leg, poised for release –",
         "A whispered incantation lingers in the air, unfinished and urgent.",
         "The quarterstaff rises, heavy and deliberate, seeking balance point."
-      ]
-    },
-    {
-      "ability": "Meld into Stone",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Steel whispers through leather, and something warm follows the meld.",
-        "Rocky fingers close around it like a vice \u2013 nothing gives.",
-        "It becomes one with the earth, its essence dissolving into stone.",
-        "A low hum builds in resonance as the spell takes hold.",
-        "The deer's eyes shine bright with understanding as it disappears."
-      ]
-    },
-    {
-      "ability": "Meld into Stone",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "Momentum carries it forward, empty air rushing past an outstretched hand.",
-        "A faint tremor runs through its body, a warning of misaligned energy.",
-        "It lingers, unsure, on the threshold \u2013 and stays that way.",
-        "Words falter in its mouth as it struggles to anchor itself.",
-        "The deer's ears fold back in confusion as it reappears, bewildered."
       ]
     },
     {
@@ -4058,30 +2666,6 @@
       ]
     },
     {
-      "ability": "Speak with Plants",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "A subtle vibration hums up its arm and into the air.",
-        "Leaves rustle in agreement as it speaks their silent language.",
-        "A glint of understanding flickers, followed by a nod.",
-        "Words unfold like petals, revealing hidden truths within.",
-        "The ground stirs, ancient secrets rising to meet its voice."
-      ]
-    },
-    {
-      "ability": "Speak with Plants",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "Its words crumble in the face of unyielding silence.",
-        "A faint tremble betrays its uncertainty as it speaks.",
-        "It strains, the sound wavering like a lost bird's call.",
-        "-no response- only the wind's indifference meets its voice.",
-        "The plants shudder, as if they've tasted something bitter."
-      ]
-    },
-    {
       "ability": "Dispel Magic",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
@@ -4094,30 +2678,6 @@
       ]
     },
     {
-      "ability": "Dispel Magic",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "Steel whispers through leather, and warmth seeps into its palms.",
-        "It conjures the words - and they fall like autumn leaves.",
-        "The air shudders as the magic takes hold, a ripple effect.",
-        "Dispel's power unfurls like a banner in the morning sun.",
-        "A gentle nudge, but enough to send the spell toppling."
-      ]
-    },
-    {
-      "ability": "Dispel Magic",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "Words falter, and the incantation hangs in the air - unfinished.",
-        "The staff wavers, its tip scraping against an unseen obstacle.",
-        "It overextends, leaving itself open to counterattack's sting.",
-        "Magic sparks but fizzles, a brief, dying ember.",
-        "Words stumble and falter, then freeze on its lips."
-      ]
-    },
-    {
       "ability": "Elemental Weapon",
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
@@ -4125,32 +2685,8 @@
         "Fingers dance with purpose, weaving an intricate spell of potential.",
         "The whispered incantation hangs in the air like a challenge.",
         "It raises its staff, and for an instant, time hesitates.",
-        "Power surges through the body, seeking a focal point \u2013 or not.",
+        "Power surges through the body, seeking a focal point – or not.",
         "A slow breath gathers momentum, poised on the edge of release."
-      ]
-    },
-    {
-      "ability": "Elemental Weapon",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "The elemental force blooms like a flower on the end of its staff.",
-        "Steel whispers through leather, and something warm follows the touch.",
-        "Impact shudders up through the shaft and into its wrists \u2013 success.",
-        "A precise strike finds purchase in the air, and reality bends.",
-        "The point finds the gap it was looking for \u2013 a wet crunch ensues."
-      ]
-    },
-    {
-      "ability": "Elemental Weapon",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance suddenly.",
-        "It overcommits, and the opening closes before the blade arrives too late.",
-        "A scrape of steel on stone where flesh should have been instead.",
-        "Power flails like a wild animal, seeking a target \u2013 and missing.",
-        "A spark dies in mid-air, without so much as a whisper."
       ]
     },
     {
@@ -4160,33 +2696,9 @@
       "entries": [
         "Fingers tremble as they seek the shape of ancient incantation.",
         "-Then silence: no echo to betray its whispered attempt-",
-        "Mouths part to release a stream that wavers on the verge\u2014",
+        "Mouths part to release a stream that wavers on the verge—",
         "Air thickens, a vacuum that resists it's presence still",
         "A faint whisper tries to form within the dusty air"
-      ]
-    },
-    {
-      "ability": "Water Breathing",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "-Water parts like silk: a path revealed where none was seen-",
-        "Steel whispers through leather, and something warm follows close.",
-        "The point finds the gap it was looking for \u2014 a wet crunch.",
-        "A slow sigh escapes as something long-awaited comes to pass",
-        "Words unfold with purpose: an invitation or a warning"
-      ]
-    },
-    {
-      "ability": "Water Breathing",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The swing carves empty air, momentum pulling it off-balance now.",
-        "A scrape of steel on stone where flesh should have been present",
-        "It overcommits, and the opening closes before the blade arrives",
-        "-Water ripples outward, but the shape it sought remains hidden-",
-        "The incantation falters: a single note lost in dissonance"
       ]
     },
     {
@@ -4199,30 +2711,6 @@
         "It pauses to gauge the water's unyielding surface tension.",
         "Water ripples out in concentric circles as it steps forward.",
         "A flicker of uncertainty crosses its eyes, and they narrow."
-      ]
-    },
-    {
-      "ability": "Water Walk",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "The point of its staff sinks into the water with a soft whisper.",
-        "As it walks on water, the surface accepts its weight without ripple.",
-        "It strides forward unimpeded, the water's resistance melting away like mist.",
-        "Its footsteps leave ripples in perfect syncopation with its heartbeat.",
-        "Steel whispers through leather, and something warm follows in its wake."
-      ]
-    },
-    {
-      "ability": "Water Walk",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "The druid's foot sinks into the pool with a splash of displaced air.",
-        "Water closes over its ankle like a cold, wet vice.",
-        "It stumbles, weight unbalanced on one leg as water rushes past.",
-        "Ripples spread out in wild disorder as it struggles to find footing.",
-        "The surface shatters beneath its foot, sending shockwaves up its leg."
       ]
     },
     {
@@ -4246,7 +2734,7 @@
         "Steel whispers through leather, and something warm follows in silence.",
         "It finds the rhythm, and the air begins to ripple with force.",
         "A low hum builds beneath its hands, vibrating up the staff.",
-        "The point finds the gap it was looking for \u2014 a wet crunch ensues."
+        "The point finds the gap it was looking for — a wet crunch ensues."
       ]
     },
     {
@@ -4281,7 +2769,7 @@
         "A silver thread snaps into place, locking everything down.",
         "The quarterstaff bites deep, a satisfying wooden creak following.",
         "Words fall like stones from a distant cliffside, landing true.",
-        "It finds the hidden seam where pressure can be applied \u2013 crunching in.",
+        "It finds the hidden seam where pressure can be applied – crunching in.",
         "Leather-bound power flows through the staff, and something bursts free."
       ]
     },
@@ -4302,35 +2790,11 @@
       "category": "attempts",
       "description": "Flavor text for attempts a spell",
       "entries": [
-        "Fingers flex around the staff's worn grip \u2014 tension builds slowly.",
+        "Fingers flex around the staff's worn grip — tension builds slowly.",
         "A whispered incantation begins to take shape in the still air.",
         "Concentration falters for an instant as doubt creeps in.",
         "Breath condenses into a sphere that falters on the edge",
         "Fingers flex, summoning energy that trembles and then falls"
-      ]
-    },
-    {
-      "ability": "Conjure Ocean",
-      "category": "successes",
-      "description": "Flavor text for successes a spell",
-      "entries": [
-        "The ocean responds with a rush of waves and salty spray.",
-        "A delicate balance is struck, and it holds its breath.",
-        "Power flows from Gimbal's hands, taking on a life of its own.",
-        "A cube of water rises, shimmering in the fading light.",
-        "It feels the familiar thrum of energy coursing through its veins."
-      ]
-    },
-    {
-      "ability": "Conjure Ocean",
-      "category": "failures",
-      "description": "Flavor text for failures a spell",
-      "entries": [
-        "Gimbal's eyes glaze over as it loses focus and the spell falters.",
-        "The words catch in their throat like a dry branch snapping.",
-        "A faint tremble runs through the staff, betraying Gimbal's uncertainty.",
-        "Water splashes against the shore with a dull, defeated sound.",
-        "Their concentration shatters like dropped glass on stone."
       ]
     },
     {
@@ -4375,7 +2839,7 @@
       "description": "Flavor text for attempts a save",
       "entries": [
         "A nimble leap forward sets it up for the next step.",
-        "It dips low, searching for a hidden weakness to exploit \u2014",
+        "It dips low, searching for a hidden weakness to exploit —",
         "A fleeting moment of balance on one leg.",
         "The staff dances in tight circles around its target.",
         "Weight shifts forward, and it launches into a sprint."
@@ -4388,7 +2852,7 @@
       "entries": [
         "Steel whispers through leather, and something warm follows the sound.",
         "Impact shudders up through the shaft, like a spark igniting flint.",
-        "A soft crunch echoes as it finds its mark \u2014 a satisfying yield.",
+        "A soft crunch echoes as it finds its mark — a satisfying yield.",
         "It flows into the moment like water around a boulder.",
         "The staff bites deep, releasing a burst of contained power."
       ]
@@ -4400,7 +2864,7 @@
       "entries": [
         "The swing carves empty air, momentum pulling it off-balance and stumbling.",
         "A scrape of steel on stone echoes where flesh should have been a heartbeat ago.",
-        "It overcommits, and the opening closes before the blade arrives \u2014 too late.",
+        "It overcommits, and the opening closes before the blade arrives — too late.",
         "A miscalculated lunge sends it careening into the underbrush.",
         "The staff's tip flails wildly, like a bird in a gale."
       ]
@@ -4422,7 +2886,7 @@
       "category": "successes",
       "description": "Flavor text for successes a save",
       "entries": [
-        "The point finds the gap it was looking for \u2014 a wet crunch.",
+        "The point finds the gap it was looking for — a wet crunch.",
         "A warm hum builds from the staff's wooden core to its tip.",
         "-and with the sound comes an answering echo of satisfaction-",
         "Impact shudders up through the shaft and into its wrists.",
@@ -4447,7 +2911,7 @@
       "description": "Flavor text for attempts a save",
       "entries": [
         "It lunges forward, weight shifting into an uncertain balance.",
-        "Gimbal's staff swoops out in a wild, unpracticed arc \u2013",
+        "Gimbal's staff swoops out in a wild, unpracticed arc –",
         "A hasty jerk sends its arm twitching, like a snapped whip.",
         "The world pauses for the briefest instant as it hesitates.",
         "It launches itself forward, form blurring into reckless abandon."
@@ -4460,7 +2924,7 @@
       "entries": [
         "Steel whispers through leather, and something warm follows the touch.",
         "A gentle thud echoes through its wrists as impact is absorbed.",
-        "The point finds the gap it was looking for \u2013 a soft, yielding give.",
+        "The point finds the gap it was looking for – a soft, yielding give.",
         "In perfect syncopation, blade meets target with a sweet crunch.",
         "It feels the satisfying shudder of connection, like a well-placed shot."
       ]
@@ -4470,11 +2934,11 @@
       "category": "failures",
       "description": "Flavor text for failures a save",
       "entries": [
-        "The swing carves empty air, momentum pulling it off-balance \u2013 hard.",
+        "The swing carves empty air, momentum pulling it off-balance – hard.",
         "A scrape of steel on stone where flesh should have been is all.",
         "It overcommits, and the opening closes before the blade arrives too late.",
         "Impact shudders up through the shaft, but finds no purchase this time.",
-        "The world seems to slow as it realizes its miscalculation \u2013 too late."
+        "The world seems to slow as it realizes its miscalculation – too late."
       ]
     },
     {
@@ -4486,7 +2950,7 @@
         "It hesitates for an instant, then seizes the opening.",
         "Muscles tense, coiling like a spring about to unwind.",
         "The swing builds, a slow-rolling momentum gathering force.",
-        "For a moment, all seems still \u2013 except for its intent."
+        "For a moment, all seems still – except for its intent."
       ]
     },
     {
@@ -4497,7 +2961,7 @@
         "Steel whispers through leather, and something warm follows.",
         "A tiny spark appears where flame and air converge.",
         "Light dances across its staff as Luminous Arrow takes flight.",
-        "The point finds the gap it was looking for \u2013 a wet crunch.",
+        "The point finds the gap it was looking for – a wet crunch.",
         "Impact shudders up through the shaft and into its wrists."
       ]
     },
@@ -4510,7 +2974,7 @@
         "A scrape of steel on stone where flesh should have been.",
         "It overcommits, and the opening closes before the blade arrives.",
         "Air rushes past in a hollow whoosh as the attack falls short.",
-        "For an instant, all seems poised \u2013 then nothing happens."
+        "For an instant, all seems poised – then nothing happens."
       ]
     },
     {
@@ -4518,7 +2982,7 @@
       "category": "attempts",
       "description": "Flavor text for attempts a skill",
       "entries": [
-        "Weight shifts forward \u2014 the body a coiled spring.",
+        "Weight shifts forward — the body a coiled spring.",
         "It darts between trees, roots and branches grasping for purchase.",
         "Leather creaks as limbs stretch, joints cracking in protest.",
         "A sudden lunge, legs splayed wide in a desperate bid.",
@@ -4530,9 +2994,9 @@
       "category": "successes",
       "description": "Flavor text for successes a skill",
       "entries": [
-        "Steel whispers through leather, and something warm follows \u2014 it's music.",
+        "Steel whispers through leather, and something warm follows — it's music.",
         "Impact shudders up through the shaft and into its wrists like a heartbeat.",
-        "The point finds the gap it was looking for \u2014 a wet crunch echoes.",
+        "The point finds the gap it was looking for — a wet crunch echoes.",
         "It unwinds in a single smooth motion, fluid as water.",
         "A soft click, followed by a sweet release of tension."
       ]
@@ -4543,8 +3007,8 @@
       "description": "Flavor text for failures a skill",
       "entries": [
         "The swing carves empty air, momentum pulling it off-balance like a ship without anchor.",
-        "A scrape of steel on stone where flesh should have been \u2014 an awful echo.",
-        "It overcommits, and the opening closes before the blade arrives \u2014 too slow.",
+        "A scrape of steel on stone where flesh should have been — an awful echo.",
+        "It overcommits, and the opening closes before the blade arrives — too slow.",
         "Weight slams down hard on the earth, jarring its entire frame.",
         "For a moment, it's frozen in place, limbs tangled in a mess."
       ]
@@ -4554,11 +3018,11 @@
       "category": "attempts",
       "description": "Flavor text for attempts a skill",
       "entries": [
-        "A delicate touch \u2014 Gimbal's fingers brush against the reins.",
+        "A delicate touch — Gimbal's fingers brush against the reins.",
         "It readies itself, poised for a moment of perfect alignment.",
         "-and then it stalls, hesitant to commit to the course.",
         "The halfling druid crouches low, gathering momentum in silence.",
-        "Gimbal's hands dance with the familiar's mane \u2014 almost in sync."
+        "Gimbal's hands dance with the familiar's mane — almost in sync."
       ]
     },
     {
@@ -4582,7 +3046,7 @@
         "The familiar shifts away, eyes rolling in discomfort and annoyance.",
         "-the bond falters for a moment, and then the creature is gone.",
         "Gimbal's voice cracks on a note of false reassurance and desperation.",
-        "It jerks back, as if slapped \u2014 a jarring, unsettling disconnect."
+        "It jerks back, as if slapped — a jarring, unsettling disconnect."
       ]
     },
     {
@@ -4626,7 +3090,7 @@
       "category": "attempts",
       "description": "Flavor text for attempts a skill",
       "entries": [
-        "Weight settles onto the balls of its feet \u2014 balance precariously poised.",
+        "Weight settles onto the balls of its feet — balance precariously poised.",
         "It leans in, staff cocked like a rifle at full draw.",
         "Muscles tense as it prepares to strike from an unyielding stance.",
         "The quarterstaff begins to swing in a wide, deliberate arc.",
@@ -4639,7 +3103,7 @@
       "description": "Flavor text for successes a skill",
       "entries": [
         "A whisper-quick step forward sets its staff into perfect alignment.",
-        "Steel whispers through leather, and something warm follows \u2014 a gentle give.",
+        "Steel whispers through leather, and something warm follows — a gentle give.",
         "Impact shudders up through the shaft and into its wrists like electricity.",
         "It finds the groove it's been searching for, smooth as silk.",
         "A pinpoint strike with the quarterstaff, dead center where it was meant to be."
@@ -4650,11 +3114,11 @@
       "category": "failures",
       "description": "Flavor text for failures a skill",
       "entries": [
-        "The swing carves empty air, momentum pulling it off-balance \u2014 a stumbling step back.",
-        "It overcommits, and the opening closes before the blade arrives \u2014 too little, too late.",
+        "The swing carves empty air, momentum pulling it off-balance — a stumbling step back.",
+        "It overcommits, and the opening closes before the blade arrives — too little, too late.",
         "A scrape of steel on stone where flesh should have been, an awkward echo.",
         "The staff bites deep into the earth, its force deflected harmlessly.",
-        "Weight shifts forward, but the follow-through falters \u2014 a stumbling stop."
+        "Weight shifts forward, but the follow-through falters — a stumbling stop."
       ]
     },
     {
@@ -4699,7 +3163,7 @@
       "description": "Flavor text for attempts a skill",
       "entries": [
         "Weight shifts forward, and the quarterstaff trembles in its grasp",
-        "A hesitant lunge sends it stumbling off-balance \u2014 quick recovery needed.",
+        "A hesitant lunge sends it stumbling off-balance — quick recovery needed.",
         "The druid's eyes narrow as they make a split-second judgment call",
         "It pauses, surveying the terrain before making a tentative move",
         "The familiar deer watches warily as it readies itself to act"
@@ -4714,7 +3178,7 @@
         "Steel whispers through leather, and something warm follows its touch",
         "History's threads begin to unravel, revealing the hidden pattern",
         "The druid's eyes light up as the past yields its secrets",
-        "A burst of insight illuminates the path forward \u2014 clarity gained"
+        "A burst of insight illuminates the path forward — clarity gained"
       ]
     },
     {
@@ -4725,7 +3189,7 @@
         "A whispered question hangs in the air, met with stony silence.",
         "Shadows deepen around it, as if the truth itself is fleeing",
         "The weight of forgotten events threatens to crush its spirit",
-        "It strains against the limits of its understanding \u2014 a crack appears",
+        "It strains against the limits of its understanding — a crack appears",
         "The druid's eyes cloud over, lost in a sea of uncertainty"
       ]
     },
@@ -4786,7 +3250,7 @@
         "Steel whispers through leather, and something warm follows.",
         "Eyes lock onto the hidden pattern, the underlying truth revealed.",
         "- A faint tremor runs up its arm, a spark of insight.",
-        "The point finds the gap it was looking for \u2014 a wet crunch."
+        "The point finds the gap it was looking for — a wet crunch."
       ]
     },
     {
@@ -4797,7 +3261,7 @@
         "- The swing carves empty air, momentum pulling it off-balance.",
         "A scrape of steel on stone where flesh should have been.",
         "It overcommits, and the opening closes before the blade arrives.",
-        "- A muffled thud echoes through the stillness \u2014 an unsatisfying hit.",
+        "- A muffled thud echoes through the stillness — an unsatisfying hit.",
         "The thread is dropped, a fragile lead lost in the noise."
       ]
     },
@@ -4819,7 +3283,7 @@
       "description": "Flavor text for successes a skill",
       "entries": [
         "Steel whispers through leather, and something warm follows.",
-        "The point finds the gap it was looking for \u2014 a wet crunch.",
+        "The point finds the gap it was looking for — a wet crunch.",
         "Impact shudders up through the shaft and into its wrists.",
         "A hidden glint of light reveals a concealed path.",
         "It steps into the gap with quiet confidence."
@@ -4833,7 +3297,7 @@
         "The swing carves empty air, momentum pulling it off-balance.",
         "A scrape of steel on stone where flesh should have been.",
         "It overcommits, and the opening closes before the blade arrives.",
-        "A faint rustle echoes through the trees \u2014 but nothing moves.",
+        "A faint rustle echoes through the trees — but nothing moves.",
         "Weight shifts to the left, and it stumbles awkwardly."
       ]
     },
@@ -4843,7 +3307,7 @@
       "description": "Flavor text for attempts a skill",
       "entries": [
         "Gimbal Starwhisper's eyes narrow, scanning the horizon's subtle cues.",
-        "A practiced crouch, weight balanced on balls of its feet \u2014 poised.",
+        "A practiced crouch, weight balanced on balls of its feet — poised.",
         "The quarterstaff trembles in hand, hesitating on the precipice.",
         "A breath catches in chest as Gimbal Starwhisper strains to discern.",
         "The wind whispers secrets that only it seems to understand fully."
@@ -4881,7 +3345,7 @@
         "It lunges forward on a boot-heeled stride.",
         "A swift rotation, and the quarterstaff twirls free.",
         "It charges, feet pounding out a rhythmic cadence.",
-        "Weight shifts onto the ball of its foot \u2014 ready.",
+        "Weight shifts onto the ball of its foot — ready.",
         "The staff arcs up in a slow, meditative curve."
       ]
     },
@@ -4894,7 +3358,7 @@
         "Impact shudders up through the shaft and into its wrists.",
         "A melodic trill bursts forth from the staff's tip.",
         "Leather creaks in time with the motion of its swing.",
-        "The point finds the gap it was looking for \u2014 a wet crunch."
+        "The point finds the gap it was looking for — a wet crunch."
       ]
     },
     {
@@ -4915,9 +3379,9 @@
       "description": "Flavor text for attempts a skill",
       "entries": [
         "A slow circle of feet, weight testing balance.",
-        "-The words hang, then falter on its tongue\u2014",
+        "-The words hang, then falter on its tongue—",
         "It gathers breath, the air trembling with anticipation.",
-        "-A hesitant phrase, then a pause as it collects thought\u2014",
+        "-A hesitant phrase, then a pause as it collects thought—",
         "Gimbal's hands weave a slow, uncertain pattern."
       ]
     },
@@ -4928,7 +3392,7 @@
       "entries": [
         "Persuasive words flow like honeyed oil on warm days.",
         "The air shimmers with agreement as the words settle in.",
-        "-A gentle nudge of logic, and something clicks into place\u2014",
+        "-A gentle nudge of logic, and something clicks into place—",
         "It speaks from the heart, a truth that resonates deeply.",
         "Gimbal's tone wraps around the listener like a gentle lasso."
       ]
@@ -4939,7 +3403,7 @@
       "description": "Flavor text for failures a skill",
       "entries": [
         "The words trail off, lost in an uncertain sea.",
-        "-A stammering halt, as if its tongue had forgotten\u2014",
+        "-A stammering halt, as if its tongue had forgotten—",
         "It speaks with conviction, but none is found.",
         "Gimbal's voice cracks on the precipice of persuasion.",
         "The words land flat, like a dropped stone in still water."
@@ -4950,8 +3414,8 @@
       "category": "attempts",
       "description": "Flavor text for attempts a skill",
       "entries": [
-        "Weight shifts forward, knees bending \u2014 the balance begins.",
-        "-A swift check of its stance before launching into prayer\u2014",
+        "Weight shifts forward, knees bending — the balance begins.",
+        "-A swift check of its stance before launching into prayer—",
         "Gimbal Starwhisper's eyes narrow, fingers tightening around the staff.",
         "The druid takes a deliberate breath, preparing for the test.",
         "-Leather creaks as it shifts, muscles tensing in anticipation,"
@@ -4964,8 +3428,8 @@
       "entries": [
         "A gentle nod, then the words flow forth like a river.",
         "Steel whispers through leather, and something warm follows.",
-        "The point finds the gap it was looking for \u2014 a wet crunch.",
-        "-Faith blooms on its face as the words take hold\u2014",
+        "The point finds the gap it was looking for — a wet crunch.",
+        "-Faith blooms on its face as the words take hold—",
         "Gimbal Starwhisper's voice carries far, echoing off distant hills."
       ]
     },
@@ -4976,7 +3440,7 @@
       "entries": [
         "A scrape of steel on stone where flesh should have been.",
         "The swing carves empty air, momentum pulling it off-balance.",
-        "-It falters, words dying on its lips as doubt creeps in\u2014",
+        "-It falters, words dying on its lips as doubt creeps in—",
         "The staff trembles in Gimbal's grasp, a sign of uncertainty.",
         "A faint whisper trails off into nothingness, lost to the wind."
       ]
@@ -5024,7 +3488,7 @@
       "entries": [
         "A whispered promise of silence precedes its gentle descent.",
         "It freezes, limbs locked in place like a startled animal.",
-        "-Then suddenly stillness \u2014 no sound to betray it.",
+        "-Then suddenly stillness — no sound to betray it.",
         "Weight settles into the balls of its feet, poised and ready.",
         "The forest holds its breath as it becomes one with shadows."
       ]
@@ -5046,7 +3510,7 @@
       "category": "failures",
       "description": "Flavor text for failures a skill",
       "entries": [
-        "A snapped twig gives away its position \u2014 too loud for stealth.",
+        "A snapped twig gives away its position — too loud for stealth.",
         "It overextends, and its footsteps echo through the stillness.",
         "A faint rustle betrays its movement, like a mouse in the walls.",
         "-Then it's back to silence, but at what cost? The trees seem to whisper.",
@@ -5059,7 +3523,7 @@
       "description": "Flavor text for attempts a skill",
       "entries": [
         "- A slow rotation, weight settling heavy as the earth.",
-        "It pauses at the threshold \u2014 a hesitant heartbeat.",
+        "It pauses at the threshold — a hesitant heartbeat.",
         "A tentative step forward, eyes locked on uncertain ground.",
         "The staff trembles in its grasp, seeking purchase in air.",
         "Gimbal Starwhisper leans into the challenge, stillness before motion."
@@ -5072,7 +3536,7 @@
       "entries": [
         "The point finds its home, a satisfying click of connection.",
         "- A sweep through the underbrush, revealing secrets hidden there.",
-        "It burrows into the heart of the problem \u2014 a gentle touch.",
+        "It burrows into the heart of the problem — a gentle touch.",
         "The staff slices through resistance like a hot knife through butter.",
         "Gimbal Starwhisper's eyes light up with understanding, a moment of clarity."
       ]
@@ -5109,7 +3573,7 @@
         "A warm light spills out from within as life force surges back.",
         "The darkness recedes like a tide, revealing a glimmer of hope.",
         "Steel whispers through leather, and something warm follows the contact.",
-        "A vital spark reignites in its chest \u2013 a flame that flickers free.",
+        "A vital spark reignites in its chest – a flame that flickers free.",
         "In this fleeting moment, it feels the gentle caress of mortality's shadow."
       ]
     },
@@ -5138,38 +3602,14 @@
       ]
     },
     {
-      "ability": "Initiative",
-      "category": "successes",
-      "description": "Flavor text for successes a initiative",
-      "entries": [
-        "- The roll clicks over, and they're first into the fray.",
-        "A swift calculation, then it's off like a shot.",
-        "The numbers align just so, a perfect harmony achieved.",
-        "It rolls with ease, as if fate itself was on their side.",
-        "The dice fall in favor, and they seize the initiative."
-      ]
-    },
-    {
-      "ability": "Initiative",
-      "category": "failures",
-      "description": "Flavor text for failures a initiative",
-      "entries": [
-        "- The roll falters, and time seems to slow around them.",
-        "A miscalculation, and it's caught off guard by the pace.",
-        "The numbers refuse to cooperate, leaving them lagging.",
-        "It hesitates, a moment's delay that proves costly.",
-        "The dice turn against, and they stumble out of the gate."
-      ]
-    },
-    {
       "ability": "Bloodied",
       "category": "attempts",
       "description": "Flavor text for attempts a bloodied",
       "entries": [
-        "Blood seeps into the worn leather of its boot \u2014 a slow leak.",
-        "Pain crackles like dry underbrush, about to ignite \u2014 it winces.",
+        "Blood seeps into the worn leather of its boot — a slow leak.",
+        "Pain crackles like dry underbrush, about to ignite — it winces.",
         "The quarterstaff's familiar weight now feels too heavy for its tired arms.",
-        "A low, guttural snarl escapes \u2014 its fury is finally unchained.",
+        "A low, guttural snarl escapes — its fury is finally unchained.",
         "It shudders, a violent tremor coursing through muscles gone slack."
       ]
     },
@@ -5184,7 +3624,7 @@
         },
         {
           "sensory_category": "Auditory",
-          "text": "A low hum of surrender rumbles up from its chest \u2014 silence follows."
+          "text": "A low hum of surrender rumbles up from its chest — silence follows."
         },
         {
           "sensory_category": "Visual/Cinematic",

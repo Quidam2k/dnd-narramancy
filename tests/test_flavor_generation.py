@@ -316,6 +316,132 @@ def test_get_available_providers_new():
         return False
 
 
+def test_has_roll_outcomes():
+    """Test no-roll ability detection (no API required)."""
+    print("\nTesting has_roll_outcomes")
+    print("-" * 40)
+
+    from narramancy.models import ParsedAbility, ParsedCreature, has_roll_outcomes
+
+    try:
+        # Feature without attack/save data and no roll language -> no outcomes
+        wild_shape = ParsedAbility(
+            name="Wild Shape", ability_type="feature",
+            description="As a Bonus Action, you shape-shift into a Beast form.",
+        )
+        assert not has_roll_outcomes(wild_shape), "no-roll feature should be False"
+
+        # Attack bonus -> outcomes
+        bite = ParsedAbility(
+            name="Bite", ability_type="attack", description="", attack_bonus=5,
+        )
+        assert has_roll_outcomes(bite), "attack_bonus should be True"
+
+        # Save DC -> outcomes
+        breath = ParsedAbility(
+            name="Poison Breath", ability_type="action",
+            description="", save_dc=13, save_type="CON",
+        )
+        assert has_roll_outcomes(breath), "save_dc should be True"
+
+        # Roll-type abilities -> outcomes
+        for atype in ("attack", "save", "skill", "death_save"):
+            a = ParsedAbility(name="X", ability_type=atype, description="")
+            assert has_roll_outcomes(a), f"type {atype} should be True"
+
+        # Description fallback (text-block parsed creatures)
+        whip = ParsedAbility(
+            name="Thorn Whip", ability_type="cantrip",
+            description="Make a melee spell attack against the target.",
+        )
+        assert has_roll_outcomes(whip), "description 'spell attack' should be True"
+
+        entangle = ParsedAbility(
+            name="Entangle", ability_type="spell",
+            description="Each creature must succeed on a Strength saving throw.",
+        )
+        assert has_roll_outcomes(entangle), "description 'saving throw' should be True"
+
+        # DDB importer enricher syntax
+        thunderwave = ParsedAbility(
+            name="Thunderwave", ability_type="spell",
+            description="Each creature makes a [[/save con format=long]].",
+        )
+        assert has_roll_outcomes(thunderwave), "[[/save enricher should be True"
+
+        # Foundry activities are authoritative over incidental description mentions
+        ws_foundry = ParsedAbility(
+            name="Wild Shape", ability_type="feature",
+            description="You retain your proficiency in saving throws.",
+            activity_types=["transform"],
+        )
+        assert not has_roll_outcomes(ws_foundry), "transform activity should override description"
+
+        save_spell = ParsedAbility(
+            name="Charm Person", ability_type="spell",
+            description="", activity_types=["save"],
+        )
+        assert has_roll_outcomes(save_spell), "save activity should be True"
+
+        # to_flavor_request threads has_outcomes through
+        creature = ParsedCreature(name="Test", abilities=[wild_shape, bite])
+        req_ws = creature.to_flavor_request(wild_shape)
+        req_bite = creature.to_flavor_request(bite)
+        assert req_ws.has_outcomes is False
+        assert req_bite.has_outcomes is True
+
+        print("  PASS")
+        return True
+
+    except Exception as e:
+        print(f"  FAIL: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+
+
+def test_attempts_only_prompt():
+    """Test that no-roll abilities get an attempts-only prompt (no API required)."""
+    print("\nTesting attempts-only prompt")
+    print("-" * 40)
+
+    try:
+        config = ConfigManager()
+        generator = FlavorTextGenerator(config)
+
+        request = FlavorTextRequest(
+            character_name="Gimbal",
+            character_race="Halfling",
+            character_class="Druid",
+            character_level=5,
+            ability_name="Wild Shape",
+            ability_type="feature",
+            ability_description="Shape-shift into a Beast form",
+            variations=3,
+            has_outcomes=False,
+        )
+        prompt = generator.generate_attempts_only_prompt(request)
+        assert "Wild Shape" in prompt
+        assert "ENTRIES:" in prompt
+        assert "SUCCESSES" not in prompt, "attempts-only prompt must not request successes"
+        assert "FAILURES" not in prompt, "attempts-only prompt must not request failures"
+        assert "no attack roll or save" in prompt
+
+        # Default requests still get the 3-section prompt
+        full_prompt = generator.generate_flavor_text_prompt(request)
+        assert "SUCCESSES:" in full_prompt
+        assert "FAILURES:" in full_prompt
+
+        print("  PASS")
+        return True
+
+    except Exception as e:
+        print(f"  FAIL: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+
+
 async def test_ai_generation():
     """Test actual AI generation (requires API key). Skipped if no key available."""
     print("\nTesting AI Generation (requires API key)")
@@ -367,6 +493,8 @@ async def main():
     results['get_provider_new'] = test_get_provider_new_providers()
     results['available_providers_new'] = test_get_available_providers_new()
     results['generator_init'] = test_generator_init()
+    results['has_roll_outcomes'] = test_has_roll_outcomes()
+    results['attempts_only_prompt'] = test_attempts_only_prompt()
     results['ai_generation'] = await test_ai_generation()
 
     print(f"\n{'=' * 60}")

@@ -390,6 +390,48 @@ FAILURES:
 """
         return prompt
 
+    def generate_attempts_only_prompt(self, request: FlavorTextRequest) -> str:
+        """Create a prompt for no-roll abilities (attempts only, no success/failure).
+
+        Abilities without a resolution roll (Wild Shape, Longstrider, initiative)
+        can't succeed or fail — only the act of using them needs flavor.
+        """
+        style_desc = self.STYLE_DESCRIPTIONS.get(request.style, self.STYLE_DESCRIPTIONS['dramatic'])
+        description_part = f"\nAbility description: {request.ability_description}" if request.ability_description else ""
+        n = request.variations
+        distribution = _sensory_distribution(n, request.ability_type)
+        pronouns = _pronoun_guidance(request.character_race)
+
+        attempt_key, _, _ = _TYPE_EXAMPLE_MAP.get(
+            request.ability_type, ('attack_attempt', 'attack_success', 'attack_failure')
+        )
+        examples = _examples_for_event(attempt_key)
+
+        prompt = f"""You are a creative D&D flavor text generator. You know D&D 5e deeply. Generate flavor specific to what this ability actually does — not generic combat. Generate {n} unique entries describing the creature USING this ability. This ability has no attack roll or save — it simply happens, so describe the act itself, not an outcome.
+
+Creature: {request.character_name} ({request.character_race}, CR {request.character_level})
+Ability: {request.ability_name} ({request.ability_type}){description_part}
+Style: {style_desc}
+{pronouns}
+"""
+        if request.context_blob:
+            prompt += f"Flavor guidance: {request.context_blob}\n"
+
+        prompt += f"""
+{distribution}
+
+{_WRITING_RULES}
+
+Examples:
+{examples}
+
+Write exactly {n} entries. Number each entry. No commentary:
+
+ENTRIES:
+1. "entry here"
+"""
+        return prompt
+
     def generate_conditional_prompt(self, request: FlavorTextRequest, category: str, count: int = 5) -> str:
         """Create a prompt for conditional flavor categories (crit/fumble/barely/killing_blow)."""
         style_desc = self.STYLE_DESCRIPTIONS.get(request.style, self.STYLE_DESCRIPTIONS['dramatic'])
@@ -603,8 +645,14 @@ ENTRIES:
         """Generate flavor text using a single AI provider."""
         provider = self._resolve_provider(provider_name)
 
-        prompt = self.generate_flavor_text_prompt(request)
-        result_data = await self._call_provider(provider, prompt, request.variations)
+        if request.has_outcomes:
+            prompt = self.generate_flavor_text_prompt(request)
+            result_data = await self._call_provider(provider, prompt, request.variations)
+        else:
+            # No resolution roll — success/failure are meaningless, generate attempts only
+            prompt = self.generate_attempts_only_prompt(request)
+            entries = await self._call_provider_simple(provider, prompt, request.variations)
+            result_data = {'attempts': entries, 'successes': [], 'failures': []}
 
         result = FlavorTextResult(
             attempts=result_data['attempts'],
