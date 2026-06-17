@@ -41,6 +41,55 @@ class AIProvider(ABC):
         return f"{self.__class__.__name__}(model={self.model!r})"
 
 
+class FileResponseProvider(AIProvider):
+    """Two-phase provider: records prompts to disk, serves responses written externally.
+
+    Lets any agent with file access (e.g. Claude Code subagents) act as the
+    generation backend without API keys:
+
+      1. Run the CLI with --provider file. Every prompt the pipeline would send
+         is written to {base_dir}/pending/<hash>.txt and the call fails softly.
+      2. An external agent reads each pending prompt and writes its raw response
+         to {base_dir}/responses/<hash>.txt.
+      3. Re-run the same CLI command. Recorded responses are served from disk;
+         any NEW prompts (conditionals unlocked by now-successful main calls,
+         top-up requests) land in pending/ for the next round. Iterate until
+         a run completes with no new pending prompts.
+
+    Config: NARRAMANCY_AI_GENERATION_FILE_DIR (default output/agent-run),
+    NARRAMANCY_AI_GENERATION_FILE_MODEL (metadata label, e.g. the agent's model).
+    """
+
+    name = "file"
+
+    def __init__(self, base_dir: str = "output/agent-run", model: str = "file"):
+        from pathlib import Path
+        self.base = Path(base_dir)
+        self.pending = self.base / "pending"
+        self.responses = self.base / "responses"
+        self.pending.mkdir(parents=True, exist_ok=True)
+        self.responses.mkdir(parents=True, exist_ok=True)
+        self.model = model
+
+    async def generate(self, prompt: str) -> ProviderResult:
+        import hashlib
+
+        h = hashlib.sha256(prompt.encode("utf-8")).hexdigest()[:16]
+        response_file = self.responses / f"{h}.txt"
+        if response_file.exists():
+            return ProviderResult(
+                text=response_file.read_text(encoding="utf-8"),
+                input_tokens=0,
+                output_tokens=0,
+                model=self.model,
+                provider_name=self.name,
+            )
+        (self.pending / f"{h}.txt").write_text(prompt, encoding="utf-8")
+        raise FileNotFoundError(
+            f"No response for prompt {h} — recorded in {self.pending / (h + '.txt')}"
+        )
+
+
 class GeminiProvider(AIProvider):
     """Google Gemini API provider."""
 
@@ -265,6 +314,11 @@ def get_provider(name: str, config: ConfigManager) -> AIProvider:
         base_url = config.get_api_key("ollama") or "http://localhost:11434"
         model = config.get("ai_generation", "ollama_model", fallback="llama3.2")
         return OllamaProvider(base_url=base_url, model=model)
+
+    elif name == "file":
+        base_dir = config.get("ai_generation", "file_dir", fallback="output/agent-run")
+        model = config.get("ai_generation", "file_model", fallback="file")
+        return FileResponseProvider(base_dir=base_dir, model=model)
 
     elif name == "lmstudio":
         base_url = config.get_api_key("lmstudio") or "http://localhost:1234"

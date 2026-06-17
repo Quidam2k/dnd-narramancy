@@ -28,7 +28,12 @@
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     background: var(--bg);
     color: var(--text);
-    min-height: 100vh;
+    /* Pin the body to the viewport so only the ability list (main) scrolls —
+       the header and the rolled description stay fixed at the top no matter
+       how far you scroll. dvh handles the mobile address bar. */
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
   }
@@ -42,6 +47,7 @@
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
+    flex-shrink: 0;
   }
 
   header h1 {
@@ -114,6 +120,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    flex-shrink: 0;
   }
 
   #result-label {
@@ -241,6 +248,7 @@
     border-top: 1px solid var(--surface-2);
     padding: 8px 16px;
     text-align: center;
+    flex-shrink: 0;
   }
   #controls button {
     background: none;
@@ -627,6 +635,16 @@
     const el = document.createElement('span');
     el.textContent = s;
     return el.innerHTML;
+  }
+
+  // ── Embedded data (single-file offline export) ──
+  // The packaging script (scripts/package_pc.py) replaces the `null` below with
+  // an inlined creature object, so the exported HTML shows that PC's tables
+  // instantly on file:// — no picker, no fetch. Harmless when left null.
+  const EMBEDDED = null; /*__EMBED__*/
+  if (EMBEDDED) {
+    data = EMBEDDED;
+    loadCreature(EMBEDDED);
   }
 })();
 </script>

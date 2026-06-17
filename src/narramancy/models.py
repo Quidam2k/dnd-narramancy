@@ -54,6 +54,12 @@ class ParsedAbility:
     recharge: Optional[str] = None  # "5-6", "short rest", etc.
     is_multi_phase: bool = False
     activity_types: List[str] = field(default_factory=list)
+    # True when the ability comes from a parser with authoritative structured
+    # activity data (Foundry's system.activities). For these, an empty
+    # activity_types list means "no roll" — do NOT fall back to scanning the
+    # description text, which false-positives on passives whose prose mentions
+    # "ability check"/"saving throw" incidentally (e.g. Powerful Build).
+    from_structured_source: bool = False
 
 
 # Ability types whose use is itself a roll that can succeed or fail
@@ -71,6 +77,25 @@ _ROLL_DESCRIPTION_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Reviewed aggressive cuts (by base name, parenthetical suffix stripped): named
+# abilities where the *character* makes no meaningful pass/fail roll, even though
+# the data or text might suggest one. Embedded-disbelief illusions (the observer
+# rolls Investigation, not the caster), Cunning Action (the Hide check is its own
+# Stealth entry), and damage-reduction reactions (you reduce damage, you don't
+# pass/fail). These get attempts-only flavor regardless of activity/save data.
+AGGRESSIVE_NO_OUTCOME = {
+    'Minor Illusion',
+    'Silent Image',
+    'Cunning Action',
+    'Deflect Attacks',
+    "Stone's Endurance",
+}
+
+
+def _base_ability_name(name: str) -> str:
+    """Strip a trailing ' (...)' source/variant suffix for name matching."""
+    return re.sub(r'\s*\(.*\)$', '', name).strip()
+
 
 def has_roll_outcomes(ability: 'ParsedAbility') -> bool:
     """Whether an ability involves a resolution roll (success/failure are meaningful).
@@ -79,6 +104,8 @@ def has_roll_outcomes(ability: 'ParsedAbility') -> bool:
     generating success/failure tables for them wastes tokens on entries
     nothing ever triggers.
     """
+    if _base_ability_name(ability.name) in AGGRESSIVE_NO_OUTCOME:
+        return False
     if ability.attack_bonus is not None or ability.save_dc is not None:
         return True
     if ability.ability_type in _ROLL_OUTCOME_TYPES:
@@ -87,6 +114,11 @@ def has_roll_outcomes(ability: 'ParsedAbility') -> bool:
         # Foundry activities are authoritative — long feature descriptions
         # mention rolls incidentally (Wild Shape retains save proficiencies)
         return bool(_ROLL_ACTIVITY_TYPES & set(ability.activity_types))
+    if ability.from_structured_source:
+        # Authoritative structured data with no roll activity = no roll.
+        # Don't fall through to the description regex (false-positives on
+        # passive features like Powerful Build, Fey Ancestry, War Caster).
+        return False
     if ability.description and _ROLL_DESCRIPTION_RE.search(ability.description):
         return True
     return False
@@ -125,6 +157,7 @@ class ParsedCreature:
                 uses=a.get('uses'),
                 recharge=a.get('recharge'),
                 activity_types=a.get('activity_types', []),
+                from_structured_source=a.get('from_structured_source', False),
             ))
 
         return cls(

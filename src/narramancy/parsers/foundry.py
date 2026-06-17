@@ -179,4 +179,5 @@ def _parse_foundry_item(item: dict):
         save_type=save_type,
         is_multi_phase=is_multi_phase,
         activity_types=activity_types,
+        from_structured_source=True,
     )

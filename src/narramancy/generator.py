@@ -36,8 +36,10 @@ Rules:
 def _writing_rules(request: 'FlavorTextRequest') -> str:
     """Writing rules with the pronoun rule matched to the subject."""
     if request.pronouns:
+        # Named familiars may legitimately use "it" — only forbid it otherwise
+        never_it = '' if 'it' in request.pronouns.lower() else ' — never "it"'
         pronoun_rule = (f'This is a named character: refer to them as "{request.character_name}" '
-                        f'or with {request.pronouns} pronouns — never "it". No class references')
+                        f'or with {request.pronouns} pronouns{never_it}. No class references')
     elif 'humanoid' in (request.character_race or '').lower():
         pronoun_rule = 'Stay character-agnostic: use "they". No creature names, no class references'
     else:
@@ -133,8 +135,9 @@ def _sensory_distribution(count: int, ability_type: str = 'attack') -> str:
 def _pronoun_guidance(request: 'FlavorTextRequest') -> str:
     """Return pronoun instruction: named characters get their name/pronouns, monsters get "it"."""
     if request.pronouns:
+        never_it = '' if 'it' in request.pronouns.lower() else ' — never "it"'
         return (f'This is a named character. Refer to them as "{request.character_name}" '
-                f'or with {request.pronouns} pronouns — never "it".')
+                f'or with {request.pronouns} pronouns{never_it}.')
     if 'humanoid' in (request.character_race or '').lower():
         return 'Use they/them pronouns.'
     return 'Use "it" as the pronoun.'

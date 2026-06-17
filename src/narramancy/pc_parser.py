@@ -220,6 +220,18 @@ def _extract_ability(item: dict, default_type: str) -> ParsedAbility:
         elif act_type == 'bonus':
             ability_type = 'bonus_action'
 
+    # Extract activity types (authoritative roll data) — mirrors foundry.py.
+    # Without this, has_roll_outcomes() falls back to scanning the description,
+    # which false-positives on passives whose prose mentions "ability check"
+    # /"saving throw" incidentally (Powerful Build, Fey Ancestry, War Caster…).
+    activities = sys.get('activities', {})
+    activity_types = list({
+        act.get('type', '')
+        for act in activities.values()
+        if isinstance(act, dict) and act.get('type', '')
+    })
+    is_multi_phase = len(activity_types) > 1
+
     return ParsedAbility(
         name=name,
         ability_type=ability_type,
@@ -228,4 +240,7 @@ def _extract_ability(item: dict, default_type: str) -> ParsedAbility:
         attack_bonus=attack_bonus,
         save_dc=save_dc,
         save_type=save_type,
+        is_multi_phase=is_multi_phase,
+        activity_types=activity_types,
+        from_structured_source=True,
     )
